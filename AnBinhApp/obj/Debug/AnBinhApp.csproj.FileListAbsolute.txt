@@ -1,0 +1,10 @@
+D:\GitHub\PTTKHTTT\AnBinhApp\bin\Debug\AnBinhApp.exe.config
+D:\GitHub\PTTKHTTT\AnBinhApp\bin\Debug\AnBinhApp.exe
+D:\GitHub\PTTKHTTT\AnBinhApp\bin\Debug\AnBinhApp.pdb
+D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.csprojAssemblyReference.cache
+D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.Homepage.resources
+D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.Properties.Resources.resources
+D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.csproj.GenerateResource.cache
+D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.csproj.CoreCompileInputs.cache
+D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.exe
+D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.pdb
