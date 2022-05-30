@@ -40,6 +40,7 @@ namespace AnBinhApp
             this.checkRememberLogin = new System.Windows.Forms.CheckBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.loginBtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,7 +111,7 @@ namespace AnBinhApp
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(188, 44);
+            this.pictureBox1.Location = new System.Drawing.Point(188, 46);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(140, 140);
             this.pictureBox1.TabIndex = 6;
@@ -144,6 +145,7 @@ namespace AnBinhApp
             // loginBtn
             // 
             this.loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
+            this.loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("Inter Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -154,12 +156,24 @@ namespace AnBinhApp
             this.loginBtn.Text = "Đăng nhập";
             this.loginBtn.UseVisualStyleBackColor = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Inter Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(171, 210);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(184, 20);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Đăng nhập để tiếp tục";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(505, 680);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.checkRememberLogin);
@@ -192,5 +206,6 @@ namespace AnBinhApp
         private System.Windows.Forms.CheckBox checkRememberLogin;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button loginBtn;
+        private System.Windows.Forms.Label label3;
     }
 }

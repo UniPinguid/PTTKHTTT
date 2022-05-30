@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,10 +19,40 @@ namespace AnBinhApp
         bool exit_clicked = false;
 
         bool is_login = false;
+        bool is_supervisor_needed = false;
 
         public Homepage()
         {
             InitializeComponent();
+            show_supervisor_input(is_supervisor_needed);
+        }
+
+        private void show_supervisor_input(bool check)
+        {
+            if (check == false)
+            {
+                label21.Hide();
+                supervisorName_textBox.Hide();
+                panel11.Hide();
+                label19.Hide();
+                supervisorNum_textBox.Hide();
+                panel10.Hide();
+                label18.Hide();
+                supervisorRelationship_textBox.Hide();
+                panel7.Hide();
+            }
+            else
+            {
+                label21.Show();
+                supervisorName_textBox.Show();
+                panel11.Show();
+                label19.Show();
+                supervisorNum_textBox.Show();
+                panel10.Show();
+                label18.Show();
+                supervisorRelationship_textBox.Show();
+                panel7.Show();
+            }
         }
 
         private void homepage_enter(object sender, EventArgs e)
@@ -173,9 +204,31 @@ namespace AnBinhApp
                 }
                 else if (dialogResult == DialogResult.No)
                 {
-                    //
+                    listVac_clicked = false;
+                    listVac_leave(sender, e);
                 }
             }
+        }
+
+        private void getAge(object sender, EventArgs e)
+        {
+            int years = DateTime.Now.Year - birthday_picker.Value.Year;
+            int months = DateTime.Now.Month - birthday_picker.Value.Month;
+            agePrompt.Text = "Bạn " + years.ToString() + " tuổi";
+
+            if (years <= 12)
+            {
+                is_supervisor_needed = true;
+                if (years <= 3)
+                {
+                    months += years * 12;
+                    agePrompt.Text = "Bạn " + months.ToString() + " tháng tuổi";
+                }
+            }
+            else
+                is_supervisor_needed = false;
+
+            show_supervisor_input(is_supervisor_needed);
         }
     }
 }
