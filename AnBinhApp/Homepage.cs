@@ -54,6 +54,14 @@ namespace AnBinhApp
                 panel7.Show();
             }
         }
+        public void EnableDoubleBuffering()
+        {
+            this.SetStyle(ControlStyles.DoubleBuffer |
+               ControlStyles.UserPaint |
+               ControlStyles.AllPaintingInWmPaint,
+               true);
+            this.UpdateStyles();
+        }
 
         private void homepage_enter(object sender, EventArgs e)
         {
@@ -229,6 +237,84 @@ namespace AnBinhApp
                 is_supervisor_needed = false;
 
             show_supervisor_input(is_supervisor_needed);
+        }
+
+        bool is_option1_select = false;
+        bool is_option2_select = false;
+        bool is_option3_select = false;
+        bool is_option4_select = false;
+
+        private void option1_click(object sender, EventArgs e)
+        {
+            if (is_option1_select == false)
+            {
+                is_option1_select = true;
+                option1.Image = Image.FromFile("../../svg/package option1 activated.png");
+            }
+            else
+            {
+                is_option1_select = false;
+                option1.Image = Image.FromFile("../../svg/package option1.png");
+            }
+        }
+
+        private void option2_click(object sender, EventArgs e)
+        {
+            if (is_option2_select == false)
+            {
+                is_option2_select = true;
+                option2.Image = Image.FromFile("../../svg/package option2 activated.png");
+            }
+            else
+            {
+                is_option2_select = false;
+                option2.Image = Image.FromFile("../../svg/package option2.png");
+            }
+        }
+
+        private void option3_click(object sender, EventArgs e)
+        {
+            if (is_option3_select == false)
+            {
+                is_option3_select = true;
+                option3.Image = Image.FromFile("../../svg/package option3 activated.png");
+            }
+            else
+            {
+                is_option3_select = false;
+                option3.Image = Image.FromFile("../../svg/package option3.png");
+            }
+        }
+
+        private void option4_click(object sender, EventArgs e)
+        {
+            if (is_option4_select == false)
+            {
+                is_option4_select = true;
+                option4.Image = Image.FromFile("../../svg/package option4 activated.png");
+            }
+            else
+            {
+                is_option4_select = false;
+                option4.Image = Image.FromFile("../../svg/package option4.png");
+            }
+        }
+
+        private void clickReturnVacRec(object sender, EventArgs e)
+        {
+            tab.SelectTab("vaccineRegisterTab");
+        }
+
+        private void clickContinueMethod(object sender, EventArgs e)
+        {
+            if (packageCheck.Checked)
+            {
+                tab.SelectTab("packageTab");
+            }
+            else if (singleCheck.Checked)
+            {
+                tab.SelectTab("singleVacTab");
+            }
         }
     }
 }
