@@ -316,5 +316,50 @@ namespace AnBinhApp
                 tab.SelectTab("singleVacTab");
             }
         }
+
+        private void notification_click(object sender, EventArgs e)
+        {
+            notification.Image = Image.FromFile("../../svg/bell click.png");
+        }
+
+        private void notification_hover(object sender, EventArgs e)
+        {
+            notification.Image = Image.FromFile("../../svg/bell hover.png");
+        }
+
+        private void notification_leave(object sender, EventArgs e)
+        {
+            notification.Image = Image.FromFile("../../svg/bell.png");
+        }
+
+        private void clickContinueFinalize(object sender, EventArgs e)
+        {
+            tab.SelectTab("finalizationTab");
+        }
+
+        private void clickReturnPackageSingle(object sender, EventArgs e)
+        {
+            if (packageCheck.Checked)
+                tab.SelectTab("packageTab");
+            else if (singleCheck.Checked)
+                tab.SelectTab("singleVacTab");
+        }
+
+        private void homepage_load(object sender, EventArgs e)
+        {
+            if (is_login == false)
+            {
+                Login login = new Login();
+                login.ShowDialog();
+                if (Login.is_login_closed == true)
+                {
+                    this.Close();
+                }
+            }
+            else
+            {
+                //
+            }
+        }
     }
 }

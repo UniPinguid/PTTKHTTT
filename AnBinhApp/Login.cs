@@ -15,6 +15,8 @@ namespace AnBinhApp
         bool username_focus = false;
         bool password_focus = false;
 
+        public static bool is_login_closed = false;
+
         public Login()
         {
             InitializeComponent();
@@ -60,6 +62,18 @@ namespace AnBinhApp
             password_focus = true;
 
             username_leave(sender, e);
+        }
+
+        private void clickRegister(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Register register = new Register();
+            register.ShowDialog();
+            register.Focus();
+        }
+
+        private void loginClosed(object sender, FormClosedEventArgs e)
+        {
+            is_login_closed = true;
         }
     }
 }

@@ -9,3 +9,4 @@ D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.csproj.CoreCompileInputs.cache
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.exe
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.pdb
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.Login.resources
+D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.Register.resources

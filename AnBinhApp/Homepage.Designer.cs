@@ -54,6 +54,7 @@ namespace AnBinhApp
             this.homepageTab = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.vaccineRegisterTab = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label28 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
@@ -109,7 +110,32 @@ namespace AnBinhApp
             this.label26 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.listVaccinationRecTab = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
+            this.notification = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.finalizationTab = new System.Windows.Forms.TabPage();
+            this.label29 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -133,11 +159,17 @@ namespace AnBinhApp
             ((System.ComponentModel.ISupportInitialize)(this.option2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.option1)).BeginInit();
             this.singleVacTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.notification)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.finalizationTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
+            this.panel1.Controls.Add(this.notification);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.label6);
@@ -402,6 +434,7 @@ namespace AnBinhApp
             this.tab.Controls.Add(this.vaccineRegisterTab);
             this.tab.Controls.Add(this.packageTab);
             this.tab.Controls.Add(this.singleVacTab);
+            this.tab.Controls.Add(this.finalizationTab);
             this.tab.Controls.Add(this.listVaccinationRecTab);
             this.tab.Location = new System.Drawing.Point(299, 12);
             this.tab.Name = "tab";
@@ -411,6 +444,7 @@ namespace AnBinhApp
             // 
             // homepageTab
             // 
+            this.homepageTab.Controls.Add(this.pictureBox9);
             this.homepageTab.Controls.Add(this.label8);
             this.homepageTab.Location = new System.Drawing.Point(4, 25);
             this.homepageTab.Name = "homepageTab";
@@ -471,6 +505,21 @@ namespace AnBinhApp
             this.vaccineRegisterTab.Size = new System.Drawing.Size(1182, 798);
             this.vaccineRegisterTab.TabIndex = 1;
             this.vaccineRegisterTab.Text = "2";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button4.Location = new System.Drawing.Point(894, 692);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(193, 57);
+            this.button4.TabIndex = 37;
+            this.button4.Text = "Tiếp tục ❯";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.clickContinueMethod);
             // 
             // dateTimePicker2
             // 
@@ -874,6 +923,7 @@ namespace AnBinhApp
             this.button1.TabIndex = 31;
             this.button1.Text = "Tiếp tục ❯";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.clickContinueFinalize);
             // 
             // label23
             // 
@@ -981,6 +1031,8 @@ namespace AnBinhApp
             // singleVacTab
             // 
             this.singleVacTab.BackColor = System.Drawing.Color.White;
+            this.singleVacTab.Controls.Add(this.button5);
+            this.singleVacTab.Controls.Add(this.comboBox1);
             this.singleVacTab.Controls.Add(this.button3);
             this.singleVacTab.Controls.Add(this.dateTimePicker1);
             this.singleVacTab.Controls.Add(this.panel13);
@@ -1030,7 +1082,7 @@ namespace AnBinhApp
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(235)))), ((int)(((byte)(245)))));
             this.panel13.Location = new System.Drawing.Point(49, 193);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(380, 3);
+            this.panel13.Size = new System.Drawing.Size(270, 3);
             this.panel13.TabIndex = 11;
             // 
             // label25
@@ -1085,20 +1137,303 @@ namespace AnBinhApp
             this.listVaccinationRecTab.Text = "tabPage1";
             this.listVaccinationRecTab.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // notification
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(894, 692);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(193, 57);
-            this.button4.TabIndex = 37;
-            this.button4.Text = "Tiếp tục ❯";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.clickContinueMethod);
+            this.notification.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.notification.Image = ((System.Drawing.Image)(resources.GetObject("notification.Image")));
+            this.notification.Location = new System.Drawing.Point(239, 33);
+            this.notification.Name = "notification";
+            this.notification.Size = new System.Drawing.Size(32, 32);
+            this.notification.TabIndex = 8;
+            this.notification.TabStop = false;
+            this.notification.Click += new System.EventHandler(this.notification_click);
+            this.notification.MouseEnter += new System.EventHandler(this.notification_hover);
+            this.notification.MouseLeave += new System.EventHandler(this.notification_leave);
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Location = new System.Drawing.Point(259, 133);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox9.TabIndex = 2;
+            this.pictureBox9.TabStop = false;
+            // 
+            // finalizationTab
+            // 
+            this.finalizationTab.Controls.Add(this.button6);
+            this.finalizationTab.Controls.Add(this.button7);
+            this.finalizationTab.Controls.Add(this.label45);
+            this.finalizationTab.Controls.Add(this.label44);
+            this.finalizationTab.Controls.Add(this.label29);
+            this.finalizationTab.Controls.Add(this.panel15);
+            this.finalizationTab.Location = new System.Drawing.Point(4, 25);
+            this.finalizationTab.Name = "finalizationTab";
+            this.finalizationTab.Padding = new System.Windows.Forms.Padding(3);
+            this.finalizationTab.Size = new System.Drawing.Size(1182, 798);
+            this.finalizationTab.TabIndex = 5;
+            this.finalizationTab.Text = "2.3";
+            this.finalizationTab.UseVisualStyleBackColor = true;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Inter SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
+            this.label29.Location = new System.Drawing.Point(43, 36);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(258, 34);
+            this.label29.TabIndex = 3;
+            this.label29.Text = "Kiểm tra thông tin";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Inter Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(49, 163);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(272, 29);
+            this.comboBox1.TabIndex = 34;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button5.Location = new System.Drawing.Point(894, 692);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(193, 57);
+            this.button5.TabIndex = 35;
+            this.button5.Text = "Tiếp tục ❯";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.clickContinueFinalize);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.label30.Location = new System.Drawing.Point(601, 118);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(86, 23);
+            this.label30.TabIndex = 18;
+            this.label30.Text = "Giới tính";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.label31.Location = new System.Drawing.Point(601, 159);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(128, 23);
+            this.label31.TabIndex = 16;
+            this.label31.Text = "Số điện thoại";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.label32.Location = new System.Drawing.Point(247, 159);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(159, 23);
+            this.label32.TabIndex = 14;
+            this.label32.Text = "Số CMND/CCCD";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.label33.Location = new System.Drawing.Point(817, 118);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(100, 23);
+            this.label33.TabIndex = 15;
+            this.label33.Text = "Ngày sinh";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.label34.Location = new System.Drawing.Point(247, 118);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(96, 23);
+            this.label34.TabIndex = 13;
+            this.label34.Text = "Họ và tên";
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(53, 108);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(145, 174);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 17;
+            this.pictureBox8.TabStop = false;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.label35.Location = new System.Drawing.Point(247, 259);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(120, 23);
+            this.label35.TabIndex = 28;
+            this.label35.Text = "Mối quan hệ";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.label36.Location = new System.Drawing.Point(601, 221);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(182, 23);
+            this.label36.TabIndex = 27;
+            this.label36.Text = "SĐT người giám hộ";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.label37.Location = new System.Drawing.Point(247, 221);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(230, 23);
+            this.label37.TabIndex = 26;
+            this.label37.Text = "Họ và tên người giám hộ";
+            // 
+            // panel15
+            // 
+            this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel15.Controls.Add(this.label43);
+            this.panel15.Controls.Add(this.label42);
+            this.panel15.Controls.Add(this.label41);
+            this.panel15.Controls.Add(this.label40);
+            this.panel15.Controls.Add(this.label39);
+            this.panel15.Controls.Add(this.label38);
+            this.panel15.Controls.Add(this.label35);
+            this.panel15.Controls.Add(this.pictureBox8);
+            this.panel15.Controls.Add(this.label36);
+            this.panel15.Controls.Add(this.label32);
+            this.panel15.Controls.Add(this.label37);
+            this.panel15.Controls.Add(this.label34);
+            this.panel15.Controls.Add(this.label30);
+            this.panel15.Controls.Add(this.label33);
+            this.panel15.Controls.Add(this.label31);
+            this.panel15.Location = new System.Drawing.Point(33, 106);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(1120, 439);
+            this.panel15.TabIndex = 29;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Inter", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
+            this.label38.Location = new System.Drawing.Point(320, 21);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(490, 41);
+            this.label38.TabIndex = 29;
+            this.label38.Text = "PHIẾU ĐĂNG KÝ TIÊM NGỪA";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.label39.Location = new System.Drawing.Point(250, 316);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(93, 23);
+            this.label39.TabIndex = 30;
+            this.label39.Text = "Loại tiêm";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.label40.Location = new System.Drawing.Point(249, 352);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(118, 23);
+            this.label40.TabIndex = 31;
+            this.label40.Text = "Tên vaccine";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.label41.Location = new System.Drawing.Point(601, 316);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(139, 23);
+            this.label41.TabIndex = 32;
+            this.label41.Text = "Thời gian tiêm";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.label42.Location = new System.Drawing.Point(601, 352);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(85, 23);
+            this.label42.TabIndex = 33;
+            this.label42.Text = "Gói tiêm";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Inter Light Italic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(49, 402);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(982, 19);
+            this.label43.TabIndex = 34;
+            this.label43.Text = "*Hãy đem phiếu này đến trung tâm y tế gần nhất để được hướng dẫn tiêm. Phiếu chỉ " +
+    "có hiệu lực sau 3 ngày tính từ ngày xác nhận được tiêm.";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Inter", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(137, 587);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(892, 23);
+            this.label44.TabIndex = 35;
+            this.label44.Text = "Sau khi xác nhận hoàn thành đăng ký tiêm ngừa, hệ thống sẽ thông báo kết quả tron" +
+    "g vòng 24 giờ.";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Inter", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(62, 587);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(69, 23);
+            this.label45.TabIndex = 36;
+            this.label45.Text = "Chú ý:";
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button6.Location = new System.Drawing.Point(894, 692);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(193, 57);
+            this.button6.TabIndex = 38;
+            this.button6.Text = "Tiếp tục ❯";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.button7.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.button7.Location = new System.Drawing.Point(94, 692);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(193, 57);
+            this.button7.TabIndex = 37;
+            this.button7.Text = "❮ Quay lại";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.clickReturnPackageSingle);
             // 
             // Homepage
             // 
@@ -1108,7 +1443,8 @@ namespace AnBinhApp
             this.Controls.Add(this.tab);
             this.Name = "Homepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "An Binh Vaccination - Homepage";
+            this.Text = "An Binh";
+            this.Shown += new System.EventHandler(this.homepage_load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -1143,6 +1479,13 @@ namespace AnBinhApp
             ((System.ComponentModel.ISupportInitialize)(this.option1)).EndInit();
             this.singleVacTab.ResumeLayout(false);
             this.singleVacTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.notification)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            this.finalizationTab.ResumeLayout(false);
+            this.finalizationTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1230,6 +1573,32 @@ namespace AnBinhApp
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.PictureBox notification;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TabPage finalizationTab;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
 
