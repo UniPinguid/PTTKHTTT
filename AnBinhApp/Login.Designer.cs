@@ -148,6 +148,7 @@ namespace AnBinhApp
             this.loginBtn.TabIndex = 9;
             this.loginBtn.Text = "Đăng nhập";
             this.loginBtn.UseVisualStyleBackColor = false;
+            this.loginBtn.Click += new System.EventHandler(this.clickLogin);
             // 
             // label3
             // 
@@ -217,7 +218,7 @@ namespace AnBinhApp
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.loginClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

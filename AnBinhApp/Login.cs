@@ -15,7 +15,8 @@ namespace AnBinhApp
         bool username_focus = false;
         bool password_focus = false;
 
-        public static bool is_login_closed = false;
+        bool is_manually_close = true;
+        public static bool is_login_close = false;
 
         public Login()
         {
@@ -71,9 +72,36 @@ namespace AnBinhApp
             register.Focus();
         }
 
-        private void loginClosed(object sender, FormClosedEventArgs e)
+        private void clickLogin(object sender, EventArgs e)
         {
-            is_login_closed = true;
+            if (true /*login successfully*/)
+            {
+                Homepage.is_login = true;
+                is_manually_close = false;
+                this.Close();
+            }
+            else
+            {
+                //
+            }
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing && is_manually_close == true)
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc là muốn thoát không?", "Thoát", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    is_manually_close = false;
+                    is_login_close = true;
+                    this.Close();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

@@ -18,7 +18,9 @@ namespace AnBinhApp
         bool listVac_clicked = false;
         bool exit_clicked = false;
 
-        bool is_login = false;
+        public static bool is_login = false;
+        bool is_employee = false;
+
         bool is_supervisor_needed = false;
 
         public Homepage()
@@ -200,21 +202,13 @@ namespace AnBinhApp
             logout_leave(sender, e);
             exit_leave(sender, e);
 
-            if (is_login)
+            if (is_employee)
                 tab.SelectTab("listVaccinationRecTab");
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Hãy đăng nhập để sử dụng tính năng này.", "Thông báo", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    Login login = new Login();
-                    login.Show();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    listVac_clicked = false;
-                    listVac_leave(sender, e);
-                }
+                MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
+                listVac_clicked = false;
+                listVac_leave(sender, e);
             }
         }
 
@@ -307,13 +301,22 @@ namespace AnBinhApp
 
         private void clickContinueMethod(object sender, EventArgs e)
         {
-            if (packageCheck.Checked)
+            if (fullName_textBox.Text == "")
+                MessageBox.Show("Xin vui lòng nhập đầy đủ thông tin", "Thông báo");
+            if (!maleBtn.Checked && !femaleBtn.Checked && !otherGenderBtn.Checked)
+                MessageBox.Show("Xin vui lòng chọn giới tính", "Thông báo");
+            else if (!packageCheck.Checked && !singleCheck.Checked)
+                MessageBox.Show("Xin vui lòng chọn loại tiêm ngừa", "Thông báo");
+            else
             {
-                tab.SelectTab("packageTab");
-            }
-            else if (singleCheck.Checked)
-            {
-                tab.SelectTab("singleVacTab");
+                if (packageCheck.Checked)
+                {
+                    tab.SelectTab("packageTab");
+                }
+                else if (singleCheck.Checked)
+                {
+                    tab.SelectTab("singleVacTab");
+                }
             }
         }
 
@@ -335,6 +338,31 @@ namespace AnBinhApp
         private void clickContinueFinalize(object sender, EventArgs e)
         {
             tab.SelectTab("finalizationTab");
+
+            label46.Text = fullName_textBox.Text;
+            if (maleBtn.Checked) label47.Text = "Nam";
+            else if (femaleBtn.Checked) label47.Text = "Nữ";
+            else if (otherGenderBtn.Checked) label47.Text = "Khác";
+            label48.Text = birthday_picker.Value.ToShortDateString();
+            label49.Text = textBox1.Text;
+            label50.Text = textBox2.Text;
+            if (supervisorName_textBox.Text == "")
+                label51.Text = "Không";
+            else label51.Text = supervisorName_textBox.Text;
+            if (supervisorNum_textBox.Text == "")
+                label52.Text = "Không";
+            else label52.Text = supervisorNum_textBox.Text;
+            if (supervisorRelationship_textBox.Text == "")
+                label53.Text = "Không";
+            else label53.Text = supervisorRelationship_textBox.Text;
+            if (packageCheck.Checked) label54.Text = "Gói";
+            else if (singleCheck.Checked) label51.Text = "Lẻ";
+            label56.Text = vaccinationDatePicker.Value.ToShortDateString();
+            label55.Text = comboBox1.Text;
+            if (is_option1_select == true) label57.Text = "Gói 0 - 12 tháng tuổi";
+            else if (is_option2_select == true) label57.Text = "Gói 0 - 24 tháng tuổi";
+            else if (is_option3_select == true) label57.Text = "Gói thường";
+            else if (is_option4_select == true) label57.Text = "Gói phụ nữ mang thai";
         }
 
         private void clickReturnPackageSingle(object sender, EventArgs e)
@@ -351,7 +379,7 @@ namespace AnBinhApp
             {
                 Login login = new Login();
                 login.ShowDialog();
-                if (Login.is_login_closed == true)
+                if (Login.is_login_close == true)
                 {
                     this.Close();
                 }
