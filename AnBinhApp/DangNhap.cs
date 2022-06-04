@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace AnBinhApp
 {
-    public partial class Login : Form
+    public partial class DangNhap : Form
     {
         bool username_focus = false;
         bool password_focus = false;
@@ -18,7 +18,7 @@ namespace AnBinhApp
         bool is_manually_close = true;
         public static bool is_login_close = false;
 
-        public Login()
+        public DangNhap()
         {
             InitializeComponent();
         }
@@ -67,7 +67,7 @@ namespace AnBinhApp
 
         private void clickRegister(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Register register = new Register();
+            DangKyTK register = new DangKyTK();
             register.ShowDialog();
             register.Focus();
         }
@@ -76,7 +76,7 @@ namespace AnBinhApp
         {
             if (true /*login successfully*/)
             {
-                Homepage.is_login = true;
+                TrangChu.is_login = true;
                 is_manually_close = false;
                 this.Close();
             }

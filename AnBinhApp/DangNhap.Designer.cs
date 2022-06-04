@@ -1,7 +1,7 @@
 ﻿
 namespace AnBinhApp
 {
-    partial class Login
+    partial class DangNhap
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace AnBinhApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.usernameHoverLine = new System.Windows.Forms.Panel();

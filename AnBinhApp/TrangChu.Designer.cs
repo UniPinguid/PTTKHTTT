@@ -1,7 +1,7 @@
 ﻿
 namespace AnBinhApp
 {
-    partial class Homepage
+    partial class TrangChu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,25 +29,25 @@ namespace AnBinhApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Homepage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel_DSPhieuTiem = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel_DangKyTiem = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel_TrangChu = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.username = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel_DangXuat = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel_Thoat = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.tab = new System.Windows.Forms.TabControl();
-            this.homepageTab = new System.Windows.Forms.TabPage();
+            this.TrangChuTab = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
-            this.vaccineRegisterTab = new System.Windows.Forms.TabPage();
+            this.DangKyTiemTab = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.vaccinationDatePicker = new System.Windows.Forms.DateTimePicker();
             this.label28 = new System.Windows.Forms.Label();
@@ -133,8 +133,23 @@ namespace AnBinhApp
             this.label30 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.listVaccinationRecTab = new System.Windows.Forms.TabPage();
-            this.notification = new System.Windows.Forms.PictureBox();
+            this.DSPhieuTiemTab = new System.Windows.Forms.TabPage();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.searchForm = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.ThongBaoTab = new System.Windows.Forms.TabPage();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.picture_dauThongBao = new System.Windows.Forms.PictureBox();
+            this.pictureThongBao = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -148,29 +163,33 @@ namespace AnBinhApp
             this.option2 = new System.Windows.Forms.PictureBox();
             this.option1 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.searchForm = new System.Windows.Forms.TextBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel_DSPhieuTiem.SuspendLayout();
+            this.panel_DangKyTiem.SuspendLayout();
+            this.panel_TrangChu.SuspendLayout();
+            this.panel_DangXuat.SuspendLayout();
+            this.panel_Thoat.SuspendLayout();
             this.tab.SuspendLayout();
-            this.homepageTab.SuspendLayout();
-            this.vaccineRegisterTab.SuspendLayout();
+            this.TrangChuTab.SuspendLayout();
+            this.DangKyTiemTab.SuspendLayout();
             this.panel14.SuspendLayout();
             this.packageTab.SuspendLayout();
             this.singleVacTab.SuspendLayout();
             this.finalizationTab.SuspendLayout();
             this.panel15.SuspendLayout();
-            this.listVaccinationRecTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.notification)).BeginInit();
+            this.DSPhieuTiemTab.SuspendLayout();
+            this.panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel17.SuspendLayout();
+            this.ThongBaoTab.SuspendLayout();
+            this.panel18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_dauThongBao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureThongBao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -184,41 +203,44 @@ namespace AnBinhApp
             ((System.ComponentModel.ISupportInitialize)(this.option2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.option1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel16.SuspendLayout();
-            this.panel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
-            this.panel1.Controls.Add(this.notification);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.picture_dauThongBao);
+            this.panel1.Controls.Add(this.pictureThongBao);
+            this.panel1.Controls.Add(this.panel_DSPhieuTiem);
+            this.panel1.Controls.Add(this.panel_DangKyTiem);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel_TrangChu);
             this.panel1.Controls.Add(this.username);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel_DangXuat);
+            this.panel1.Controls.Add(this.panel_Thoat);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(308, 834);
             this.panel1.TabIndex = 0;
             // 
-            // panel6
+            // panel_DSPhieuTiem
             // 
-            this.panel6.Controls.Add(this.pictureBox6);
-            this.panel6.Controls.Add(this.label10);
-            this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel6.Location = new System.Drawing.Point(12, 365);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(278, 56);
-            this.panel6.TabIndex = 7;
-            this.panel6.Click += new System.EventHandler(this.listVac_click);
-            this.panel6.MouseEnter += new System.EventHandler(this.listVac_enter);
-            this.panel6.MouseLeave += new System.EventHandler(this.listVac_leave);
+            this.panel_DSPhieuTiem.Controls.Add(this.pictureBox6);
+            this.panel_DSPhieuTiem.Controls.Add(this.label10);
+            this.panel_DSPhieuTiem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel_DSPhieuTiem.Location = new System.Drawing.Point(12, 365);
+            this.panel_DSPhieuTiem.Name = "panel_DSPhieuTiem";
+            this.panel_DSPhieuTiem.Size = new System.Drawing.Size(278, 56);
+            this.panel_DSPhieuTiem.TabIndex = 7;
+            this.panel_DSPhieuTiem.Click += new System.EventHandler(this.DSPhieuTiem_click);
+            this.panel_DSPhieuTiem.MouseEnter += new System.EventHandler(this.DSPhieuTiem_enter);
+            this.panel_DSPhieuTiem.MouseLeave += new System.EventHandler(this.DSPhieuTiem_leave);
             // 
             // label10
             // 
@@ -231,22 +253,22 @@ namespace AnBinhApp
             this.label10.Size = new System.Drawing.Size(177, 23);
             this.label10.TabIndex = 1;
             this.label10.Text = "Phiếu đăng ký tiêm";
-            this.label10.Click += new System.EventHandler(this.listVac_click);
-            this.label10.MouseEnter += new System.EventHandler(this.listVac_enter);
-            this.label10.MouseLeave += new System.EventHandler(this.listVac_leave);
+            this.label10.Click += new System.EventHandler(this.DSPhieuTiem_click);
+            this.label10.MouseEnter += new System.EventHandler(this.DSPhieuTiem_enter);
+            this.label10.MouseLeave += new System.EventHandler(this.DSPhieuTiem_leave);
             // 
-            // panel5
+            // panel_DangKyTiem
             // 
-            this.panel5.Controls.Add(this.pictureBox5);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel5.Location = new System.Drawing.Point(12, 252);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(278, 56);
-            this.panel5.TabIndex = 6;
-            this.panel5.Click += new System.EventHandler(this.vacReg_click);
-            this.panel5.MouseEnter += new System.EventHandler(this.vacReg_enter);
-            this.panel5.MouseLeave += new System.EventHandler(this.vacReg_leave);
+            this.panel_DangKyTiem.Controls.Add(this.pictureBox5);
+            this.panel_DangKyTiem.Controls.Add(this.label7);
+            this.panel_DangKyTiem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel_DangKyTiem.Location = new System.Drawing.Point(12, 252);
+            this.panel_DangKyTiem.Name = "panel_DangKyTiem";
+            this.panel_DangKyTiem.Size = new System.Drawing.Size(278, 56);
+            this.panel_DangKyTiem.TabIndex = 6;
+            this.panel_DangKyTiem.Click += new System.EventHandler(this.DangKyTiem_click);
+            this.panel_DangKyTiem.MouseEnter += new System.EventHandler(this.DangKyTiem_enter);
+            this.panel_DangKyTiem.MouseLeave += new System.EventHandler(this.DangKyTiem_leave);
             // 
             // label7
             // 
@@ -259,9 +281,9 @@ namespace AnBinhApp
             this.label7.Size = new System.Drawing.Size(174, 23);
             this.label7.TabIndex = 1;
             this.label7.Text = "Đăng ký tiêm ngừa";
-            this.label7.Click += new System.EventHandler(this.vacReg_click);
-            this.label7.MouseEnter += new System.EventHandler(this.vacReg_enter);
-            this.label7.MouseLeave += new System.EventHandler(this.vacReg_leave);
+            this.label7.Click += new System.EventHandler(this.DangKyTiem_click);
+            this.label7.MouseEnter += new System.EventHandler(this.DangKyTiem_enter);
+            this.label7.MouseLeave += new System.EventHandler(this.DangKyTiem_leave);
             // 
             // label6
             // 
@@ -274,18 +296,18 @@ namespace AnBinhApp
             this.label6.TabIndex = 3;
             this.label6.Text = "Danh sách";
             // 
-            // panel4
+            // panel_TrangChu
             // 
-            this.panel4.Controls.Add(this.pictureBox4);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel4.Location = new System.Drawing.Point(12, 198);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(278, 56);
-            this.panel4.TabIndex = 5;
-            this.panel4.Click += new System.EventHandler(this.homepage_click);
-            this.panel4.MouseEnter += new System.EventHandler(this.homepage_enter);
-            this.panel4.MouseLeave += new System.EventHandler(this.homepage_leave);
+            this.panel_TrangChu.Controls.Add(this.pictureBox4);
+            this.panel_TrangChu.Controls.Add(this.label5);
+            this.panel_TrangChu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel_TrangChu.Location = new System.Drawing.Point(12, 198);
+            this.panel_TrangChu.Name = "panel_TrangChu";
+            this.panel_TrangChu.Size = new System.Drawing.Size(278, 56);
+            this.panel_TrangChu.TabIndex = 5;
+            this.panel_TrangChu.Click += new System.EventHandler(this.TrangChu_click);
+            this.panel_TrangChu.MouseEnter += new System.EventHandler(this.TrangChu_enter);
+            this.panel_TrangChu.MouseLeave += new System.EventHandler(this.TrangChu_leave);
             // 
             // label5
             // 
@@ -298,9 +320,9 @@ namespace AnBinhApp
             this.label5.Size = new System.Drawing.Size(99, 23);
             this.label5.TabIndex = 1;
             this.label5.Text = "Trang chủ";
-            this.label5.Click += new System.EventHandler(this.homepage_click);
-            this.label5.MouseEnter += new System.EventHandler(this.homepage_enter);
-            this.label5.MouseLeave += new System.EventHandler(this.homepage_leave);
+            this.label5.Click += new System.EventHandler(this.TrangChu_click);
+            this.label5.MouseEnter += new System.EventHandler(this.TrangChu_enter);
+            this.label5.MouseLeave += new System.EventHandler(this.TrangChu_leave);
             // 
             // username
             // 
@@ -324,17 +346,17 @@ namespace AnBinhApp
             this.label3.TabIndex = 5;
             this.label3.Text = "Chào mừng,";
             // 
-            // panel2
+            // panel_DangXuat
             // 
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel2.Location = new System.Drawing.Point(12, 641);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(278, 56);
-            this.panel2.TabIndex = 4;
-            this.panel2.MouseEnter += new System.EventHandler(this.logout_enter);
-            this.panel2.MouseLeave += new System.EventHandler(this.logout_leave);
+            this.panel_DangXuat.Controls.Add(this.pictureBox1);
+            this.panel_DangXuat.Controls.Add(this.label1);
+            this.panel_DangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel_DangXuat.Location = new System.Drawing.Point(12, 641);
+            this.panel_DangXuat.Name = "panel_DangXuat";
+            this.panel_DangXuat.Size = new System.Drawing.Size(278, 56);
+            this.panel_DangXuat.TabIndex = 4;
+            this.panel_DangXuat.MouseEnter += new System.EventHandler(this.DangXuat_enter);
+            this.panel_DangXuat.MouseLeave += new System.EventHandler(this.DangXuat_leave);
             // 
             // label1
             // 
@@ -347,21 +369,21 @@ namespace AnBinhApp
             this.label1.Size = new System.Drawing.Size(101, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Đăng xuất";
-            this.label1.MouseEnter += new System.EventHandler(this.logout_enter);
-            this.label1.MouseLeave += new System.EventHandler(this.logout_leave);
+            this.label1.MouseEnter += new System.EventHandler(this.DangXuat_enter);
+            this.label1.MouseLeave += new System.EventHandler(this.DangXuat_leave);
             // 
-            // panel3
+            // panel_Thoat
             // 
-            this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel3.Location = new System.Drawing.Point(12, 696);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(278, 56);
-            this.panel3.TabIndex = 3;
-            this.panel3.Click += new System.EventHandler(this.exit_click);
-            this.panel3.MouseEnter += new System.EventHandler(this.exit_enter);
-            this.panel3.MouseLeave += new System.EventHandler(this.exit_leave);
+            this.panel_Thoat.Controls.Add(this.pictureBox3);
+            this.panel_Thoat.Controls.Add(this.label2);
+            this.panel_Thoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel_Thoat.Location = new System.Drawing.Point(12, 696);
+            this.panel_Thoat.Name = "panel_Thoat";
+            this.panel_Thoat.Size = new System.Drawing.Size(278, 56);
+            this.panel_Thoat.TabIndex = 3;
+            this.panel_Thoat.Click += new System.EventHandler(this.Thoat_click);
+            this.panel_Thoat.MouseEnter += new System.EventHandler(this.Thoat_enter);
+            this.panel_Thoat.MouseLeave += new System.EventHandler(this.Thoat_leave);
             // 
             // label2
             // 
@@ -374,35 +396,37 @@ namespace AnBinhApp
             this.label2.Size = new System.Drawing.Size(62, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Thoát";
-            this.label2.Click += new System.EventHandler(this.exit_click);
-            this.label2.MouseEnter += new System.EventHandler(this.exit_enter);
-            this.label2.MouseLeave += new System.EventHandler(this.exit_leave);
+            this.label2.Click += new System.EventHandler(this.Thoat_click);
+            this.label2.MouseEnter += new System.EventHandler(this.Thoat_enter);
+            this.label2.MouseLeave += new System.EventHandler(this.Thoat_leave);
             // 
             // tab
             // 
-            this.tab.Controls.Add(this.homepageTab);
-            this.tab.Controls.Add(this.vaccineRegisterTab);
+            this.tab.Controls.Add(this.TrangChuTab);
+            this.tab.Controls.Add(this.DangKyTiemTab);
             this.tab.Controls.Add(this.packageTab);
             this.tab.Controls.Add(this.singleVacTab);
             this.tab.Controls.Add(this.finalizationTab);
-            this.tab.Controls.Add(this.listVaccinationRecTab);
+            this.tab.Controls.Add(this.DSPhieuTiemTab);
+            this.tab.Controls.Add(this.ThongBaoTab);
+            this.tab.ItemSize = new System.Drawing.Size(40, 21);
             this.tab.Location = new System.Drawing.Point(299, 12);
             this.tab.Name = "tab";
             this.tab.SelectedIndex = 0;
             this.tab.Size = new System.Drawing.Size(1190, 827);
             this.tab.TabIndex = 1;
             // 
-            // homepageTab
+            // TrangChuTab
             // 
-            this.homepageTab.Controls.Add(this.pictureBox9);
-            this.homepageTab.Controls.Add(this.label8);
-            this.homepageTab.Location = new System.Drawing.Point(4, 25);
-            this.homepageTab.Name = "homepageTab";
-            this.homepageTab.Padding = new System.Windows.Forms.Padding(3);
-            this.homepageTab.Size = new System.Drawing.Size(1182, 798);
-            this.homepageTab.TabIndex = 0;
-            this.homepageTab.Text = "1";
-            this.homepageTab.UseVisualStyleBackColor = true;
+            this.TrangChuTab.Controls.Add(this.pictureBox9);
+            this.TrangChuTab.Controls.Add(this.label8);
+            this.TrangChuTab.Location = new System.Drawing.Point(4, 25);
+            this.TrangChuTab.Name = "TrangChuTab";
+            this.TrangChuTab.Padding = new System.Windows.Forms.Padding(3);
+            this.TrangChuTab.Size = new System.Drawing.Size(1182, 798);
+            this.TrangChuTab.TabIndex = 0;
+            this.TrangChuTab.Text = "1";
+            this.TrangChuTab.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -413,48 +437,48 @@ namespace AnBinhApp
             this.label8.TabIndex = 1;
             this.label8.Text = "Homepage";
             // 
-            // vaccineRegisterTab
+            // DangKyTiemTab
             // 
-            this.vaccineRegisterTab.BackColor = System.Drawing.Color.White;
-            this.vaccineRegisterTab.Controls.Add(this.button4);
-            this.vaccineRegisterTab.Controls.Add(this.vaccinationDatePicker);
-            this.vaccineRegisterTab.Controls.Add(this.label28);
-            this.vaccineRegisterTab.Controls.Add(this.panel14);
-            this.vaccineRegisterTab.Controls.Add(this.label27);
-            this.vaccineRegisterTab.Controls.Add(this.panel12);
-            this.vaccineRegisterTab.Controls.Add(this.panel7);
-            this.vaccineRegisterTab.Controls.Add(this.supervisorRelationship_textBox);
-            this.vaccineRegisterTab.Controls.Add(this.panel10);
-            this.vaccineRegisterTab.Controls.Add(this.label18);
-            this.vaccineRegisterTab.Controls.Add(this.supervisorNum_textBox);
-            this.vaccineRegisterTab.Controls.Add(this.label19);
-            this.vaccineRegisterTab.Controls.Add(this.panel11);
-            this.vaccineRegisterTab.Controls.Add(this.supervisorName_textBox);
-            this.vaccineRegisterTab.Controls.Add(this.label21);
-            this.vaccineRegisterTab.Controls.Add(this.agePrompt);
-            this.vaccineRegisterTab.Controls.Add(this.otherGenderBtn);
-            this.vaccineRegisterTab.Controls.Add(this.femaleBtn);
-            this.vaccineRegisterTab.Controls.Add(this.maleBtn);
-            this.vaccineRegisterTab.Controls.Add(this.label15);
-            this.vaccineRegisterTab.Controls.Add(this.panel9);
-            this.vaccineRegisterTab.Controls.Add(this.textBox2);
-            this.vaccineRegisterTab.Controls.Add(this.panel8);
-            this.vaccineRegisterTab.Controls.Add(this.label14);
-            this.vaccineRegisterTab.Controls.Add(this.textBox1);
-            this.vaccineRegisterTab.Controls.Add(this.birthday_picker);
-            this.vaccineRegisterTab.Controls.Add(this.label13);
-            this.vaccineRegisterTab.Controls.Add(this.usernameHoverLine);
-            this.vaccineRegisterTab.Controls.Add(this.label12);
-            this.vaccineRegisterTab.Controls.Add(this.fullName_textBox);
-            this.vaccineRegisterTab.Controls.Add(this.label11);
-            this.vaccineRegisterTab.Controls.Add(this.label9);
-            this.vaccineRegisterTab.Controls.Add(this.pictureBox7);
-            this.vaccineRegisterTab.Location = new System.Drawing.Point(4, 25);
-            this.vaccineRegisterTab.Name = "vaccineRegisterTab";
-            this.vaccineRegisterTab.Padding = new System.Windows.Forms.Padding(3);
-            this.vaccineRegisterTab.Size = new System.Drawing.Size(1182, 798);
-            this.vaccineRegisterTab.TabIndex = 1;
-            this.vaccineRegisterTab.Text = "2";
+            this.DangKyTiemTab.BackColor = System.Drawing.Color.White;
+            this.DangKyTiemTab.Controls.Add(this.button4);
+            this.DangKyTiemTab.Controls.Add(this.vaccinationDatePicker);
+            this.DangKyTiemTab.Controls.Add(this.label28);
+            this.DangKyTiemTab.Controls.Add(this.panel14);
+            this.DangKyTiemTab.Controls.Add(this.label27);
+            this.DangKyTiemTab.Controls.Add(this.panel12);
+            this.DangKyTiemTab.Controls.Add(this.panel7);
+            this.DangKyTiemTab.Controls.Add(this.supervisorRelationship_textBox);
+            this.DangKyTiemTab.Controls.Add(this.panel10);
+            this.DangKyTiemTab.Controls.Add(this.label18);
+            this.DangKyTiemTab.Controls.Add(this.supervisorNum_textBox);
+            this.DangKyTiemTab.Controls.Add(this.label19);
+            this.DangKyTiemTab.Controls.Add(this.panel11);
+            this.DangKyTiemTab.Controls.Add(this.supervisorName_textBox);
+            this.DangKyTiemTab.Controls.Add(this.label21);
+            this.DangKyTiemTab.Controls.Add(this.agePrompt);
+            this.DangKyTiemTab.Controls.Add(this.otherGenderBtn);
+            this.DangKyTiemTab.Controls.Add(this.femaleBtn);
+            this.DangKyTiemTab.Controls.Add(this.maleBtn);
+            this.DangKyTiemTab.Controls.Add(this.label15);
+            this.DangKyTiemTab.Controls.Add(this.panel9);
+            this.DangKyTiemTab.Controls.Add(this.textBox2);
+            this.DangKyTiemTab.Controls.Add(this.panel8);
+            this.DangKyTiemTab.Controls.Add(this.label14);
+            this.DangKyTiemTab.Controls.Add(this.textBox1);
+            this.DangKyTiemTab.Controls.Add(this.birthday_picker);
+            this.DangKyTiemTab.Controls.Add(this.label13);
+            this.DangKyTiemTab.Controls.Add(this.usernameHoverLine);
+            this.DangKyTiemTab.Controls.Add(this.label12);
+            this.DangKyTiemTab.Controls.Add(this.fullName_textBox);
+            this.DangKyTiemTab.Controls.Add(this.label11);
+            this.DangKyTiemTab.Controls.Add(this.label9);
+            this.DangKyTiemTab.Controls.Add(this.pictureBox7);
+            this.DangKyTiemTab.Location = new System.Drawing.Point(4, 25);
+            this.DangKyTiemTab.Name = "DangKyTiemTab";
+            this.DangKyTiemTab.Padding = new System.Windows.Forms.Padding(3);
+            this.DangKyTiemTab.Size = new System.Drawing.Size(1182, 798);
+            this.DangKyTiemTab.TabIndex = 1;
+            this.DangKyTiemTab.Text = "2";
             // 
             // button4
             // 
@@ -864,7 +888,7 @@ namespace AnBinhApp
             this.button1.TabIndex = 31;
             this.button1.Text = "Tiếp tục ❯";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.clickContinueFinalize);
+            this.button1.Click += new System.EventHandler(this.clickTiepTucCuoiCung);
             // 
             // label23
             // 
@@ -957,7 +981,7 @@ namespace AnBinhApp
             this.button5.TabIndex = 35;
             this.button5.Text = "Tiếp tục ❯";
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.clickContinueFinalize);
+            this.button5.Click += new System.EventHandler(this.clickTiepTucCuoiCung);
             // 
             // comboBox1
             // 
@@ -1092,7 +1116,7 @@ namespace AnBinhApp
             this.button7.TabIndex = 37;
             this.button7.Text = "❮ Quay lại";
             this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.clickReturnPackageSingle);
+            this.button7.Click += new System.EventHandler(this.clickQuayLaiGoiLe);
             // 
             // label45
             // 
@@ -1435,33 +1459,217 @@ namespace AnBinhApp
             this.label31.TabIndex = 16;
             this.label31.Text = "Số điện thoại";
             // 
-            // listVaccinationRecTab
+            // DSPhieuTiemTab
             // 
-            this.listVaccinationRecTab.BackColor = System.Drawing.Color.White;
-            this.listVaccinationRecTab.Controls.Add(this.panel16);
-            this.listVaccinationRecTab.Controls.Add(this.label58);
-            this.listVaccinationRecTab.Controls.Add(this.label4);
-            this.listVaccinationRecTab.Controls.Add(this.dataGridView1);
-            this.listVaccinationRecTab.Controls.Add(this.panel17);
-            this.listVaccinationRecTab.Location = new System.Drawing.Point(4, 25);
-            this.listVaccinationRecTab.Name = "listVaccinationRecTab";
-            this.listVaccinationRecTab.Padding = new System.Windows.Forms.Padding(3);
-            this.listVaccinationRecTab.Size = new System.Drawing.Size(1182, 798);
-            this.listVaccinationRecTab.TabIndex = 2;
-            this.listVaccinationRecTab.Text = "tabPage1";
+            this.DSPhieuTiemTab.BackColor = System.Drawing.Color.White;
+            this.DSPhieuTiemTab.Controls.Add(this.panel16);
+            this.DSPhieuTiemTab.Controls.Add(this.label58);
+            this.DSPhieuTiemTab.Controls.Add(this.label4);
+            this.DSPhieuTiemTab.Controls.Add(this.dataGridView1);
+            this.DSPhieuTiemTab.Controls.Add(this.panel17);
+            this.DSPhieuTiemTab.Location = new System.Drawing.Point(4, 25);
+            this.DSPhieuTiemTab.Name = "DSPhieuTiemTab";
+            this.DSPhieuTiemTab.Padding = new System.Windows.Forms.Padding(3);
+            this.DSPhieuTiemTab.Size = new System.Drawing.Size(1182, 798);
+            this.DSPhieuTiemTab.TabIndex = 2;
+            this.DSPhieuTiemTab.Text = "3";
             // 
-            // notification
+            // panel16
             // 
-            this.notification.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.notification.Image = ((System.Drawing.Image)(resources.GetObject("notification.Image")));
-            this.notification.Location = new System.Drawing.Point(239, 33);
-            this.notification.Name = "notification";
-            this.notification.Size = new System.Drawing.Size(32, 32);
-            this.notification.TabIndex = 8;
-            this.notification.TabStop = false;
-            this.notification.Click += new System.EventHandler(this.notification_click);
-            this.notification.MouseEnter += new System.EventHandler(this.notification_hover);
-            this.notification.MouseLeave += new System.EventHandler(this.notification_leave);
+            this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel16.Controls.Add(this.pictureBox11);
+            this.panel16.Controls.Add(this.searchForm);
+            this.panel16.Location = new System.Drawing.Point(52, 144);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(843, 52);
+            this.panel16.TabIndex = 11;
+            // 
+            // searchForm
+            // 
+            this.searchForm.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchForm.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchForm.Location = new System.Drawing.Point(61, 13);
+            this.searchForm.Name = "searchForm";
+            this.searchForm.Size = new System.Drawing.Size(769, 25);
+            this.searchForm.TabIndex = 0;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Inter Light Italic", 10F);
+            this.label58.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label58.Location = new System.Drawing.Point(48, 80);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(671, 20);
+            this.label58.TabIndex = 5;
+            this.label58.Text = "Nháy đúp chuột vào một dòng để cập nhật lại tình trạng của một phiếu một đăng ký";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Inter SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
+            this.label4.Location = new System.Drawing.Point(43, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(582, 34);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Duyệt danh sách phiếu đăng ký tiêm ngừa";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(52, 232);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1086, 529);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // panel17
+            // 
+            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel17.Controls.Add(this.comboBox2);
+            this.panel17.Location = new System.Drawing.Point(889, 144);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(249, 52);
+            this.panel17.TabIndex = 12;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox2.Font = new System.Drawing.Font("Inter Light", 11F);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(25, 11);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(214, 29);
+            this.comboBox2.TabIndex = 10;
+            this.comboBox2.Text = "Lọc theo tình trạng";
+            // 
+            // ThongBaoTab
+            // 
+            this.ThongBaoTab.Controls.Add(this.pictureBox10);
+            this.ThongBaoTab.Controls.Add(this.panel18);
+            this.ThongBaoTab.Controls.Add(this.label59);
+            this.ThongBaoTab.ForeColor = System.Drawing.Color.White;
+            this.ThongBaoTab.Location = new System.Drawing.Point(4, 25);
+            this.ThongBaoTab.Name = "ThongBaoTab";
+            this.ThongBaoTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ThongBaoTab.Size = new System.Drawing.Size(1182, 798);
+            this.ThongBaoTab.TabIndex = 6;
+            this.ThongBaoTab.Text = "notif";
+            this.ThongBaoTab.UseVisualStyleBackColor = true;
+            // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel18.Controls.Add(this.pictureBox14);
+            this.panel18.Controls.Add(this.pictureBox13);
+            this.panel18.Controls.Add(this.button9);
+            this.panel18.Controls.Add(this.button8);
+            this.panel18.Controls.Add(this.label61);
+            this.panel18.Controls.Add(this.label60);
+            this.panel18.Controls.Add(this.pictureBox12);
+            this.panel18.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel18.Location = new System.Drawing.Point(49, 106);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(1086, 186);
+            this.panel18.TabIndex = 3;
+            this.panel18.MouseEnter += new System.EventHandler(this.DongThongBao_enter);
+            this.panel18.MouseLeave += new System.EventHandler(this.DongThongBao_leave);
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(155)))), ((int)(((byte)(242)))));
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Inter Light", 11F);
+            this.button9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button9.Location = new System.Drawing.Point(336, 124);
+            this.button9.Name = "button9";
+            this.button9.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
+            this.button9.Size = new System.Drawing.Size(185, 41);
+            this.button9.TabIndex = 4;
+            this.button9.Text = "Thanh toán";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.clickThanhToan);
+            this.button9.MouseEnter += new System.EventHandler(this.DongThongBao_enter);
+            // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Inter Light", 11F);
+            this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button8.Location = new System.Drawing.Point(127, 124);
+            this.button8.Name = "button8";
+            this.button8.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
+            this.button8.Size = new System.Drawing.Size(190, 41);
+            this.button8.TabIndex = 3;
+            this.button8.Text = "Xem lại phiếu";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.MouseEnter += new System.EventHandler(this.DongThongBao_enter);
+            // 
+            // label61
+            // 
+            this.label61.Font = new System.Drawing.Font("Inter Light", 10.5F);
+            this.label61.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label61.Location = new System.Drawing.Point(127, 63);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(927, 53);
+            this.label61.TabIndex = 2;
+            this.label61.Text = "Phiếu đăng ký tiêm ngừa của bạn đã được duyệt. Vui lòng kiểm tra lại thông tin th" +
+    "ời gian tiêm và địa điểm tiêm. Bạn có thể thực hiện thanh toán tại đây hoặc tại " +
+    "trung tâm y tế.";
+            this.label61.MouseEnter += new System.EventHandler(this.DongThongBao_enter);
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Inter SemiBold", 14F, System.Drawing.FontStyle.Bold);
+            this.label60.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
+            this.label60.Location = new System.Drawing.Point(122, 20);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(377, 29);
+            this.label60.TabIndex = 1;
+            this.label60.Text = "Đăng ký tiêm ngừa thành công!";
+            this.label60.MouseEnter += new System.EventHandler(this.DongThongBao_enter);
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Inter SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label59.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
+            this.label59.Location = new System.Drawing.Point(43, 36);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(220, 34);
+            this.label59.TabIndex = 2;
+            this.label59.Text = "Xem thông báo";
+            // 
+            // picture_dauThongBao
+            // 
+            this.picture_dauThongBao.BackColor = System.Drawing.Color.Transparent;
+            this.picture_dauThongBao.Image = ((System.Drawing.Image)(resources.GetObject("picture_dauThongBao.Image")));
+            this.picture_dauThongBao.Location = new System.Drawing.Point(259, 29);
+            this.picture_dauThongBao.Name = "picture_dauThongBao";
+            this.picture_dauThongBao.Size = new System.Drawing.Size(16, 16);
+            this.picture_dauThongBao.TabIndex = 9;
+            this.picture_dauThongBao.TabStop = false;
+            // 
+            // pictureThongBao
+            // 
+            this.pictureThongBao.BackColor = System.Drawing.Color.Transparent;
+            this.pictureThongBao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureThongBao.Image = ((System.Drawing.Image)(resources.GetObject("pictureThongBao.Image")));
+            this.pictureThongBao.Location = new System.Drawing.Point(239, 33);
+            this.pictureThongBao.Name = "pictureThongBao";
+            this.pictureThongBao.Size = new System.Drawing.Size(28, 28);
+            this.pictureThongBao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureThongBao.TabIndex = 8;
+            this.pictureThongBao.TabStop = false;
+            this.pictureThongBao.Click += new System.EventHandler(this.ThongBao_click);
+            this.pictureThongBao.MouseEnter += new System.EventHandler(this.ThongBao_hover);
+            this.pictureThongBao.MouseLeave += new System.EventHandler(this.ThongBao_leave);
             // 
             // pictureBox6
             // 
@@ -1472,9 +1680,9 @@ namespace AnBinhApp
             this.pictureBox6.Size = new System.Drawing.Size(26, 26);
             this.pictureBox6.TabIndex = 2;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.listVac_click);
-            this.pictureBox6.MouseEnter += new System.EventHandler(this.listVac_enter);
-            this.pictureBox6.MouseLeave += new System.EventHandler(this.listVac_leave);
+            this.pictureBox6.Click += new System.EventHandler(this.DSPhieuTiem_click);
+            this.pictureBox6.MouseEnter += new System.EventHandler(this.DSPhieuTiem_enter);
+            this.pictureBox6.MouseLeave += new System.EventHandler(this.DSPhieuTiem_leave);
             // 
             // pictureBox5
             // 
@@ -1485,9 +1693,9 @@ namespace AnBinhApp
             this.pictureBox5.Size = new System.Drawing.Size(25, 24);
             this.pictureBox5.TabIndex = 2;
             this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.vacReg_click);
-            this.pictureBox5.MouseEnter += new System.EventHandler(this.vacReg_enter);
-            this.pictureBox5.MouseLeave += new System.EventHandler(this.vacReg_leave);
+            this.pictureBox5.Click += new System.EventHandler(this.DangKyTiem_click);
+            this.pictureBox5.MouseEnter += new System.EventHandler(this.DangKyTiem_enter);
+            this.pictureBox5.MouseLeave += new System.EventHandler(this.DangKyTiem_leave);
             // 
             // pictureBox4
             // 
@@ -1498,9 +1706,9 @@ namespace AnBinhApp
             this.pictureBox4.Size = new System.Drawing.Size(25, 24);
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.homepage_click);
-            this.pictureBox4.MouseEnter += new System.EventHandler(this.homepage_enter);
-            this.pictureBox4.MouseLeave += new System.EventHandler(this.homepage_leave);
+            this.pictureBox4.Click += new System.EventHandler(this.TrangChu_click);
+            this.pictureBox4.MouseEnter += new System.EventHandler(this.TrangChu_enter);
+            this.pictureBox4.MouseLeave += new System.EventHandler(this.TrangChu_leave);
             // 
             // pictureBox1
             // 
@@ -1511,8 +1719,8 @@ namespace AnBinhApp
             this.pictureBox1.Size = new System.Drawing.Size(29, 24);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseEnter += new System.EventHandler(this.logout_enter);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.logout_leave);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.DangXuat_enter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.DangXuat_leave);
             // 
             // pictureBox3
             // 
@@ -1523,9 +1731,9 @@ namespace AnBinhApp
             this.pictureBox3.Size = new System.Drawing.Size(24, 24);
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.exit_click);
-            this.pictureBox3.MouseEnter += new System.EventHandler(this.exit_enter);
-            this.pictureBox3.MouseLeave += new System.EventHandler(this.exit_leave);
+            this.pictureBox3.Click += new System.EventHandler(this.Thoat_click);
+            this.pictureBox3.MouseEnter += new System.EventHandler(this.Thoat_enter);
+            this.pictureBox3.MouseLeave += new System.EventHandler(this.Thoat_leave);
             // 
             // pictureBox2
             // 
@@ -1607,103 +1815,84 @@ namespace AnBinhApp
             this.pictureBox8.TabIndex = 17;
             this.pictureBox8.TabStop = false;
             // 
-            // dataGridView1
+            // pictureBox11
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(52, 232);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1086, 529);
-            this.dataGridView1.TabIndex = 0;
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(14, 8);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 1;
+            this.pictureBox11.TabStop = false;
             // 
-            // label4
+            // pictureBox10
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Inter SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
-            this.label4.Location = new System.Drawing.Point(43, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(582, 34);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Duyệt danh sách phiếu đăng ký tiêm ngừa";
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(214, 403);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(800, 600);
+            this.pictureBox10.TabIndex = 4;
+            this.pictureBox10.TabStop = false;
             // 
-            // label58
+            // pictureBox14
             // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Inter Light Italic", 10F);
-            this.label58.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label58.Location = new System.Drawing.Point(48, 80);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(671, 20);
-            this.label58.TabIndex = 5;
-            this.label58.Text = "Nháy đúp chuột vào một dòng để cập nhật lại tình trạng của một phiếu một đăng ký";
+            this.pictureBox14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(155)))), ((int)(((byte)(242)))));
+            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
+            this.pictureBox14.Location = new System.Drawing.Point(349, 133);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(29, 24);
+            this.pictureBox14.TabIndex = 6;
+            this.pictureBox14.TabStop = false;
+            this.pictureBox14.Click += new System.EventHandler(this.clickThanhToan);
             // 
-            // comboBox2
+            // pictureBox13
             // 
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.Font = new System.Drawing.Font("Inter Light", 11F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(25, 11);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(214, 29);
-            this.comboBox2.TabIndex = 10;
-            this.comboBox2.Text = "Lọc theo tình trạng";
+            this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
+            this.pictureBox13.Location = new System.Drawing.Point(144, 133);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(19, 24);
+            this.pictureBox13.TabIndex = 5;
+            this.pictureBox13.TabStop = false;
             // 
-            // panel16
+            // pictureBox12
             // 
-            this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel16.Controls.Add(this.searchForm);
-            this.panel16.Location = new System.Drawing.Point(52, 144);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(843, 52);
-            this.panel16.TabIndex = 11;
+            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
+            this.pictureBox12.Location = new System.Drawing.Point(22, 20);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox12.TabIndex = 0;
+            this.pictureBox12.TabStop = false;
+            this.pictureBox12.MouseEnter += new System.EventHandler(this.DongThongBao_enter);
             // 
-            // panel17
-            // 
-            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel17.Controls.Add(this.comboBox2);
-            this.panel17.Location = new System.Drawing.Point(889, 144);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(249, 52);
-            this.panel17.TabIndex = 12;
-            // 
-            // searchForm
-            // 
-            this.searchForm.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.searchForm.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchForm.Location = new System.Drawing.Point(61, 13);
-            this.searchForm.Name = "searchForm";
-            this.searchForm.Size = new System.Drawing.Size(769, 25);
-            this.searchForm.TabIndex = 0;
-            // 
-            // Homepage
+            // TrangChu
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1482, 833);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tab);
-            this.Name = "Homepage";
+            this.Name = "TrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "An Binh";
-            this.Shown += new System.EventHandler(this.homepage_load);
+            this.Shown += new System.EventHandler(this.TrangChu_load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel_DSPhieuTiem.ResumeLayout(false);
+            this.panel_DSPhieuTiem.PerformLayout();
+            this.panel_DangKyTiem.ResumeLayout(false);
+            this.panel_DangKyTiem.PerformLayout();
+            this.panel_TrangChu.ResumeLayout(false);
+            this.panel_TrangChu.PerformLayout();
+            this.panel_DangXuat.ResumeLayout(false);
+            this.panel_DangXuat.PerformLayout();
+            this.panel_Thoat.ResumeLayout(false);
+            this.panel_Thoat.PerformLayout();
             this.tab.ResumeLayout(false);
-            this.homepageTab.ResumeLayout(false);
-            this.homepageTab.PerformLayout();
-            this.vaccineRegisterTab.ResumeLayout(false);
-            this.vaccineRegisterTab.PerformLayout();
+            this.TrangChuTab.ResumeLayout(false);
+            this.TrangChuTab.PerformLayout();
+            this.DangKyTiemTab.ResumeLayout(false);
+            this.DangKyTiemTab.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             this.packageTab.ResumeLayout(false);
@@ -1714,9 +1903,18 @@ namespace AnBinhApp
             this.finalizationTab.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
-            this.listVaccinationRecTab.ResumeLayout(false);
-            this.listVaccinationRecTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.notification)).EndInit();
+            this.DSPhieuTiemTab.ResumeLayout(false);
+            this.DSPhieuTiemTab.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel17.ResumeLayout(false);
+            this.ThongBaoTab.ResumeLayout(false);
+            this.ThongBaoTab.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.panel18.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_dauThongBao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureThongBao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -1730,10 +1928,11 @@ namespace AnBinhApp
             ((System.ComponentModel.ISupportInitialize)(this.option2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.option1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
-            this.panel17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1742,29 +1941,29 @@ namespace AnBinhApp
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel_Thoat;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabControl tab;
-        private System.Windows.Forms.TabPage homepageTab;
-        private System.Windows.Forms.TabPage vaccineRegisterTab;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TabPage TrangChuTab;
+        private System.Windows.Forms.TabPage DangKyTiemTab;
+        private System.Windows.Forms.Panel panel_DangXuat;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel_TrangChu;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label username;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel_DangKyTiem;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel_DSPhieuTiem;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TabPage listVaccinationRecTab;
+        private System.Windows.Forms.TabPage DSPhieuTiemTab;
         private System.Windows.Forms.TextBox fullName_textBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
@@ -1821,7 +2020,7 @@ namespace AnBinhApp
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.PictureBox notification;
+        private System.Windows.Forms.PictureBox pictureThongBao;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TabPage finalizationTab;
@@ -1866,6 +2065,19 @@ namespace AnBinhApp
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.TextBox searchForm;
+        private System.Windows.Forms.PictureBox picture_dauThongBao;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.TabPage ThongBaoTab;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox pictureBox10;
     }
 }
 
