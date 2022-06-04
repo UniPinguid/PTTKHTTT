@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace AnBinhApp
 {
-    public partial class Register : Form
+    public partial class DangKyTK : Form
     {
         public static bool is_register_closed = false;
 
-        public Register()
+        public DangKyTK()
         {
             InitializeComponent();
         }
 
         private void clickLogin(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Login login = new Login();
+            DangNhap login = new DangNhap();
             login.Show();
             this.Hide();
         }

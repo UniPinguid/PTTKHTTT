@@ -1,7 +1,7 @@
 ﻿
 namespace AnBinhApp
 {
-    partial class CheckForm
+    partial class KiemTraPhieu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace AnBinhApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KiemTraPhieu));
             this.panel15 = new System.Windows.Forms.Panel();
             this.label57 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@ namespace AnBinhApp
             this.label30 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.loginBtn = new System.Windows.Forms.Button();
+            this.btnHoanTat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -386,19 +386,20 @@ namespace AnBinhApp
             this.label31.TabIndex = 16;
             this.label31.Text = "Số điện thoại";
             // 
-            // loginBtn
+            // btnHoanTat
             // 
-            this.loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
-            this.loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginBtn.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.loginBtn.Location = new System.Drawing.Point(959, 556);
-            this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(180, 48);
-            this.loginBtn.TabIndex = 31;
-            this.loginBtn.Text = "Hoàn tất";
-            this.loginBtn.UseVisualStyleBackColor = false;
+            this.btnHoanTat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
+            this.btnHoanTat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHoanTat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHoanTat.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoanTat.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnHoanTat.Location = new System.Drawing.Point(959, 556);
+            this.btnHoanTat.Name = "btnHoanTat";
+            this.btnHoanTat.Size = new System.Drawing.Size(180, 48);
+            this.btnHoanTat.TabIndex = 31;
+            this.btnHoanTat.Text = "Hoàn tất";
+            this.btnHoanTat.UseVisualStyleBackColor = false;
+            this.btnHoanTat.Click += new System.EventHandler(this.btnHoanTat_Click);
             // 
             // label1
             // 
@@ -444,7 +445,7 @@ namespace AnBinhApp
             this.textBox1.Size = new System.Drawing.Size(487, 63);
             this.textBox1.TabIndex = 50;
             // 
-            // CheckForm
+            // KiemTraPhieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -454,9 +455,10 @@ namespace AnBinhApp
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.loginBtn);
+            this.Controls.Add(this.btnHoanTat);
             this.Controls.Add(this.panel15);
-            this.Name = "CheckForm";
+            this.Name = "KiemTraPhieu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin phiếu đăng ký tiêm ngừa";
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
@@ -496,7 +498,7 @@ namespace AnBinhApp
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Button loginBtn;
+        private System.Windows.Forms.Button btnHoanTat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;

@@ -1,7 +1,7 @@
 ﻿
 namespace AnBinhApp
 {
-    partial class Register
+    partial class DangKyTK
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace AnBinhApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangKyTK));
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.Button();

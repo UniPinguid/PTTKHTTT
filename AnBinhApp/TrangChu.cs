@@ -11,25 +11,46 @@ using System.Windows.Forms;
 
 namespace AnBinhApp
 {
-    public partial class Homepage : Form
+    public partial class TrangChu : Form
     {
-        bool homepage_clicked = false;
-        bool vacReg_clicked = false;
-        bool listVac_clicked = false;
-        bool exit_clicked = false;
+        bool is_TrangChu_clicked = false;
+        bool is_DangKyTiem_clicked = false;
+        bool is_DSPhieuTiem_clicked = false;
+        bool is_Thoat_clicked = false;
 
         public static bool is_login = false;
-        bool is_employee = false;
+        public static bool is_NhanVien = false;
+        bool co_ThongBao = true;
 
-        bool is_supervisor_needed = false;
+        bool co_can_giam_ho = false;
 
-        public Homepage()
+        public TrangChu()
         {
             InitializeComponent();
-            show_supervisor_input(is_supervisor_needed);
+            HienThiInputGiamHo(co_can_giam_ho);
         }
 
-        private void show_supervisor_input(bool check)
+        private void TrangChu_load(object sender, EventArgs e)
+        {
+            if (co_ThongBao == false)
+                picture_dauThongBao.Hide();
+            else picture_dauThongBao.Show();
+            if (is_login == false)
+            {
+                DangNhap login = new DangNhap();
+                login.ShowDialog();
+                if (DangNhap.is_login_close == true)
+                {
+                    this.Close();
+                }
+            }
+            else
+            {
+                //
+            }
+        }
+
+        private void HienThiInputGiamHo(bool check)
         {
             if (check == false)
             {
@@ -56,75 +77,66 @@ namespace AnBinhApp
                 panel7.Show();
             }
         }
-        public void EnableDoubleBuffering()
-        {
-            this.SetStyle(ControlStyles.DoubleBuffer |
-               ControlStyles.UserPaint |
-               ControlStyles.AllPaintingInWmPaint,
-               true);
-            this.UpdateStyles();
-        }
 
-        private void homepage_enter(object sender, EventArgs e)
+        private void TrangChu_enter(object sender, EventArgs e)
         {
-            if (homepage_clicked)
-                panel4.BackColor = Color.FromArgb(58, 137, 222);
+            if (is_TrangChu_clicked)
+                panel_TrangChu.BackColor = Color.FromArgb(58, 137, 222);
             else
-                panel4.BackColor = Color.FromArgb(37, 58, 128);
+                panel_TrangChu.BackColor = Color.FromArgb(37, 58, 128);
         }
 
-        private void homepage_leave(object sender, EventArgs e)
+        private void TrangChu_leave(object sender, EventArgs e)
         {
-            if (homepage_clicked)
-                panel4.BackColor = Color.FromArgb(73, 155, 242);
+            if (is_TrangChu_clicked)
+                panel_TrangChu.BackColor = Color.FromArgb(73, 155, 242);
             else
-                panel4.BackColor = Color.FromArgb(38, 21, 92);
+                panel_TrangChu.BackColor = Color.FromArgb(38, 21, 92);
         }
-        private void homepage_click(object sender, EventArgs e)
+        private void TrangChu_click(object sender, EventArgs e)
         {
-            panel4.BackColor = Color.FromArgb(73, 155, 242);
-            homepage_clicked = true;
-
-            vacReg_clicked = false;
-            exit_clicked = false;
+            panel_TrangChu.BackColor = Color.FromArgb(73, 155, 242);
+            is_TrangChu_clicked = true;
+            is_DSPhieuTiem_clicked = false;
+            is_DangKyTiem_clicked = false;
+            is_Thoat_clicked = false;
 
             // homepage_leave(sender, e);
-            vacReg_leave(sender, e);
-            listVac_leave(sender, e);
-            logout_leave(sender, e);
-            exit_leave(sender, e);
+            DangKyTiem_leave(sender, e);
+            DSPhieuTiem_leave(sender, e);
+            DangXuat_leave(sender, e);
+            Thoat_leave(sender, e);
 
-
-            tab.SelectTab("homepageTab");
+            tab.SelectTab("TrangChuTab");
         }
 
-        private void logout_enter(object sender, EventArgs e)
+        private void DangXuat_enter(object sender, EventArgs e)
         {
-            panel2.BackColor = Color.FromArgb(37, 58, 128);
+            panel_DangXuat.BackColor = Color.FromArgb(37, 58, 128);
         }
 
-        private void logout_leave(object sender, EventArgs e)
+        private void DangXuat_leave(object sender, EventArgs e)
         {
-            panel2.BackColor = Color.FromArgb(38, 21, 92);
+            panel_DangXuat.BackColor = Color.FromArgb(38, 21, 92);
         }
 
-        private void exit_enter(object sender, EventArgs e)
+        private void Thoat_enter(object sender, EventArgs e)
         {
-            panel3.BackColor = Color.FromArgb(37, 58, 128);
+            panel_Thoat.BackColor = Color.FromArgb(37, 58, 128);
         }
 
-        private void exit_leave(object sender, EventArgs e)
+        private void Thoat_leave(object sender, EventArgs e)
         {
-            if (exit_clicked)
-                panel3.BackColor = Color.FromArgb(73, 155, 242);
+            if (is_Thoat_clicked)
+                panel_Thoat.BackColor = Color.FromArgb(73, 155, 242);
             else
-                panel3.BackColor = Color.FromArgb(38, 21, 92);
+                panel_Thoat.BackColor = Color.FromArgb(38, 21, 92);
         }
 
-        private void exit_click(object sender, EventArgs e)
+        private void Thoat_click(object sender, EventArgs e)
         {
-            panel3.BackColor = Color.FromArgb(73, 155, 242);
-            exit_clicked = true;
+            panel_Thoat.BackColor = Color.FromArgb(73, 155, 242);
+            is_Thoat_clicked = true;
 
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là muốn thoát không?", "Thoát An Binh", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -133,82 +145,83 @@ namespace AnBinhApp
             }
             else if (dialogResult == DialogResult.No)
             {
-                exit_clicked = false;
-                exit_leave(sender, e);
+                is_Thoat_clicked = false;
+                Thoat_leave(sender, e);
             }
         }
 
-        private void vacReg_enter(object sender, EventArgs e)
+        private void DangKyTiem_enter(object sender, EventArgs e)
         {
-            if (vacReg_clicked)
-                panel5.BackColor = Color.FromArgb(58, 137, 222);
+            if (is_DangKyTiem_clicked)
+                panel_DangKyTiem.BackColor = Color.FromArgb(58, 137, 222);
             else
-                panel5.BackColor = Color.FromArgb(37, 58, 128);
+                panel_DangKyTiem.BackColor = Color.FromArgb(37, 58, 128);
         }
 
-        private void vacReg_leave(object sender, EventArgs e)
+        private void DangKyTiem_leave(object sender, EventArgs e)
         {
-            if (vacReg_clicked)
-                panel5.BackColor = Color.FromArgb(73, 155, 242);
+            if (is_DangKyTiem_clicked)
+                panel_DangKyTiem.BackColor = Color.FromArgb(73, 155, 242);
             else
-                panel5.BackColor = Color.FromArgb(38, 21, 92);
+                panel_DangKyTiem.BackColor = Color.FromArgb(38, 21, 92);
         }
 
-        private void vacReg_click(object sender, EventArgs e)
+        private void DangKyTiem_click(object sender, EventArgs e)
         {
-            panel5.BackColor = Color.FromArgb(73, 155, 242);
-            vacReg_clicked = true;
+            panel_DangKyTiem.BackColor = Color.FromArgb(73, 155, 242);
 
-            homepage_clicked = false;
-            exit_clicked = false;
+            is_DangKyTiem_clicked = true;
+            is_DSPhieuTiem_clicked = false;
+            is_TrangChu_clicked = false;
+            is_Thoat_clicked = false;
 
-            homepage_leave(sender, e);
+            TrangChu_leave(sender, e);
             // vacReg_leave(sender, e);
-            listVac_leave(sender, e);
-            logout_leave(sender, e);
-            exit_leave(sender, e);
+            DSPhieuTiem_leave(sender, e);
+            DangXuat_leave(sender, e);
+            Thoat_leave(sender, e);
 
-            tab.SelectTab("vaccineRegisterTab");
+            tab.SelectTab("DangKyTiemTab");
         }
 
-        private void listVac_enter(object sender, EventArgs e)
+        private void DSPhieuTiem_enter(object sender, EventArgs e)
         {
-            if (listVac_clicked)
-                panel6.BackColor = Color.FromArgb(58, 137, 222);
+            if (is_DSPhieuTiem_clicked)
+                panel_DSPhieuTiem.BackColor = Color.FromArgb(58, 137, 222);
             else
-                panel6.BackColor = Color.FromArgb(37, 58, 128);
+                panel_DSPhieuTiem.BackColor = Color.FromArgb(37, 58, 128);
         }
 
-        private void listVac_leave(object sender, EventArgs e)
+        private void DSPhieuTiem_leave(object sender, EventArgs e)
         {
-            if (listVac_clicked)
-                panel6.BackColor = Color.FromArgb(73, 155, 242);
+            if (is_DSPhieuTiem_clicked)
+                panel_DSPhieuTiem.BackColor = Color.FromArgb(73, 155, 242);
             else
-                panel6.BackColor = Color.FromArgb(38, 21, 92);
+                panel_DSPhieuTiem.BackColor = Color.FromArgb(38, 21, 92);
         }
 
-        private void listVac_click(object sender, EventArgs e)
+        private void DSPhieuTiem_click(object sender, EventArgs e)
         {
-            panel5.BackColor = Color.FromArgb(73, 155, 242);
-            listVac_clicked = true;
+            panel_DSPhieuTiem.BackColor = Color.FromArgb(73, 155, 242);
 
-            homepage_clicked = false;
-            vacReg_clicked = false;
-            exit_clicked = false;
+            is_DSPhieuTiem_clicked = true;
+            is_TrangChu_clicked = false;
+            is_DangKyTiem_clicked = false;
+            is_Thoat_clicked = false;
 
-            homepage_leave(sender, e);
-            vacReg_leave(sender, e);
+            TrangChu_leave(sender, e);
+            DangKyTiem_leave(sender, e);
             // listVac_leave(sender, e);
-            logout_leave(sender, e);
-            exit_leave(sender, e);
+            DangXuat_leave(sender, e);
+            Thoat_leave(sender, e);
 
-            if (is_employee)
-                tab.SelectTab("listVaccinationRecTab");
+            if (is_NhanVien)
+                tab.SelectTab("DSPhieuTiemTab");
             else
             {
                 MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
-                listVac_clicked = false;
-                listVac_leave(sender, e);
+                is_DSPhieuTiem_clicked = false;
+                DSPhieuTiem_leave(sender, e);
             }
         }
 
@@ -220,7 +233,7 @@ namespace AnBinhApp
 
             if (years <= 12)
             {
-                is_supervisor_needed = true;
+                co_can_giam_ho = true;
                 if (years <= 3)
                 {
                     months += years * 12;
@@ -228,9 +241,9 @@ namespace AnBinhApp
                 }
             }
             else
-                is_supervisor_needed = false;
+                co_can_giam_ho = false;
 
-            show_supervisor_input(is_supervisor_needed);
+            HienThiInputGiamHo(co_can_giam_ho);
         }
 
         bool is_option1_select = false;
@@ -320,22 +333,33 @@ namespace AnBinhApp
             }
         }
 
-        private void notification_click(object sender, EventArgs e)
+        private void ThongBao_click(object sender, EventArgs e)
         {
-            notification.Image = Image.FromFile("../../svg/bell click.png");
+            pictureThongBao.Image = Image.FromFile("../../svg/bell click.png");
+            tab.SelectTab("ThongBaoTab");
+
+            if (co_ThongBao == false)
+            {
+                panel18.Hide();
+                pictureBox10.Location = new Point(200, 120);
+            }
+            else
+            {
+                pictureBox10.Hide();
+            }
         }
 
-        private void notification_hover(object sender, EventArgs e)
+        private void ThongBao_hover(object sender, EventArgs e)
         {
-            notification.Image = Image.FromFile("../../svg/bell hover.png");
+            pictureThongBao.Image = Image.FromFile("../../svg/bell hover.png");
         }
 
-        private void notification_leave(object sender, EventArgs e)
+        private void ThongBao_leave(object sender, EventArgs e)
         {
-            notification.Image = Image.FromFile("../../svg/bell.png");
+            pictureThongBao.Image = Image.FromFile("../../svg/bell.png");
         }
 
-        private void clickContinueFinalize(object sender, EventArgs e)
+        private void clickTiepTucCuoiCung(object sender, EventArgs e)
         {
             tab.SelectTab("finalizationTab");
 
@@ -365,7 +389,7 @@ namespace AnBinhApp
             else if (is_option4_select == true) label57.Text = "Gói phụ nữ mang thai";
         }
 
-        private void clickReturnPackageSingle(object sender, EventArgs e)
+        private void clickQuayLaiGoiLe(object sender, EventArgs e)
         {
             if (packageCheck.Checked)
                 tab.SelectTab("packageTab");
@@ -373,21 +397,21 @@ namespace AnBinhApp
                 tab.SelectTab("singleVacTab");
         }
 
-        private void homepage_load(object sender, EventArgs e)
+        private void DongThongBao_enter(object sender, EventArgs e)
         {
-            if (is_login == false)
-            {
-                Login login = new Login();
-                login.ShowDialog();
-                if (Login.is_login_close == true)
-                {
-                    this.Close();
-                }
-            }
-            else
-            {
-                //
-            }
+            panel18.BackColor = Color.FromArgb(228, 241, 247);
+        }
+
+        private void DongThongBao_leave(object sender, EventArgs e)
+        {
+            panel18.BackColor = Color.WhiteSmoke;
+        }
+
+        private void clickThanhToan(object sender, EventArgs e)
+        {
+            ThanhToan thanhToanForm = new ThanhToan();
+            this.Hide();
+            thanhToanForm.ShowDialog();
         }
     }
 }
