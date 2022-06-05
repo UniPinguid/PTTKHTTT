@@ -33,6 +33,7 @@ namespace AnBinhApp
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel_TaiKhoan = new System.Windows.Forms.Panel();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -105,7 +106,6 @@ namespace AnBinhApp
             this.label60 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.label59 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             this.panel_TaiKhoan.SuspendLayout();
@@ -159,6 +159,8 @@ namespace AnBinhApp
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
+            this.panel1.Controls.Add(this.pictureBox16);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.pictureBox23);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.panel2);
@@ -169,7 +171,6 @@ namespace AnBinhApp
             this.panel1.Controls.Add(this.panel_DatMuaVacXin);
             this.panel1.Controls.Add(this.pictureBox17);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.pictureBox16);
             this.panel1.Controls.Add(this.panel_DSNhanVien);
             this.panel1.Controls.Add(this.panel_dsKH);
             this.panel1.Controls.Add(this.panel_DSVacxin);
@@ -177,7 +178,6 @@ namespace AnBinhApp
             this.panel1.Controls.Add(this.pictureThongBao);
             this.panel1.Controls.Add(this.panel_DSPhieuTiem);
             this.panel1.Controls.Add(this.panel_DangKyTiem);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.panel_TrangChu);
             this.panel1.Controls.Add(this.username);
             this.panel1.Controls.Add(this.label3);
@@ -212,6 +212,13 @@ namespace AnBinhApp
             this.label19.TabIndex = 14;
             this.label19.Text = "Tài khoản";
             // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(3, 1054);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(303, 30);
+            this.panel2.TabIndex = 16;
+            // 
             // panel_TaiKhoan
             // 
             this.panel_TaiKhoan.Controls.Add(this.pictureBox22);
@@ -228,9 +235,9 @@ namespace AnBinhApp
             // 
             this.pictureBox22.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox22.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox22.Image")));
-            this.pictureBox22.Location = new System.Drawing.Point(25, 17);
+            this.pictureBox22.Location = new System.Drawing.Point(32, 17);
             this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(29, 24);
+            this.pictureBox22.Size = new System.Drawing.Size(20, 24);
             this.pictureBox22.TabIndex = 2;
             this.pictureBox22.TabStop = false;
             this.pictureBox22.MouseEnter += new System.EventHandler(this.taiKhoan_enter);
@@ -266,9 +273,9 @@ namespace AnBinhApp
             // 
             this.pictureBox21.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox21.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox21.Image")));
-            this.pictureBox21.Location = new System.Drawing.Point(29, 17);
+            this.pictureBox21.Location = new System.Drawing.Point(30, 17);
             this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(25, 24);
+            this.pictureBox21.Size = new System.Drawing.Size(24, 24);
             this.pictureBox21.TabIndex = 2;
             this.pictureBox21.TabStop = false;
             this.pictureBox21.MouseEnter += new System.EventHandler(this.QTTC_enter);
@@ -489,7 +496,7 @@ namespace AnBinhApp
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
             this.pictureBox8.Location = new System.Drawing.Point(29, 16);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox8.Size = new System.Drawing.Size(24, 24);
             this.pictureBox8.TabIndex = 2;
             this.pictureBox8.TabStop = false;
             this.pictureBox8.MouseEnter += new System.EventHandler(this.dsKH_enter);
@@ -868,7 +875,7 @@ namespace AnBinhApp
             this.DSPhieuTiemTab.Location = new System.Drawing.Point(4, 25);
             this.DSPhieuTiemTab.Name = "DSPhieuTiemTab";
             this.DSPhieuTiemTab.Padding = new System.Windows.Forms.Padding(3);
-            this.DSPhieuTiemTab.Size = new System.Drawing.Size(1182, 798);
+            this.DSPhieuTiemTab.Size = new System.Drawing.Size(1154, 798);
             this.DSPhieuTiemTab.TabIndex = 2;
             this.DSPhieuTiemTab.Text = "3";
             // 
@@ -1094,13 +1101,6 @@ namespace AnBinhApp
             this.label59.Size = new System.Drawing.Size(220, 34);
             this.label59.TabIndex = 2;
             this.label59.Text = "Xem thông báo";
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(3, 1054);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(303, 30);
-            this.panel2.TabIndex = 16;
             // 
             // TrangChu
             // 

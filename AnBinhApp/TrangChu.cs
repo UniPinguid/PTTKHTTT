@@ -15,8 +15,11 @@ namespace AnBinhApp
     {
         public static bool is_login = false;
         public static bool is_NhanVien = false;
+        public static bool co_ThongBao = true;
 
-        bool co_ThongBao = true;
+        public static bool ds_collapsible = false;
+        public static bool chucnang_collapsible = false;
+        public static bool taikhoan_collapsible = true;
 
         public TrangChu()
         {
@@ -44,7 +47,7 @@ namespace AnBinhApp
                 panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y - 224);
                 panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y - 224);
 
-                panel2.Location = new Point(panel2.Location.X, panel_Thoat.Location.Y - 224);
+                panel2.Location = new Point(panel2.Location.X, panel2.Location.Y - 224);
             }
             if (chucnang_collapsible == false)
             {
@@ -59,7 +62,7 @@ namespace AnBinhApp
                 panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y - 168);
                 panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y - 168);
 
-                panel2.Location = new Point(panel2.Location.X, panel_Thoat.Location.Y - 168);
+                panel2.Location = new Point(panel2.Location.X, panel2.Location.Y - 168);
             }
         }
 
@@ -89,15 +92,10 @@ namespace AnBinhApp
         bool is_Thoat_clicked = false;
         bool is_DSPhieuTiem_clicked = false;
 
-        bool ds_collapsible = false;
-        bool chucnang_collapsible = false;
-        bool taikhoan_collapsible = true;
-
         private void TrangChu_enter(object sender, EventArgs e)
         {
             panel_TrangChu.BackColor = Color.FromArgb(37, 58, 128);
         }
-
         private void TrangChu_leave(object sender, EventArgs e)
         {
             panel_TrangChu.BackColor = Color.FromArgb(38, 21, 92);
@@ -118,22 +116,6 @@ namespace AnBinhApp
         {
             panel_Thoat.BackColor = Color.FromArgb(38, 21, 92);
         }
-        private void Thoat_click(object sender, EventArgs e)
-        {
-            panel_Thoat.BackColor = Color.FromArgb(73, 155, 242);
-            is_Thoat_clicked = true;
-
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc là muốn thoát không?", "Thoát An Binh", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                this.Close();
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                is_Thoat_clicked = false;
-                Thoat_leave(sender, e);
-            }
-        }
         private void DangKyTiem_enter(object sender, EventArgs e)
         {
             panel_DangKyTiem.BackColor = Color.FromArgb(37, 58, 128);
@@ -141,22 +123,7 @@ namespace AnBinhApp
         private void DangKyTiem_leave(object sender, EventArgs e)
         {
             panel_DangKyTiem.BackColor = Color.FromArgb(38, 21, 92);
-        }
-        private void DangKyTiem_click(object sender, EventArgs e)
-        {
-            panel_DangKyTiem.BackColor = Color.FromArgb(73, 155, 242);
-            is_Thoat_clicked = false;
-
-            TrangChu_leave(sender, e);
-            // vacReg_leave(sender, e);
-            DSPhieuTiem_leave(sender, e);
-            DangXuat_leave(sender, e);
-            Thoat_leave(sender, e);
-
-            DangKyTiemNgua dktn = new DangKyTiemNgua();
-            dktn.Show();
-            this.Hide();
-        }
+        }        
         private void DSPhieuTiem_enter(object sender, EventArgs e)
         {
             panel_DSPhieuTiem.BackColor = Color.FromArgb(37, 58, 128);
@@ -164,42 +131,8 @@ namespace AnBinhApp
         private void DSPhieuTiem_leave(object sender, EventArgs e)
         {
             panel_DSPhieuTiem.BackColor = Color.FromArgb(38, 21, 92);
-        }
-        private void DSPhieuTiem_click(object sender, EventArgs e)
-        {
-            panel_DSPhieuTiem.BackColor = Color.FromArgb(73, 155, 242);
-            is_Thoat_clicked = false;
-
-            TrangChu_leave(sender, e);
-            DangKyTiem_leave(sender, e);
-            // listVac_leave(sender, e);
-            DangXuat_leave(sender, e);
-            Thoat_leave(sender, e);
-
-            if (is_NhanVien)
-                tab.SelectTab("DSPhieuTiemTab");
-            else
-            {
-                MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
-                is_DSPhieuTiem_clicked = false;
-                DSPhieuTiem_leave(sender, e);
-            }
-        }       
-        private void ThongBao_click(object sender, EventArgs e)
-        {
-            pictureThongBao.Image = Image.FromFile("../../svg/bell click.png");
-            tab.SelectTab("ThongBaoTab");
-
-            if (co_ThongBao == false)
-            {
-                panel18.Hide();
-                pictureBox10.Location = new Point(200, 120);
-            }
-            else
-            {
-                pictureBox10.Hide();
-            }
-        }
+        }        
+        
         private void ThongBao_hover(object sender, EventArgs e)
         {
             pictureThongBao.Image = Image.FromFile("../../svg/bell hover.png");
@@ -316,6 +249,8 @@ namespace AnBinhApp
                 panel_TaiKhoan.Hide();
                 panel_DangXuat.Hide();
                 panel_Thoat.Hide();
+
+                panel2.Hide();
             }
             else
             {
@@ -325,31 +260,22 @@ namespace AnBinhApp
                 panel_TaiKhoan.Show();
                 panel_DangXuat.Show();
                 panel_Thoat.Show();
+
+                panel2.Show();
             }
         }
-
-        private void clickThanhToan(object sender, EventArgs e)
-        {
-            ThanhToan thanhToanForm = new ThanhToan();
-            this.Hide();
-            thanhToanForm.ShowDialog();
-        }
-
         private void QTTC_enter(object sender, EventArgs e)
         {
             panel_QTTC.BackColor = Color.FromArgb(37, 58, 128);
         }
-
         private void QTTC_leave(object sender, EventArgs e)
         {
             panel_QTTC.BackColor = Color.FromArgb(38, 21, 92);
         }
-
         private void dsKH_enter(object sender, EventArgs e)
         {
             panel_dsKH.BackColor = Color.FromArgb(37, 58, 128);
         }
-
         private void dsKH_leave(object sender, EventArgs e)
         {
             panel_dsKH.BackColor = Color.FromArgb(38, 21, 92);
@@ -419,6 +345,21 @@ namespace AnBinhApp
 
         // Start of
         // Transitioning
+        private void ThongBao_click(object sender, EventArgs e)
+        {
+            pictureThongBao.Image = Image.FromFile("../../svg/bell click.png");
+            tab.SelectTab("ThongBaoTab");
+
+            if (co_ThongBao == false)
+            {
+                panel18.Hide();
+                pictureBox10.Location = new Point(200, 120);
+            }
+            else
+            {
+                pictureBox10.Hide();
+            }
+        }
         private void TrangChu_click(object sender, EventArgs e)
         {
             panel_TrangChu.BackColor = Color.FromArgb(73, 155, 242);
@@ -432,6 +373,63 @@ namespace AnBinhApp
             TrangChu trangChuForm = new TrangChu();
             trangChuForm.Show();
             this.Close();
+        }
+        private void DangKyTiem_click(object sender, EventArgs e)
+        {
+            panel_DangKyTiem.BackColor = Color.FromArgb(73, 155, 242);
+            is_Thoat_clicked = false;
+
+            TrangChu_leave(sender, e);
+            // vacReg_leave(sender, e);
+            DSPhieuTiem_leave(sender, e);
+            DangXuat_leave(sender, e);
+            Thoat_leave(sender, e);
+
+            DangKyTiemNgua dktn = new DangKyTiemNgua();
+            dktn.Show();
+            this.Hide();
+        }
+        private void DSPhieuTiem_click(object sender, EventArgs e)
+        {
+            panel_DSPhieuTiem.BackColor = Color.FromArgb(73, 155, 242);
+            is_Thoat_clicked = false;
+
+            TrangChu_leave(sender, e);
+            DangKyTiem_leave(sender, e);
+            // listVac_leave(sender, e);
+            DangXuat_leave(sender, e);
+            Thoat_leave(sender, e);
+
+            if (is_NhanVien)
+                tab.SelectTab("DSPhieuTiemTab");
+            else
+            {
+                MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
+                is_DSPhieuTiem_clicked = false;
+                DSPhieuTiem_leave(sender, e);
+            }
+        }
+        private void Thoat_click(object sender, EventArgs e)
+        {
+            panel_Thoat.BackColor = Color.FromArgb(73, 155, 242);
+            is_Thoat_clicked = true;
+
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc là muốn thoát không?", "Thoát An Binh", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                is_Thoat_clicked = false;
+                Thoat_leave(sender, e);
+            }
+        }
+        private void clickThanhToan(object sender, EventArgs e)
+        {
+            ThanhToan thanhToanForm = new ThanhToan();
+            this.Hide();
+            thanhToanForm.ShowDialog();
         }
 
         // End of
