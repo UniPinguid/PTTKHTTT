@@ -13,21 +13,54 @@ namespace AnBinhApp
 {
     public partial class TrangChu : Form
     {
-        bool is_TrangChu_clicked = false;
-        bool is_DangKyTiem_clicked = false;
-        bool is_DSPhieuTiem_clicked = false;
-        bool is_Thoat_clicked = false;
-
         public static bool is_login = false;
         public static bool is_NhanVien = false;
-        bool co_ThongBao = true;
 
-        bool co_can_giam_ho = false;
+        bool co_ThongBao = true;
 
         public TrangChu()
         {
             InitializeComponent();
-            HienThiInputGiamHo(co_can_giam_ho);
+            this.Size = new Size(1500, 880);
+
+            if (ds_collapsible == false)
+            {
+                
+                pictureBox16.Image = Image.FromFile("../../svg/collapsible off.png");
+                panel_dsKH.Hide();
+                panel_DSPhieuTiem.Hide();
+                panel_DSVacxin.Hide();
+                panel_DSNhanVien.Hide();
+
+                label13.Location = new Point(label13.Location.X, label13.Location.Y - 224);
+                pictureBox17.Location = new Point(pictureBox17.Location.X, pictureBox17.Location.Y - 224);
+                panel_DatMuaVacXin.Location = new Point(panel_DatMuaVacXin.Location.X, panel_DatMuaVacXin.Location.Y - 224);
+                panel_XemLich.Location = new Point(panel_XemLich.Location.X, panel_XemLich.Location.Y - 224);
+                panel_PhanCong.Location = new Point(panel_PhanCong.Location.X, panel_PhanCong.Location.Y - 224);
+
+                label19.Location = new Point(label19.Location.X, label19.Location.Y - 224);
+                pictureBox23.Location = new Point(pictureBox23.Location.X, pictureBox23.Location.Y - 224);
+                panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y - 224);
+                panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y - 224);
+                panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y - 224);
+
+                panel2.Location = new Point(panel2.Location.X, panel_Thoat.Location.Y - 224);
+            }
+            if (chucnang_collapsible == false)
+            {
+                pictureBox17.Image = Image.FromFile("../../svg/collapsible off.png");
+                panel_DatMuaVacXin.Hide();
+                panel_XemLich.Hide();
+                panel_PhanCong.Hide();
+
+                label19.Location = new Point(label19.Location.X, label19.Location.Y - 168);
+                pictureBox23.Location = new Point(pictureBox23.Location.X, pictureBox23.Location.Y - 168);
+                panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y - 168);
+                panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y - 168);
+                panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y - 168);
+
+                panel2.Location = new Point(panel2.Location.X, panel_Thoat.Location.Y - 168);
+            }
         }
 
         private void TrangChu_load(object sender, EventArgs e)
@@ -50,89 +83,41 @@ namespace AnBinhApp
             }
         }
 
-        private void HienThiInputGiamHo(bool check)
-        {
-            if (check == false)
-            {
-                label21.Hide();
-                supervisorName_textBox.Hide();
-                panel11.Hide();
-                label19.Hide();
-                supervisorNum_textBox.Hide();
-                panel10.Hide();
-                label18.Hide();
-                supervisorRelationship_textBox.Hide();
-                panel7.Hide();
-            }
-            else
-            {
-                label21.Show();
-                supervisorName_textBox.Show();
-                panel11.Show();
-                label19.Show();
-                supervisorNum_textBox.Show();
-                panel10.Show();
-                label18.Show();
-                supervisorRelationship_textBox.Show();
-                panel7.Show();
-            }
-        }
+        // Start of
+        // Styling and visualization
+
+        bool is_Thoat_clicked = false;
+        bool is_DSPhieuTiem_clicked = false;
+
+        bool ds_collapsible = false;
+        bool chucnang_collapsible = false;
+        bool taikhoan_collapsible = true;
 
         private void TrangChu_enter(object sender, EventArgs e)
         {
-            if (is_TrangChu_clicked)
-                panel_TrangChu.BackColor = Color.FromArgb(58, 137, 222);
-            else
-                panel_TrangChu.BackColor = Color.FromArgb(37, 58, 128);
+            panel_TrangChu.BackColor = Color.FromArgb(37, 58, 128);
         }
 
         private void TrangChu_leave(object sender, EventArgs e)
         {
-            if (is_TrangChu_clicked)
-                panel_TrangChu.BackColor = Color.FromArgb(73, 155, 242);
-            else
-                panel_TrangChu.BackColor = Color.FromArgb(38, 21, 92);
+            panel_TrangChu.BackColor = Color.FromArgb(38, 21, 92);
         }
-        private void TrangChu_click(object sender, EventArgs e)
-        {
-            panel_TrangChu.BackColor = Color.FromArgb(73, 155, 242);
-            is_TrangChu_clicked = true;
-            is_DSPhieuTiem_clicked = false;
-            is_DangKyTiem_clicked = false;
-            is_Thoat_clicked = false;
-
-            // homepage_leave(sender, e);
-            DangKyTiem_leave(sender, e);
-            DSPhieuTiem_leave(sender, e);
-            DangXuat_leave(sender, e);
-            Thoat_leave(sender, e);
-
-            tab.SelectTab("TrangChuTab");
-        }
-
         private void DangXuat_enter(object sender, EventArgs e)
         {
             panel_DangXuat.BackColor = Color.FromArgb(37, 58, 128);
         }
-
         private void DangXuat_leave(object sender, EventArgs e)
         {
             panel_DangXuat.BackColor = Color.FromArgb(38, 21, 92);
         }
-
         private void Thoat_enter(object sender, EventArgs e)
         {
             panel_Thoat.BackColor = Color.FromArgb(37, 58, 128);
         }
-
         private void Thoat_leave(object sender, EventArgs e)
         {
-            if (is_Thoat_clicked)
-                panel_Thoat.BackColor = Color.FromArgb(73, 155, 242);
-            else
-                panel_Thoat.BackColor = Color.FromArgb(38, 21, 92);
+            panel_Thoat.BackColor = Color.FromArgb(38, 21, 92);
         }
-
         private void Thoat_click(object sender, EventArgs e)
         {
             panel_Thoat.BackColor = Color.FromArgb(73, 155, 242);
@@ -149,30 +134,17 @@ namespace AnBinhApp
                 Thoat_leave(sender, e);
             }
         }
-
         private void DangKyTiem_enter(object sender, EventArgs e)
         {
-            if (is_DangKyTiem_clicked)
-                panel_DangKyTiem.BackColor = Color.FromArgb(58, 137, 222);
-            else
-                panel_DangKyTiem.BackColor = Color.FromArgb(37, 58, 128);
+            panel_DangKyTiem.BackColor = Color.FromArgb(37, 58, 128);
         }
-
         private void DangKyTiem_leave(object sender, EventArgs e)
         {
-            if (is_DangKyTiem_clicked)
-                panel_DangKyTiem.BackColor = Color.FromArgb(73, 155, 242);
-            else
-                panel_DangKyTiem.BackColor = Color.FromArgb(38, 21, 92);
+            panel_DangKyTiem.BackColor = Color.FromArgb(38, 21, 92);
         }
-
         private void DangKyTiem_click(object sender, EventArgs e)
         {
             panel_DangKyTiem.BackColor = Color.FromArgb(73, 155, 242);
-
-            is_DangKyTiem_clicked = true;
-            is_DSPhieuTiem_clicked = false;
-            is_TrangChu_clicked = false;
             is_Thoat_clicked = false;
 
             TrangChu_leave(sender, e);
@@ -181,32 +153,21 @@ namespace AnBinhApp
             DangXuat_leave(sender, e);
             Thoat_leave(sender, e);
 
-            tab.SelectTab("DangKyTiemTab");
+            DangKyTiemNgua dktn = new DangKyTiemNgua();
+            dktn.Show();
+            this.Hide();
         }
-
         private void DSPhieuTiem_enter(object sender, EventArgs e)
         {
-            if (is_DSPhieuTiem_clicked)
-                panel_DSPhieuTiem.BackColor = Color.FromArgb(58, 137, 222);
-            else
-                panel_DSPhieuTiem.BackColor = Color.FromArgb(37, 58, 128);
+            panel_DSPhieuTiem.BackColor = Color.FromArgb(37, 58, 128);
         }
-
         private void DSPhieuTiem_leave(object sender, EventArgs e)
         {
-            if (is_DSPhieuTiem_clicked)
-                panel_DSPhieuTiem.BackColor = Color.FromArgb(73, 155, 242);
-            else
-                panel_DSPhieuTiem.BackColor = Color.FromArgb(38, 21, 92);
+            panel_DSPhieuTiem.BackColor = Color.FromArgb(38, 21, 92);
         }
-
         private void DSPhieuTiem_click(object sender, EventArgs e)
         {
             panel_DSPhieuTiem.BackColor = Color.FromArgb(73, 155, 242);
-
-            is_DSPhieuTiem_clicked = true;
-            is_TrangChu_clicked = false;
-            is_DangKyTiem_clicked = false;
             is_Thoat_clicked = false;
 
             TrangChu_leave(sender, e);
@@ -223,116 +184,7 @@ namespace AnBinhApp
                 is_DSPhieuTiem_clicked = false;
                 DSPhieuTiem_leave(sender, e);
             }
-        }
-
-        private void getAge(object sender, EventArgs e)
-        {
-            int years = DateTime.Now.Year - birthday_picker.Value.Year;
-            int months = DateTime.Now.Month - birthday_picker.Value.Month;
-            agePrompt.Text = "Bạn " + years.ToString() + " tuổi";
-
-            if (years <= 12)
-            {
-                co_can_giam_ho = true;
-                if (years <= 3)
-                {
-                    months += years * 12;
-                    agePrompt.Text = "Bạn " + months.ToString() + " tháng tuổi";
-                }
-            }
-            else
-                co_can_giam_ho = false;
-
-            HienThiInputGiamHo(co_can_giam_ho);
-        }
-
-        bool is_option1_select = false;
-        bool is_option2_select = false;
-        bool is_option3_select = false;
-        bool is_option4_select = false;
-
-        private void option1_click(object sender, EventArgs e)
-        {
-            if (is_option1_select == false)
-            {
-                is_option1_select = true;
-                option1.Image = Image.FromFile("../../svg/package option1 activated.png");
-            }
-            else
-            {
-                is_option1_select = false;
-                option1.Image = Image.FromFile("../../svg/package option1.png");
-            }
-        }
-
-        private void option2_click(object sender, EventArgs e)
-        {
-            if (is_option2_select == false)
-            {
-                is_option2_select = true;
-                option2.Image = Image.FromFile("../../svg/package option2 activated.png");
-            }
-            else
-            {
-                is_option2_select = false;
-                option2.Image = Image.FromFile("../../svg/package option2.png");
-            }
-        }
-
-        private void option3_click(object sender, EventArgs e)
-        {
-            if (is_option3_select == false)
-            {
-                is_option3_select = true;
-                option3.Image = Image.FromFile("../../svg/package option3 activated.png");
-            }
-            else
-            {
-                is_option3_select = false;
-                option3.Image = Image.FromFile("../../svg/package option3.png");
-            }
-        }
-
-        private void option4_click(object sender, EventArgs e)
-        {
-            if (is_option4_select == false)
-            {
-                is_option4_select = true;
-                option4.Image = Image.FromFile("../../svg/package option4 activated.png");
-            }
-            else
-            {
-                is_option4_select = false;
-                option4.Image = Image.FromFile("../../svg/package option4.png");
-            }
-        }
-
-        private void clickReturnVacRec(object sender, EventArgs e)
-        {
-            tab.SelectTab("vaccineRegisterTab");
-        }
-
-        private void clickContinueMethod(object sender, EventArgs e)
-        {
-            if (fullName_textBox.Text == "")
-                MessageBox.Show("Xin vui lòng nhập đầy đủ thông tin", "Thông báo");
-            if (!maleBtn.Checked && !femaleBtn.Checked && !otherGenderBtn.Checked)
-                MessageBox.Show("Xin vui lòng chọn giới tính", "Thông báo");
-            else if (!packageCheck.Checked && !singleCheck.Checked)
-                MessageBox.Show("Xin vui lòng chọn loại tiêm ngừa", "Thông báo");
-            else
-            {
-                if (packageCheck.Checked)
-                {
-                    tab.SelectTab("packageTab");
-                }
-                else if (singleCheck.Checked)
-                {
-                    tab.SelectTab("singleVacTab");
-                }
-            }
-        }
-
+        }       
         private void ThongBao_click(object sender, EventArgs e)
         {
             pictureThongBao.Image = Image.FromFile("../../svg/bell click.png");
@@ -348,63 +200,132 @@ namespace AnBinhApp
                 pictureBox10.Hide();
             }
         }
-
         private void ThongBao_hover(object sender, EventArgs e)
         {
             pictureThongBao.Image = Image.FromFile("../../svg/bell hover.png");
         }
-
         private void ThongBao_leave(object sender, EventArgs e)
         {
             pictureThongBao.Image = Image.FromFile("../../svg/bell.png");
         }
-
-        private void clickTiepTucCuoiCung(object sender, EventArgs e)
-        {
-            tab.SelectTab("finalizationTab");
-
-            label46.Text = fullName_textBox.Text;
-            if (maleBtn.Checked) label47.Text = "Nam";
-            else if (femaleBtn.Checked) label47.Text = "Nữ";
-            else if (otherGenderBtn.Checked) label47.Text = "Khác";
-            label48.Text = birthday_picker.Value.ToShortDateString();
-            label49.Text = textBox1.Text;
-            label50.Text = textBox2.Text;
-            if (supervisorName_textBox.Text == "")
-                label51.Text = "Không";
-            else label51.Text = supervisorName_textBox.Text;
-            if (supervisorNum_textBox.Text == "")
-                label52.Text = "Không";
-            else label52.Text = supervisorNum_textBox.Text;
-            if (supervisorRelationship_textBox.Text == "")
-                label53.Text = "Không";
-            else label53.Text = supervisorRelationship_textBox.Text;
-            if (packageCheck.Checked) label54.Text = "Gói";
-            else if (singleCheck.Checked) label51.Text = "Lẻ";
-            label56.Text = vaccinationDatePicker.Value.ToShortDateString();
-            label55.Text = comboBox1.Text;
-            if (is_option1_select == true) label57.Text = "Gói 0 - 12 tháng tuổi";
-            else if (is_option2_select == true) label57.Text = "Gói 0 - 24 tháng tuổi";
-            else if (is_option3_select == true) label57.Text = "Gói thường";
-            else if (is_option4_select == true) label57.Text = "Gói phụ nữ mang thai";
-        }
-
-        private void clickQuayLaiGoiLe(object sender, EventArgs e)
-        {
-            if (packageCheck.Checked)
-                tab.SelectTab("packageTab");
-            else if (singleCheck.Checked)
-                tab.SelectTab("singleVacTab");
-        }
-
         private void DongThongBao_enter(object sender, EventArgs e)
         {
             panel18.BackColor = Color.FromArgb(228, 241, 247);
         }
-
         private void DongThongBao_leave(object sender, EventArgs e)
         {
             panel18.BackColor = Color.WhiteSmoke;
+        }
+        private void moRongDS_click(object sender, EventArgs e)
+        {
+            if (ds_collapsible == true)
+            {
+                pictureBox16.Image = Image.FromFile("../../svg/collapsible off.png");
+                ds_collapsible = false;
+
+                panel_dsKH.Hide();
+                panel_DSPhieuTiem.Hide();
+                panel_DSVacxin.Hide();
+                panel_DSNhanVien.Hide();
+
+                label13.Location = new Point(label13.Location.X, label13.Location.Y - 224);
+                pictureBox17.Location = new Point(pictureBox17.Location.X, pictureBox17.Location.Y - 224);
+                panel_DatMuaVacXin.Location = new Point(panel_DatMuaVacXin.Location.X, panel_DatMuaVacXin.Location.Y - 224);
+                panel_XemLich.Location = new Point(panel_XemLich.Location.X, panel_XemLich.Location.Y - 224);
+                panel_PhanCong.Location = new Point(panel_PhanCong.Location.X, panel_PhanCong.Location.Y - 224);
+
+                label19.Location = new Point(label19.Location.X, label19.Location.Y - 224);
+                pictureBox23.Location = new Point(pictureBox23.Location.X, pictureBox23.Location.Y - 224);
+                panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y - 224);
+                panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y - 224);
+                panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y - 224);
+
+                panel2.Location = new Point(panel2.Location.X, panel_Thoat.Location.Y - 224);
+            }
+            else
+            {
+                pictureBox16.Image = Image.FromFile("../../svg/collapsible on.png");
+                ds_collapsible = true;
+
+                panel_dsKH.Show();
+                panel_DSPhieuTiem.Show();
+                panel_DSVacxin.Show();
+                panel_DSNhanVien.Show();
+
+                label13.Show();
+
+                label13.Location = new Point(label13.Location.X, label13.Location.Y + 224);
+                pictureBox17.Location = new Point(pictureBox17.Location.X, pictureBox17.Location.Y + 224);
+                panel_DatMuaVacXin.Location = new Point(panel_DatMuaVacXin.Location.X, panel_DatMuaVacXin.Location.Y + 224);
+                panel_XemLich.Location = new Point(panel_XemLich.Location.X, panel_XemLich.Location.Y + 224);
+                panel_PhanCong.Location = new Point(panel_PhanCong.Location.X, panel_PhanCong.Location.Y + 224);
+
+                label19.Location = new Point(label19.Location.X, label19.Location.Y + 224);
+                pictureBox23.Location = new Point(pictureBox23.Location.X, pictureBox23.Location.Y + 224);
+                panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y + 224);
+                panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y + 224);
+                panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y + 224);
+
+                panel2.Location = new Point(panel2.Location.X, panel_Thoat.Location.Y + 224);
+            }
+        }
+        private void moRongChucNang_click(object sender, EventArgs e)
+        {
+            if (chucnang_collapsible == true)
+            {
+                chucnang_collapsible = false;
+
+                pictureBox17.Image = Image.FromFile("../../svg/collapsible off.png");
+                panel_DatMuaVacXin.Hide();
+                panel_XemLich.Hide();
+                panel_PhanCong.Hide();
+
+                label19.Location = new Point(label19.Location.X, label19.Location.Y - 168);
+                pictureBox23.Location = new Point(pictureBox23.Location.X, pictureBox23.Location.Y - 168);
+                panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y - 168);
+                panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y - 168);
+                panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y - 168);
+
+                panel2.Location = new Point(panel2.Location.X, panel_Thoat.Location.Y - 168);
+            }
+            else
+            {
+                chucnang_collapsible = true;
+
+                pictureBox17.Image = Image.FromFile("../../svg/collapsible on.png");
+                panel_DatMuaVacXin.Show();
+                panel_XemLich.Show();
+                panel_PhanCong.Show();
+
+                label19.Location = new Point(label19.Location.X, label19.Location.Y + 168);
+                pictureBox23.Location = new Point(pictureBox23.Location.X, pictureBox23.Location.Y + 168);
+                panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y + 168);
+                panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y + 168);
+                panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y + 168);
+
+                panel2.Location = new Point(panel2.Location.X, panel_Thoat.Location.Y + 168);
+            }
+        }
+        private void moRongTaiKhoan_click(object sender, EventArgs e)
+        {
+            if (taikhoan_collapsible == true)
+            {
+                taikhoan_collapsible = false;
+
+                pictureBox23.Image = Image.FromFile("../../svg/collapsible off.png");
+                panel_TaiKhoan.Hide();
+                panel_DangXuat.Hide();
+                panel_Thoat.Hide();
+            }
+            else
+            {
+                taikhoan_collapsible = true;
+
+                pictureBox23.Image = Image.FromFile("../../svg/collapsible on.png");
+                panel_TaiKhoan.Show();
+                panel_DangXuat.Show();
+                panel_Thoat.Show();
+            }
         }
 
         private void clickThanhToan(object sender, EventArgs e)
@@ -413,5 +334,107 @@ namespace AnBinhApp
             this.Hide();
             thanhToanForm.ShowDialog();
         }
+
+        private void QTTC_enter(object sender, EventArgs e)
+        {
+            panel_QTTC.BackColor = Color.FromArgb(37, 58, 128);
+        }
+
+        private void QTTC_leave(object sender, EventArgs e)
+        {
+            panel_QTTC.BackColor = Color.FromArgb(38, 21, 92);
+        }
+
+        private void dsKH_enter(object sender, EventArgs e)
+        {
+            panel_dsKH.BackColor = Color.FromArgb(37, 58, 128);
+        }
+
+        private void dsKH_leave(object sender, EventArgs e)
+        {
+            panel_dsKH.BackColor = Color.FromArgb(38, 21, 92);
+        }
+        private void dsVacXin_enter(object sender, EventArgs e)
+        {
+            panel_DSVacxin.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void dsVacXin_leave(object sender, EventArgs e)
+        {
+            panel_DSVacxin.BackColor = Color.FromArgb(38, 21, 92);
+        }
+
+        private void dsNhanVien_enter(object sender, EventArgs e)
+        {
+            panel_DSNhanVien.BackColor = Color.FromArgb(37, 58, 128);
+        }
+
+        private void dsNhanVien_leave(object sender, EventArgs e)
+        {
+            panel_DSNhanVien.BackColor = Color.FromArgb(38, 21, 92);
+        }
+
+        private void panel_DatMuaVacXin_MouseEnter(object sender, EventArgs e)
+        {
+            panel_DatMuaVacXin.BackColor = Color.FromArgb(37, 58, 128);
+        }
+
+        private void panel_DatMuaVacXin_MouseLeave(object sender, EventArgs e)
+        {
+            panel_DatMuaVacXin.BackColor = Color.FromArgb(38, 21, 92);
+        }
+
+        private void xemLich_enter(object sender, EventArgs e)
+        {
+            panel_XemLich.BackColor = Color.FromArgb(37, 58, 128);
+        }
+
+        private void xemLich_leave(object sender, EventArgs e)
+        {
+            panel_XemLich.BackColor = Color.FromArgb(38, 21, 92);
+        }
+
+        private void phanCong_enter(object sender, EventArgs e)
+        {
+            panel_PhanCong.BackColor = Color.FromArgb(37, 58, 128);
+        }
+
+        private void phanCong_leave(object sender, EventArgs e)
+        {
+            panel_PhanCong.BackColor = Color.FromArgb(38, 21, 92);
+        }
+
+        private void taiKhoan_enter(object sender, EventArgs e)
+        {
+            panel_TaiKhoan.BackColor = Color.FromArgb(37, 58, 128);
+        }
+
+        private void taiKhoan_leave(object sender, EventArgs e)
+        {
+            panel_TaiKhoan.BackColor = Color.FromArgb(38, 21, 92);
+        }
+
+        // End of
+        // Styling and visualization
+
+
+        // Start of
+        // Transitioning
+        private void TrangChu_click(object sender, EventArgs e)
+        {
+            panel_TrangChu.BackColor = Color.FromArgb(73, 155, 242);
+
+            // homepage_leave(sender, e);
+            DangKyTiem_leave(sender, e);
+            DSPhieuTiem_leave(sender, e);
+            DangXuat_leave(sender, e);
+            Thoat_leave(sender, e);
+
+            TrangChu trangChuForm = new TrangChu();
+            trangChuForm.Show();
+            this.Close();
+        }
+
+        // End of
+        // Transitioning
     }
 }

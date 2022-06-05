@@ -12,3 +12,4 @@ D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.DangNhap.resources
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.DangKyTK.resources
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.KiemTraPhieu.resources
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.ThanhToan.resources
+D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.DangKyTiemNgua.resources

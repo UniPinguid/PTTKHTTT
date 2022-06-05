@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DangKyTiemNgua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangKyTiemNgua.Designer.cs">
+      <DependentUpon>DangKyTiemNgua.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="KiemTraPhieu.Designer.cs">
       <DependentUpon>KiemTraPhieu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DangKyTiemNgua.resx">
+      <DependentUpon>DangKyTiemNgua.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>
     </EmbeddedResource>

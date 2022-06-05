@@ -78,7 +78,7 @@ namespace AnBinhApp
             {
                 TrangChu.is_login = true;
                 is_manually_close = false;
-                this.Close();
+                this.Hide();
             }
             else
             {
