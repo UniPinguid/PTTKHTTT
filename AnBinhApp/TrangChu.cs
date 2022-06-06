@@ -25,45 +25,7 @@ namespace AnBinhApp
         {
             InitializeComponent();
             this.Size = new Size(1500, 880);
-
-            if (ds_collapsible == false)
-            {
-                
-                pictureBox16.Image = Image.FromFile("../../svg/collapsible off.png");
-                panel_dsKH.Hide();
-                panel_DSPhieuTiem.Hide();
-                panel_DSVacxin.Hide();
-                panel_DSNhanVien.Hide();
-
-                label13.Location = new Point(label13.Location.X, label13.Location.Y - 224);
-                pictureBox17.Location = new Point(pictureBox17.Location.X, pictureBox17.Location.Y - 224);
-                panel_DatMuaVacXin.Location = new Point(panel_DatMuaVacXin.Location.X, panel_DatMuaVacXin.Location.Y - 224);
-                panel_XemLich.Location = new Point(panel_XemLich.Location.X, panel_XemLich.Location.Y - 224);
-                panel_PhanCong.Location = new Point(panel_PhanCong.Location.X, panel_PhanCong.Location.Y - 224);
-
-                label19.Location = new Point(label19.Location.X, label19.Location.Y - 224);
-                pictureBox23.Location = new Point(pictureBox23.Location.X, pictureBox23.Location.Y - 224);
-                panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y - 224);
-                panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y - 224);
-                panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y - 224);
-
-                panel2.Location = new Point(panel2.Location.X, panel2.Location.Y - 224);
-            }
-            if (chucnang_collapsible == false)
-            {
-                pictureBox17.Image = Image.FromFile("../../svg/collapsible off.png");
-                panel_DatMuaVacXin.Hide();
-                panel_XemLich.Hide();
-                panel_PhanCong.Hide();
-
-                label19.Location = new Point(label19.Location.X, label19.Location.Y - 168);
-                pictureBox23.Location = new Point(pictureBox23.Location.X, pictureBox23.Location.Y - 168);
-                panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y - 168);
-                panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y - 168);
-                panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y - 168);
-
-                panel2.Location = new Point(panel2.Location.X, panel2.Location.Y - 168);
-            }
+            sideBarCollapsible(ds_collapsible, chucnang_collapsible, taikhoan_collapsible);
         }
 
         private void TrangChu_load(object sender, EventArgs e)
@@ -91,6 +53,104 @@ namespace AnBinhApp
 
         bool is_Thoat_clicked = false;
         bool is_DSPhieuTiem_clicked = false;
+
+        private void sideBarCollapsible(bool ds_collapsible, bool chucnang_collapsible, bool taikhoan_collapsible)
+        {
+            if (ds_collapsible == false)
+            {
+                collapsible_ds.Image = Image.FromFile("../../svg/collapsible off.png");
+                panel_dsKH.Hide();
+                panel_DSPhieuTiem.Hide();
+                panel_DSVacxin.Hide();
+                panel_DSNhanVien.Hide();
+
+                label_chucNang.Location = new Point(label_chucNang.Location.X, label_chucNang.Location.Y - 224);
+                collapsible_chucNang.Location = new Point(collapsible_chucNang.Location.X, collapsible_chucNang.Location.Y - 224);
+                panel_DatMuaVacXin.Location = new Point(panel_DatMuaVacXin.Location.X, panel_DatMuaVacXin.Location.Y - 224);
+                panel_XemLich.Location = new Point(panel_XemLich.Location.X, panel_XemLich.Location.Y - 224);
+                panel_PhanCong.Location = new Point(panel_PhanCong.Location.X, panel_PhanCong.Location.Y - 224);
+
+                label_taiKhoan.Location = new Point(label_taiKhoan.Location.X, label_taiKhoan.Location.Y - 224);
+                collapsible_taiKhoan.Location = new Point(collapsible_taiKhoan.Location.X, collapsible_taiKhoan.Location.Y - 224);
+                panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y - 224);
+                panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y - 224);
+                panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y - 224);
+
+                panel2.Location = new Point(panel2.Location.X, panel2.Location.Y - 224);
+            }
+            else
+            {
+                collapsible_ds.Image = Image.FromFile("../../svg/collapsible on.png");
+                panel_dsKH.Show();
+                panel_DSPhieuTiem.Show();
+                panel_DSVacxin.Show();
+                panel_DSNhanVien.Show();
+
+                label_chucNang.Location = new Point(label_chucNang.Location.X, label_chucNang.Location.Y + 224);
+                collapsible_chucNang.Location = new Point(collapsible_chucNang.Location.X, collapsible_chucNang.Location.Y + 224);
+                panel_DatMuaVacXin.Location = new Point(panel_DatMuaVacXin.Location.X, panel_DatMuaVacXin.Location.Y + 224);
+                panel_XemLich.Location = new Point(panel_XemLich.Location.X, panel_XemLich.Location.Y + 224);
+                panel_PhanCong.Location = new Point(panel_PhanCong.Location.X, panel_PhanCong.Location.Y + 224);
+
+                label_taiKhoan.Location = new Point(label_taiKhoan.Location.X, label_taiKhoan.Location.Y + 224);
+                collapsible_taiKhoan.Location = new Point(collapsible_taiKhoan.Location.X, collapsible_taiKhoan.Location.Y + 224);
+                panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y + 224);
+                panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y + 224);
+                panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y + 224);
+
+                panel2.Location = new Point(panel2.Location.X, panel2.Location.Y + 224);
+            }
+
+            if (chucnang_collapsible == false)
+            {
+                collapsible_chucNang.Image = Image.FromFile("../../svg/collapsible off.png");
+                panel_DatMuaVacXin.Hide();
+                panel_XemLich.Hide();
+                panel_PhanCong.Hide();
+
+                label_taiKhoan.Location = new Point(label_taiKhoan.Location.X, label_taiKhoan.Location.Y - 168);
+                collapsible_taiKhoan.Location = new Point(collapsible_taiKhoan.Location.X, collapsible_taiKhoan.Location.Y - 168);
+                panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y - 168);
+                panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y - 168);
+                panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y - 168);
+
+                panel2.Location = new Point(panel2.Location.X, panel2.Location.Y - 168);
+            }
+            else
+            {
+                collapsible_chucNang.Image = Image.FromFile("../../svg/collapsible on.png");
+                panel_DatMuaVacXin.Show();
+                panel_XemLich.Show();
+                panel_PhanCong.Show();
+
+                label_taiKhoan.Location = new Point(label_taiKhoan.Location.X, label_taiKhoan.Location.Y + 168);
+                collapsible_taiKhoan.Location = new Point(collapsible_taiKhoan.Location.X, collapsible_taiKhoan.Location.Y + 168);
+                panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y + 168);
+                panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y + 168);
+                panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y + 168);
+
+                panel2.Location = new Point(panel2.Location.X, panel2.Location.Y + 168);
+            }
+
+            if (taikhoan_collapsible == false)
+            {
+                collapsible_taiKhoan.Image = Image.FromFile("../../svg/collapsible off.png");
+                panel_TaiKhoan.Hide();
+                panel_DangXuat.Hide();
+                panel_Thoat.Hide();
+
+                panel2.Hide();
+            }
+            else
+            {
+                collapsible_taiKhoan.Image = Image.FromFile("../../svg/collapsible on.png");
+                panel_TaiKhoan.Show();
+                panel_DangXuat.Show();
+                panel_Thoat.Show();
+
+                panel2.Show();
+            }
+        }
 
         private void TrangChu_enter(object sender, EventArgs e)
         {
@@ -153,7 +213,7 @@ namespace AnBinhApp
         {
             if (ds_collapsible == true)
             {
-                pictureBox16.Image = Image.FromFile("../../svg/collapsible off.png");
+                collapsible_ds.Image = Image.FromFile("../../svg/collapsible off.png");
                 ds_collapsible = false;
 
                 panel_dsKH.Hide();
@@ -161,14 +221,14 @@ namespace AnBinhApp
                 panel_DSVacxin.Hide();
                 panel_DSNhanVien.Hide();
 
-                label13.Location = new Point(label13.Location.X, label13.Location.Y - 224);
-                pictureBox17.Location = new Point(pictureBox17.Location.X, pictureBox17.Location.Y - 224);
+                label_chucNang.Location = new Point(label_chucNang.Location.X, label_chucNang.Location.Y - 224);
+                collapsible_chucNang.Location = new Point(collapsible_chucNang.Location.X, collapsible_chucNang.Location.Y - 224);
                 panel_DatMuaVacXin.Location = new Point(panel_DatMuaVacXin.Location.X, panel_DatMuaVacXin.Location.Y - 224);
                 panel_XemLich.Location = new Point(panel_XemLich.Location.X, panel_XemLich.Location.Y - 224);
                 panel_PhanCong.Location = new Point(panel_PhanCong.Location.X, panel_PhanCong.Location.Y - 224);
 
-                label19.Location = new Point(label19.Location.X, label19.Location.Y - 224);
-                pictureBox23.Location = new Point(pictureBox23.Location.X, pictureBox23.Location.Y - 224);
+                label_taiKhoan.Location = new Point(label_taiKhoan.Location.X, label_taiKhoan.Location.Y - 224);
+                collapsible_taiKhoan.Location = new Point(collapsible_taiKhoan.Location.X, collapsible_taiKhoan.Location.Y - 224);
                 panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y - 224);
                 panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y - 224);
                 panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y - 224);
@@ -177,7 +237,7 @@ namespace AnBinhApp
             }
             else
             {
-                pictureBox16.Image = Image.FromFile("../../svg/collapsible on.png");
+                collapsible_ds.Image = Image.FromFile("../../svg/collapsible on.png");
                 ds_collapsible = true;
 
                 panel_dsKH.Show();
@@ -185,16 +245,16 @@ namespace AnBinhApp
                 panel_DSVacxin.Show();
                 panel_DSNhanVien.Show();
 
-                label13.Show();
+                label_chucNang.Show();
 
-                label13.Location = new Point(label13.Location.X, label13.Location.Y + 224);
-                pictureBox17.Location = new Point(pictureBox17.Location.X, pictureBox17.Location.Y + 224);
+                label_chucNang.Location = new Point(label_chucNang.Location.X, label_chucNang.Location.Y + 224);
+                collapsible_chucNang.Location = new Point(collapsible_chucNang.Location.X, collapsible_chucNang.Location.Y + 224);
                 panel_DatMuaVacXin.Location = new Point(panel_DatMuaVacXin.Location.X, panel_DatMuaVacXin.Location.Y + 224);
                 panel_XemLich.Location = new Point(panel_XemLich.Location.X, panel_XemLich.Location.Y + 224);
                 panel_PhanCong.Location = new Point(panel_PhanCong.Location.X, panel_PhanCong.Location.Y + 224);
 
-                label19.Location = new Point(label19.Location.X, label19.Location.Y + 224);
-                pictureBox23.Location = new Point(pictureBox23.Location.X, pictureBox23.Location.Y + 224);
+                label_taiKhoan.Location = new Point(label_taiKhoan.Location.X, label_taiKhoan.Location.Y + 224);
+                collapsible_taiKhoan.Location = new Point(collapsible_taiKhoan.Location.X, collapsible_taiKhoan.Location.Y + 224);
                 panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y + 224);
                 panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y + 224);
                 panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y + 224);
@@ -208,13 +268,13 @@ namespace AnBinhApp
             {
                 chucnang_collapsible = false;
 
-                pictureBox17.Image = Image.FromFile("../../svg/collapsible off.png");
+                collapsible_chucNang.Image = Image.FromFile("../../svg/collapsible off.png");
                 panel_DatMuaVacXin.Hide();
                 panel_XemLich.Hide();
                 panel_PhanCong.Hide();
 
-                label19.Location = new Point(label19.Location.X, label19.Location.Y - 168);
-                pictureBox23.Location = new Point(pictureBox23.Location.X, pictureBox23.Location.Y - 168);
+                label_taiKhoan.Location = new Point(label_taiKhoan.Location.X, label_taiKhoan.Location.Y - 168);
+                collapsible_taiKhoan.Location = new Point(collapsible_taiKhoan.Location.X, collapsible_taiKhoan.Location.Y - 168);
                 panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y - 168);
                 panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y - 168);
                 panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y - 168);
@@ -225,13 +285,13 @@ namespace AnBinhApp
             {
                 chucnang_collapsible = true;
 
-                pictureBox17.Image = Image.FromFile("../../svg/collapsible on.png");
+                collapsible_chucNang.Image = Image.FromFile("../../svg/collapsible on.png");
                 panel_DatMuaVacXin.Show();
                 panel_XemLich.Show();
                 panel_PhanCong.Show();
 
-                label19.Location = new Point(label19.Location.X, label19.Location.Y + 168);
-                pictureBox23.Location = new Point(pictureBox23.Location.X, pictureBox23.Location.Y + 168);
+                label_taiKhoan.Location = new Point(label_taiKhoan.Location.X, label_taiKhoan.Location.Y + 168);
+                collapsible_taiKhoan.Location = new Point(collapsible_taiKhoan.Location.X, collapsible_taiKhoan.Location.Y + 168);
                 panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y + 168);
                 panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y + 168);
                 panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y + 168);
@@ -245,7 +305,7 @@ namespace AnBinhApp
             {
                 taikhoan_collapsible = false;
 
-                pictureBox23.Image = Image.FromFile("../../svg/collapsible off.png");
+                collapsible_taiKhoan.Image = Image.FromFile("../../svg/collapsible off.png");
                 panel_TaiKhoan.Hide();
                 panel_DangXuat.Hide();
                 panel_Thoat.Hide();
@@ -256,7 +316,7 @@ namespace AnBinhApp
             {
                 taikhoan_collapsible = true;
 
-                pictureBox23.Image = Image.FromFile("../../svg/collapsible on.png");
+                collapsible_taiKhoan.Image = Image.FromFile("../../svg/collapsible on.png");
                 panel_TaiKhoan.Show();
                 panel_DangXuat.Show();
                 panel_Thoat.Show();
@@ -409,6 +469,20 @@ namespace AnBinhApp
                 DSPhieuTiem_leave(sender, e);
             }
         }
+        private void DangXuat_click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc là muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                DangNhap dangNhap = new DangNhap();
+                dangNhap.Show();
+                this.Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //
+            }
+        }
         private void Thoat_click(object sender, EventArgs e)
         {
             panel_Thoat.BackColor = Color.FromArgb(73, 155, 242);
@@ -431,7 +505,6 @@ namespace AnBinhApp
             this.Hide();
             thanhToanForm.ShowDialog();
         }
-
         // End of
         // Transitioning
     }

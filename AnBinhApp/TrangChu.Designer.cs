@@ -31,8 +31,10 @@ namespace AnBinhApp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox23 = new System.Windows.Forms.PictureBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.collapsible_ds = new System.Windows.Forms.PictureBox();
+            this.label_ds = new System.Windows.Forms.Label();
+            this.collapsible_taiKhoan = new System.Windows.Forms.PictureBox();
+            this.label_taiKhoan = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel_TaiKhoan = new System.Windows.Forms.Panel();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
@@ -49,9 +51,8 @@ namespace AnBinhApp
             this.panel_DatMuaVacXin = new System.Windows.Forms.Panel();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.collapsible_chucNang = new System.Windows.Forms.PictureBox();
+            this.label_chucNang = new System.Windows.Forms.Label();
             this.panel_DSNhanVien = new System.Windows.Forms.Panel();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -69,7 +70,6 @@ namespace AnBinhApp
             this.panel_DangKyTiem = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel_TrangChu = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -107,7 +107,8 @@ namespace AnBinhApp
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.label59 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.collapsible_ds)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.collapsible_taiKhoan)).BeginInit();
             this.panel_TaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             this.panel_QTTC.SuspendLayout();
@@ -118,8 +119,7 @@ namespace AnBinhApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             this.panel_DatMuaVacXin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.collapsible_chucNang)).BeginInit();
             this.panel_DSNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.panel_dsKH.SuspendLayout();
@@ -159,18 +159,18 @@ namespace AnBinhApp
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
-            this.panel1.Controls.Add(this.pictureBox16);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.pictureBox23);
-            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.collapsible_ds);
+            this.panel1.Controls.Add(this.label_ds);
+            this.panel1.Controls.Add(this.collapsible_taiKhoan);
+            this.panel1.Controls.Add(this.label_taiKhoan);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel_TaiKhoan);
             this.panel1.Controls.Add(this.panel_QTTC);
             this.panel1.Controls.Add(this.panel_PhanCong);
             this.panel1.Controls.Add(this.panel_XemLich);
             this.panel1.Controls.Add(this.panel_DatMuaVacXin);
-            this.panel1.Controls.Add(this.pictureBox17);
-            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.collapsible_chucNang);
+            this.panel1.Controls.Add(this.label_chucNang);
             this.panel1.Controls.Add(this.panel_DSNhanVien);
             this.panel1.Controls.Add(this.panel_dsKH);
             this.panel1.Controls.Add(this.panel_DSVacxin);
@@ -190,27 +190,49 @@ namespace AnBinhApp
             this.panel1.Size = new System.Drawing.Size(330, 840);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBox23
+            // collapsible_ds
             // 
-            this.pictureBox23.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox23.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox23.Image")));
-            this.pictureBox23.Location = new System.Drawing.Point(122, 865);
-            this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(25, 14);
-            this.pictureBox23.TabIndex = 15;
-            this.pictureBox23.TabStop = false;
-            this.pictureBox23.Click += new System.EventHandler(this.moRongTaiKhoan_click);
+            this.collapsible_ds.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.collapsible_ds.Image = ((System.Drawing.Image)(resources.GetObject("collapsible_ds.Image")));
+            this.collapsible_ds.Location = new System.Drawing.Point(122, 382);
+            this.collapsible_ds.Name = "collapsible_ds";
+            this.collapsible_ds.Size = new System.Drawing.Size(25, 14);
+            this.collapsible_ds.TabIndex = 11;
+            this.collapsible_ds.TabStop = false;
+            this.collapsible_ds.Click += new System.EventHandler(this.moRongDS_click);
             // 
-            // label19
+            // label_ds
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(216)))), ((int)(((byte)(239)))));
-            this.label19.Location = new System.Drawing.Point(16, 861);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(87, 20);
-            this.label19.TabIndex = 14;
-            this.label19.Text = "Tài khoản";
+            this.label_ds.AutoSize = true;
+            this.label_ds.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ds.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(216)))), ((int)(((byte)(239)))));
+            this.label_ds.Location = new System.Drawing.Point(16, 378);
+            this.label_ds.Name = "label_ds";
+            this.label_ds.Size = new System.Drawing.Size(95, 20);
+            this.label_ds.TabIndex = 3;
+            this.label_ds.Text = "Danh sách";
+            // 
+            // collapsible_taiKhoan
+            // 
+            this.collapsible_taiKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.collapsible_taiKhoan.Image = ((System.Drawing.Image)(resources.GetObject("collapsible_taiKhoan.Image")));
+            this.collapsible_taiKhoan.Location = new System.Drawing.Point(122, 865);
+            this.collapsible_taiKhoan.Name = "collapsible_taiKhoan";
+            this.collapsible_taiKhoan.Size = new System.Drawing.Size(25, 14);
+            this.collapsible_taiKhoan.TabIndex = 15;
+            this.collapsible_taiKhoan.TabStop = false;
+            this.collapsible_taiKhoan.Click += new System.EventHandler(this.moRongTaiKhoan_click);
+            // 
+            // label_taiKhoan
+            // 
+            this.label_taiKhoan.AutoSize = true;
+            this.label_taiKhoan.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_taiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(216)))), ((int)(((byte)(239)))));
+            this.label_taiKhoan.Location = new System.Drawing.Point(16, 861);
+            this.label_taiKhoan.Name = "label_taiKhoan";
+            this.label_taiKhoan.Size = new System.Drawing.Size(87, 20);
+            this.label_taiKhoan.TabIndex = 14;
+            this.label_taiKhoan.Text = "Tài khoản";
             // 
             // panel2
             // 
@@ -407,38 +429,27 @@ namespace AnBinhApp
             this.label14.MouseEnter += new System.EventHandler(this.panel_DatMuaVacXin_MouseEnter);
             this.label14.MouseLeave += new System.EventHandler(this.panel_DatMuaVacXin_MouseLeave);
             // 
-            // pictureBox17
+            // collapsible_chucNang
             // 
-            this.pictureBox17.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
-            this.pictureBox17.Location = new System.Drawing.Point(122, 651);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(25, 14);
-            this.pictureBox17.TabIndex = 13;
-            this.pictureBox17.TabStop = false;
-            this.pictureBox17.Click += new System.EventHandler(this.moRongChucNang_click);
+            this.collapsible_chucNang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.collapsible_chucNang.Image = ((System.Drawing.Image)(resources.GetObject("collapsible_chucNang.Image")));
+            this.collapsible_chucNang.Location = new System.Drawing.Point(122, 651);
+            this.collapsible_chucNang.Name = "collapsible_chucNang";
+            this.collapsible_chucNang.Size = new System.Drawing.Size(25, 14);
+            this.collapsible_chucNang.TabIndex = 13;
+            this.collapsible_chucNang.TabStop = false;
+            this.collapsible_chucNang.Click += new System.EventHandler(this.moRongChucNang_click);
             // 
-            // label13
+            // label_chucNang
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(216)))), ((int)(((byte)(239)))));
-            this.label13.Location = new System.Drawing.Point(16, 647);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(99, 20);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "Chức năng";
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
-            this.pictureBox16.Location = new System.Drawing.Point(122, 382);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(25, 14);
-            this.pictureBox16.TabIndex = 11;
-            this.pictureBox16.TabStop = false;
-            this.pictureBox16.Click += new System.EventHandler(this.moRongDS_click);
+            this.label_chucNang.AutoSize = true;
+            this.label_chucNang.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_chucNang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(216)))), ((int)(((byte)(239)))));
+            this.label_chucNang.Location = new System.Drawing.Point(16, 647);
+            this.label_chucNang.Name = "label_chucNang";
+            this.label_chucNang.Size = new System.Drawing.Size(99, 20);
+            this.label_chucNang.TabIndex = 12;
+            this.label_chucNang.Text = "Chức năng";
             // 
             // panel_DSNhanVien
             // 
@@ -661,17 +672,6 @@ namespace AnBinhApp
             this.label7.MouseEnter += new System.EventHandler(this.DangKyTiem_enter);
             this.label7.MouseLeave += new System.EventHandler(this.DangKyTiem_leave);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(216)))), ((int)(((byte)(239)))));
-            this.label6.Location = new System.Drawing.Point(16, 378);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 20);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Danh sách";
-            // 
             // panel_TrangChu
             // 
             this.panel_TrangChu.Controls.Add(this.pictureBox4);
@@ -744,6 +744,7 @@ namespace AnBinhApp
             this.panel_DangXuat.Name = "panel_DangXuat";
             this.panel_DangXuat.Size = new System.Drawing.Size(278, 56);
             this.panel_DangXuat.TabIndex = 4;
+            this.panel_DangXuat.Click += new System.EventHandler(this.DangXuat_click);
             this.panel_DangXuat.MouseEnter += new System.EventHandler(this.DangXuat_enter);
             this.panel_DangXuat.MouseLeave += new System.EventHandler(this.DangXuat_leave);
             // 
@@ -756,6 +757,7 @@ namespace AnBinhApp
             this.pictureBox1.Size = new System.Drawing.Size(29, 24);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.DangXuat_click);
             this.pictureBox1.MouseEnter += new System.EventHandler(this.DangXuat_enter);
             this.pictureBox1.MouseLeave += new System.EventHandler(this.DangXuat_leave);
             // 
@@ -770,6 +772,7 @@ namespace AnBinhApp
             this.label1.Size = new System.Drawing.Size(101, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Đăng xuất";
+            this.label1.Click += new System.EventHandler(this.DangXuat_click);
             this.label1.MouseEnter += new System.EventHandler(this.DangXuat_enter);
             this.label1.MouseLeave += new System.EventHandler(this.DangXuat_leave);
             // 
@@ -1114,7 +1117,8 @@ namespace AnBinhApp
             this.Shown += new System.EventHandler(this.TrangChu_load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.collapsible_ds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.collapsible_taiKhoan)).EndInit();
             this.panel_TaiKhoan.ResumeLayout(false);
             this.panel_TaiKhoan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
@@ -1130,8 +1134,7 @@ namespace AnBinhApp
             this.panel_DatMuaVacXin.ResumeLayout(false);
             this.panel_DatMuaVacXin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.collapsible_chucNang)).EndInit();
             this.panel_DSNhanVien.ResumeLayout(false);
             this.panel_DSNhanVien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
@@ -1202,7 +1205,7 @@ namespace AnBinhApp
         private System.Windows.Forms.Panel panel_DangKyTiem;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label_ds;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel_DSPhieuTiem;
         private System.Windows.Forms.PictureBox pictureBox6;
@@ -1234,15 +1237,15 @@ namespace AnBinhApp
         private System.Windows.Forms.Panel panel_DSVacxin;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.PictureBox collapsible_ds;
         private System.Windows.Forms.Panel panel_DSNhanVien;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel_dsKH;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.PictureBox pictureBox23;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.PictureBox collapsible_taiKhoan;
+        private System.Windows.Forms.Label label_taiKhoan;
         private System.Windows.Forms.Panel panel_TaiKhoan;
         private System.Windows.Forms.PictureBox pictureBox22;
         private System.Windows.Forms.Label label18;
@@ -1258,8 +1261,8 @@ namespace AnBinhApp
         private System.Windows.Forms.Panel panel_DatMuaVacXin;
         private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.PictureBox pictureBox17;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.PictureBox collapsible_chucNang;
+        private System.Windows.Forms.Label label_chucNang;
         private System.Windows.Forms.Panel panel2;
     }
 }

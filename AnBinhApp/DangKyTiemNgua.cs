@@ -21,10 +21,24 @@ namespace AnBinhApp
         {
             InitializeComponent();
             HienThiInputGiamHo(co_can_giam_ho);
+            sideBarCollapsible(ds_collapsible, chucnang_collapsible, taikhoan_collapsible);
+        }       
+
+        // Start of
+        // Styling and visualization
+
+        bool is_Thoat_clicked = false;
+        bool is_DSPhieuTiem_clicked = false;
+
+        bool ds_collapsible = TrangChu.ds_collapsible;
+        bool chucnang_collapsible = TrangChu.chucnang_collapsible;
+        bool taikhoan_collapsible = TrangChu.taikhoan_collapsible;
+
+        private void sideBarCollapsible(bool ds_collapsible, bool chucnang_collapsible, bool taikhoan_collapsible)
+        {
             if (ds_collapsible == false)
             {
-
-                pictureBox16.Image = Image.FromFile("../../svg/collapsible off.png");
+                collapsible_ds.Image = Image.FromFile("../../svg/collapsible off.png");
                 panel_dsKH.Hide();
                 panel_DSPhieuTiem.Hide();
                 panel_DSVacxin.Hide();
@@ -44,9 +58,11 @@ namespace AnBinhApp
 
                 panel2.Location = new Point(panel2.Location.X, panel2.Location.Y - 224);
             }
+            
+
             if (chucnang_collapsible == false)
             {
-                collapsible_taiKhoan.Image = Image.FromFile("../../svg/collapsible off.png");
+                collapsible_chucNang.Image = Image.FromFile("../../svg/collapsible off.png");
                 panel_DatMuaVacXin.Hide();
                 panel_XemLich.Hide();
                 panel_PhanCong.Hide();
@@ -59,17 +75,28 @@ namespace AnBinhApp
 
                 panel2.Location = new Point(panel2.Location.X, panel2.Location.Y - 168);
             }
+           
+
+            if (taikhoan_collapsible == false)
+            {
+                collapsible_taiKhoan.Image = Image.FromFile("../../svg/collapsible off.png");
+                panel_TaiKhoan.Hide();
+                panel_DangXuat.Hide();
+                panel_Thoat.Hide();
+
+                panel2.Hide();
+            }
+            
         }
 
-        // Start of
-        // Styling and visualization
-
-        bool is_Thoat_clicked = false;
-        bool is_DSPhieuTiem_clicked = false;
-
-        bool ds_collapsible = false;
-        bool chucnang_collapsible = false;
-        bool taikhoan_collapsible = true;
+        private void ThongBao_hover(object sender, EventArgs e)
+        {
+            pictureThongBao.Image = Image.FromFile("../../svg/bell hover.png");
+        }
+        private void ThongBao_leave(object sender, EventArgs e)
+        {
+            pictureThongBao.Image = Image.FromFile("../../svg/bell.png");
+        }
 
         private void TrangChu_enter(object sender, EventArgs e)
         {
@@ -78,6 +105,89 @@ namespace AnBinhApp
         private void TrangChu_leave(object sender, EventArgs e)
         {
             panel_TrangChu.BackColor = Color.FromArgb(38, 21, 92);
+        }
+        private void DangKyTiem_enter(object sender, EventArgs e)
+        {
+            panel_DangKyTiem.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void DangKyTiem_leave(object sender, EventArgs e)
+        {
+            panel_DangKyTiem.BackColor = Color.FromArgb(38, 21, 92);
+        }
+        private void QTTC_enter(object sender, EventArgs e)
+        {
+            panel_QTTC.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void QTTC_leave(object sender, EventArgs e)
+        {
+            panel_QTTC.BackColor = Color.FromArgb(38, 21, 92);
+        }
+
+        private void dsKH_enter(object sender, EventArgs e)
+        {
+            panel_dsKH.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void dsKH_leave(object sender, EventArgs e)
+        {
+            panel_dsKH.BackColor = Color.FromArgb(38, 21, 92);
+        }
+        private void DSPhieuTiem_enter(object sender, EventArgs e)
+        {
+            panel_DSPhieuTiem.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void DSPhieuTiem_leave(object sender, EventArgs e)
+        {
+            panel_DSPhieuTiem.BackColor = Color.FromArgb(38, 21, 92);
+        }
+        private void dsVacXin_enter(object sender, EventArgs e)
+        {
+            panel_DSVacxin.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void dsVacXin_leave(object sender, EventArgs e)
+        {
+            panel_DSVacxin.BackColor = Color.FromArgb(38, 21, 92);
+        }
+        private void dsNhanVien_enter(object sender, EventArgs e)
+        {
+            panel_DSNhanVien.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void dsNhanVien_leave(object sender, EventArgs e)
+        {
+            panel_DSNhanVien.BackColor = Color.FromArgb(38, 21, 92);
+        }
+
+        private void datMuaVacxin_enter(object sender, EventArgs e)
+        {
+            panel_DatMuaVacXin.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void datMuaVacxin_leave(object sender, EventArgs e)
+        {
+            panel_DatMuaVacXin.BackColor = Color.FromArgb(38, 21, 92);
+        }
+        private void xemLich_enter(object sender, EventArgs e)
+        {
+            panel_XemLich.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void xemLich_leave(object sender, EventArgs e)
+        {
+            panel_XemLich.BackColor = Color.FromArgb(38, 21, 92);
+        }
+        private void phanCong_enter(object sender, EventArgs e)
+        {
+            panel_PhanCong.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void phanCong_leave(object sender, EventArgs e)
+        {
+            panel_PhanCong.BackColor = Color.FromArgb(38, 21, 92);
+        }
+        
+        private void taiKhoan_enter(object sender, EventArgs e)
+        {
+            panel_TaiKhoan.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void taiKhoan_leave(object sender, EventArgs e)
+        {
+            panel_TaiKhoan.BackColor = Color.FromArgb(38, 21, 92);
         }
         private void DangXuat_enter(object sender, EventArgs e)
         {
@@ -95,36 +205,12 @@ namespace AnBinhApp
         {
             panel_Thoat.BackColor = Color.FromArgb(38, 21, 92);
         }
-        private void DangKyTiem_enter(object sender, EventArgs e)
-        {
-            panel_DangKyTiem.BackColor = Color.FromArgb(37, 58, 128);
-        }
-        private void DangKyTiem_leave(object sender, EventArgs e)
-        {
-            panel_DangKyTiem.BackColor = Color.FromArgb(38, 21, 92);
-        }
-        private void DSPhieuTiem_enter(object sender, EventArgs e)
-        {
-            panel_DSPhieuTiem.BackColor = Color.FromArgb(37, 58, 128);
-        }
-        private void DSPhieuTiem_leave(object sender, EventArgs e)
-        {
-            panel_DSPhieuTiem.BackColor = Color.FromArgb(38, 21, 92);
-        }
 
-        private void ThongBao_hover(object sender, EventArgs e)
-        {
-            pictureThongBao.Image = Image.FromFile("../../svg/bell hover.png");
-        }
-        private void ThongBao_leave(object sender, EventArgs e)
-        {
-            pictureThongBao.Image = Image.FromFile("../../svg/bell.png");
-        }
         private void moRongDS_click(object sender, EventArgs e)
         {
             if (ds_collapsible == true)
             {
-                pictureBox16.Image = Image.FromFile("../../svg/collapsible off.png");
+                collapsible_ds.Image = Image.FromFile("../../svg/collapsible off.png");
                 ds_collapsible = false;
 
                 panel_dsKH.Hide();
@@ -148,7 +234,7 @@ namespace AnBinhApp
             }
             else
             {
-                pictureBox16.Image = Image.FromFile("../../svg/collapsible on.png");
+                collapsible_ds.Image = Image.FromFile("../../svg/collapsible on.png");
                 ds_collapsible = true;
 
                 panel_dsKH.Show();
@@ -184,7 +270,7 @@ namespace AnBinhApp
                 panel_XemLich.Hide();
                 panel_PhanCong.Hide();
 
-                label19.Location = new Point(label19.Location.X, label19.Location.Y - 168);
+                label_taiKhoan.Location = new Point(label_taiKhoan.Location.X, label_taiKhoan.Location.Y - 168);
                 collapsible_taiKhoan.Location = new Point(collapsible_taiKhoan.Location.X, collapsible_taiKhoan.Location.Y - 168);
                 panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y - 168);
                 panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y - 168);
@@ -201,7 +287,7 @@ namespace AnBinhApp
                 panel_XemLich.Show();
                 panel_PhanCong.Show();
 
-                label19.Location = new Point(label19.Location.X, label19.Location.Y + 168);
+                label_taiKhoan.Location = new Point(label_taiKhoan.Location.X, label_taiKhoan.Location.Y + 168);
                 collapsible_taiKhoan.Location = new Point(collapsible_taiKhoan.Location.X, collapsible_taiKhoan.Location.Y + 168);
                 panel_TaiKhoan.Location = new Point(panel_TaiKhoan.Location.X, panel_TaiKhoan.Location.Y + 168);
                 panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y + 168);
@@ -234,80 +320,6 @@ namespace AnBinhApp
 
                 panel2.Show();
             }
-        }
-        private void QTTC_enter(object sender, EventArgs e)
-        {
-            panel_QTTC.BackColor = Color.FromArgb(37, 58, 128);
-        }
-        private void QTTC_leave(object sender, EventArgs e)
-        {
-            panel_QTTC.BackColor = Color.FromArgb(38, 21, 92);
-        }
-        private void dsKH_enter(object sender, EventArgs e)
-        {
-            panel_dsKH.BackColor = Color.FromArgb(37, 58, 128);
-        }
-        private void dsKH_leave(object sender, EventArgs e)
-        {
-            panel_dsKH.BackColor = Color.FromArgb(38, 21, 92);
-        }
-        private void dsVacXin_enter(object sender, EventArgs e)
-        {
-            panel_DSVacxin.BackColor = Color.FromArgb(37, 58, 128);
-        }
-        private void dsVacXin_leave(object sender, EventArgs e)
-        {
-            panel_DSVacxin.BackColor = Color.FromArgb(38, 21, 92);
-        }
-
-        private void dsNhanVien_enter(object sender, EventArgs e)
-        {
-            panel_DSNhanVien.BackColor = Color.FromArgb(37, 58, 128);
-        }
-
-        private void dsNhanVien_leave(object sender, EventArgs e)
-        {
-            panel_DSNhanVien.BackColor = Color.FromArgb(38, 21, 92);
-        }
-
-        private void panel_DatMuaVacXin_MouseEnter(object sender, EventArgs e)
-        {
-            panel_DatMuaVacXin.BackColor = Color.FromArgb(37, 58, 128);
-        }
-
-        private void panel_DatMuaVacXin_MouseLeave(object sender, EventArgs e)
-        {
-            panel_DatMuaVacXin.BackColor = Color.FromArgb(38, 21, 92);
-        }
-
-        private void xemLich_enter(object sender, EventArgs e)
-        {
-            panel_XemLich.BackColor = Color.FromArgb(37, 58, 128);
-        }
-
-        private void xemLich_leave(object sender, EventArgs e)
-        {
-            panel_XemLich.BackColor = Color.FromArgb(38, 21, 92);
-        }
-
-        private void phanCong_enter(object sender, EventArgs e)
-        {
-            panel_PhanCong.BackColor = Color.FromArgb(37, 58, 128);
-        }
-
-        private void phanCong_leave(object sender, EventArgs e)
-        {
-            panel_PhanCong.BackColor = Color.FromArgb(38, 21, 92);
-        }
-
-        private void taiKhoan_enter(object sender, EventArgs e)
-        {
-            panel_TaiKhoan.BackColor = Color.FromArgb(37, 58, 128);
-        }
-
-        private void taiKhoan_leave(object sender, EventArgs e)
-        {
-            panel_TaiKhoan.BackColor = Color.FromArgb(38, 21, 92);
         }
 
         // End of
@@ -518,14 +530,14 @@ namespace AnBinhApp
 
         private void clickReturnVacRec(object sender, EventArgs e)
         {
-            tab.SelectTab("vaccineRegisterTab");
+            tab.SelectTab("DangKyTiemTab");
         }
 
         private void clickContinueMethod(object sender, EventArgs e)
         {
             if (fullName_textBox.Text == "")
                 MessageBox.Show("Xin vui lòng nhập đầy đủ thông tin", "Thông báo");
-            if (!maleBtn.Checked && !femaleBtn.Checked && !otherGenderBtn.Checked)
+            else if (!maleBtn.Checked && !femaleBtn.Checked && !otherGenderBtn.Checked)
                 MessageBox.Show("Xin vui lòng chọn giới tính", "Thông báo");
             else if (!packageCheck.Checked && !singleCheck.Checked)
                 MessageBox.Show("Xin vui lòng chọn loại tiêm ngừa", "Thông báo");

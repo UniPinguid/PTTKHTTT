@@ -67,16 +67,6 @@ namespace AnBinhApp
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.singleVacTab = new System.Windows.Forms.TabPage();
-            this.button5 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.packageTab = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -89,6 +79,16 @@ namespace AnBinhApp
             this.option3 = new System.Windows.Forms.PictureBox();
             this.option2 = new System.Windows.Forms.PictureBox();
             this.option1 = new System.Windows.Forms.PictureBox();
+            this.singleVacTab = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.finalizationTab = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -124,7 +124,7 @@ namespace AnBinhApp
             this.label33 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.collapsible_ds = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.collapsible_taiKhoan = new System.Windows.Forms.PictureBox();
             this.label_taiKhoan = new System.Windows.Forms.Label();
@@ -179,17 +179,17 @@ namespace AnBinhApp
             this.DangKyTiemTab.SuspendLayout();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.singleVacTab.SuspendLayout();
             this.packageTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.option4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.option3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.option2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.option1)).BeginInit();
+            this.singleVacTab.SuspendLayout();
             this.finalizationTab.SuspendLayout();
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.collapsible_ds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_taiKhoan)).BeginInit();
             this.panel_TaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
@@ -226,8 +226,8 @@ namespace AnBinhApp
             // tab
             // 
             this.tab.Controls.Add(this.DangKyTiemTab);
-            this.tab.Controls.Add(this.singleVacTab);
             this.tab.Controls.Add(this.packageTab);
+            this.tab.Controls.Add(this.singleVacTab);
             this.tab.Controls.Add(this.finalizationTab);
             this.tab.ItemSize = new System.Drawing.Size(40, 21);
             this.tab.Location = new System.Drawing.Point(303, -26);
@@ -576,6 +576,7 @@ namespace AnBinhApp
             this.birthday_picker.Size = new System.Drawing.Size(155, 30);
             this.birthday_picker.TabIndex = 8;
             this.birthday_picker.Value = new System.DateTime(2022, 5, 30, 0, 0, 0, 0);
+            this.birthday_picker.ValueChanged += new System.EventHandler(this.getAge);
             // 
             // label13
             // 
@@ -645,6 +646,160 @@ namespace AnBinhApp
             this.pictureBox7.Size = new System.Drawing.Size(218, 269);
             this.pictureBox7.TabIndex = 11;
             this.pictureBox7.TabStop = false;
+            // 
+            // packageTab
+            // 
+            this.packageTab.Controls.Add(this.button2);
+            this.packageTab.Controls.Add(this.button1);
+            this.packageTab.Controls.Add(this.label23);
+            this.packageTab.Controls.Add(this.label22);
+            this.packageTab.Controls.Add(this.label20);
+            this.packageTab.Controls.Add(this.label17);
+            this.packageTab.Controls.Add(this.label16);
+            this.packageTab.Controls.Add(this.option4);
+            this.packageTab.Controls.Add(this.option3);
+            this.packageTab.Controls.Add(this.option2);
+            this.packageTab.Controls.Add(this.option1);
+            this.packageTab.Location = new System.Drawing.Point(4, 25);
+            this.packageTab.Name = "packageTab";
+            this.packageTab.Padding = new System.Windows.Forms.Padding(3);
+            this.packageTab.Size = new System.Drawing.Size(1182, 895);
+            this.packageTab.TabIndex = 3;
+            this.packageTab.Text = "2.1";
+            this.packageTab.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.button2.Location = new System.Drawing.Point(94, 722);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(193, 57);
+            this.button2.TabIndex = 32;
+            this.button2.Text = "❮ Quay lại";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.clickReturnVacRec);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(894, 722);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(193, 57);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Tiếp tục ❯";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.clickTiepTucCuoiCung);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Inter Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label23.Location = new System.Drawing.Point(103, 646);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(185, 46);
+            this.label23.TabIndex = 11;
+            this.label23.Text = "Gói tiêm cho phụ nữ\r\nmang thai";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Inter Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label22.Location = new System.Drawing.Point(670, 349);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(149, 23);
+            this.label22.TabIndex = 9;
+            this.label22.Text = "Gói tiêm thường";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Inter Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label20.Location = new System.Drawing.Point(377, 349);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(187, 46);
+            this.label20.TabIndex = 7;
+            this.label20.Text = "Gói tiêm cho trẻ em \r\n0 - 24 tháng tuổi";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Inter Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label17.Location = new System.Drawing.Point(103, 349);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(187, 46);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "Gói tiêm cho trẻ em \r\n0 - 12 tháng tuổi";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Inter SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
+            this.label16.Location = new System.Drawing.Point(43, 66);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(203, 34);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Chọn gói tiêm";
+            // 
+            // option4
+            // 
+            this.option4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.option4.Image = ((System.Drawing.Image)(resources.GetObject("option4.Image")));
+            this.option4.Location = new System.Drawing.Point(94, 433);
+            this.option4.Name = "option4";
+            this.option4.Size = new System.Drawing.Size(200, 200);
+            this.option4.TabIndex = 10;
+            this.option4.TabStop = false;
+            this.option4.Click += new System.EventHandler(this.option4_click);
+            // 
+            // option3
+            // 
+            this.option3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.option3.Image = ((System.Drawing.Image)(resources.GetObject("option3.Image")));
+            this.option3.Location = new System.Drawing.Point(642, 136);
+            this.option3.Name = "option3";
+            this.option3.Size = new System.Drawing.Size(200, 200);
+            this.option3.TabIndex = 8;
+            this.option3.TabStop = false;
+            this.option3.Click += new System.EventHandler(this.option3_click);
+            // 
+            // option2
+            // 
+            this.option2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.option2.Image = ((System.Drawing.Image)(resources.GetObject("option2.Image")));
+            this.option2.Location = new System.Drawing.Point(368, 136);
+            this.option2.Name = "option2";
+            this.option2.Size = new System.Drawing.Size(200, 200);
+            this.option2.TabIndex = 6;
+            this.option2.TabStop = false;
+            this.option2.Click += new System.EventHandler(this.option2_click);
+            // 
+            // option1
+            // 
+            this.option1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.option1.Image = ((System.Drawing.Image)(resources.GetObject("option1.Image")));
+            this.option1.Location = new System.Drawing.Point(94, 136);
+            this.option1.Name = "option1";
+            this.option1.Size = new System.Drawing.Size(200, 200);
+            this.option1.TabIndex = 4;
+            this.option1.TabStop = false;
+            this.option1.Click += new System.EventHandler(this.option1_click);
             // 
             // singleVacTab
             // 
@@ -768,154 +923,6 @@ namespace AnBinhApp
             this.label24.TabIndex = 2;
             this.label24.Text = "Chọn thời gian tiêm lẻ";
             // 
-            // packageTab
-            // 
-            this.packageTab.Controls.Add(this.button2);
-            this.packageTab.Controls.Add(this.button1);
-            this.packageTab.Controls.Add(this.label23);
-            this.packageTab.Controls.Add(this.label22);
-            this.packageTab.Controls.Add(this.label20);
-            this.packageTab.Controls.Add(this.label17);
-            this.packageTab.Controls.Add(this.label16);
-            this.packageTab.Controls.Add(this.option4);
-            this.packageTab.Controls.Add(this.option3);
-            this.packageTab.Controls.Add(this.option2);
-            this.packageTab.Controls.Add(this.option1);
-            this.packageTab.Location = new System.Drawing.Point(4, 25);
-            this.packageTab.Name = "packageTab";
-            this.packageTab.Padding = new System.Windows.Forms.Padding(3);
-            this.packageTab.Size = new System.Drawing.Size(1182, 895);
-            this.packageTab.TabIndex = 3;
-            this.packageTab.Text = "2.1";
-            this.packageTab.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.button2.Location = new System.Drawing.Point(94, 722);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(193, 57);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "❮ Quay lại";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(894, 722);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(193, 57);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Tiếp tục ❯";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Inter Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label23.Location = new System.Drawing.Point(103, 646);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(185, 46);
-            this.label23.TabIndex = 11;
-            this.label23.Text = "Gói tiêm cho phụ nữ\r\nmang thai";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Inter Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label22.Location = new System.Drawing.Point(670, 349);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(149, 23);
-            this.label22.TabIndex = 9;
-            this.label22.Text = "Gói tiêm thường";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Inter Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label20.Location = new System.Drawing.Point(377, 349);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(187, 46);
-            this.label20.TabIndex = 7;
-            this.label20.Text = "Gói tiêm cho trẻ em \r\n0 - 24 tháng tuổi";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Inter Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label17.Location = new System.Drawing.Point(103, 349);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(187, 46);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "Gói tiêm cho trẻ em \r\n0 - 12 tháng tuổi";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Inter SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
-            this.label16.Location = new System.Drawing.Point(43, 66);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(203, 34);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "Chọn gói tiêm";
-            // 
-            // option4
-            // 
-            this.option4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.option4.Image = ((System.Drawing.Image)(resources.GetObject("option4.Image")));
-            this.option4.Location = new System.Drawing.Point(94, 433);
-            this.option4.Name = "option4";
-            this.option4.Size = new System.Drawing.Size(200, 200);
-            this.option4.TabIndex = 10;
-            this.option4.TabStop = false;
-            // 
-            // option3
-            // 
-            this.option3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.option3.Image = ((System.Drawing.Image)(resources.GetObject("option3.Image")));
-            this.option3.Location = new System.Drawing.Point(642, 136);
-            this.option3.Name = "option3";
-            this.option3.Size = new System.Drawing.Size(200, 200);
-            this.option3.TabIndex = 8;
-            this.option3.TabStop = false;
-            // 
-            // option2
-            // 
-            this.option2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.option2.Image = ((System.Drawing.Image)(resources.GetObject("option2.Image")));
-            this.option2.Location = new System.Drawing.Point(368, 136);
-            this.option2.Name = "option2";
-            this.option2.Size = new System.Drawing.Size(200, 200);
-            this.option2.TabIndex = 6;
-            this.option2.TabStop = false;
-            // 
-            // option1
-            // 
-            this.option1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.option1.Image = ((System.Drawing.Image)(resources.GetObject("option1.Image")));
-            this.option1.Location = new System.Drawing.Point(94, 136);
-            this.option1.Name = "option1";
-            this.option1.Size = new System.Drawing.Size(200, 200);
-            this.option1.TabIndex = 4;
-            this.option1.TabStop = false;
-            // 
             // finalizationTab
             // 
             this.finalizationTab.Controls.Add(this.button6);
@@ -959,6 +966,7 @@ namespace AnBinhApp
             this.button7.TabIndex = 37;
             this.button7.Text = "❮ Quay lại";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.clickQuayLaiGoiLe);
             // 
             // label45
             // 
@@ -1315,7 +1323,7 @@ namespace AnBinhApp
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
-            this.panel1.Controls.Add(this.pictureBox16);
+            this.panel1.Controls.Add(this.collapsible_ds);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.collapsible_taiKhoan);
             this.panel1.Controls.Add(this.label_taiKhoan);
@@ -1346,15 +1354,16 @@ namespace AnBinhApp
             this.panel1.Size = new System.Drawing.Size(330, 840);
             this.panel1.TabIndex = 3;
             // 
-            // pictureBox16
+            // collapsible_ds
             // 
-            this.pictureBox16.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
-            this.pictureBox16.Location = new System.Drawing.Point(122, 382);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(25, 14);
-            this.pictureBox16.TabIndex = 11;
-            this.pictureBox16.TabStop = false;
+            this.collapsible_ds.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.collapsible_ds.Image = ((System.Drawing.Image)(resources.GetObject("collapsible_ds.Image")));
+            this.collapsible_ds.Location = new System.Drawing.Point(122, 382);
+            this.collapsible_ds.Name = "collapsible_ds";
+            this.collapsible_ds.Size = new System.Drawing.Size(25, 14);
+            this.collapsible_ds.TabIndex = 11;
+            this.collapsible_ds.TabStop = false;
+            this.collapsible_ds.Click += new System.EventHandler(this.moRongDS_click);
             // 
             // label6
             // 
@@ -1376,6 +1385,7 @@ namespace AnBinhApp
             this.collapsible_taiKhoan.Size = new System.Drawing.Size(25, 14);
             this.collapsible_taiKhoan.TabIndex = 15;
             this.collapsible_taiKhoan.TabStop = false;
+            this.collapsible_taiKhoan.Click += new System.EventHandler(this.moRongTaiKhoan_click);
             // 
             // label_taiKhoan
             // 
@@ -1404,6 +1414,8 @@ namespace AnBinhApp
             this.panel_TaiKhoan.Name = "panel_TaiKhoan";
             this.panel_TaiKhoan.Size = new System.Drawing.Size(278, 56);
             this.panel_TaiKhoan.TabIndex = 5;
+            this.panel_TaiKhoan.MouseEnter += new System.EventHandler(this.taiKhoan_enter);
+            this.panel_TaiKhoan.MouseLeave += new System.EventHandler(this.taiKhoan_leave);
             // 
             // pictureBox22
             // 
@@ -1414,6 +1426,8 @@ namespace AnBinhApp
             this.pictureBox22.Size = new System.Drawing.Size(20, 24);
             this.pictureBox22.TabIndex = 2;
             this.pictureBox22.TabStop = false;
+            this.pictureBox22.MouseEnter += new System.EventHandler(this.taiKhoan_enter);
+            this.pictureBox22.MouseLeave += new System.EventHandler(this.taiKhoan_leave);
             // 
             // label2
             // 
@@ -1426,6 +1440,8 @@ namespace AnBinhApp
             this.label2.Size = new System.Drawing.Size(95, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tài khoản";
+            this.label2.MouseEnter += new System.EventHandler(this.taiKhoan_enter);
+            this.label2.MouseLeave += new System.EventHandler(this.taiKhoan_leave);
             // 
             // panel_QTTC
             // 
@@ -1436,6 +1452,8 @@ namespace AnBinhApp
             this.panel_QTTC.Name = "panel_QTTC";
             this.panel_QTTC.Size = new System.Drawing.Size(278, 56);
             this.panel_QTTC.TabIndex = 7;
+            this.panel_QTTC.MouseEnter += new System.EventHandler(this.QTTC_enter);
+            this.panel_QTTC.MouseLeave += new System.EventHandler(this.QTTC_leave);
             // 
             // pictureBox21
             // 
@@ -1446,6 +1464,8 @@ namespace AnBinhApp
             this.pictureBox21.Size = new System.Drawing.Size(24, 24);
             this.pictureBox21.TabIndex = 2;
             this.pictureBox21.TabStop = false;
+            this.pictureBox21.MouseEnter += new System.EventHandler(this.QTTC_enter);
+            this.pictureBox21.MouseLeave += new System.EventHandler(this.QTTC_leave);
             // 
             // label3
             // 
@@ -1458,6 +1478,8 @@ namespace AnBinhApp
             this.label3.Size = new System.Drawing.Size(183, 21);
             this.label3.TabIndex = 1;
             this.label3.Text = "Quy trình tiêm chủng";
+            this.label3.MouseEnter += new System.EventHandler(this.QTTC_enter);
+            this.label3.MouseLeave += new System.EventHandler(this.QTTC_leave);
             // 
             // panel_PhanCong
             // 
@@ -1468,6 +1490,8 @@ namespace AnBinhApp
             this.panel_PhanCong.Name = "panel_PhanCong";
             this.panel_PhanCong.Size = new System.Drawing.Size(278, 56);
             this.panel_PhanCong.TabIndex = 13;
+            this.panel_PhanCong.MouseEnter += new System.EventHandler(this.phanCong_enter);
+            this.panel_PhanCong.MouseLeave += new System.EventHandler(this.phanCong_leave);
             // 
             // pictureBox20
             // 
@@ -1478,6 +1502,8 @@ namespace AnBinhApp
             this.pictureBox20.Size = new System.Drawing.Size(26, 26);
             this.pictureBox20.TabIndex = 2;
             this.pictureBox20.TabStop = false;
+            this.pictureBox20.MouseEnter += new System.EventHandler(this.phanCong_enter);
+            this.pictureBox20.MouseLeave += new System.EventHandler(this.phanCong_leave);
             // 
             // label4
             // 
@@ -1490,6 +1516,8 @@ namespace AnBinhApp
             this.label4.Size = new System.Drawing.Size(131, 23);
             this.label4.TabIndex = 1;
             this.label4.Text = "Phân công ca";
+            this.label4.MouseEnter += new System.EventHandler(this.phanCong_enter);
+            this.label4.MouseLeave += new System.EventHandler(this.phanCong_leave);
             // 
             // panel_XemLich
             // 
@@ -1500,6 +1528,8 @@ namespace AnBinhApp
             this.panel_XemLich.Name = "panel_XemLich";
             this.panel_XemLich.Size = new System.Drawing.Size(278, 56);
             this.panel_XemLich.TabIndex = 12;
+            this.panel_XemLich.MouseEnter += new System.EventHandler(this.xemLich_enter);
+            this.panel_XemLich.MouseLeave += new System.EventHandler(this.xemLich_leave);
             // 
             // pictureBox19
             // 
@@ -1510,6 +1540,8 @@ namespace AnBinhApp
             this.pictureBox19.Size = new System.Drawing.Size(26, 26);
             this.pictureBox19.TabIndex = 2;
             this.pictureBox19.TabStop = false;
+            this.pictureBox19.MouseEnter += new System.EventHandler(this.xemLich_enter);
+            this.pictureBox19.MouseLeave += new System.EventHandler(this.xemLich_leave);
             // 
             // label5
             // 
@@ -1522,6 +1554,8 @@ namespace AnBinhApp
             this.label5.Size = new System.Drawing.Size(160, 23);
             this.label5.TabIndex = 1;
             this.label5.Text = "Xem lịch làm việc";
+            this.label5.MouseEnter += new System.EventHandler(this.xemLich_enter);
+            this.label5.MouseLeave += new System.EventHandler(this.xemLich_leave);
             // 
             // panel_DatMuaVacXin
             // 
@@ -1532,6 +1566,8 @@ namespace AnBinhApp
             this.panel_DatMuaVacXin.Name = "panel_DatMuaVacXin";
             this.panel_DatMuaVacXin.Size = new System.Drawing.Size(278, 56);
             this.panel_DatMuaVacXin.TabIndex = 11;
+            this.panel_DatMuaVacXin.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
+            this.panel_DatMuaVacXin.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
             // 
             // pictureBox18
             // 
@@ -1542,6 +1578,8 @@ namespace AnBinhApp
             this.pictureBox18.Size = new System.Drawing.Size(26, 26);
             this.pictureBox18.TabIndex = 2;
             this.pictureBox18.TabStop = false;
+            this.pictureBox18.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
+            this.pictureBox18.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
             // 
             // label7
             // 
@@ -1554,6 +1592,8 @@ namespace AnBinhApp
             this.label7.Size = new System.Drawing.Size(147, 23);
             this.label7.TabIndex = 1;
             this.label7.Text = "Đặt mua vacxin";
+            this.label7.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
+            this.label7.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
             // 
             // collapsible_chucNang
             // 
@@ -1564,6 +1604,7 @@ namespace AnBinhApp
             this.collapsible_chucNang.Size = new System.Drawing.Size(25, 14);
             this.collapsible_chucNang.TabIndex = 13;
             this.collapsible_chucNang.TabStop = false;
+            this.collapsible_chucNang.Click += new System.EventHandler(this.moRongChucNang_click);
             // 
             // label_chucNang
             // 
@@ -1585,6 +1626,8 @@ namespace AnBinhApp
             this.panel_DSNhanVien.Name = "panel_DSNhanVien";
             this.panel_DSNhanVien.Size = new System.Drawing.Size(278, 56);
             this.panel_DSNhanVien.TabIndex = 10;
+            this.panel_DSNhanVien.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
+            this.panel_DSNhanVien.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
             // 
             // pictureBox15
             // 
@@ -1595,6 +1638,8 @@ namespace AnBinhApp
             this.pictureBox15.Size = new System.Drawing.Size(26, 26);
             this.pictureBox15.TabIndex = 2;
             this.pictureBox15.TabStop = false;
+            this.pictureBox15.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
+            this.pictureBox15.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
             // 
             // label10
             // 
@@ -1607,6 +1652,8 @@ namespace AnBinhApp
             this.label10.Size = new System.Drawing.Size(98, 23);
             this.label10.TabIndex = 1;
             this.label10.Text = "Nhân viên";
+            this.label10.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
+            this.label10.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
             // 
             // panel_dsKH
             // 
@@ -1617,6 +1664,8 @@ namespace AnBinhApp
             this.panel_dsKH.Name = "panel_dsKH";
             this.panel_dsKH.Size = new System.Drawing.Size(278, 56);
             this.panel_dsKH.TabIndex = 8;
+            this.panel_dsKH.MouseEnter += new System.EventHandler(this.dsKH_enter);
+            this.panel_dsKH.MouseLeave += new System.EventHandler(this.dsKH_leave);
             // 
             // pictureBox1
             // 
@@ -1627,6 +1676,8 @@ namespace AnBinhApp
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.dsKH_enter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.dsKH_leave);
             // 
             // label58
             // 
@@ -1639,6 +1690,8 @@ namespace AnBinhApp
             this.label58.Size = new System.Drawing.Size(115, 23);
             this.label58.TabIndex = 1;
             this.label58.Text = "Khách hàng";
+            this.label58.MouseEnter += new System.EventHandler(this.dsKH_enter);
+            this.label58.MouseLeave += new System.EventHandler(this.dsKH_leave);
             // 
             // panel_DSVacxin
             // 
@@ -1649,6 +1702,8 @@ namespace AnBinhApp
             this.panel_DSVacxin.Name = "panel_DSVacxin";
             this.panel_DSVacxin.Size = new System.Drawing.Size(278, 56);
             this.panel_DSVacxin.TabIndex = 8;
+            this.panel_DSVacxin.MouseEnter += new System.EventHandler(this.dsVacXin_enter);
+            this.panel_DSVacxin.MouseLeave += new System.EventHandler(this.dsVacXin_leave);
             // 
             // pictureBox2
             // 
@@ -1659,6 +1714,8 @@ namespace AnBinhApp
             this.pictureBox2.Size = new System.Drawing.Size(26, 26);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.dsVacXin_enter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.dsVacXin_leave);
             // 
             // label59
             // 
@@ -1671,6 +1728,8 @@ namespace AnBinhApp
             this.label59.Size = new System.Drawing.Size(180, 23);
             this.label59.TabIndex = 1;
             this.label59.Text = "Khả năng cung cấp";
+            this.label59.MouseEnter += new System.EventHandler(this.dsVacXin_enter);
+            this.label59.MouseLeave += new System.EventHandler(this.dsVacXin_leave);
             // 
             // picture_dauThongBao
             // 
@@ -1703,6 +1762,8 @@ namespace AnBinhApp
             this.panel_DSPhieuTiem.Name = "panel_DSPhieuTiem";
             this.panel_DSPhieuTiem.Size = new System.Drawing.Size(278, 56);
             this.panel_DSPhieuTiem.TabIndex = 7;
+            this.panel_DSPhieuTiem.MouseEnter += new System.EventHandler(this.DSPhieuTiem_enter);
+            this.panel_DSPhieuTiem.MouseLeave += new System.EventHandler(this.DSPhieuTiem_leave);
             // 
             // pictureBox6
             // 
@@ -1713,6 +1774,8 @@ namespace AnBinhApp
             this.pictureBox6.Size = new System.Drawing.Size(26, 26);
             this.pictureBox6.TabIndex = 2;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.MouseEnter += new System.EventHandler(this.DSPhieuTiem_enter);
+            this.pictureBox6.MouseLeave += new System.EventHandler(this.DSPhieuTiem_leave);
             // 
             // label60
             // 
@@ -1725,9 +1788,12 @@ namespace AnBinhApp
             this.label60.Size = new System.Drawing.Size(177, 23);
             this.label60.TabIndex = 1;
             this.label60.Text = "Phiếu đăng ký tiêm";
+            this.label60.MouseEnter += new System.EventHandler(this.DSPhieuTiem_enter);
+            this.label60.MouseLeave += new System.EventHandler(this.DSPhieuTiem_leave);
             // 
             // panel_DangKyTiem
             // 
+            this.panel_DangKyTiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(155)))), ((int)(((byte)(242)))));
             this.panel_DangKyTiem.Controls.Add(this.pictureBox5);
             this.panel_DangKyTiem.Controls.Add(this.label61);
             this.panel_DangKyTiem.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1767,6 +1833,9 @@ namespace AnBinhApp
             this.panel_TrangChu.Name = "panel_TrangChu";
             this.panel_TrangChu.Size = new System.Drawing.Size(278, 56);
             this.panel_TrangChu.TabIndex = 5;
+            this.panel_TrangChu.Click += new System.EventHandler(this.TrangChu_click);
+            this.panel_TrangChu.MouseEnter += new System.EventHandler(this.TrangChu_enter);
+            this.panel_TrangChu.MouseLeave += new System.EventHandler(this.TrangChu_leave);
             // 
             // pictureBox4
             // 
@@ -1777,6 +1846,9 @@ namespace AnBinhApp
             this.pictureBox4.Size = new System.Drawing.Size(25, 24);
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.TrangChu_click);
+            this.pictureBox4.MouseEnter += new System.EventHandler(this.TrangChu_enter);
+            this.pictureBox4.MouseLeave += new System.EventHandler(this.TrangChu_leave);
             // 
             // label62
             // 
@@ -1789,6 +1861,9 @@ namespace AnBinhApp
             this.label62.Size = new System.Drawing.Size(99, 23);
             this.label62.TabIndex = 1;
             this.label62.Text = "Trang chủ";
+            this.label62.Click += new System.EventHandler(this.TrangChu_click);
+            this.label62.MouseEnter += new System.EventHandler(this.TrangChu_enter);
+            this.label62.MouseLeave += new System.EventHandler(this.TrangChu_leave);
             // 
             // username
             // 
@@ -1821,6 +1896,8 @@ namespace AnBinhApp
             this.panel_DangXuat.Name = "panel_DangXuat";
             this.panel_DangXuat.Size = new System.Drawing.Size(278, 56);
             this.panel_DangXuat.TabIndex = 4;
+            this.panel_DangXuat.MouseEnter += new System.EventHandler(this.DangXuat_enter);
+            this.panel_DangXuat.MouseLeave += new System.EventHandler(this.DangXuat_leave);
             // 
             // pictureBox3
             // 
@@ -1831,6 +1908,8 @@ namespace AnBinhApp
             this.pictureBox3.Size = new System.Drawing.Size(29, 24);
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.MouseEnter += new System.EventHandler(this.DangXuat_enter);
+            this.pictureBox3.MouseLeave += new System.EventHandler(this.DangXuat_leave);
             // 
             // label64
             // 
@@ -1843,6 +1922,8 @@ namespace AnBinhApp
             this.label64.Size = new System.Drawing.Size(101, 23);
             this.label64.TabIndex = 1;
             this.label64.Text = "Đăng xuất";
+            this.label64.MouseEnter += new System.EventHandler(this.DangXuat_enter);
+            this.label64.MouseLeave += new System.EventHandler(this.DangXuat_leave);
             // 
             // panel_Thoat
             // 
@@ -1853,6 +1934,8 @@ namespace AnBinhApp
             this.panel_Thoat.Name = "panel_Thoat";
             this.panel_Thoat.Size = new System.Drawing.Size(278, 56);
             this.panel_Thoat.TabIndex = 3;
+            this.panel_Thoat.MouseEnter += new System.EventHandler(this.Thoat_enter);
+            this.panel_Thoat.MouseLeave += new System.EventHandler(this.Thoat_leave);
             // 
             // pictureBox9
             // 
@@ -1863,6 +1946,8 @@ namespace AnBinhApp
             this.pictureBox9.Size = new System.Drawing.Size(24, 24);
             this.pictureBox9.TabIndex = 2;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.MouseEnter += new System.EventHandler(this.Thoat_enter);
+            this.pictureBox9.MouseLeave += new System.EventHandler(this.Thoat_leave);
             // 
             // label65
             // 
@@ -1875,6 +1960,8 @@ namespace AnBinhApp
             this.label65.Size = new System.Drawing.Size(62, 23);
             this.label65.TabIndex = 1;
             this.label65.Text = "Thoát";
+            this.label65.MouseEnter += new System.EventHandler(this.Thoat_enter);
+            this.label65.MouseLeave += new System.EventHandler(this.Thoat_leave);
             // 
             // pictureBox10
             // 
@@ -1901,14 +1988,14 @@ namespace AnBinhApp
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.singleVacTab.ResumeLayout(false);
-            this.singleVacTab.PerformLayout();
             this.packageTab.ResumeLayout(false);
             this.packageTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.option4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.option3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.option2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.option1)).EndInit();
+            this.singleVacTab.ResumeLayout(false);
+            this.singleVacTab.PerformLayout();
             this.finalizationTab.ResumeLayout(false);
             this.finalizationTab.PerformLayout();
             this.panel15.ResumeLayout(false);
@@ -1916,7 +2003,7 @@ namespace AnBinhApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.collapsible_ds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_taiKhoan)).EndInit();
             this.panel_TaiKhoan.ResumeLayout(false);
             this.panel_TaiKhoan.PerformLayout();
@@ -2060,7 +2147,7 @@ namespace AnBinhApp
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.PictureBox collapsible_ds;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox collapsible_taiKhoan;
         private System.Windows.Forms.Label label_taiKhoan;
