@@ -52,6 +52,12 @@
     <Compile Include="DangKyTiemNgua.Designer.cs">
       <DependentUpon>DangKyTiemNgua.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatMuaVacxin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatMuaVacxin.Designer.cs">
+      <DependentUpon>DatMuaVacxin.cs</DependentUpon>
+    </Compile>
     <Compile Include="DSPhieuTiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="DangKyTiemNgua.resx">
       <DependentUpon>DangKyTiemNgua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatMuaVacxin.resx">
+      <DependentUpon>DatMuaVacxin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DSPhieuTiem.resx">
       <DependentUpon>DSPhieuTiem.cs</DependentUpon>

@@ -33,7 +33,7 @@ namespace AnBinhApp
             }
             else
             {
-                pictureBox10.Hide();
+                //
             }
         }
         private void sideBarCollapsible(bool ds_collapsible, bool chucnang_collapsible, bool taikhoan_collapsible)
