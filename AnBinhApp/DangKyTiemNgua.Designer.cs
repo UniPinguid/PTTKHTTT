@@ -1752,6 +1752,9 @@ namespace AnBinhApp
             this.pictureThongBao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureThongBao.TabIndex = 8;
             this.pictureThongBao.TabStop = false;
+            this.pictureThongBao.Click += new System.EventHandler(this.ThongBao_click);
+            this.pictureThongBao.MouseEnter += new System.EventHandler(this.ThongBao_enter);
+            this.pictureThongBao.MouseLeave += new System.EventHandler(this.ThongBao_leave);
             // 
             // panel_DSPhieuTiem
             // 
@@ -1762,8 +1765,8 @@ namespace AnBinhApp
             this.panel_DSPhieuTiem.Name = "panel_DSPhieuTiem";
             this.panel_DSPhieuTiem.Size = new System.Drawing.Size(278, 56);
             this.panel_DSPhieuTiem.TabIndex = 7;
-            this.panel_DSPhieuTiem.MouseEnter += new System.EventHandler(this.DSPhieuTiem_enter);
-            this.panel_DSPhieuTiem.MouseLeave += new System.EventHandler(this.DSPhieuTiem_leave);
+            this.panel_DSPhieuTiem.MouseEnter += new System.EventHandler(this.dsPhieuTiem_enter);
+            this.panel_DSPhieuTiem.MouseLeave += new System.EventHandler(this.dsPhieuTiem_leave);
             // 
             // pictureBox6
             // 
@@ -1774,8 +1777,8 @@ namespace AnBinhApp
             this.pictureBox6.Size = new System.Drawing.Size(26, 26);
             this.pictureBox6.TabIndex = 2;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.MouseEnter += new System.EventHandler(this.DSPhieuTiem_enter);
-            this.pictureBox6.MouseLeave += new System.EventHandler(this.DSPhieuTiem_leave);
+            this.pictureBox6.MouseEnter += new System.EventHandler(this.dsPhieuTiem_enter);
+            this.pictureBox6.MouseLeave += new System.EventHandler(this.dsPhieuTiem_leave);
             // 
             // label60
             // 
@@ -1788,8 +1791,8 @@ namespace AnBinhApp
             this.label60.Size = new System.Drawing.Size(177, 23);
             this.label60.TabIndex = 1;
             this.label60.Text = "Phiếu đăng ký tiêm";
-            this.label60.MouseEnter += new System.EventHandler(this.DSPhieuTiem_enter);
-            this.label60.MouseLeave += new System.EventHandler(this.DSPhieuTiem_leave);
+            this.label60.MouseEnter += new System.EventHandler(this.dsPhieuTiem_enter);
+            this.label60.MouseLeave += new System.EventHandler(this.dsPhieuTiem_leave);
             // 
             // panel_DangKyTiem
             // 
@@ -1896,6 +1899,7 @@ namespace AnBinhApp
             this.panel_DangXuat.Name = "panel_DangXuat";
             this.panel_DangXuat.Size = new System.Drawing.Size(278, 56);
             this.panel_DangXuat.TabIndex = 4;
+            this.panel_DangXuat.Click += new System.EventHandler(this.DangXuat_click);
             this.panel_DangXuat.MouseEnter += new System.EventHandler(this.DangXuat_enter);
             this.panel_DangXuat.MouseLeave += new System.EventHandler(this.DangXuat_leave);
             // 
@@ -1908,6 +1912,7 @@ namespace AnBinhApp
             this.pictureBox3.Size = new System.Drawing.Size(29, 24);
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.DangXuat_click);
             this.pictureBox3.MouseEnter += new System.EventHandler(this.DangXuat_enter);
             this.pictureBox3.MouseLeave += new System.EventHandler(this.DangXuat_leave);
             // 
@@ -1922,6 +1927,7 @@ namespace AnBinhApp
             this.label64.Size = new System.Drawing.Size(101, 23);
             this.label64.TabIndex = 1;
             this.label64.Text = "Đăng xuất";
+            this.label64.Click += new System.EventHandler(this.DangXuat_click);
             this.label64.MouseEnter += new System.EventHandler(this.DangXuat_enter);
             this.label64.MouseLeave += new System.EventHandler(this.DangXuat_leave);
             // 

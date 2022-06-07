@@ -52,11 +52,23 @@
     <Compile Include="DangKyTiemNgua.Designer.cs">
       <DependentUpon>DangKyTiemNgua.cs</DependentUpon>
     </Compile>
+    <Compile Include="DSPhieuTiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSPhieuTiem.Designer.cs">
+      <DependentUpon>DSPhieuTiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ThanhToan.Designer.cs">
       <DependentUpon>ThanhToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongBao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongBao.Designer.cs">
+      <DependentUpon>ThongBao.cs</DependentUpon>
     </Compile>
     <Compile Include="TrangChu.cs">
       <SubType>Form</SubType>
@@ -87,8 +99,14 @@
     <EmbeddedResource Include="DangKyTiemNgua.resx">
       <DependentUpon>DangKyTiemNgua.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DSPhieuTiem.resx">
+      <DependentUpon>DSPhieuTiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongBao.resx">
+      <DependentUpon>ThongBao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>
