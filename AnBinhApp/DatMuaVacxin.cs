@@ -427,6 +427,14 @@ namespace AnBinhApp
             }
         }
 
+        private void clickHoanTat(object sender, EventArgs e)
+        {
+            HienThi thanhCong = new HienThi();
+            thanhCong.Show();
+            thanhCong.messageShow("success", "Đặt mua vắc xin thành công!", "Hệ thống sẽ gửi cho bạn thông báo\ntrong vòng 24 giờ");
+            this.Close();
+        }
+
         // End of
         // Transitioning
     }

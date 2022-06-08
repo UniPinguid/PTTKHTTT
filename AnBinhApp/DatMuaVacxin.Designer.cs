@@ -63,6 +63,29 @@ namespace AnBinhApp
             this.label1 = new System.Windows.Forms.Label();
             this.panel_Thoat = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.dGV_listVaccine = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.searchForm = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label_maVacxin = new System.Windows.Forms.Label();
+            this.label_tenVacxin = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label_quocGia = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label_fullName = new System.Windows.Forms.Label();
+            this.label_sdt = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.soLuongVacxin = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.collapsible_ds = new System.Windows.Forms.PictureBox();
             this.collapsible_taiKhoan = new System.Windows.Forms.PictureBox();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
@@ -82,7 +105,6 @@ namespace AnBinhApp
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label59 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel_TaiKhoan.SuspendLayout();
             this.panel_QTTC.SuspendLayout();
@@ -97,6 +119,11 @@ namespace AnBinhApp
             this.panel_TrangChu.SuspendLayout();
             this.panel_DangXuat.SuspendLayout();
             this.panel_Thoat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_listVaccine)).BeginInit();
+            this.panel16.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.soLuongVacxin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_ds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_taiKhoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
@@ -560,6 +587,266 @@ namespace AnBinhApp
             this.label2.MouseEnter += new System.EventHandler(this.Thoat_enter);
             this.label2.MouseLeave += new System.EventHandler(this.Thoat_leave);
             // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Inter SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label59.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
+            this.label59.Location = new System.Drawing.Point(356, 65);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(229, 34);
+            this.label59.TabIndex = 6;
+            this.label59.Text = "Đặt mua vắc xin";
+            // 
+            // dGV_listVaccine
+            // 
+            this.dGV_listVaccine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_listVaccine.Location = new System.Drawing.Point(362, 246);
+            this.dGV_listVaccine.Name = "dGV_listVaccine";
+            this.dGV_listVaccine.RowHeadersWidth = 51;
+            this.dGV_listVaccine.RowTemplate.Height = 24;
+            this.dGV_listVaccine.Size = new System.Drawing.Size(598, 315);
+            this.dGV_listVaccine.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Inter Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(358, 114);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(230, 23);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Vui lòng chọn loại vắc xin";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(155)))), ((int)(((byte)(242)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(815, 175);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(145, 45);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Tìm kiếm";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // panel16
+            // 
+            this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel16.Controls.Add(this.pictureBox11);
+            this.panel16.Controls.Add(this.searchForm);
+            this.panel16.Location = new System.Drawing.Point(362, 175);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(453, 45);
+            this.panel16.TabIndex = 19;
+            // 
+            // searchForm
+            // 
+            this.searchForm.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchForm.Font = new System.Drawing.Font("Inter", 11F);
+            this.searchForm.Location = new System.Drawing.Point(60, 11);
+            this.searchForm.Name = "searchForm";
+            this.searchForm.Size = new System.Drawing.Size(388, 23);
+            this.searchForm.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label13);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.label_quocGia);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label_tenVacxin);
+            this.panel3.Controls.Add(this.label_maVacxin);
+            this.panel3.Location = new System.Drawing.Point(984, 246);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(477, 315);
+            this.panel3.TabIndex = 22;
+            // 
+            // label_maVacxin
+            // 
+            this.label_maVacxin.AutoSize = true;
+            this.label_maVacxin.Font = new System.Drawing.Font("Inter Light", 9F);
+            this.label_maVacxin.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_maVacxin.Location = new System.Drawing.Point(21, 19);
+            this.label_maVacxin.Name = "label_maVacxin";
+            this.label_maVacxin.Size = new System.Drawing.Size(74, 19);
+            this.label_maVacxin.TabIndex = 23;
+            this.label_maVacxin.Text = "mavacxin";
+            // 
+            // label_tenVacxin
+            // 
+            this.label_tenVacxin.AutoSize = true;
+            this.label_tenVacxin.Font = new System.Drawing.Font("Inter SemiBold", 15F, System.Drawing.FontStyle.Bold);
+            this.label_tenVacxin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
+            this.label_tenVacxin.Location = new System.Drawing.Point(20, 43);
+            this.label_tenVacxin.Name = "label_tenVacxin";
+            this.label_tenVacxin.Size = new System.Drawing.Size(148, 30);
+            this.label_tenVacxin.TabIndex = 24;
+            this.label_tenVacxin.Text = "Tên vắc xin";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Inter Medium", 10.5F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(21, 104);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(165, 21);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Quốc gia sản xuất";
+            // 
+            // label_quocGia
+            // 
+            this.label_quocGia.AutoSize = true;
+            this.label_quocGia.Font = new System.Drawing.Font("Inter Light", 10.5F);
+            this.label_quocGia.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_quocGia.Location = new System.Drawing.Point(192, 104);
+            this.label_quocGia.Name = "label_quocGia";
+            this.label_quocGia.Size = new System.Drawing.Size(80, 21);
+            this.label_quocGia.TabIndex = 25;
+            this.label_quocGia.Text = "quocGia";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Inter Medium", 10.5F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(21, 135);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 21);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Mô tả";
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Inter Light", 10.5F);
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label13.Location = new System.Drawing.Point(40, 163);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(411, 132);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "quocGia";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button4.Location = new System.Drawing.Point(1243, 737);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(193, 57);
+            this.button4.TabIndex = 38;
+            this.button4.Text = "Hoàn tất";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.clickHoanTat);
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(235)))), ((int)(((byte)(245)))));
+            this.panel11.Location = new System.Drawing.Point(387, 664);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(380, 3);
+            this.panel11.TabIndex = 41;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(383, 596);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(100, 24);
+            this.label21.TabIndex = 39;
+            this.label21.Text = "Họ và tên";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(235)))), ((int)(((byte)(245)))));
+            this.panel4.Location = new System.Drawing.Point(824, 664);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(350, 3);
+            this.panel4.TabIndex = 44;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(820, 596);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(135, 24);
+            this.label19.TabIndex = 42;
+            this.label19.Text = "Số điện thoại";
+            // 
+            // label_fullName
+            // 
+            this.label_fullName.AutoSize = true;
+            this.label_fullName.Font = new System.Drawing.Font("Inter Light", 11F);
+            this.label_fullName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label_fullName.Location = new System.Drawing.Point(383, 639);
+            this.label_fullName.Name = "label_fullName";
+            this.label_fullName.Size = new System.Drawing.Size(92, 23);
+            this.label_fullName.TabIndex = 45;
+            this.label_fullName.Text = "ho va ten";
+            // 
+            // label_sdt
+            // 
+            this.label_sdt.AutoSize = true;
+            this.label_sdt.Font = new System.Drawing.Font("Inter Light", 11F);
+            this.label_sdt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label_sdt.Location = new System.Drawing.Point(821, 638);
+            this.label_sdt.Name = "label_sdt";
+            this.label_sdt.Size = new System.Drawing.Size(39, 23);
+            this.label_sdt.TabIndex = 46;
+            this.label_sdt.Text = "sdt";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(1267, 596);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(169, 24);
+            this.label20.TabIndex = 47;
+            this.label20.Text = "Số lượng cần đặt";
+            // 
+            // soLuongVacxin
+            // 
+            this.soLuongVacxin.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.soLuongVacxin.Location = new System.Drawing.Point(1312, 631);
+            this.soLuongVacxin.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.soLuongVacxin.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.soLuongVacxin.Name = "soLuongVacxin";
+            this.soLuongVacxin.Size = new System.Drawing.Size(120, 32);
+            this.soLuongVacxin.TabIndex = 48;
+            this.soLuongVacxin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.soLuongVacxin.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(16, 8);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 1;
+            this.pictureBox11.TabStop = false;
+            // 
             // collapsible_ds
             // 
             this.collapsible_ds.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -783,23 +1070,26 @@ namespace AnBinhApp
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Font = new System.Drawing.Font("Inter SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
-            this.label59.Location = new System.Drawing.Point(356, 65);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(229, 34);
-            this.label59.TabIndex = 6;
-            this.label59.Text = "Đặt mua vắc xin";
-            // 
             // DatMuaVacxin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1482, 833);
+            this.Controls.Add(this.soLuongVacxin);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label_sdt);
+            this.Controls.Add(this.label_fullName);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel11);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel16);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dGV_listVaccine);
             this.Controls.Add(this.label59);
             this.Controls.Add(this.panel1);
             this.Name = "DatMuaVacxin";
@@ -833,6 +1123,13 @@ namespace AnBinhApp
             this.panel_DangXuat.PerformLayout();
             this.panel_Thoat.ResumeLayout(false);
             this.panel_Thoat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_listVaccine)).EndInit();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.soLuongVacxin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_ds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_taiKhoan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
@@ -912,5 +1209,27 @@ namespace AnBinhApp
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.DataGridView dGV_listVaccine;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.TextBox searchForm;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label_tenVacxin;
+        private System.Windows.Forms.Label label_maVacxin;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label_quocGia;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label_fullName;
+        private System.Windows.Forms.Label label_sdt;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.NumericUpDown soLuongVacxin;
     }
 }

@@ -389,6 +389,12 @@ namespace AnBinhApp
                 dsPhieuTiem_leave(sender, e);
             }
         }
+        private void DatMuaVacxin_click(object sender, EventArgs e)
+        {
+            DatMuaVacxin datMuaVacxinForm = new DatMuaVacxin();
+            datMuaVacxinForm.Show();
+            this.Hide();
+        }
         private void DangXuat_click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);

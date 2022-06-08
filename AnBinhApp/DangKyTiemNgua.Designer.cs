@@ -1566,6 +1566,7 @@ namespace AnBinhApp
             this.panel_DatMuaVacXin.Name = "panel_DatMuaVacXin";
             this.panel_DatMuaVacXin.Size = new System.Drawing.Size(278, 56);
             this.panel_DatMuaVacXin.TabIndex = 11;
+            this.panel_DatMuaVacXin.Click += new System.EventHandler(this.DatMuaVacxin_click);
             this.panel_DatMuaVacXin.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
             this.panel_DatMuaVacXin.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
             // 
@@ -1578,6 +1579,7 @@ namespace AnBinhApp
             this.pictureBox18.Size = new System.Drawing.Size(26, 26);
             this.pictureBox18.TabIndex = 2;
             this.pictureBox18.TabStop = false;
+            this.pictureBox18.Click += new System.EventHandler(this.DatMuaVacxin_click);
             this.pictureBox18.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
             this.pictureBox18.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
             // 
@@ -1592,6 +1594,7 @@ namespace AnBinhApp
             this.label7.Size = new System.Drawing.Size(147, 23);
             this.label7.TabIndex = 1;
             this.label7.Text = "Đặt mua vacxin";
+            this.label7.Click += new System.EventHandler(this.DatMuaVacxin_click);
             this.label7.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
             this.label7.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
             // 
@@ -1765,6 +1768,7 @@ namespace AnBinhApp
             this.panel_DSPhieuTiem.Name = "panel_DSPhieuTiem";
             this.panel_DSPhieuTiem.Size = new System.Drawing.Size(278, 56);
             this.panel_DSPhieuTiem.TabIndex = 7;
+            this.panel_DSPhieuTiem.Click += new System.EventHandler(this.dsPhieuTiem_click);
             this.panel_DSPhieuTiem.MouseEnter += new System.EventHandler(this.dsPhieuTiem_enter);
             this.panel_DSPhieuTiem.MouseLeave += new System.EventHandler(this.dsPhieuTiem_leave);
             // 
@@ -1777,6 +1781,7 @@ namespace AnBinhApp
             this.pictureBox6.Size = new System.Drawing.Size(26, 26);
             this.pictureBox6.TabIndex = 2;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.dsPhieuTiem_click);
             this.pictureBox6.MouseEnter += new System.EventHandler(this.dsPhieuTiem_enter);
             this.pictureBox6.MouseLeave += new System.EventHandler(this.dsPhieuTiem_leave);
             // 
@@ -1791,6 +1796,7 @@ namespace AnBinhApp
             this.label60.Size = new System.Drawing.Size(177, 23);
             this.label60.TabIndex = 1;
             this.label60.Text = "Phiếu đăng ký tiêm";
+            this.label60.Click += new System.EventHandler(this.dsPhieuTiem_click);
             this.label60.MouseEnter += new System.EventHandler(this.dsPhieuTiem_enter);
             this.label60.MouseLeave += new System.EventHandler(this.dsPhieuTiem_leave);
             // 
