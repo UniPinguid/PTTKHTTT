@@ -793,6 +793,7 @@ namespace AnBinhApp
             this.panel_DatMuaVacXin.Name = "panel_DatMuaVacXin";
             this.panel_DatMuaVacXin.Size = new System.Drawing.Size(278, 56);
             this.panel_DatMuaVacXin.TabIndex = 11;
+            this.panel_DatMuaVacXin.Click += new System.EventHandler(this.datMuaVacxin_click);
             this.panel_DatMuaVacXin.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
             this.panel_DatMuaVacXin.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
             // 
@@ -805,6 +806,7 @@ namespace AnBinhApp
             this.pictureBox18.Size = new System.Drawing.Size(26, 26);
             this.pictureBox18.TabIndex = 2;
             this.pictureBox18.TabStop = false;
+            this.pictureBox18.Click += new System.EventHandler(this.datMuaVacxin_click);
             this.pictureBox18.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
             this.pictureBox18.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
             // 
@@ -819,6 +821,7 @@ namespace AnBinhApp
             this.label5.Size = new System.Drawing.Size(147, 23);
             this.label5.TabIndex = 1;
             this.label5.Text = "Đặt mua vacxin";
+            this.label5.Click += new System.EventHandler(this.datMuaVacxin_click);
             this.label5.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
             this.label5.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
             // 

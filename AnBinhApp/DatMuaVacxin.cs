@@ -399,11 +399,9 @@ namespace AnBinhApp
                 TrangChu.is_login = false;
                 TrangChu.is_NhanVien = false;
 
-                DangNhap dangNhap = new DangNhap();
-                this.Hide();
+                this.Close();
                 TrangChu trangChu = new TrangChu();
                 trangChu.Show();
-                dangNhap.ShowDialog();
             }
             else if (dialogResult == DialogResult.No)
             {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,18 +11,28 @@ using System.Windows.Forms;
 
 namespace AnBinhApp
 {
-    public partial class DangKyTiemNgua : Form
+    public partial class XemLich : Form
     {
-        bool co_can_giam_ho = false;
+        DateTime today = DateTime.Today;
+        DateTime date = DateTime.Today;
 
-        public DangKyTiemNgua()
+        bool is_DKLichRanh_clicked = false;
+
+        public XemLich()
         {
             InitializeComponent();
             notification(TrangChu.co_ThongBao);
-            HienThiInputGiamHo(co_can_giam_ho);
             sideBarCollapsible(TrangChu.ds_collapsible, TrangChu.chucnang_collapsible, TrangChu.taikhoan_collapsible);
-        }       
+            weekCalendar(today);
 
+            btnHoanTat.Hide();
+            btnHuy.Hide();
+            label27.Hide();
+
+            get_cell_status();
+        }
+
+      
         // Start of
         // Styling and visualization
 
@@ -61,7 +72,7 @@ namespace AnBinhApp
                 panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y - 224);
 
                 panel2.Location = new Point(panel2.Location.X, panel2.Location.Y - 224);
-            }            
+            }
 
             if (chucnang_collapsible == false)
             {
@@ -77,7 +88,7 @@ namespace AnBinhApp
                 panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y - 168);
 
                 panel2.Location = new Point(panel2.Location.X, panel2.Location.Y - 168);
-            }          
+            }
 
             if (taikhoan_collapsible == false)
             {
@@ -88,7 +99,7 @@ namespace AnBinhApp
 
                 panel2.Hide();
             }
-            
+
         }
         private void ThongBao_enter(object sender, EventArgs e)
         {
@@ -181,7 +192,7 @@ namespace AnBinhApp
         {
             panel_PhanCong.BackColor = Color.FromArgb(38, 21, 92);
         }
-        
+
         private void taiKhoan_enter(object sender, EventArgs e)
         {
             panel_TaiKhoan.BackColor = Color.FromArgb(37, 58, 128);
@@ -395,13 +406,6 @@ namespace AnBinhApp
             datMuaVacxinForm.Show();
             this.Close();
         }
-        private void xemLich_click(object sender, EventArgs e)
-        {
-            XemLich xemLichForm = new XemLich();
-            xemLichForm.Show();
-            this.Close();
-        }
-
         private void DangXuat_click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);
@@ -410,7 +414,6 @@ namespace AnBinhApp
                 TrangChu.is_login = false;
                 TrangChu.is_NhanVien = false;
 
-                this.Close();
                 TrangChu trangChu = new TrangChu();
                 trangChu.Show();
             }
@@ -435,182 +438,258 @@ namespace AnBinhApp
                 Thoat_leave(sender, e);
             }
         }
+        private void clickThanhToan(object sender, EventArgs e)
+        {
+            ThanhToan thanhToanForm = new ThanhToan();
+            this.Hide();
+            thanhToanForm.ShowDialog();
+        }
 
         // End of
-        // Transitioning
+        // Transitioning        
 
-        private void getAge(object sender, EventArgs e)
+
+        // Start of
+        // Calendar
+
+        public static DateTime FirstDateOfWeek(int year, int weekOfYear)
         {
-            int years = DateTime.Now.Year - birthday_picker.Value.Year;
-            int months = DateTime.Now.Month - birthday_picker.Value.Month;
-            agePrompt.Text = "Bạn " + years.ToString() + " tuổi";
+            DateTime jan1 = new DateTime(year, 1, 1);
+            int daysOffset = DayOfWeek.Thursday - jan1.DayOfWeek;
 
-            if (years <= 12)
+            // Use first Thursday in January to get first week of the year as
+            // it will never be in Week 52/53
+            DateTime firstThursday = jan1.AddDays(daysOffset);
+            var cal = CultureInfo.CurrentCulture.Calendar;
+            int firstWeek = cal.GetWeekOfYear(firstThursday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+
+            var weekNum = weekOfYear;
+            // As we're adding days to a date in Week 1,
+            // we need to subtract 1 in order to get the right date for week #1
+            if (firstWeek == 1)
             {
-                co_can_giam_ho = true;
-                if (years <= 3)
-                {
-                    months += years * 12;
-                    agePrompt.Text = "Bạn " + months.ToString() + " tháng tuổi";
-                }
+                weekNum -= 1;
             }
-            else
-                co_can_giam_ho = false;
 
-            HienThiInputGiamHo(co_can_giam_ho);
+            // Using the first Thursday as starting week ensures that we are starting in the right year
+            // then we add number of weeks multiplied with days
+            var result = firstThursday.AddDays(weekNum * 7);
+
+            // Subtract 3 days from Thursday to get Monday, which is the first weekday in ISO8601
+            return result.AddDays(-3);
         }
 
-        private void HienThiInputGiamHo(bool check)
+        private void resetButton()
         {
-            if (check == false)
-            {
-                label21.Hide();
-                supervisorName_textBox.Hide();
-                panel11.Hide();
-                label19.Hide();
-                supervisorNum_textBox.Hide();
-                panel10.Hide();
-                label18.Hide();
-                supervisorRelationship_textBox.Hide();
-                panel7.Hide();
-            }
-            else
-            {
-                label21.Show();
-                supervisorName_textBox.Show();
-                panel11.Show();
-                label19.Show();
-                supervisorNum_textBox.Show();
-                panel10.Show();
-                label18.Show();
-                supervisorRelationship_textBox.Show();
-                panel7.Show();
-            }
+            c2M.BackColor = Color.Gainsboro;
+            c2A.BackColor = Color.Gainsboro;
+            c2E.BackColor = Color.Gainsboro;
+
+            c3M.BackColor = Color.Gainsboro;
+            c3A.BackColor = Color.Gainsboro;
+            c3E.BackColor = Color.Gainsboro;
+
+            c4M.BackColor = Color.Gainsboro;
+            c4A.BackColor = Color.Gainsboro;
+            c4E.BackColor = Color.Gainsboro;
+
+            c5M.BackColor = Color.Gainsboro;
+            c5A.BackColor = Color.Gainsboro;
+            c5E.BackColor = Color.Gainsboro;
+
+            c6M.BackColor = Color.Gainsboro;
+            c6A.BackColor = Color.Gainsboro;
+            c6E.BackColor = Color.Gainsboro;
+
+            c7M.BackColor = Color.Gainsboro;
+            c7A.BackColor = Color.Gainsboro;
+            c7E.BackColor = Color.Gainsboro;
+
+            c8M.BackColor = Color.Gainsboro;
+            c8A.BackColor = Color.Gainsboro;
+            c8E.BackColor = Color.Gainsboro;
         }
 
-        bool is_option1_select = false;
-        bool is_option2_select = false;
-        bool is_option3_select = false;
-        bool is_option4_select = false;
-
-        private void option1_click(object sender, EventArgs e)
+        private void weekCalendar(DateTime date)
         {
-            if (is_option1_select == false)
-            {
-                is_option1_select = true;
-                option1.Image = Image.FromFile("../../svg/package option1 activated.png");
-            }
-            else
-            {
-                is_option1_select = false;
-                option1.Image = Image.FromFile("../../svg/package option1.png");
-            }
-        }
+            Calendar cal = new CultureInfo("en-US").Calendar;
+            int week = cal.GetWeekOfYear(date, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+            DateTime firstMonday = FirstDateOfWeek(2022, week - 1);
 
-        private void option2_click(object sender, EventArgs e)
-        {
-            if (is_option2_select == false)
-            {
-                is_option2_select = true;
-                option2.Image = Image.FromFile("../../svg/package option2 activated.png");
-            }
-            else
-            {
-                is_option2_select = false;
-                option2.Image = Image.FromFile("../../svg/package option2.png");
-            }
-        }
+            label_T2.Text = firstMonday.ToShortDateString();
+            label_T3.Text = firstMonday.AddDays(1).ToShortDateString();
+            label_T4.Text = firstMonday.AddDays(2).ToShortDateString();
+            label_T5.Text = firstMonday.AddDays(3).ToShortDateString();
+            label_T6.Text = firstMonday.AddDays(4).ToShortDateString();
+            label_T7.Text = firstMonday.AddDays(5).ToShortDateString();
+            label_CN.Text = firstMonday.AddDays(6).ToShortDateString();
 
-        private void option3_click(object sender, EventArgs e)
-        {
-            if (is_option3_select == false)
+            if (date.DayOfWeek == DayOfWeek.Monday && today == firstMonday)
             {
-                is_option3_select = true;
-                option3.Image = Image.FromFile("../../svg/package option3 activated.png");
+                c2M.BackColor = Color.FromArgb(196, 220, 245);
+                c2A.BackColor = Color.FromArgb(196, 220, 245);
+                c2E.BackColor = Color.FromArgb(196, 220, 245);
             }
-            else
+            else if (date.DayOfWeek == DayOfWeek.Tuesday && today == firstMonday.AddDays(1))
             {
-                is_option3_select = false;
-                option3.Image = Image.FromFile("../../svg/package option3.png");
+                c3M.BackColor = Color.FromArgb(196, 220, 245);
+                c3A.BackColor = Color.FromArgb(196, 220, 245);
+                c3E.BackColor = Color.FromArgb(196, 220, 245);
             }
-        }
-
-        private void option4_click(object sender, EventArgs e)
-        {
-            if (is_option4_select == false)
+            else if (date.DayOfWeek == DayOfWeek.Wednesday && today == firstMonday.AddDays(2))
             {
-                is_option4_select = true;
-                option4.Image = Image.FromFile("../../svg/package option4 activated.png");
+                c4M.BackColor = Color.FromArgb(196, 220, 245);
+                c4A.BackColor = Color.FromArgb(196, 220, 245);
+                c4E.BackColor = Color.FromArgb(196, 220, 245);
             }
-            else
+            else if (date.DayOfWeek == DayOfWeek.Thursday && today == firstMonday.AddDays(3))
             {
-                is_option4_select = false;
-                option4.Image = Image.FromFile("../../svg/package option4.png");
+                c5M.BackColor = Color.FromArgb(196, 220, 245);
+                c5A.BackColor = Color.FromArgb(196, 220, 245);
+                c5E.BackColor = Color.FromArgb(196, 220, 245);
             }
-        }
-
-        private void clickReturnVacRec(object sender, EventArgs e)
-        {
-            tab.SelectTab("DangKyTiemTab");
-        }
-
-        private void clickContinueMethod(object sender, EventArgs e)
-        {
-            if (fullName_textBox.Text == "")
-                MessageBox.Show("Xin vui lòng nhập đầy đủ thông tin", "Thông báo");
-            else if (!maleBtn.Checked && !femaleBtn.Checked && !otherGenderBtn.Checked)
-                MessageBox.Show("Xin vui lòng chọn giới tính", "Thông báo");
-            else if (!packageCheck.Checked && !singleCheck.Checked)
-                MessageBox.Show("Xin vui lòng chọn loại tiêm ngừa", "Thông báo");
-            else
+            else if (date.DayOfWeek == DayOfWeek.Friday && today == firstMonday.AddDays(4))
             {
-                if (packageCheck.Checked)
-                {
-                    tab.SelectTab("packageTab");
-                }
-                else if (singleCheck.Checked)
-                {
-                    tab.SelectTab("singleVacTab");
-                }
+                c6M.BackColor = Color.FromArgb(196, 220, 245);
+                c6A.BackColor = Color.FromArgb(196, 220, 245);
+                c6E.BackColor = Color.FromArgb(196, 220, 245);
+            }
+            else if (date.DayOfWeek == DayOfWeek.Saturday && today == firstMonday.AddDays(5))
+            {
+                c7M.BackColor = Color.FromArgb(196, 220, 245);
+                c7A.BackColor = Color.FromArgb(196, 220, 245);
+                c7E.BackColor = Color.FromArgb(196, 220, 245);
+            }
+            else if (date.DayOfWeek == DayOfWeek.Sunday && today == firstMonday.AddDays(6))
+            {
+                c8M.BackColor = Color.FromArgb(196, 220, 245);
+                c8A.BackColor = Color.FromArgb(196, 220, 245);
+                c8E.BackColor = Color.FromArgb(196, 220, 245);
             }
         }
 
-        private void clickQuayLaiGoiLe(object sender, EventArgs e)
+        private void click_nextWeek(object sender, EventArgs e)
         {
-            if (packageCheck.Checked)
-                tab.SelectTab("packageTab");
-            else if (singleCheck.Checked)
-                tab.SelectTab("singleVacTab");
+            resetButton();
+            date = date.AddDays(7);
+            weekCalendar(date);
         }
 
-        private void clickTiepTucCuoiCung(object sender, EventArgs e)
+        private void click_lastWeek(object sender, EventArgs e)
         {
-            tab.SelectTab("finalizationTab");
-
-            label46.Text = fullName_textBox.Text;
-            if (maleBtn.Checked) label47.Text = "Nam";
-            else if (femaleBtn.Checked) label47.Text = "Nữ";
-            else if (otherGenderBtn.Checked) label47.Text = "Khác";
-            label48.Text = birthday_picker.Value.ToShortDateString();
-            label49.Text = textBox1.Text;
-            label50.Text = textBox2.Text;
-            if (supervisorName_textBox.Text == "")
-                label51.Text = "Không";
-            else label51.Text = supervisorName_textBox.Text;
-            if (supervisorNum_textBox.Text == "")
-                label52.Text = "Không";
-            else label52.Text = supervisorNum_textBox.Text;
-            if (supervisorRelationship_textBox.Text == "")
-                label53.Text = "Không";
-            else label53.Text = supervisorRelationship_textBox.Text;
-            if (packageCheck.Checked) label54.Text = "Gói";
-            else if (singleCheck.Checked) label51.Text = "Lẻ";
-            label56.Text = vaccinationDatePicker.Value.ToShortDateString();
-            label55.Text = comboBox1.Text;
-            if (is_option1_select == true) label57.Text = "Gói 0 - 12 tháng tuổi";
-            else if (is_option2_select == true) label57.Text = "Gói 0 - 24 tháng tuổi";
-            else if (is_option3_select == true) label57.Text = "Gói thường";
-            else if (is_option4_select == true) label57.Text = "Gói phụ nữ mang thai";
+            resetButton();
+            date = date.AddDays(-7);
+            weekCalendar(date);
         }
+
+        private void click_returnToday(object sender, EventArgs e)
+        {
+            resetButton();
+            date = today;
+            weekCalendar(date);
+        }
+
+        private void click_DKLichRanh(object sender, EventArgs e)
+        {
+            is_DKLichRanh_clicked = true;
+
+            btnDKLichRanh.Hide();
+
+            btnHoanTat.Show();
+            btnHoanTat.Location = new Point(btnHoanTat.Location.X, 607);
+            btnHuy.Show();
+            btnHuy.Location = new Point(btnHuy.Location.X, 607);
+
+            label8.Text = "Đăng ký lịch rảnh";
+            label27.Show();
+        }
+
+        private void click_Huy(object sender, EventArgs e)
+        {
+            is_DKLichRanh_clicked = false;
+
+            btnDKLichRanh.Show();
+            btnHoanTat.Hide();
+            btnHuy.Hide();
+
+            label8.Text = "Xem lịch làm việc";
+            label27.Hide();
+        }
+
+        private void click_HoanTat(object sender, EventArgs e)
+        {
+            is_DKLichRanh_clicked = false;
+
+            HienThi dkLichSuccess = new HienThi();
+            dkLichSuccess.Show();
+            dkLichSuccess.messageShow("successDKLichRanh", "Đăng ký lịch rảnh thành công!", "Hãy chờ bộ phận điều hành duyệt\ntrong vòng 24 giờ.");
+            this.Close();
+        }
+
+        // End of
+        // Calendar
+
+
+        // Start of
+        // Đăng ký lịch rảnh
+
+        // status 0 là chưa xác định, 1 là đã chọn, 2 là rảnh, 3 là bận
+        // status 2 và 3 không thể bỏ chọn
+
+        short c2M_status = 0;
+        short c2A_status = 2;
+        short c2E_status = 3;
+
+        private void get_cell_status()
+        {
+            // hàm đọc dữ liệu từ database
+            // và nhập vào từng cX_status
+
+            cell_color(c2M, c2M_status);
+            cell_color(c2A, c2A_status);
+            cell_color(c2E, c2E_status);
+        }
+
+        private void cell_color(Button cell, short cell_status)
+        {
+            if (cell_status == 0) cell.BackColor = Color.Gainsboro;
+            else if (cell_status == 2) cell.BackColor = Color.FromArgb(176, 224, 173);
+            else if (cell_status == 3) cell.BackColor = Color.FromArgb(237, 185, 191);
+        }
+
+        private short cell_click(Button cell, short cell_checked)
+        {
+            if (is_DKLichRanh_clicked && cell_checked == 0)
+            {
+                cell_checked = 1;
+                cell.BackColor = Color.FromArgb(180, 232, 240);
+                cell.FlatAppearance.BorderSize = 3;
+                cell.FlatAppearance.BorderColor = Color.FromArgb(137, 188, 204);
+            }
+            else if (is_DKLichRanh_clicked && cell_checked == 1)
+            {
+                cell_checked = 0;
+                cell.BackColor = Color.Gainsboro;
+                cell.FlatAppearance.BorderSize = 0;
+            }
+            else if (is_DKLichRanh_clicked && cell_checked == 2)
+            {
+                MessageBox.Show("Không thể chọn trùng lịch rảnh.","Thông báo"); 
+            }
+            else if (is_DKLichRanh_clicked && cell_checked == 3)
+            {
+                MessageBox.Show("Không thể chọn lịch rảnh trùng với lịch làm việc.", "Thông báo");
+            }
+
+            return cell_checked;
+        }
+
+        private void c2M_click(object sender, EventArgs e)
+        {
+            c2M_status = cell_click(c2M, c2M_status);
+        }
+
+        // End of
+        // Đăng ký lịch rảnh
     }
 }

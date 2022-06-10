@@ -341,6 +341,7 @@ namespace AnBinhApp
             this.panel_XemLich.Name = "panel_XemLich";
             this.panel_XemLich.Size = new System.Drawing.Size(278, 56);
             this.panel_XemLich.TabIndex = 12;
+            this.panel_XemLich.Click += new System.EventHandler(this.xemLich_click);
             this.panel_XemLich.MouseEnter += new System.EventHandler(this.xemLich_enter);
             this.panel_XemLich.MouseLeave += new System.EventHandler(this.xemLich_leave);
             // 
@@ -353,6 +354,7 @@ namespace AnBinhApp
             this.pictureBox19.Size = new System.Drawing.Size(26, 26);
             this.pictureBox19.TabIndex = 2;
             this.pictureBox19.TabStop = false;
+            this.pictureBox19.Click += new System.EventHandler(this.xemLich_click);
             this.pictureBox19.MouseEnter += new System.EventHandler(this.xemLich_enter);
             this.pictureBox19.MouseLeave += new System.EventHandler(this.xemLich_leave);
             // 
@@ -367,6 +369,7 @@ namespace AnBinhApp
             this.label15.Size = new System.Drawing.Size(160, 23);
             this.label15.TabIndex = 1;
             this.label15.Text = "Xem lịch làm việc";
+            this.label15.Click += new System.EventHandler(this.xemLich_click);
             this.label15.MouseEnter += new System.EventHandler(this.xemLich_enter);
             this.label15.MouseLeave += new System.EventHandler(this.xemLich_leave);
             // 
@@ -379,6 +382,7 @@ namespace AnBinhApp
             this.panel_DatMuaVacXin.Name = "panel_DatMuaVacXin";
             this.panel_DatMuaVacXin.Size = new System.Drawing.Size(278, 56);
             this.panel_DatMuaVacXin.TabIndex = 11;
+            this.panel_DatMuaVacXin.Click += new System.EventHandler(this.datMuaVacxin_click);
             this.panel_DatMuaVacXin.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
             this.panel_DatMuaVacXin.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
             // 
@@ -391,6 +395,7 @@ namespace AnBinhApp
             this.pictureBox18.Size = new System.Drawing.Size(26, 26);
             this.pictureBox18.TabIndex = 2;
             this.pictureBox18.TabStop = false;
+            this.pictureBox18.Click += new System.EventHandler(this.datMuaVacxin_click);
             this.pictureBox18.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
             this.pictureBox18.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
             // 
@@ -405,6 +410,7 @@ namespace AnBinhApp
             this.label14.Size = new System.Drawing.Size(147, 23);
             this.label14.TabIndex = 1;
             this.label14.Text = "Đặt mua vacxin";
+            this.label14.Click += new System.EventHandler(this.datMuaVacxin_click);
             this.label14.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
             this.label14.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
             // 

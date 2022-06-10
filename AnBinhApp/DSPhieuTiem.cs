@@ -390,6 +390,18 @@ namespace AnBinhApp
                 DSPhieuTiem_leave(sender, e);
             }
         }
+        private void datMuaVacxin_click(object sender, EventArgs e)
+        {
+            DatMuaVacxin datMuaVacxinForm = new DatMuaVacxin();
+            datMuaVacxinForm.Show();
+            this.Close();
+        }
+        private void xemLich_click(object sender, EventArgs e)
+        {
+            XemLich xemLichForm = new XemLich();
+            xemLichForm.Show();
+            this.Close();
+        }
         private void DangXuat_click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);
@@ -425,13 +437,7 @@ namespace AnBinhApp
                 Thoat_leave(sender, e);
             }
         }
-        private void clickThanhToan(object sender, EventArgs e)
-        {
-            ThanhToan thanhToanForm = new ThanhToan();
-            this.Hide();
-            thanhToanForm.ShowDialog();
-        }
-
+        
         // End of
         // Transitioning
     }

@@ -480,5 +480,12 @@ namespace AnBinhApp
             KiemTraPhieu phieu = new KiemTraPhieu();
             phieu.Show();
         }
+
+        private void datMuaVacxin_click(object sender, EventArgs e)
+        {
+            DatMuaVacxin datMuaVacxinForm = new DatMuaVacxin();
+            datMuaVacxinForm.Show();
+            this.Close();
+        }
     }
 }

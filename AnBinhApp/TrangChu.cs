@@ -15,6 +15,7 @@ namespace AnBinhApp
     {
         public static bool is_login = false;
         public static bool is_NhanVien = true;
+        public static bool is_BoPhanDieuHanh = false;
         public static bool co_ThongBao = true;
 
         public static bool ds_collapsible = false;
@@ -113,22 +114,6 @@ namespace AnBinhApp
         private void TrangChu_leave(object sender, EventArgs e)
         {
             panel_TrangChu.BackColor = Color.FromArgb(38, 21, 92);
-        }
-        private void DangXuat_enter(object sender, EventArgs e)
-        {
-            panel_DangXuat.BackColor = Color.FromArgb(37, 58, 128);
-        }
-        private void DangXuat_leave(object sender, EventArgs e)
-        {
-            panel_DangXuat.BackColor = Color.FromArgb(38, 21, 92);
-        }
-        private void Thoat_enter(object sender, EventArgs e)
-        {
-            panel_Thoat.BackColor = Color.FromArgb(37, 58, 128);
-        }
-        private void Thoat_leave(object sender, EventArgs e)
-        {
-            panel_Thoat.BackColor = Color.FromArgb(38, 21, 92);
         }
         private void DangKyTiem_enter(object sender, EventArgs e)
         {
@@ -278,6 +263,7 @@ namespace AnBinhApp
         {
             panel_QTTC.BackColor = Color.FromArgb(38, 21, 92);
         }
+
         private void dsKH_enter(object sender, EventArgs e)
         {
             panel_dsKH.BackColor = Color.FromArgb(37, 58, 128);
@@ -294,12 +280,10 @@ namespace AnBinhApp
         {
             panel_DSVacxin.BackColor = Color.FromArgb(38, 21, 92);
         }
-
         private void dsNhanVien_enter(object sender, EventArgs e)
         {
             panel_DSNhanVien.BackColor = Color.FromArgb(37, 58, 128);
         }
-
         private void dsNhanVien_leave(object sender, EventArgs e)
         {
             panel_DSNhanVien.BackColor = Color.FromArgb(38, 21, 92);
@@ -309,27 +293,22 @@ namespace AnBinhApp
         {
             panel_DatMuaVacXin.BackColor = Color.FromArgb(37, 58, 128);
         }
-
         private void panel_DatMuaVacXin_MouseLeave(object sender, EventArgs e)
         {
             panel_DatMuaVacXin.BackColor = Color.FromArgb(38, 21, 92);
         }
-
         private void xemLich_enter(object sender, EventArgs e)
         {
             panel_XemLich.BackColor = Color.FromArgb(37, 58, 128);
         }
-
         private void xemLich_leave(object sender, EventArgs e)
         {
             panel_XemLich.BackColor = Color.FromArgb(38, 21, 92);
         }
-
         private void phanCong_enter(object sender, EventArgs e)
         {
             panel_PhanCong.BackColor = Color.FromArgb(37, 58, 128);
         }
-
         private void phanCong_leave(object sender, EventArgs e)
         {
             panel_PhanCong.BackColor = Color.FromArgb(38, 21, 92);
@@ -339,10 +318,25 @@ namespace AnBinhApp
         {
             panel_TaiKhoan.BackColor = Color.FromArgb(37, 58, 128);
         }
-
         private void taiKhoan_leave(object sender, EventArgs e)
         {
             panel_TaiKhoan.BackColor = Color.FromArgb(38, 21, 92);
+        }
+        private void DangXuat_enter(object sender, EventArgs e)
+        {
+            panel_DangXuat.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void DangXuat_leave(object sender, EventArgs e)
+        {
+            panel_DangXuat.BackColor = Color.FromArgb(38, 21, 92);
+        }
+        private void Thoat_enter(object sender, EventArgs e)
+        {
+            panel_Thoat.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void Thoat_leave(object sender, EventArgs e)
+        {
+            panel_Thoat.BackColor = Color.FromArgb(38, 21, 92);
         }
 
         // End of
@@ -411,6 +405,27 @@ namespace AnBinhApp
                 DSPhieuTiem_leave(sender, e);
             }
         }
+        private void datMuaVacxin_click(object sender, EventArgs e)
+        {
+            DatMuaVacxin datMuaVacxinForm = new DatMuaVacxin();
+            datMuaVacxinForm.Show();
+            this.Hide();
+        }
+        private void xemLich_click(object sender, EventArgs e)
+        {
+            if (is_NhanVien)
+            {
+                XemLich xemLichForm = new XemLich();
+                xemLichForm.Show();
+                this.Hide();                
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
+                is_DSPhieuTiem_clicked = false;
+                DSPhieuTiem_leave(sender, e);
+            }
+        }
         private void DangXuat_click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);
@@ -419,11 +434,9 @@ namespace AnBinhApp
                 is_login = false;
                 is_NhanVien = false;
 
-                DangNhap dangNhap = new DangNhap();
                 this.Hide();
                 TrangChu trangChu = new TrangChu();
                 trangChu.Show();
-                dangNhap.ShowDialog();
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -453,12 +466,7 @@ namespace AnBinhApp
             thanhToanForm.ShowDialog();
         }
 
-        private void DatMuaVacxin_click(object sender, EventArgs e)
-        {
-            DatMuaVacxin datMuaVacxinForm = new DatMuaVacxin();
-            datMuaVacxinForm.Show();
-            this.Hide();
-        }
+        
         // End of
         // Transitioning
     }
