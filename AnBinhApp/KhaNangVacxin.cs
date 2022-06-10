@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,33 +10,26 @@ using System.Windows.Forms;
 
 namespace AnBinhApp
 {
-    public partial class XemLich : Form
+    public partial class KhaNangVacxin : Form
     {
-        DateTime today = DateTime.Today;
-        DateTime date = DateTime.Today;
-
-        bool is_DKLichRanh_clicked = false;
-
-        public XemLich()
+        public KhaNangVacxin()
         {
             InitializeComponent();
             notification(TrangChu.co_ThongBao);
             sideBarCollapsible(TrangChu.ds_collapsible, TrangChu.chucnang_collapsible, TrangChu.taikhoan_collapsible);
-            weekCalendar(today);
-
-            btnHoanTat.Hide();
-            btnHuy.Hide();
-            label27.Hide();
-
-            get_cell_status();
         }
 
-      
         // Start of
         // Styling and visualization
 
         bool is_Thoat_clicked = false;
         bool is_DSPhieuTiem_clicked = false;
+
+        bool tab_vacxin = true;
+        bool tab_loVacxin = false;
+        bool tab_phieuDatMua = false;
+        bool tab_phieuNhapHang = false;
+
         private void notification(bool co_ThongBao)
         {
             if (TrangChu.co_ThongBao == false)
@@ -334,25 +326,6 @@ namespace AnBinhApp
             }
         }
 
-        private void lastWeek_enter(object sender, EventArgs e)
-        {
-            label_lastWeek.ForeColor = Color.FromArgb(38, 21, 92);
-        }
-        private void lastWeek_leave(object sender, EventArgs e)
-        {
-            label_lastWeek.Font = new Font("Inter Light", label_lastWeek.Font.Size);
-            label_lastWeek.ForeColor = Color.DarkGray;
-        }
-        private void nextWeek_enter(object sender, EventArgs e)
-        {
-            label_nextWeek.ForeColor = Color.FromArgb(38, 21, 92);
-        }
-        private void nextWeek_leave(object sender, EventArgs e)
-        {
-            label_nextWeek.Font = new Font("Inter Light", label_nextWeek.Font.Size);
-            label_nextWeek.ForeColor = Color.DarkGray;
-        }
-
         // End of
         // Styling and visualization
 
@@ -425,6 +398,21 @@ namespace AnBinhApp
             datMuaVacxinForm.Show();
             this.Close();
         }
+        private void xemLich_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_NhanVien)
+            {
+                XemLich xemLichForm = new XemLich();
+                xemLichForm.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
+                is_DSPhieuTiem_clicked = false;
+                dsPhieuTiem_leave(sender, e);
+            }
+        }
         private void DangXuat_click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);
@@ -458,255 +446,91 @@ namespace AnBinhApp
             }
         }
 
-        // End of
-        // Transitioning        
-
-
-        // Start of
-        // Calendar
-
-        public static DateTime FirstDateOfWeek(int year, int weekOfYear)
+        private void tabVacxin_click(object sender, EventArgs e)
         {
-            DateTime jan1 = new DateTime(year, 1, 1);
-            int daysOffset = DayOfWeek.Thursday - jan1.DayOfWeek;
+            btnVacxin.BackColor = Color.FromArgb(73, 155, 242);
+            btnVacxin.ForeColor = Color.White;
+            btnVacxin.Font = new Font("Inter Medium", btnVacxin.Font.Size);
 
-            // Use first Thursday in January to get first week of the year as
-            // it will never be in Week 52/53
-            DateTime firstThursday = jan1.AddDays(daysOffset);
-            var cal = CultureInfo.CurrentCulture.Calendar;
-            int firstWeek = cal.GetWeekOfYear(firstThursday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+            btnLoVacxin.BackColor = Color.White;           
+            btnPhieuDatMua.BackColor = Color.White;
+            btnPhieuNhapHang.BackColor = Color.White;
 
-            var weekNum = weekOfYear;
-            // As we're adding days to a date in Week 1,
-            // we need to subtract 1 in order to get the right date for week #1
-            if (firstWeek == 1)
-            {
-                weekNum -= 1;
-            }
+            btnLoVacxin.ForeColor = Color.DarkGray;
+            btnPhieuDatMua.ForeColor = Color.DarkGray;
+            btnPhieuNhapHang.ForeColor = Color.DarkGray;
 
-            // Using the first Thursday as starting week ensures that we are starting in the right year
-            // then we add number of weeks multiplied with days
-            var result = firstThursday.AddDays(weekNum * 7);
-
-            // Subtract 3 days from Thursday to get Monday, which is the first weekday in ISO8601
-            return result.AddDays(-3);
+            tab.SelectTab(vacxin);
+            tab_vacxin = true;
+            tab_loVacxin = false;
+            tab_phieuDatMua = false;
+            tab_phieuNhapHang = false;
         }
 
-        private void resetButton()
+        private void tabLoVacxin_click(object sender, EventArgs e)
         {
-            c2M.BackColor = Color.Gainsboro;
-            c2A.BackColor = Color.Gainsboro;
-            c2E.BackColor = Color.Gainsboro;
+            btnLoVacxin.BackColor = Color.FromArgb(73, 155, 242);
+            btnLoVacxin.ForeColor = Color.White;
+            btnLoVacxin.Font = new Font("Inter Medium", btnLoVacxin.Font.Size);
 
-            c3M.BackColor = Color.Gainsboro;
-            c3A.BackColor = Color.Gainsboro;
-            c3E.BackColor = Color.Gainsboro;
+            btnVacxin.BackColor = Color.White;
+            btnPhieuDatMua.BackColor = Color.White;
+            btnPhieuNhapHang.BackColor = Color.White;
 
-            c4M.BackColor = Color.Gainsboro;
-            c4A.BackColor = Color.Gainsboro;
-            c4E.BackColor = Color.Gainsboro;
+            btnVacxin.ForeColor = Color.DarkGray;
+            btnPhieuDatMua.ForeColor = Color.DarkGray;
+            btnPhieuNhapHang.ForeColor = Color.DarkGray;
 
-            c5M.BackColor = Color.Gainsboro;
-            c5A.BackColor = Color.Gainsboro;
-            c5E.BackColor = Color.Gainsboro;
-
-            c6M.BackColor = Color.Gainsboro;
-            c6A.BackColor = Color.Gainsboro;
-            c6E.BackColor = Color.Gainsboro;
-
-            c7M.BackColor = Color.Gainsboro;
-            c7A.BackColor = Color.Gainsboro;
-            c7E.BackColor = Color.Gainsboro;
-
-            c8M.BackColor = Color.Gainsboro;
-            c8A.BackColor = Color.Gainsboro;
-            c8E.BackColor = Color.Gainsboro;
+            tab.SelectTab(loVacxin);
+            tab_vacxin = false;
+            tab_loVacxin = true;
+            tab_phieuDatMua = false;
+            tab_phieuNhapHang = false;
         }
 
-        private void weekCalendar(DateTime date)
+        private void tabPDM_click(object sender, EventArgs e)
         {
-            Calendar cal = new CultureInfo("en-US").Calendar;
-            int week = cal.GetWeekOfYear(date, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
-            DateTime firstMonday = FirstDateOfWeek(2022, week - 1);
+            btnPhieuDatMua.BackColor = Color.FromArgb(73, 155, 242);
+            btnPhieuDatMua.ForeColor = Color.White;
+            btnPhieuDatMua.Font = new Font("Inter Medium", btnPhieuDatMua.Font.Size);
 
-            label_T2.Text = firstMonday.ToShortDateString();
-            label_T3.Text = firstMonday.AddDays(1).ToShortDateString();
-            label_T4.Text = firstMonday.AddDays(2).ToShortDateString();
-            label_T5.Text = firstMonday.AddDays(3).ToShortDateString();
-            label_T6.Text = firstMonday.AddDays(4).ToShortDateString();
-            label_T7.Text = firstMonday.AddDays(5).ToShortDateString();
-            label_CN.Text = firstMonday.AddDays(6).ToShortDateString();
+            btnVacxin.BackColor = Color.White;
+            btnLoVacxin.BackColor = Color.White;
+            btnPhieuNhapHang.BackColor = Color.White;
 
-            if (date.DayOfWeek == DayOfWeek.Monday && today == firstMonday)
-            {
-                c2M.BackColor = Color.FromArgb(196, 220, 245);
-                c2A.BackColor = Color.FromArgb(196, 220, 245);
-                c2E.BackColor = Color.FromArgb(196, 220, 245);
-            }
-            else if (date.DayOfWeek == DayOfWeek.Tuesday && today == firstMonday.AddDays(1))
-            {
-                c3M.BackColor = Color.FromArgb(196, 220, 245);
-                c3A.BackColor = Color.FromArgb(196, 220, 245);
-                c3E.BackColor = Color.FromArgb(196, 220, 245);
-            }
-            else if (date.DayOfWeek == DayOfWeek.Wednesday && today == firstMonday.AddDays(2))
-            {
-                c4M.BackColor = Color.FromArgb(196, 220, 245);
-                c4A.BackColor = Color.FromArgb(196, 220, 245);
-                c4E.BackColor = Color.FromArgb(196, 220, 245);
-            }
-            else if (date.DayOfWeek == DayOfWeek.Thursday && today == firstMonday.AddDays(3))
-            {
-                c5M.BackColor = Color.FromArgb(196, 220, 245);
-                c5A.BackColor = Color.FromArgb(196, 220, 245);
-                c5E.BackColor = Color.FromArgb(196, 220, 245);
-            }
-            else if (date.DayOfWeek == DayOfWeek.Friday && today == firstMonday.AddDays(4))
-            {
-                c6M.BackColor = Color.FromArgb(196, 220, 245);
-                c6A.BackColor = Color.FromArgb(196, 220, 245);
-                c6E.BackColor = Color.FromArgb(196, 220, 245);
-            }
-            else if (date.DayOfWeek == DayOfWeek.Saturday && today == firstMonday.AddDays(5))
-            {
-                c7M.BackColor = Color.FromArgb(196, 220, 245);
-                c7A.BackColor = Color.FromArgb(196, 220, 245);
-                c7E.BackColor = Color.FromArgb(196, 220, 245);
-            }
-            else if (date.DayOfWeek == DayOfWeek.Sunday && today == firstMonday.AddDays(6))
-            {
-                c8M.BackColor = Color.FromArgb(196, 220, 245);
-                c8A.BackColor = Color.FromArgb(196, 220, 245);
-                c8E.BackColor = Color.FromArgb(196, 220, 245);
-            }
+            btnVacxin.ForeColor = Color.DarkGray;
+            btnLoVacxin.ForeColor = Color.DarkGray;
+            btnPhieuNhapHang.ForeColor = Color.DarkGray;
+
+            tab.SelectTab(phieuDatMua);
+            tab_vacxin = false;
+            tab_loVacxin = false;
+            tab_phieuDatMua = true;
+            tab_phieuNhapHang = false;
         }
 
-        private void click_lastWeek(object sender, EventArgs e)
+        private void tabPNH_click(object sender, EventArgs e)
         {
-            label_lastWeek.Font = new Font("Inter Medium", label_lastWeek.Font.Size);
-            resetButton();
-            date = date.AddDays(-7);
-            weekCalendar(date);
-        }
+            btnPhieuNhapHang.BackColor = Color.FromArgb(73, 155, 242);
+            btnPhieuNhapHang.ForeColor = Color.White;
+            btnPhieuNhapHang.Font = new Font("Inter Medium", btnPhieuNhapHang.Font.Size);
 
-        private void click_nextWeek(object sender, EventArgs e)
-        {
-            label_nextWeek.Font = new Font("Inter Medium", label_nextWeek.Font.Size);
-            resetButton();
-            date = date.AddDays(7);
-            weekCalendar(date);
-        }
+            btnVacxin.BackColor = Color.White;
+            btnLoVacxin.BackColor = Color.White;
+            btnPhieuDatMua.BackColor = Color.White;
 
-        private void click_returnToday(object sender, EventArgs e)
-        {
-            resetButton();
-            date = today;
-            weekCalendar(date);
-        }
+            btnVacxin.ForeColor = Color.DarkGray;
+            btnLoVacxin.ForeColor = Color.DarkGray;
+            btnPhieuDatMua.ForeColor = Color.DarkGray;
 
-        private void click_DKLichRanh(object sender, EventArgs e)
-        {
-            is_DKLichRanh_clicked = true;
-
-            btnDKLichRanh.Hide();
-
-            btnHoanTat.Show();
-            btnHoanTat.Location = new Point(btnHoanTat.Location.X, 607);
-            btnHuy.Show();
-            btnHuy.Location = new Point(btnHuy.Location.X, 607);
-
-            label8.Text = "Đăng ký lịch rảnh";
-            label27.Show();
-        }
-
-        private void click_Huy(object sender, EventArgs e)
-        {
-            is_DKLichRanh_clicked = false;
-
-            btnDKLichRanh.Show();
-            btnHoanTat.Hide();
-            btnHuy.Hide();
-
-            label8.Text = "Xem lịch làm việc";
-            label27.Hide();
-        }
-
-        private void click_HoanTat(object sender, EventArgs e)
-        {
-            is_DKLichRanh_clicked = false;
-
-            HienThi dkLichSuccess = new HienThi();
-            dkLichSuccess.Show();
-            dkLichSuccess.messageShow("successDKLichRanh", "Đăng ký lịch rảnh thành công!", "Hãy chờ bộ phận điều hành duyệt\ntrong vòng 24 giờ.");
-            this.Close();
+            tab.SelectTab(phieuNhapHang);
+            tab_vacxin = false;
+            tab_loVacxin = false;
+            tab_phieuDatMua = false;
+            tab_phieuNhapHang = true;
         }
 
         // End of
-        // Calendar
-
-
-        // Start of
-        // Đăng ký lịch rảnh
-
-        // status 0 là chưa xác định, 1 là đã chọn, 2 là rảnh, 3 là bận
-        // status 2 và 3 không thể bỏ chọn
-
-        short c2M_status = 0;
-        short c2A_status = 2;
-        short c2E_status = 3;
-
-        private void get_cell_status()
-        {
-            // hàm đọc dữ liệu từ database
-            // và nhập vào từng cX_status
-
-            cell_color(c2M, c2M_status);
-            cell_color(c2A, c2A_status);
-            cell_color(c2E, c2E_status);
-            // copy paste hết 21 ô...
-        }
-
-        private void cell_color(Button cell, short cell_status)
-        {
-            if (cell_status == 0) cell.BackColor = Color.Gainsboro;
-            else if (cell_status == 2) cell.BackColor = Color.FromArgb(176, 224, 173);
-            else if (cell_status == 3) cell.BackColor = Color.FromArgb(237, 185, 191);
-        }
-
-        private short cell_click(Button cell, short cell_checked)
-        {
-            if (is_DKLichRanh_clicked && cell_checked == 0)
-            {
-                cell_checked = 1;
-                cell.BackColor = Color.FromArgb(180, 232, 240);
-                cell.FlatAppearance.BorderSize = 3;
-                cell.FlatAppearance.BorderColor = Color.FromArgb(137, 188, 204);
-            }
-            else if (is_DKLichRanh_clicked && cell_checked == 1)
-            {
-                cell_checked = 0;
-                cell.BackColor = Color.Gainsboro;
-                cell.FlatAppearance.BorderSize = 0;
-            }
-            else if (is_DKLichRanh_clicked && cell_checked == 2)
-            {
-                MessageBox.Show("Không thể chọn trùng lịch rảnh.","Thông báo"); 
-            }
-            else if (is_DKLichRanh_clicked && cell_checked == 3)
-            {
-                MessageBox.Show("Không thể chọn lịch rảnh trùng với lịch làm việc.", "Thông báo");
-            }
-
-            return cell_checked;
-        }
-
-        private void c2M_click(object sender, EventArgs e)
-        {
-            c2M_status = cell_click(c2M, c2M_status);
-            // copy paste hết 21 ô...
-        }
-
-        // End of
-        // Đăng ký lịch rảnh
+        // Transitioning     
     }
 }

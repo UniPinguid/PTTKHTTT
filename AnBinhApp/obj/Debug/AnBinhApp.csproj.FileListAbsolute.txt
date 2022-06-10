@@ -18,3 +18,4 @@ D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.DSPhieuTiem.resources
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.DatMuaVacxin.resources
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.HienThi.resources
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.XemLich.resources
+D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.KhaNangVacxin.resources

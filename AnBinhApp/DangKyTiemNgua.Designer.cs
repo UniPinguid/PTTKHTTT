@@ -950,8 +950,9 @@ namespace AnBinhApp
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(193, 57);
             this.button6.TabIndex = 38;
-            this.button6.Text = "Tiếp tục ❯";
+            this.button6.Text = "Hoàn tất";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.clickHoanTat);
             // 
             // button7
             // 

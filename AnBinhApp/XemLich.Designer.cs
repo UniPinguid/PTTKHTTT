@@ -1286,6 +1286,8 @@ namespace AnBinhApp
             this.label_lastWeek.TabIndex = 55;
             this.label_lastWeek.Text = "❮ Tuần trước";
             this.label_lastWeek.Click += new System.EventHandler(this.click_lastWeek);
+            this.label_lastWeek.MouseEnter += new System.EventHandler(this.lastWeek_enter);
+            this.label_lastWeek.MouseLeave += new System.EventHandler(this.lastWeek_leave);
             // 
             // label_nextWeek
             // 
@@ -1299,6 +1301,8 @@ namespace AnBinhApp
             this.label_nextWeek.TabIndex = 56;
             this.label_nextWeek.Text = "Tuần sau ❯";
             this.label_nextWeek.Click += new System.EventHandler(this.click_nextWeek);
+            this.label_nextWeek.MouseEnter += new System.EventHandler(this.nextWeek_enter);
+            this.label_nextWeek.MouseLeave += new System.EventHandler(this.nextWeek_leave);
             // 
             // panel3
             // 

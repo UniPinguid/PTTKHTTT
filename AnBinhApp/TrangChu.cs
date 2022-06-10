@@ -381,7 +381,7 @@ namespace AnBinhApp
             dktn.Show();
             this.Hide();
         }
-        private void DSPhieuTiem_click(object sender, EventArgs e)
+        private void dsPhieuTiem_click(object sender, EventArgs e)
         {
             panel_DSPhieuTiem.BackColor = Color.FromArgb(73, 155, 242);
             is_Thoat_clicked = false;
@@ -403,6 +403,19 @@ namespace AnBinhApp
                 MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
                 is_DSPhieuTiem_clicked = false;
                 DSPhieuTiem_leave(sender, e);
+            }
+        }
+        private void dsVacXin_click(object sender, EventArgs e)
+        {
+            if (is_NhanVien)
+            {
+                KhaNangVacxin dsVacXinForm = new KhaNangVacxin();
+                dsVacXinForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
             }
         }
         private void datMuaVacxin_click(object sender, EventArgs e)
@@ -458,15 +471,8 @@ namespace AnBinhApp
                 is_Thoat_clicked = false;
                 Thoat_leave(sender, e);
             }
-        }
-        private void clickThanhToan(object sender, EventArgs e)
-        {
-            ThanhToan thanhToanForm = new ThanhToan();
-            this.Hide();
-            thanhToanForm.ShowDialog();
-        }
+        }            
 
-        
         // End of
         // Transitioning
     }

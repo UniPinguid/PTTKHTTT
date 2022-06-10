@@ -612,5 +612,13 @@ namespace AnBinhApp
             else if (is_option3_select == true) label57.Text = "Gói thường";
             else if (is_option4_select == true) label57.Text = "Gói phụ nữ mang thai";
         }
+
+        private void clickHoanTat(object sender, EventArgs e)
+        {
+            HienThi hienThiForm = new HienThi();
+            hienThiForm.messageShow("success", "Đăng ký tiêm ngừa thành công!", "Hệ thống sẽ duyệt và gửi kết quả cho bạn trong vòng 24 giờ.");
+            this.Close();
+            hienThiForm.Show();
+        }
     }
 }

@@ -70,6 +70,12 @@
     <Compile Include="HienThi.Designer.cs">
       <DependentUpon>HienThi.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhaNangVacxin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhaNangVacxin.Designer.cs">
+      <DependentUpon>KhaNangVacxin.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HienThi.resx">
       <DependentUpon>HienThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhaNangVacxin.resx">
+      <DependentUpon>KhaNangVacxin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>
