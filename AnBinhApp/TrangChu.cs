@@ -14,7 +14,7 @@ namespace AnBinhApp
     public partial class TrangChu : Form
     {
         public static bool is_login = false;
-        public static bool is_NhanVien = true;
+        public static bool is_NhanVien = false;
         public static bool is_BoPhanDieuHanh = false;
         public static bool co_ThongBao = true;
 
@@ -381,6 +381,7 @@ namespace AnBinhApp
             dktn.Show();
             this.Hide();
         }
+
         private void dsPhieuTiem_click(object sender, EventArgs e)
         {
             panel_DSPhieuTiem.BackColor = Color.FromArgb(73, 155, 242);
@@ -439,6 +440,13 @@ namespace AnBinhApp
                 DSPhieuTiem_leave(sender, e);
             }
         }
+
+        private void taiKhoan_click(object sender, EventArgs e)
+        {
+            TaiKhoan tkForm = new TaiKhoan();
+            tkForm.Show();
+            this.Hide();
+        }
         private void DangXuat_click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);
@@ -471,7 +479,7 @@ namespace AnBinhApp
                 is_Thoat_clicked = false;
                 Thoat_leave(sender, e);
             }
-        }            
+        }        
 
         // End of
         // Transitioning

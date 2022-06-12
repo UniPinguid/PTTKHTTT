@@ -10,11 +10,34 @@ using System.Windows.Forms;
 
 namespace AnBinhApp
 {
-    public partial class DSPhieuTiem : Form
+    public partial class TaiKhoan : Form
     {
-        public DSPhieuTiem()
+        int salary = 5000;
+
+        bool is_ThongTinThem_clicked = true;
+        bool is_PhieuDK_clickd = false;
+        bool is_BangCap_clicked = false;
+
+        public TaiKhoan()
         {
             InitializeComponent();
+
+            // Nếu là khách hàng
+            if (!TrangChu.is_NhanVien)
+            {
+                btnBangCap.Hide();
+                panel6.Hide();
+                panel_nguoiGH.Location = new Point(45, 29);
+            }
+            // Nếu là nhân viên
+            else if (TrangChu.is_NhanVien)
+            {
+                btnPhieuDK.Hide();
+                btnBangCap.Location = new Point(286, 434);
+                panel_nguoiGH.Hide();
+            }
+
+            tab.SelectTab(tabThongTinThem);
             notification(TrangChu.co_ThongBao);
             sideBarCollapsible(TrangChu.ds_collapsible, TrangChu.chucnang_collapsible, TrangChu.taikhoan_collapsible);
         }
@@ -24,6 +47,23 @@ namespace AnBinhApp
 
         bool is_Thoat_clicked = false;
         bool is_DSPhieuTiem_clicked = false;
+
+        bool tab_vacxin = true;
+        bool tab_loVacxin = false;
+        bool tab_phieuDatMua = false;
+        bool tab_phieuNhapHang = false;
+
+        private void salaryFocus(object sender, MouseEventArgs e)
+        {
+            toggleSalaryVisible.Image = Image.FromFile("../../svg/eye hidden.png");
+            label_salary.Text = "$" + salary.ToString();
+        }
+        private void salaryUnfocus(object sender, MouseEventArgs e)
+        {
+            toggleSalaryVisible.Image = Image.FromFile("../../svg/eye visible.png");
+            label_salary.Text = "******";
+        }
+
 
         private void notification(bool co_ThongBao)
         {
@@ -61,7 +101,6 @@ namespace AnBinhApp
                 panel2.Location = new Point(panel2.Location.X, panel2.Location.Y - 224);
             }
 
-
             if (chucnang_collapsible == false)
             {
                 collapsible_chucNang.Image = Image.FromFile("../../svg/collapsible off.png");
@@ -78,7 +117,6 @@ namespace AnBinhApp
                 panel2.Location = new Point(panel2.Location.X, panel2.Location.Y - 168);
             }
 
-
             if (taikhoan_collapsible == false)
             {
                 collapsible_taiKhoan.Image = Image.FromFile("../../svg/collapsible off.png");
@@ -90,7 +128,6 @@ namespace AnBinhApp
             }
 
         }
-
         private void ThongBao_enter(object sender, EventArgs e)
         {
             pictureThongBao.Image = Image.FromFile("../../svg/bell hover.png");
@@ -133,11 +170,11 @@ namespace AnBinhApp
         {
             panel_dsKH.BackColor = Color.FromArgb(38, 21, 92);
         }
-        private void DSPhieuTiem_enter(object sender, EventArgs e)
+        private void dsPhieuTiem_enter(object sender, EventArgs e)
         {
             panel_DSPhieuTiem.BackColor = Color.FromArgb(37, 58, 128);
         }
-        private void DSPhieuTiem_leave(object sender, EventArgs e)
+        private void dsPhieuTiem_leave(object sender, EventArgs e)
         {
             panel_DSPhieuTiem.BackColor = Color.FromArgb(38, 21, 92);
         }
@@ -343,7 +380,7 @@ namespace AnBinhApp
 
             // homepage_leave(sender, e);
             DangKyTiem_leave(sender, e);
-            DSPhieuTiem_leave(sender, e);
+            dsPhieuTiem_leave(sender, e);
             DangXuat_leave(sender, e);
             Thoat_leave(sender, e);
 
@@ -358,7 +395,7 @@ namespace AnBinhApp
 
             TrangChu_leave(sender, e);
             // vacReg_leave(sender, e);
-            DSPhieuTiem_leave(sender, e);
+            dsPhieuTiem_leave(sender, e);
             DangXuat_leave(sender, e);
             Thoat_leave(sender, e);
 
@@ -387,19 +424,27 @@ namespace AnBinhApp
             {
                 MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
                 is_DSPhieuTiem_clicked = false;
-                DSPhieuTiem_leave(sender, e);
+                dsPhieuTiem_leave(sender, e);
             }
         }
+        private void dsVacXin_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_NhanVien)
+            {
+                KhaNangVacxin dsVacXinForm = new KhaNangVacxin();
+                dsVacXinForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
+            }
+        }
+
         private void datMuaVacxin_click(object sender, EventArgs e)
         {
             DatMuaVacxin datMuaVacxinForm = new DatMuaVacxin();
             datMuaVacxinForm.Show();
-            this.Close();
-        }
-        private void dsVacXin_click(object sender, EventArgs e)
-        {
-            KhaNangVacxin dsVacxin = new KhaNangVacxin();
-            dsVacxin.Show();
             this.Close();
         }
         private void xemLich_click(object sender, EventArgs e)
@@ -413,6 +458,8 @@ namespace AnBinhApp
             else
             {
                 MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
+                is_DSPhieuTiem_clicked = false;
+                dsPhieuTiem_leave(sender, e);
             }
         }
         private void DangXuat_click(object sender, EventArgs e)
@@ -423,11 +470,8 @@ namespace AnBinhApp
                 TrangChu.is_login = false;
                 TrangChu.is_NhanVien = false;
 
-                DangNhap dangNhap = new DangNhap();
-                this.Hide();
                 TrangChu trangChu = new TrangChu();
                 trangChu.Show();
-                dangNhap.ShowDialog();
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -449,9 +493,47 @@ namespace AnBinhApp
                 is_Thoat_clicked = false;
                 Thoat_leave(sender, e);
             }
-        }        
+        }
+
+        private void btnThongTinThem_click(object sender, EventArgs e)
+        {
+            tab.SelectTab(tabThongTinThem);
+            btnThongTinThem.ForeColor = Color.White;
+            btnThongTinThem.BackColor = Color.FromArgb(73, 155, 242);
+            btnThongTinThem.Font = new Font("Inter Medium", btnThongTinThem.Font.Size);
+
+            btnPhieuDK.ForeColor = Color.DarkGray;
+            btnPhieuDK.BackColor = Color.FromArgb(247, 249, 252);
+            btnPhieuDK.Font = new Font("Inter Light", btnPhieuDK.Font.Size);
+
+            btnBangCap.ForeColor = Color.DarkGray;
+            btnBangCap.BackColor = Color.FromArgb(247, 249, 252);
+            btnBangCap.Font = new Font("Inter Light", btnBangCap.Font.Size);
+        }
+        private void btnPhieuDK_click(object sender, EventArgs e)
+        {
+            tab.SelectTab(tabPhieuDK);
+            btnPhieuDK.ForeColor = Color.White;
+            btnPhieuDK.BackColor = Color.FromArgb(73, 155, 242);
+            btnPhieuDK.Font = new Font("Inter Medium", btnPhieuDK.Font.Size);
+
+            btnThongTinThem.ForeColor = Color.DarkGray;
+            btnThongTinThem.BackColor = Color.FromArgb(247, 249, 252);
+            btnThongTinThem.Font = new Font("Inter Light", btnThongTinThem.Font.Size);
+        }
+        private void btnBangCap_click(object sender, EventArgs e)
+        {
+            tab.SelectTab(tabBangCap);
+            btnBangCap.ForeColor = Color.White;
+            btnBangCap.BackColor = Color.FromArgb(73, 155, 242);
+            btnBangCap.Font = new Font("Inter Medium", btnBangCap.Font.Size);
+
+            btnThongTinThem.ForeColor = Color.DarkGray;
+            btnThongTinThem.BackColor = Color.FromArgb(247, 249, 252);
+            btnThongTinThem.Font = new Font("Inter Light", btnThongTinThem.Font.Size);
+        }   
 
         // End of
-        // Transitioning
+        // Transitioning     
     }
 }
