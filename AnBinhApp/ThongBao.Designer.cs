@@ -83,7 +83,7 @@ namespace AnBinhApp
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.panel_thongBaoThanhCong = new System.Windows.Forms.Panel();
+            this.panel_tbDKThanhCong = new System.Windows.Forms.Panel();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.button9 = new System.Windows.Forms.Button();
@@ -92,6 +92,12 @@ namespace AnBinhApp
             this.label60 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.label59 = new System.Windows.Forms.Label();
+            this.panel_tbDuyetLich = new System.Windows.Forms.Panel();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_ds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_taiKhoan)).BeginInit();
@@ -126,10 +132,13 @@ namespace AnBinhApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            this.panel_thongBaoThanhCong.SuspendLayout();
+            this.panel_tbDKThanhCong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            this.panel_tbDuyetLich.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -808,27 +817,27 @@ namespace AnBinhApp
             // pictureBox10
             // 
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(522, 419);
+            this.pictureBox10.Location = new System.Drawing.Point(1449, 122);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(800, 600);
             this.pictureBox10.TabIndex = 7;
             this.pictureBox10.TabStop = false;
             // 
-            // panel_thongBaoThanhCong
+            // panel_tbDKThanhCong
             // 
-            this.panel_thongBaoThanhCong.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel_thongBaoThanhCong.Controls.Add(this.pictureBox14);
-            this.panel_thongBaoThanhCong.Controls.Add(this.pictureBox13);
-            this.panel_thongBaoThanhCong.Controls.Add(this.button9);
-            this.panel_thongBaoThanhCong.Controls.Add(this.button8);
-            this.panel_thongBaoThanhCong.Controls.Add(this.label61);
-            this.panel_thongBaoThanhCong.Controls.Add(this.label60);
-            this.panel_thongBaoThanhCong.Controls.Add(this.pictureBox12);
-            this.panel_thongBaoThanhCong.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel_thongBaoThanhCong.Location = new System.Drawing.Point(357, 122);
-            this.panel_thongBaoThanhCong.Name = "panel_thongBaoThanhCong";
-            this.panel_thongBaoThanhCong.Size = new System.Drawing.Size(1086, 186);
-            this.panel_thongBaoThanhCong.TabIndex = 6;
+            this.panel_tbDKThanhCong.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_tbDKThanhCong.Controls.Add(this.pictureBox14);
+            this.panel_tbDKThanhCong.Controls.Add(this.pictureBox13);
+            this.panel_tbDKThanhCong.Controls.Add(this.button9);
+            this.panel_tbDKThanhCong.Controls.Add(this.button8);
+            this.panel_tbDKThanhCong.Controls.Add(this.label61);
+            this.panel_tbDKThanhCong.Controls.Add(this.label60);
+            this.panel_tbDKThanhCong.Controls.Add(this.pictureBox12);
+            this.panel_tbDKThanhCong.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel_tbDKThanhCong.Location = new System.Drawing.Point(357, 122);
+            this.panel_tbDKThanhCong.Name = "panel_tbDKThanhCong";
+            this.panel_tbDKThanhCong.Size = new System.Drawing.Size(1086, 186);
+            this.panel_tbDKThanhCong.TabIndex = 6;
             // 
             // pictureBox14
             // 
@@ -926,14 +935,84 @@ namespace AnBinhApp
             this.label59.TabIndex = 5;
             this.label59.Text = "Xem thông báo";
             // 
+            // panel_tbDuyetLich
+            // 
+            this.panel_tbDuyetLich.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel_tbDuyetLich.Controls.Add(this.pictureBox11);
+            this.panel_tbDuyetLich.Controls.Add(this.button2);
+            this.panel_tbDuyetLich.Controls.Add(this.label4);
+            this.panel_tbDuyetLich.Controls.Add(this.label6);
+            this.panel_tbDuyetLich.Controls.Add(this.pictureBox16);
+            this.panel_tbDuyetLich.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel_tbDuyetLich.Location = new System.Drawing.Point(357, 335);
+            this.panel_tbDuyetLich.Name = "panel_tbDuyetLich";
+            this.panel_tbDuyetLich.Size = new System.Drawing.Size(1086, 186);
+            this.panel_tbDuyetLich.TabIndex = 7;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(147, 133);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(24, 23);
+            this.pictureBox11.TabIndex = 5;
+            this.pictureBox11.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Inter Light", 11F);
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button2.Location = new System.Drawing.Point(127, 124);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
+            this.button2.Size = new System.Drawing.Size(185, 41);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Xem lại lịch";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Inter Light", 10.5F);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(127, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(927, 53);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Lịch làm việc mà bạn đăng ký vào ngày dd/mm/yyyy đã được duyệt. Bạn hãy xem lại l" +
+    "ịch ca làm việc của mình\r\nđể không bị trễ hoặc mất buổi nhé.";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Inter SemiBold", 14F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
+            this.label6.Location = new System.Drawing.Point(122, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(273, 29);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Đã duyệt lịch làm việc!";
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
+            this.pictureBox16.Location = new System.Drawing.Point(22, 20);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox16.TabIndex = 0;
+            this.pictureBox16.TabStop = false;
+            // 
             // ThongBao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1482, 833);
+            this.Controls.Add(this.panel_tbDuyetLich);
             this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.panel_thongBaoThanhCong);
+            this.Controls.Add(this.panel_tbDKThanhCong);
             this.Controls.Add(this.label59);
             this.Controls.Add(this.panel1);
             this.Name = "ThongBao";
@@ -987,11 +1066,15 @@ namespace AnBinhApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            this.panel_thongBaoThanhCong.ResumeLayout(false);
-            this.panel_thongBaoThanhCong.PerformLayout();
+            this.panel_tbDKThanhCong.ResumeLayout(false);
+            this.panel_tbDKThanhCong.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            this.panel_tbDuyetLich.ResumeLayout(false);
+            this.panel_tbDuyetLich.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1052,7 +1135,7 @@ namespace AnBinhApp
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.Panel panel_thongBaoThanhCong;
+        private System.Windows.Forms.Panel panel_tbDKThanhCong;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Button button9;
@@ -1061,5 +1144,11 @@ namespace AnBinhApp
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Panel panel_tbDuyetLich;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox16;
     }
 }

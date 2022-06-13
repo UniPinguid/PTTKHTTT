@@ -76,6 +76,12 @@
     <Compile Include="KhaNangVacxin.Designer.cs">
       <DependentUpon>KhaNangVacxin.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanCong.Designer.cs">
+      <DependentUpon>PhanCong.cs</DependentUpon>
+    </Compile>
     <Compile Include="TaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhaNangVacxin.resx">
       <DependentUpon>KhaNangVacxin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanCong.resx">
+      <DependentUpon>PhanCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TaiKhoan.resx">
       <DependentUpon>TaiKhoan.cs</DependentUpon>

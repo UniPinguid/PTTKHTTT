@@ -25,20 +25,42 @@ namespace AnBinhApp
         bool is_Thoat_clicked = false;
         bool is_DSPhieuTiem_clicked = false;
 
+        bool is_DKTiem_success = false;
+        bool is_DuyetLich_approved = true;
+
         private void notification(bool co_ThongBao)
         {
             if (TrangChu.co_ThongBao == false)
             {
                 picture_dauThongBao.Hide();
                 pictureBox10.Location = new Point(522, 159);
-                panel_thongBaoThanhCong.Hide();
+                panel_tbDKThanhCong.Hide();
+                panel_tbDuyetLich.Hide();
             }
             else
             {
                 pictureBox10.Hide();
+
+                if (is_DKTiem_success)
+                {
+                    panel_tbDKThanhCong.Show();
+                }
+                else
+                {
+                    panel_tbDKThanhCong.Hide();
+                }
+
+                if (is_DuyetLich_approved)
+                {
+                    panel_tbDuyetLich.Show();
+                    panel_tbDuyetLich.Location = new Point(357, 122);
+                }
+                else
+                {
+                    panel_tbDuyetLich.Hide();
+                }
             }
         }
-
         private void sideBarCollapsible(bool ds_collapsible, bool chucnang_collapsible, bool taikhoan_collapsible)
         {
             if (ds_collapsible == false)
