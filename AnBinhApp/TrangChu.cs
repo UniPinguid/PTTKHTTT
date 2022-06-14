@@ -352,6 +352,7 @@ namespace AnBinhApp
             thongBaoForm.Show();
             this.Hide();           
         }
+
         private void TrangChu_click(object sender, EventArgs e)
         {
             panel_TrangChu.BackColor = Color.FromArgb(73, 155, 242);
@@ -379,6 +380,12 @@ namespace AnBinhApp
 
             DangKyTiemNgua dktn = new DangKyTiemNgua();
             dktn.Show();
+            this.Hide();
+        }
+        private void QTTC_click(object sender, EventArgs e)
+        {
+            QuyTrinhTiemChung QTTCForm = new QuyTrinhTiemChung();
+            QTTCForm.Show();
             this.Hide();
         }
 

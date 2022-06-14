@@ -21,3 +21,4 @@ D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.XemLich.resources
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.KhaNangVacxin.resources
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.TaiKhoan.resources
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.PhanCong.resources
+D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.QuyTrinhTiemChung.resources

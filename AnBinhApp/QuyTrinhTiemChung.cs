@@ -10,17 +10,34 @@ using System.Windows.Forms;
 
 namespace AnBinhApp
 {
-    public partial class ThanhToan : Form
+    public partial class QuyTrinhTiemChung : Form
     {
-        public ThanhToan()
+        // Biến kiểm tra xem ngày hôm nay có trùng với ngày tiêm đã đăng ký hay không
+        bool is_vaccination_today = true;
+        // Biến kiểm tra xem phiếu đăng ký đó đẵ thanh toán hay chưa (thông qua thuộc tính Tình trạng)
+        bool is_paid = false;
+
+        public QuyTrinhTiemChung()
         {
             InitializeComponent();
-            hoadonMotLan.Hide();
-            hoadonTraGop.Hide();
-            btnThanhToan.Hide();
-
             notification(TrangChu.co_ThongBao);
             sideBarCollapsible(TrangChu.ds_collapsible, TrangChu.chucnang_collapsible, TrangChu.taikhoan_collapsible);
+
+            if (!is_vaccination_today)
+            {
+                tab.Hide();
+            }
+            else
+            {
+                tab.SelectTab(start);
+                label1.Hide();
+                label8.Hide();
+                button4.Hide();
+                pictureEmpty.Hide();
+
+                rBtnMotLan.Checked = true;
+                hoadonTraGop.Hide();
+            }
         }
 
         // Start of
@@ -40,7 +57,6 @@ namespace AnBinhApp
                 //
             }
         }
-
         private void sideBarCollapsible(bool ds_collapsible, bool chucnang_collapsible, bool taikhoan_collapsible)
         {
             if (ds_collapsible == false)
@@ -66,7 +82,6 @@ namespace AnBinhApp
                 panel2.Location = new Point(panel2.Location.X, panel2.Location.Y - 224);
             }
 
-
             if (chucnang_collapsible == false)
             {
                 collapsible_chucNang.Image = Image.FromFile("../../svg/collapsible off.png");
@@ -83,7 +98,6 @@ namespace AnBinhApp
                 panel2.Location = new Point(panel2.Location.X, panel2.Location.Y - 168);
             }
 
-
             if (taikhoan_collapsible == false)
             {
                 collapsible_taiKhoan.Image = Image.FromFile("../../svg/collapsible off.png");
@@ -95,7 +109,6 @@ namespace AnBinhApp
             }
 
         }
-
         private void ThongBao_enter(object sender, EventArgs e)
         {
             pictureThongBao.Image = Image.FromFile("../../svg/bell hover.png");
@@ -283,7 +296,7 @@ namespace AnBinhApp
                 panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y - 168);
                 panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y - 168);
 
-                panel2.Location = new Point(panel2.Location.X, panel2.Location.Y - 168);
+                panel2.Location = new Point(panel2.Location.X, panel_Thoat.Location.Y - 168);
             }
             else
             {
@@ -300,7 +313,7 @@ namespace AnBinhApp
                 panel_DangXuat.Location = new Point(panel_DangXuat.Location.X, panel_DangXuat.Location.Y + 168);
                 panel_Thoat.Location = new Point(panel_Thoat.Location.X, panel_Thoat.Location.Y + 168);
 
-                panel2.Location = new Point(panel2.Location.X, panel2.Location.Y + 168);
+                panel2.Location = new Point(panel2.Location.X, panel_Thoat.Location.Y + 168);
             }
         }
         private void moRongTaiKhoan_click(object sender, EventArgs e)
@@ -395,11 +408,46 @@ namespace AnBinhApp
                 dsPhieuTiem_leave(sender, e);
             }
         }
+        private void dsVacXin_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_NhanVien)
+            {
+                KhaNangVacxin dsVacXinForm = new KhaNangVacxin();
+                dsVacXinForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
+            }
+        }
 
         private void datMuaVacxin_click(object sender, EventArgs e)
         {
             DatMuaVacxin datMuaVacxinForm = new DatMuaVacxin();
             datMuaVacxinForm.Show();
+            this.Close();
+        }
+        private void xemLich_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_NhanVien)
+            {
+                XemLich xemLichForm = new XemLich();
+                xemLichForm.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
+                is_DSPhieuTiem_clicked = false;
+                dsPhieuTiem_leave(sender, e);
+            }
+        }
+
+        private void taiKhoan_click(object sender, EventArgs e)
+        {
+            TaiKhoan tkForm = new TaiKhoan();
+            tkForm.Show();
             this.Close();
         }
         private void DangXuat_click(object sender, EventArgs e)
@@ -410,11 +458,8 @@ namespace AnBinhApp
                 TrangChu.is_login = false;
                 TrangChu.is_NhanVien = false;
 
-                DangNhap dangNhap = new DangNhap();
-                this.Hide();
                 TrangChu trangChu = new TrangChu();
                 trangChu.Show();
-                dangNhap.ShowDialog();
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -437,20 +482,53 @@ namespace AnBinhApp
                 Thoat_leave(sender, e);
             }
         }
-        private void clickThanhToan(object sender, EventArgs e)
+
+        private void clickXemLaiPhieuDK(object sender, EventArgs e)
         {
-            ThanhToan thanhToanForm = new ThanhToan();
-            this.Hide();
-            thanhToanForm.ShowDialog();
+            TaiKhoan tkForm = new TaiKhoan();
+            tkForm.Show();
+            this.Close();
         }
 
-        // End of
-        // Transitioning
-
-        private void ThanhToan_Load(object sender, EventArgs e)
+        private void clickToStep1(object sender, EventArgs e)
         {
-            ngayttMotLan.Text = DateTime.Now.ToShortDateString();
-            ngayttTraGop.Text = DateTime.Now.ToShortDateString();
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn bắt đầu quy trình tiêm chủng không?", "Bắt đầu tiêm chủng", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                tab.SelectTab(step1);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //
+            }
+        }
+
+        private void clickToStep2(object sender, EventArgs e)
+        {
+            if (textBox_maBS.Text == "")
+            {
+                MessageBox.Show("Mã bác sĩ không được để trống!", "Thông báo");
+            }
+            else if (textBox_maBS.Text == "false" /* mã bác sĩ không hợp lệ */)
+            {
+                MessageBox.Show("Mã bác sĩ không hợp lệ!", "Thông báo");
+            }
+            else
+            {
+                tab.SelectTab(step2);
+            }
+        }
+
+        private void clickToStep3(object sender, EventArgs e)
+        {
+            if (!is_paid)
+            {
+                tab.SelectTab(step3);
+            }
+            else
+            {
+                tab.SelectTab(step4);
+            }
         }
 
         private void rBtnMotLan_CheckedChanged(object sender, EventArgs e)
@@ -459,7 +537,7 @@ namespace AnBinhApp
             {
                 hoadonMotLan.Show();
                 btnThanhToan.Show();
-                btnThanhToan.Location = new Point(1225, 470);
+                btnThanhToan.Location = new Point(914, 501);
             }
             else
             {
@@ -471,10 +549,10 @@ namespace AnBinhApp
         {
             if (rBtnTraGop.Checked)
             {
-                hoadonTraGop.Location = new Point(801, 179);
+                hoadonTraGop.Location = new Point(490, 210);
                 hoadonTraGop.Show();
                 btnThanhToan.Show();
-                btnThanhToan.Location = new Point(1225, 505);
+                btnThanhToan.Location = new Point(914, 520);
             }
             else
             {
@@ -482,10 +560,57 @@ namespace AnBinhApp
             }
         }
 
-        private void clickXemPhieu(object sender, EventArgs e)
+        private void clickThanhToan(object sender, EventArgs e)
         {
-            KiemTraPhieu phieu = new KiemTraPhieu();
-            phieu.Show();
-        }       
+            ttThanhToan.Text = "Thành công";
+            ttThanhToan.ForeColor = Color.FromArgb(136, 227, 118);
+            ttThanhToan.Font = new Font("Inter Medium", ttThanhToan.Font.Size);
+
+            is_paid = true;
+        }
+
+        private void clickToStep4(object sender, EventArgs e)
+        {
+            if (!is_paid)
+            {
+                MessageBox.Show("Thanh toán chưa thành công!", "Thông báo");
+            }
+            else
+            {
+                tab.SelectTab(step4);
+            }
+        }
+
+        private int minute = 30;
+        private int second = 0;
+
+        private void clickToStep5(object sender, EventArgs e)
+        {
+            tab.SelectTab(step5);
+
+            timer1 = new System.Windows.Forms.Timer();
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Interval = 1000; // 1 second
+            timer1.Start();
+
+            comboBox1.SelectedIndex = comboBox1.FindStringExact("Khỏe mạnh");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            second--;
+            if (second < 0)
+            {
+                minute--;
+                second = 59;
+            }
+            if (minute == 0)
+                timer1.Stop();
+
+            lblCountDown.Text = minute.ToString() + ":" + second.ToString().PadLeft(2, '0');
+        }
+
+        // End of
+        // Transitioning
     }
 }

@@ -644,6 +644,7 @@ namespace AnBinhApp
             this.panel_QTTC.Name = "panel_QTTC";
             this.panel_QTTC.Size = new System.Drawing.Size(278, 56);
             this.panel_QTTC.TabIndex = 7;
+            this.panel_QTTC.Click += new System.EventHandler(this.QTTC_click);
             this.panel_QTTC.MouseEnter += new System.EventHandler(this.QTTC_enter);
             this.panel_QTTC.MouseLeave += new System.EventHandler(this.QTTC_leave);
             // 
@@ -656,6 +657,7 @@ namespace AnBinhApp
             this.pictureBox21.Size = new System.Drawing.Size(24, 24);
             this.pictureBox21.TabIndex = 2;
             this.pictureBox21.TabStop = false;
+            this.pictureBox21.Click += new System.EventHandler(this.QTTC_click);
             this.pictureBox21.MouseEnter += new System.EventHandler(this.QTTC_enter);
             // 
             // label17
@@ -669,6 +671,7 @@ namespace AnBinhApp
             this.label17.Size = new System.Drawing.Size(183, 21);
             this.label17.TabIndex = 1;
             this.label17.Text = "Quy trình tiêm chủng";
+            this.label17.Click += new System.EventHandler(this.QTTC_click);
             this.label17.MouseEnter += new System.EventHandler(this.QTTC_enter);
             // 
             // panel_TaiKhoan
