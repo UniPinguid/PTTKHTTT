@@ -109,9 +109,9 @@ namespace AnBinhApp
             this.label57.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label57.Location = new System.Drawing.Point(694, 353);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(66, 20);
+            this.label57.Size = new System.Drawing.Size(68, 20);
             this.label57.TabIndex = 46;
-            this.label57.Text = "label57";
+            this.label57.Text = "goitiem";
             // 
             // label56
             // 
@@ -120,9 +120,9 @@ namespace AnBinhApp
             this.label56.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label56.Location = new System.Drawing.Point(755, 317);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(66, 20);
+            this.label56.Size = new System.Drawing.Size(107, 20);
             this.label56.TabIndex = 45;
-            this.label56.Text = "label56";
+            this.label56.Text = "thoigiantiem";
             // 
             // label55
             // 
@@ -131,9 +131,9 @@ namespace AnBinhApp
             this.label55.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label55.Location = new System.Drawing.Point(374, 353);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(66, 20);
+            this.label55.Size = new System.Drawing.Size(95, 20);
             this.label55.TabIndex = 44;
-            this.label55.Text = "label55";
+            this.label55.Text = "tenvaccine";
             // 
             // label54
             // 
@@ -142,9 +142,9 @@ namespace AnBinhApp
             this.label54.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label54.Location = new System.Drawing.Point(352, 317);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(67, 20);
+            this.label54.Size = new System.Drawing.Size(71, 20);
             this.label54.TabIndex = 43;
-            this.label54.Text = "label54";
+            this.label54.Text = "loaitiem";
             // 
             // label53
             // 
@@ -153,9 +153,9 @@ namespace AnBinhApp
             this.label53.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label53.Location = new System.Drawing.Point(728, 255);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(67, 20);
+            this.label53.Size = new System.Drawing.Size(97, 20);
             this.label53.TabIndex = 42;
-            this.label53.Text = "label53";
+            this.label53.Text = "moiquanhe";
             // 
             // label52
             // 
@@ -164,9 +164,9 @@ namespace AnBinhApp
             this.label52.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label52.Location = new System.Drawing.Point(435, 260);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(66, 20);
+            this.label52.Size = new System.Drawing.Size(73, 20);
             this.label52.TabIndex = 41;
-            this.label52.Text = "label52";
+            this.label52.Text = "sdt_ngh";
             // 
             // label51
             // 
@@ -175,9 +175,9 @@ namespace AnBinhApp
             this.label51.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label51.Location = new System.Drawing.Point(490, 222);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(64, 20);
+            this.label51.Size = new System.Drawing.Size(112, 20);
             this.label51.TabIndex = 40;
-            this.label51.Text = "label51";
+            this.label51.Text = "hovaten_ngh";
             // 
             // label50
             // 
@@ -186,9 +186,9 @@ namespace AnBinhApp
             this.label50.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label50.Location = new System.Drawing.Point(735, 160);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(66, 20);
+            this.label50.Size = new System.Drawing.Size(34, 20);
             this.label50.TabIndex = 39;
-            this.label50.Text = "label50";
+            this.label50.Text = "sdt";
             // 
             // label49
             // 
@@ -197,9 +197,9 @@ namespace AnBinhApp
             this.label49.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label49.Location = new System.Drawing.Point(412, 160);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(67, 20);
+            this.label49.Size = new System.Drawing.Size(53, 20);
             this.label49.TabIndex = 38;
-            this.label49.Text = "label49";
+            this.label49.Text = "cmnd";
             // 
             // label48
             // 
@@ -208,9 +208,9 @@ namespace AnBinhApp
             this.label48.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label48.Location = new System.Drawing.Point(923, 119);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(67, 20);
+            this.label48.Size = new System.Drawing.Size(80, 20);
             this.label48.TabIndex = 37;
-            this.label48.Text = "label48";
+            this.label48.Text = "ngaysinh";
             // 
             // label47
             // 
@@ -221,7 +221,7 @@ namespace AnBinhApp
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(67, 20);
             this.label47.TabIndex = 36;
-            this.label47.Text = "label47";
+            this.label47.Text = "gioitinh";
             // 
             // label46
             // 
@@ -230,9 +230,9 @@ namespace AnBinhApp
             this.label46.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label46.Location = new System.Drawing.Point(352, 119);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(67, 20);
+            this.label46.Size = new System.Drawing.Size(73, 20);
             this.label46.TabIndex = 35;
-            this.label46.Text = "label46";
+            this.label46.Text = "hovaten";
             // 
             // label43
             // 

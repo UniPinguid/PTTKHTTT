@@ -463,6 +463,20 @@ namespace AnBinhApp
             }
         }
 
+        private void clickThemNV(object sender, EventArgs e)
+        {
+            PhanCongThemNV PCThemNV = new PhanCongThemNV();
+            PCThemNV.Show();
+        }
+        private void clickHoanTat(object sender, EventArgs e)
+        {
+            HienThi PhanCongSuccess = new HienThi();
+            PhanCongSuccess.Show();
+            PhanCongSuccess.messageShow("success", "Phân công lịch làm việc thành công!", "Thông tin về lịch làm việc mới của mỗi nhân viên sẽ được cập nhật\nđến họ trong vòng 24 giờ.");
+            this.Close();
+        }
+
+
         // End of
         // Transitioning
 
@@ -601,7 +615,6 @@ namespace AnBinhApp
             date = date.AddDays(-1);
             getToday(date);
         }
-
         private void clickNextDay(object sender, EventArgs e)
         {
             date = date.AddDays(1);
@@ -620,7 +633,6 @@ namespace AnBinhApp
             label_yesterday.ForeColor = Color.FromArgb(20, 20, 20);
             label_yesterday_date.ForeColor = Color.FromArgb(20, 20, 20);
         }
-
         private void previousDay_leave(object sender, EventArgs e)
         {
             yesterday_arrow.ForeColor = Color.FromArgb(150, 150, 150);
@@ -634,7 +646,6 @@ namespace AnBinhApp
             label_tomorrow.ForeColor = Color.FromArgb(20, 20, 20);
             label_tomorrow_date.ForeColor = Color.FromArgb(20, 20, 20);
         }
-
         private void nextDay_leave(object sender, EventArgs e)
         {
             tomorrow_arrow.ForeColor = Color.FromArgb(150, 150, 150);

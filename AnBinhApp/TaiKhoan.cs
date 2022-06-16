@@ -40,6 +40,8 @@ namespace AnBinhApp
             tab.SelectTab(tabThongTinThem);
             notification(TrangChu.co_ThongBao);
             sideBarCollapsible(TrangChu.ds_collapsible, TrangChu.chucnang_collapsible, TrangChu.taikhoan_collapsible);
+
+            submitBtn.Hide();
         }
 
         // Start of
@@ -403,6 +405,7 @@ namespace AnBinhApp
             dktn.Show();
             this.Hide();
         }
+
         private void dsPhieuTiem_click(object sender, EventArgs e)
         {
             panel_DSPhieuTiem.BackColor = Color.FromArgb(73, 155, 242);
@@ -440,6 +443,19 @@ namespace AnBinhApp
                 MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
             }
         }
+        private void dsNhanVien_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_BoPhanDieuHanh)
+            {
+                DSNhanVien dsNV = new DSNhanVien();
+                dsNV.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có bộ phận điều hành mới được sử dụng tính năng này!", "Thông báo");
+            }
+        }
 
         private void datMuaVacxin_click(object sender, EventArgs e)
         {
@@ -462,6 +478,20 @@ namespace AnBinhApp
                 dsPhieuTiem_leave(sender, e);
             }
         }
+        private void phanCong_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_BoPhanDieuHanh)
+            {
+                PhanCong phanCongForm = new PhanCong();
+                phanCongForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có bộ phận điều hành mới được sử dụng tính năng này!", "Thông báo");
+            }
+        }
+
         private void DangXuat_click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);
@@ -531,7 +561,44 @@ namespace AnBinhApp
             btnThongTinThem.ForeColor = Color.DarkGray;
             btnThongTinThem.BackColor = Color.FromArgb(247, 249, 252);
             btnThongTinThem.Font = new Font("Inter Light", btnThongTinThem.Font.Size);
-        }   
+        }
+
+        private void clickEdit(object sender, EventArgs e)
+        {
+            editBtn.Hide();
+            submitBtn.Show();
+            submitBtn.Location = new Point(985, 43);
+
+            textBox_hoTen.ReadOnly = false;
+            textBox_viTri.ReadOnly = false;
+            textBox_ngaySinh.ReadOnly = false;
+            textBox_sdt.ReadOnly = false;
+            textBox_diaChi.ReadOnly = false;
+
+            textBox_hoTen.BackColor = Color.FromArgb(240, 240, 240);
+            textBox_viTri.BackColor = Color.FromArgb(240, 240, 240);
+            textBox_ngaySinh.BackColor = Color.FromArgb(240, 240, 240);
+            textBox_sdt.BackColor = Color.FromArgb(240, 240, 240);
+            textBox_diaChi.BackColor = Color.FromArgb(240, 240, 240);
+        }
+
+        private void clickSubmit(object sender, EventArgs e)
+        {
+            submitBtn.Hide();
+            editBtn.Show();
+
+            textBox_hoTen.ReadOnly = true;
+            textBox_viTri.ReadOnly = true;
+            textBox_ngaySinh.ReadOnly = true;
+            textBox_sdt.ReadOnly = true;
+            textBox_diaChi.ReadOnly = true;
+
+            textBox_hoTen.BackColor = Color.White;
+            textBox_viTri.BackColor = Color.White;
+            textBox_ngaySinh.BackColor = Color.White;
+            textBox_sdt.BackColor = Color.White;
+            textBox_diaChi.BackColor = Color.White;
+        }
 
         // End of
         // Transitioning     

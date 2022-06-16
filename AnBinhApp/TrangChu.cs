@@ -14,8 +14,8 @@ namespace AnBinhApp
     public partial class TrangChu : Form
     {
         public static bool is_login = false;
-        public static bool is_NhanVien = false;
-        public static bool is_BoPhanDieuHanh = true;
+        public static bool is_NhanVien = true;
+        public static bool is_BoPhanDieuHanh = false;
         public static bool co_ThongBao = true;
 
         public static bool ds_collapsible = false;
@@ -352,7 +352,6 @@ namespace AnBinhApp
             thongBaoForm.Show();
             this.Hide();           
         }
-
         private void TrangChu_click(object sender, EventArgs e)
         {
             panel_TrangChu.BackColor = Color.FromArgb(73, 155, 242);
@@ -426,6 +425,20 @@ namespace AnBinhApp
                 MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
             }
         }
+        private void dsNhanVien_click(object sender, EventArgs e)
+        {
+            if (is_BoPhanDieuHanh)
+            {
+                DSNhanVien dsNV = new DSNhanVien();
+                dsNV.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có bộ phận điều hành mới được sử dụng tính năng này!", "Thông báo");
+            }
+        }
+
         private void datMuaVacxin_click(object sender, EventArgs e)
         {
             DatMuaVacxin datMuaVacxinForm = new DatMuaVacxin();

@@ -384,6 +384,7 @@ namespace AnBinhApp
             dktn.Show();
             this.Hide();
         }
+
         private void dsPhieuTiem_click(object sender, EventArgs e)
         {
             panel_DSPhieuTiem.BackColor = Color.FromArgb(73, 155, 242);
@@ -421,6 +422,19 @@ namespace AnBinhApp
                 MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
             }
         }
+        private void dsNhanVien_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_BoPhanDieuHanh)
+            {
+                DSNhanVien dsNV = new DSNhanVien();
+                dsNV.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có bộ phận điều hành mới được sử dụng tính năng này!", "Thông báo");
+            }
+        }
 
         private void datMuaVacxin_click(object sender, EventArgs e)
         {
@@ -443,6 +457,20 @@ namespace AnBinhApp
                 dsPhieuTiem_leave(sender, e);
             }
         }
+        private void phanCong_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_BoPhanDieuHanh)
+            {
+                PhanCong phanCongForm = new PhanCong();
+                phanCongForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có bộ phận điều hành mới được sử dụng tính năng này!", "Thông báo");
+            }
+        }
+
 
         private void taiKhoan_click(object sender, EventArgs e)
         {
@@ -489,7 +517,6 @@ namespace AnBinhApp
             tkForm.Show();
             this.Close();
         }
-
         private void clickToStep1(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn bắt đầu quy trình tiêm chủng không?", "Bắt đầu tiêm chủng", MessageBoxButtons.YesNo);
@@ -502,7 +529,6 @@ namespace AnBinhApp
                 //
             }
         }
-
         private void clickToStep2(object sender, EventArgs e)
         {
             if (textBox_maBS.Text == "")
@@ -518,7 +544,6 @@ namespace AnBinhApp
                 tab.SelectTab(step2);
             }
         }
-
         private void clickToStep3(object sender, EventArgs e)
         {
             if (!is_paid)
@@ -530,7 +555,6 @@ namespace AnBinhApp
                 tab.SelectTab(step4);
             }
         }
-
         private void rBtnMotLan_CheckedChanged(object sender, EventArgs e)
         {
             if (rBtnMotLan.Checked)
@@ -544,7 +568,6 @@ namespace AnBinhApp
                 hoadonMotLan.Hide();
             }
         }
-
         private void rBtnTraGop_CheckedChanged(object sender, EventArgs e)
         {
             if (rBtnTraGop.Checked)
@@ -559,7 +582,6 @@ namespace AnBinhApp
                 hoadonTraGop.Hide();
             }
         }
-
         private void clickThanhToan(object sender, EventArgs e)
         {
             ttThanhToan.Text = "Thành công";
@@ -568,7 +590,6 @@ namespace AnBinhApp
 
             is_paid = true;
         }
-
         private void clickToStep4(object sender, EventArgs e)
         {
             if (!is_paid)
@@ -580,10 +601,6 @@ namespace AnBinhApp
                 tab.SelectTab(step4);
             }
         }
-
-        private int minute = 30;
-        private int second = 0;
-
         private void clickToStep5(object sender, EventArgs e)
         {
             tab.SelectTab(step5);
@@ -595,7 +612,17 @@ namespace AnBinhApp
 
             comboBox1.SelectedIndex = comboBox1.FindStringExact("Khỏe mạnh");
         }
+        private void clickXemLaiPhieu(object sender, EventArgs e)
+        {
+            KiemTraPhieu ktPhieu = new KiemTraPhieu();
+            ktPhieu.Show();
+        }
 
+        // End of
+        // Transitioning
+
+        private int minute = 30;
+        private int second = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
             second--;
@@ -610,7 +637,12 @@ namespace AnBinhApp
             lblCountDown.Text = minute.ToString() + ":" + second.ToString().PadLeft(2, '0');
         }
 
-        // End of
-        // Transitioning
+        private void clickHoanTat(object sender, EventArgs e)
+        {
+            HienThi qttcSuccess = new HienThi();
+            qttcSuccess.Show();
+            qttcSuccess.messageShow("success", "Quy trình tiêm chủng thành công!", "Hệ thống An Bình chúc bạn nhiều sức khỏe và\nluôn lạc quan trong mùa dịch này nhé!");
+            this.Close();
+        }
     }
 }

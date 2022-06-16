@@ -587,6 +587,7 @@ namespace AnBinhApp
             resetButton();
             date = date.AddDays(-7);
             weekCalendar(date);
+            get_cell_status();
         }
 
         private void click_nextWeek(object sender, EventArgs e)
@@ -595,6 +596,7 @@ namespace AnBinhApp
             resetButton();
             date = date.AddDays(7);
             weekCalendar(date);
+            get_cell_status();
         }
 
         private void click_returnToday(object sender, EventArgs e)

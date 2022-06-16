@@ -368,6 +368,7 @@ namespace AnBinhApp
             dktn.Show();
             this.Hide();
         }
+
         private void dsPhieuTiem_click(object sender, EventArgs e)
         {
             panel_DSPhieuTiem.BackColor = Color.FromArgb(73, 155, 242);
@@ -392,6 +393,33 @@ namespace AnBinhApp
                 dsPhieuTiem_leave(sender, e);
             }
         }
+        private void dsVacXin_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_NhanVien)
+            {
+                KhaNangVacxin dsVacXinForm = new KhaNangVacxin();
+                dsVacXinForm.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
+            }
+        }
+        private void dsNhanVien_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_BoPhanDieuHanh)
+            {
+                DSNhanVien dsNV = new DSNhanVien();
+                dsNV.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có bộ phận điều hành mới được sử dụng tính năng này!", "Thông báo");
+            }
+        }
+
         private void datMuaVacxin_click(object sender, EventArgs e)
         {
             DatMuaVacxin datMuaVacxinForm = new DatMuaVacxin();
@@ -412,6 +440,26 @@ namespace AnBinhApp
                 is_DSPhieuTiem_clicked = false;
                 dsPhieuTiem_leave(sender, e);
             }
+        }
+        private void phanCong_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_BoPhanDieuHanh)
+            {
+                PhanCong phanCongForm = new PhanCong();
+                phanCongForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có bộ phận điều hành mới được sử dụng tính năng này!", "Thông báo");
+            }
+        }
+
+        private void taiKhoan_click(object sender, EventArgs e)
+        {
+            TaiKhoan tkForm = new TaiKhoan();
+            tkForm.Show();
+            this.Hide();
         }
         private void DangXuat_click(object sender, EventArgs e)
         {
@@ -466,7 +514,6 @@ namespace AnBinhApp
             tab_phieuDatMua = false;
             tab_phieuNhapHang = false;
         }
-
         private void tabLoVacxin_click(object sender, EventArgs e)
         {
             btnLoVacxin.BackColor = Color.FromArgb(73, 155, 242);
@@ -487,7 +534,6 @@ namespace AnBinhApp
             tab_phieuDatMua = false;
             tab_phieuNhapHang = false;
         }
-
         private void tabPDM_click(object sender, EventArgs e)
         {
             btnPhieuDatMua.BackColor = Color.FromArgb(73, 155, 242);
@@ -508,7 +554,6 @@ namespace AnBinhApp
             tab_phieuDatMua = true;
             tab_phieuNhapHang = false;
         }
-
         private void tabPNH_click(object sender, EventArgs e)
         {
             btnPhieuNhapHang.BackColor = Color.FromArgb(73, 155, 242);

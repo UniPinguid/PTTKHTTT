@@ -350,21 +350,13 @@ namespace AnBinhApp
             trangChuForm.Show();
             this.Close();
         }
-        private void DangKyTiem_click(object sender, EventArgs e)
+        private void QTTC_click(object sender, EventArgs e)
         {
-            panel_DangKyTiem.BackColor = Color.FromArgb(73, 155, 242);
-            is_Thoat_clicked = false;
-
-            TrangChu_leave(sender, e);
-            // vacReg_leave(sender, e);
-            dsPhieuTiem_leave(sender, e);
-            DangXuat_leave(sender, e);
-            Thoat_leave(sender, e);
-
-            DangKyTiemNgua dktn = new DangKyTiemNgua();
-            dktn.Show();
-            this.Hide();
+            QuyTrinhTiemChung QTTCForm = new QuyTrinhTiemChung();
+            QTTCForm.Show();
+            this.Close();
         }
+
         private void dsPhieuTiem_click(object sender, EventArgs e)
         {
             panel_DSPhieuTiem.BackColor = Color.FromArgb(73, 155, 242);
@@ -389,6 +381,33 @@ namespace AnBinhApp
                 dsPhieuTiem_leave(sender, e);
             }
         }
+        private void dsVacXin_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_NhanVien)
+            {
+                KhaNangVacxin dsVacXinForm = new KhaNangVacxin();
+                dsVacXinForm.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
+            }
+        }
+        private void dsNhanVien_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_BoPhanDieuHanh)
+            {
+                DSNhanVien dsNV = new DSNhanVien();
+                dsNV.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có bộ phận điều hành mới được sử dụng tính năng này!", "Thông báo");
+            }
+        }
+
         private void datMuaVacxin_click(object sender, EventArgs e)
         {
             DatMuaVacxin datMuaVacxinForm = new DatMuaVacxin();
@@ -401,7 +420,26 @@ namespace AnBinhApp
             xemLichForm.Show();
             this.Close();
         }
+        private void phanCong_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_BoPhanDieuHanh)
+            {
+                PhanCong phanCongForm = new PhanCong();
+                phanCongForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có bộ phận điều hành mới được sử dụng tính năng này!", "Thông báo");
+            }
+        }
 
+        private void taiKhoan_click(object sender, EventArgs e)
+        {
+            TaiKhoan tkForm = new TaiKhoan();
+            tkForm.Show();
+            this.Close();
+        }
         private void DangXuat_click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);

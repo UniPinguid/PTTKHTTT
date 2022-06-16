@@ -461,6 +461,7 @@ namespace AnBinhApp
             this.panel_DSNhanVien.Name = "panel_DSNhanVien";
             this.panel_DSNhanVien.Size = new System.Drawing.Size(278, 56);
             this.panel_DSNhanVien.TabIndex = 10;
+            this.panel_DSNhanVien.Click += new System.EventHandler(this.dsNhanVien_click);
             this.panel_DSNhanVien.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
             this.panel_DSNhanVien.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
             // 
@@ -473,6 +474,7 @@ namespace AnBinhApp
             this.pictureBox15.Size = new System.Drawing.Size(26, 26);
             this.pictureBox15.TabIndex = 2;
             this.pictureBox15.TabStop = false;
+            this.pictureBox15.Click += new System.EventHandler(this.dsNhanVien_click);
             this.pictureBox15.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
             this.pictureBox15.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
             // 
@@ -487,6 +489,7 @@ namespace AnBinhApp
             this.label12.Size = new System.Drawing.Size(98, 23);
             this.label12.TabIndex = 1;
             this.label12.Text = "Nhân viên";
+            this.label12.Click += new System.EventHandler(this.dsNhanVien_click);
             this.label12.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
             this.label12.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
             // 

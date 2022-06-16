@@ -31,69 +31,46 @@ namespace AnBinhApp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhanCong));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.collapsible_ds = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.collapsible_taiKhoan = new System.Windows.Forms.PictureBox();
             this.label_taiKhoan = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel_TaiKhoan = new System.Windows.Forms.Panel();
-            this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_QTTC = new System.Windows.Forms.Panel();
-            this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel_PhanCong = new System.Windows.Forms.Panel();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel_XemLich = new System.Windows.Forms.Panel();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel_DatMuaVacXin = new System.Windows.Forms.Panel();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.collapsible_chucNang = new System.Windows.Forms.PictureBox();
             this.label_chucNang = new System.Windows.Forms.Label();
             this.panel_DSNhanVien = new System.Windows.Forms.Panel();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel_dsKH = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label58 = new System.Windows.Forms.Label();
             this.panel_DSVacxin = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label59 = new System.Windows.Forms.Label();
-            this.picture_dauThongBao = new System.Windows.Forms.PictureBox();
-            this.pictureThongBao = new System.Windows.Forms.PictureBox();
             this.panel_DSPhieuTiem = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label60 = new System.Windows.Forms.Label();
             this.panel_DangKyTiem = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label61 = new System.Windows.Forms.Label();
             this.panel_TrangChu = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label62 = new System.Windows.Forms.Label();
             this.username = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
             this.panel_DangXuat = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label64 = new System.Windows.Forms.Label();
             this.panel_Thoat = new System.Windows.Forms.Panel();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label65 = new System.Windows.Forms.Label();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.searchForm = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.morningIcon = new System.Windows.Forms.PictureBox();
-            this.afternoonIcon = new System.Windows.Forms.PictureBox();
-            this.eveningIcon = new System.Windows.Forms.PictureBox();
             this.yesterday_arrow = new System.Windows.Forms.Label();
             this.label_yesterday = new System.Windows.Forms.Label();
             this.label_yesterday_date = new System.Windows.Forms.Label();
@@ -104,55 +81,78 @@ namespace AnBinhApp
             this.label_today_date = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.calendar = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.eveningIcon = new System.Windows.Forms.PictureBox();
+            this.afternoonIcon = new System.Windows.Forms.PictureBox();
+            this.morningIcon = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.collapsible_ds = new System.Windows.Forms.PictureBox();
+            this.collapsible_taiKhoan = new System.Windows.Forms.PictureBox();
+            this.pictureBox22 = new System.Windows.Forms.PictureBox();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.collapsible_chucNang = new System.Windows.Forms.PictureBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.picture_dauThongBao = new System.Windows.Forms.PictureBox();
+            this.pictureThongBao = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.panel_TaiKhoan.SuspendLayout();
+            this.panel_QTTC.SuspendLayout();
+            this.panel_PhanCong.SuspendLayout();
+            this.panel_XemLich.SuspendLayout();
+            this.panel_DatMuaVacXin.SuspendLayout();
+            this.panel_DSNhanVien.SuspendLayout();
+            this.panel_dsKH.SuspendLayout();
+            this.panel_DSVacxin.SuspendLayout();
+            this.panel_DSPhieuTiem.SuspendLayout();
+            this.panel_DangKyTiem.SuspendLayout();
+            this.panel_TrangChu.SuspendLayout();
+            this.panel_DangXuat.SuspendLayout();
+            this.panel_Thoat.SuspendLayout();
+            this.panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eveningIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.afternoonIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.morningIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_ds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_taiKhoan)).BeginInit();
-            this.panel_TaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
-            this.panel_QTTC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
-            this.panel_PhanCong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            this.panel_XemLich.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            this.panel_DatMuaVacXin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_chucNang)).BeginInit();
-            this.panel_DSNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            this.panel_dsKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel_DSVacxin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_dauThongBao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureThongBao)).BeginInit();
-            this.panel_DSPhieuTiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.panel_DangKyTiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel_TrangChu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel_DangXuat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel_Thoat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            this.panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.morningIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.afternoonIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eveningIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -190,17 +190,6 @@ namespace AnBinhApp
             this.panel1.Size = new System.Drawing.Size(330, 840);
             this.panel1.TabIndex = 6;
             // 
-            // collapsible_ds
-            // 
-            this.collapsible_ds.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.collapsible_ds.Image = ((System.Drawing.Image)(resources.GetObject("collapsible_ds.Image")));
-            this.collapsible_ds.Location = new System.Drawing.Point(122, 382);
-            this.collapsible_ds.Name = "collapsible_ds";
-            this.collapsible_ds.Size = new System.Drawing.Size(25, 14);
-            this.collapsible_ds.TabIndex = 11;
-            this.collapsible_ds.TabStop = false;
-            this.collapsible_ds.Click += new System.EventHandler(this.moRongDS_click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -211,17 +200,6 @@ namespace AnBinhApp
             this.label6.Size = new System.Drawing.Size(95, 20);
             this.label6.TabIndex = 3;
             this.label6.Text = "Danh sách";
-            // 
-            // collapsible_taiKhoan
-            // 
-            this.collapsible_taiKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.collapsible_taiKhoan.Image = ((System.Drawing.Image)(resources.GetObject("collapsible_taiKhoan.Image")));
-            this.collapsible_taiKhoan.Location = new System.Drawing.Point(122, 865);
-            this.collapsible_taiKhoan.Name = "collapsible_taiKhoan";
-            this.collapsible_taiKhoan.Size = new System.Drawing.Size(25, 14);
-            this.collapsible_taiKhoan.TabIndex = 15;
-            this.collapsible_taiKhoan.TabStop = false;
-            this.collapsible_taiKhoan.Click += new System.EventHandler(this.moRongTaiKhoan_click);
             // 
             // label_taiKhoan
             // 
@@ -255,19 +233,6 @@ namespace AnBinhApp
             this.panel_TaiKhoan.MouseEnter += new System.EventHandler(this.taiKhoan_enter);
             this.panel_TaiKhoan.MouseLeave += new System.EventHandler(this.taiKhoan_leave);
             // 
-            // pictureBox22
-            // 
-            this.pictureBox22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox22.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox22.Image")));
-            this.pictureBox22.Location = new System.Drawing.Point(32, 17);
-            this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(20, 24);
-            this.pictureBox22.TabIndex = 2;
-            this.pictureBox22.TabStop = false;
-            this.pictureBox22.Click += new System.EventHandler(this.taiKhoan_click);
-            this.pictureBox22.MouseEnter += new System.EventHandler(this.taiKhoan_enter);
-            this.pictureBox22.MouseLeave += new System.EventHandler(this.taiKhoan_leave);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -295,18 +260,6 @@ namespace AnBinhApp
             this.panel_QTTC.MouseEnter += new System.EventHandler(this.QTTC_enter);
             this.panel_QTTC.MouseLeave += new System.EventHandler(this.QTTC_leave);
             // 
-            // pictureBox21
-            // 
-            this.pictureBox21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox21.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox21.Image")));
-            this.pictureBox21.Location = new System.Drawing.Point(30, 17);
-            this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox21.TabIndex = 2;
-            this.pictureBox21.TabStop = false;
-            this.pictureBox21.MouseEnter += new System.EventHandler(this.QTTC_enter);
-            this.pictureBox21.MouseLeave += new System.EventHandler(this.QTTC_leave);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -332,16 +285,6 @@ namespace AnBinhApp
             this.panel_PhanCong.Size = new System.Drawing.Size(278, 56);
             this.panel_PhanCong.TabIndex = 13;
             // 
-            // pictureBox20
-            // 
-            this.pictureBox20.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
-            this.pictureBox20.Location = new System.Drawing.Point(29, 16);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(26, 26);
-            this.pictureBox20.TabIndex = 2;
-            this.pictureBox20.TabStop = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -366,19 +309,6 @@ namespace AnBinhApp
             this.panel_XemLich.Click += new System.EventHandler(this.xemLich_click);
             this.panel_XemLich.MouseEnter += new System.EventHandler(this.xemLich_enter);
             this.panel_XemLich.MouseLeave += new System.EventHandler(this.xemLich_leave);
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
-            this.pictureBox19.Location = new System.Drawing.Point(29, 16);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(26, 26);
-            this.pictureBox19.TabIndex = 2;
-            this.pictureBox19.TabStop = false;
-            this.pictureBox19.Click += new System.EventHandler(this.xemLich_click);
-            this.pictureBox19.MouseEnter += new System.EventHandler(this.xemLich_enter);
-            this.pictureBox19.MouseLeave += new System.EventHandler(this.xemLich_leave);
             // 
             // label5
             // 
@@ -408,19 +338,6 @@ namespace AnBinhApp
             this.panel_DatMuaVacXin.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
             this.panel_DatMuaVacXin.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
             // 
-            // pictureBox18
-            // 
-            this.pictureBox18.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
-            this.pictureBox18.Location = new System.Drawing.Point(29, 16);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(26, 26);
-            this.pictureBox18.TabIndex = 2;
-            this.pictureBox18.TabStop = false;
-            this.pictureBox18.Click += new System.EventHandler(this.datMuaVacxin_click);
-            this.pictureBox18.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
-            this.pictureBox18.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -435,17 +352,6 @@ namespace AnBinhApp
             this.label7.Click += new System.EventHandler(this.datMuaVacxin_click);
             this.label7.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
             this.label7.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
-            // 
-            // collapsible_chucNang
-            // 
-            this.collapsible_chucNang.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.collapsible_chucNang.Image = ((System.Drawing.Image)(resources.GetObject("collapsible_chucNang.Image")));
-            this.collapsible_chucNang.Location = new System.Drawing.Point(122, 651);
-            this.collapsible_chucNang.Name = "collapsible_chucNang";
-            this.collapsible_chucNang.Size = new System.Drawing.Size(25, 14);
-            this.collapsible_chucNang.TabIndex = 13;
-            this.collapsible_chucNang.TabStop = false;
-            this.collapsible_chucNang.Click += new System.EventHandler(this.moRongChucNang_click);
             // 
             // label_chucNang
             // 
@@ -469,18 +375,6 @@ namespace AnBinhApp
             this.panel_DSNhanVien.TabIndex = 10;
             this.panel_DSNhanVien.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
             this.panel_DSNhanVien.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
-            this.pictureBox15.Location = new System.Drawing.Point(29, 16);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(26, 26);
-            this.pictureBox15.TabIndex = 2;
-            this.pictureBox15.TabStop = false;
-            this.pictureBox15.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
-            this.pictureBox15.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
             // 
             // label10
             // 
@@ -507,18 +401,6 @@ namespace AnBinhApp
             this.panel_dsKH.TabIndex = 8;
             this.panel_dsKH.MouseEnter += new System.EventHandler(this.dsKH_enter);
             this.panel_dsKH.MouseLeave += new System.EventHandler(this.dsKH_leave);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(29, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseEnter += new System.EventHandler(this.dsKH_enter);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.dsKH_leave);
             // 
             // label58
             // 
@@ -547,19 +429,6 @@ namespace AnBinhApp
             this.panel_DSVacxin.MouseEnter += new System.EventHandler(this.dsVacXin_enter);
             this.panel_DSVacxin.MouseLeave += new System.EventHandler(this.dsVacXin_leave);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(29, 16);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(26, 26);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.dsVacXin_click);
-            this.pictureBox2.MouseEnter += new System.EventHandler(this.dsVacXin_enter);
-            this.pictureBox2.MouseLeave += new System.EventHandler(this.dsVacXin_leave);
-            // 
             // label59
             // 
             this.label59.AutoSize = true;
@@ -575,31 +444,6 @@ namespace AnBinhApp
             this.label59.MouseEnter += new System.EventHandler(this.dsVacXin_enter);
             this.label59.MouseLeave += new System.EventHandler(this.dsVacXin_leave);
             // 
-            // picture_dauThongBao
-            // 
-            this.picture_dauThongBao.BackColor = System.Drawing.Color.Transparent;
-            this.picture_dauThongBao.Image = ((System.Drawing.Image)(resources.GetObject("picture_dauThongBao.Image")));
-            this.picture_dauThongBao.Location = new System.Drawing.Point(259, 29);
-            this.picture_dauThongBao.Name = "picture_dauThongBao";
-            this.picture_dauThongBao.Size = new System.Drawing.Size(16, 16);
-            this.picture_dauThongBao.TabIndex = 9;
-            this.picture_dauThongBao.TabStop = false;
-            // 
-            // pictureThongBao
-            // 
-            this.pictureThongBao.BackColor = System.Drawing.Color.Transparent;
-            this.pictureThongBao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureThongBao.Image = ((System.Drawing.Image)(resources.GetObject("pictureThongBao.Image")));
-            this.pictureThongBao.Location = new System.Drawing.Point(239, 33);
-            this.pictureThongBao.Name = "pictureThongBao";
-            this.pictureThongBao.Size = new System.Drawing.Size(28, 28);
-            this.pictureThongBao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureThongBao.TabIndex = 8;
-            this.pictureThongBao.TabStop = false;
-            this.pictureThongBao.Click += new System.EventHandler(this.ThongBao_click);
-            this.pictureThongBao.MouseEnter += new System.EventHandler(this.ThongBao_enter);
-            this.pictureThongBao.MouseLeave += new System.EventHandler(this.ThongBao_leave);
-            // 
             // panel_DSPhieuTiem
             // 
             this.panel_DSPhieuTiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
@@ -613,19 +457,6 @@ namespace AnBinhApp
             this.panel_DSPhieuTiem.Click += new System.EventHandler(this.dsPhieuTiem_click);
             this.panel_DSPhieuTiem.MouseEnter += new System.EventHandler(this.dsPhieuTiem_enter);
             this.panel_DSPhieuTiem.MouseLeave += new System.EventHandler(this.dsPhieuTiem_leave);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(29, 16);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(26, 26);
-            this.pictureBox6.TabIndex = 2;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.dsPhieuTiem_click);
-            this.pictureBox6.MouseEnter += new System.EventHandler(this.dsPhieuTiem_enter);
-            this.pictureBox6.MouseLeave += new System.EventHandler(this.dsPhieuTiem_leave);
             // 
             // label60
             // 
@@ -656,19 +487,6 @@ namespace AnBinhApp
             this.panel_DangKyTiem.MouseEnter += new System.EventHandler(this.DangKyTiem_enter);
             this.panel_DangKyTiem.MouseLeave += new System.EventHandler(this.DangKyTiem_leave);
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(29, 17);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(25, 24);
-            this.pictureBox5.TabIndex = 2;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.DangKyTiem_click);
-            this.pictureBox5.MouseEnter += new System.EventHandler(this.DangKyTiem_enter);
-            this.pictureBox5.MouseLeave += new System.EventHandler(this.DangKyTiem_leave);
-            // 
             // label61
             // 
             this.label61.AutoSize = true;
@@ -696,19 +514,6 @@ namespace AnBinhApp
             this.panel_TrangChu.Click += new System.EventHandler(this.TrangChu_click);
             this.panel_TrangChu.MouseEnter += new System.EventHandler(this.TrangChu_enter);
             this.panel_TrangChu.MouseLeave += new System.EventHandler(this.TrangChu_leave);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(29, 17);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(25, 24);
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.TrangChu_click);
-            this.pictureBox4.MouseEnter += new System.EventHandler(this.TrangChu_enter);
-            this.pictureBox4.MouseLeave += new System.EventHandler(this.TrangChu_leave);
             // 
             // label62
             // 
@@ -760,19 +565,6 @@ namespace AnBinhApp
             this.panel_DangXuat.MouseEnter += new System.EventHandler(this.DangXuat_enter);
             this.panel_DangXuat.MouseLeave += new System.EventHandler(this.DangXuat_leave);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(25, 17);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(29, 24);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.DangXuat_click);
-            this.pictureBox3.MouseEnter += new System.EventHandler(this.DangXuat_enter);
-            this.pictureBox3.MouseLeave += new System.EventHandler(this.DangXuat_leave);
-            // 
             // label64
             // 
             this.label64.AutoSize = true;
@@ -801,19 +593,6 @@ namespace AnBinhApp
             this.panel_Thoat.MouseEnter += new System.EventHandler(this.Thoat_enter);
             this.panel_Thoat.MouseLeave += new System.EventHandler(this.Thoat_leave);
             // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(31, 17);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox9.TabIndex = 2;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.Thoat_click);
-            this.pictureBox9.MouseEnter += new System.EventHandler(this.Thoat_enter);
-            this.pictureBox9.MouseLeave += new System.EventHandler(this.Thoat_leave);
-            // 
             // label65
             // 
             this.label65.AutoSize = true;
@@ -828,15 +607,6 @@ namespace AnBinhApp
             this.label65.Click += new System.EventHandler(this.Thoat_click);
             this.label65.MouseEnter += new System.EventHandler(this.Thoat_enter);
             this.label65.MouseLeave += new System.EventHandler(this.Thoat_leave);
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(26, 26);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(169, 56);
-            this.pictureBox10.TabIndex = 1;
-            this.pictureBox10.TabStop = false;
             // 
             // button1
             // 
@@ -861,16 +631,6 @@ namespace AnBinhApp
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(634, 45);
             this.panel16.TabIndex = 22;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(16, 8);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 1;
-            this.pictureBox11.TabStop = false;
             // 
             // searchForm
             // 
@@ -933,45 +693,6 @@ namespace AnBinhApp
             this.label9.Size = new System.Drawing.Size(49, 20);
             this.label9.TabIndex = 26;
             this.label9.Text = "Buổi:";
-            // 
-            // morningIcon
-            // 
-            this.morningIcon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.morningIcon.Image = ((System.Drawing.Image)(resources.GetObject("morningIcon.Image")));
-            this.morningIcon.Location = new System.Drawing.Point(1041, 344);
-            this.morningIcon.Name = "morningIcon";
-            this.morningIcon.Size = new System.Drawing.Size(24, 24);
-            this.morningIcon.TabIndex = 27;
-            this.morningIcon.TabStop = false;
-            this.morningIcon.Click += new System.EventHandler(this.morning_click);
-            this.morningIcon.MouseEnter += new System.EventHandler(this.morning_enter);
-            this.morningIcon.MouseLeave += new System.EventHandler(this.morning_leave);
-            // 
-            // afternoonIcon
-            // 
-            this.afternoonIcon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.afternoonIcon.Image = ((System.Drawing.Image)(resources.GetObject("afternoonIcon.Image")));
-            this.afternoonIcon.Location = new System.Drawing.Point(1067, 344);
-            this.afternoonIcon.Name = "afternoonIcon";
-            this.afternoonIcon.Size = new System.Drawing.Size(24, 24);
-            this.afternoonIcon.TabIndex = 28;
-            this.afternoonIcon.TabStop = false;
-            this.afternoonIcon.Click += new System.EventHandler(this.afternoon_click);
-            this.afternoonIcon.MouseEnter += new System.EventHandler(this.afternoon_enter);
-            this.afternoonIcon.MouseLeave += new System.EventHandler(this.afternoon_leave);
-            // 
-            // eveningIcon
-            // 
-            this.eveningIcon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.eveningIcon.Image = ((System.Drawing.Image)(resources.GetObject("eveningIcon.Image")));
-            this.eveningIcon.Location = new System.Drawing.Point(1093, 344);
-            this.eveningIcon.Name = "eveningIcon";
-            this.eveningIcon.Size = new System.Drawing.Size(24, 24);
-            this.eveningIcon.TabIndex = 29;
-            this.eveningIcon.TabStop = false;
-            this.eveningIcon.Click += new System.EventHandler(this.evening_click);
-            this.eveningIcon.MouseEnter += new System.EventHandler(this.evening_enter);
-            this.eveningIcon.MouseLeave += new System.EventHandler(this.evening_leave);
             // 
             // yesterday_arrow
             // 
@@ -1108,15 +829,6 @@ namespace AnBinhApp
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(1224, 401);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(24, 21);
-            this.pictureBox7.TabIndex = 61;
-            this.pictureBox7.TabStop = false;
-            // 
             // button3
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1130,16 +842,7 @@ namespace AnBinhApp
             this.button3.Text = "Thêm nhân viên";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(1224, 492);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox8.TabIndex = 63;
-            this.pictureBox8.TabStop = false;
+            this.button3.Click += new System.EventHandler(this.clickThemNV);
             // 
             // button4
             // 
@@ -1155,16 +858,6 @@ namespace AnBinhApp
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // pictureBox12
-            // 
-            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(1224, 548);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox12.TabIndex = 65;
-            this.pictureBox12.TabStop = false;
-            // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(155)))), ((int)(((byte)(242)))));
@@ -1178,6 +871,7 @@ namespace AnBinhApp
             this.button5.TabIndex = 66;
             this.button5.Text = "Hoàn tất";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.clickHoanTat);
             // 
             // calendar
             // 
@@ -1189,6 +883,315 @@ namespace AnBinhApp
             this.calendar.Size = new System.Drawing.Size(162, 29);
             this.calendar.TabIndex = 69;
             this.calendar.ValueChanged += new System.EventHandler(this.changeDate);
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
+            this.pictureBox12.Location = new System.Drawing.Point(1224, 548);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox12.TabIndex = 65;
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(1224, 492);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox8.TabIndex = 63;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.clickThemNV);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(1224, 401);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(24, 21);
+            this.pictureBox7.TabIndex = 61;
+            this.pictureBox7.TabStop = false;
+            // 
+            // eveningIcon
+            // 
+            this.eveningIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eveningIcon.Image = ((System.Drawing.Image)(resources.GetObject("eveningIcon.Image")));
+            this.eveningIcon.Location = new System.Drawing.Point(1093, 344);
+            this.eveningIcon.Name = "eveningIcon";
+            this.eveningIcon.Size = new System.Drawing.Size(24, 24);
+            this.eveningIcon.TabIndex = 29;
+            this.eveningIcon.TabStop = false;
+            this.eveningIcon.Click += new System.EventHandler(this.evening_click);
+            this.eveningIcon.MouseEnter += new System.EventHandler(this.evening_enter);
+            this.eveningIcon.MouseLeave += new System.EventHandler(this.evening_leave);
+            // 
+            // afternoonIcon
+            // 
+            this.afternoonIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.afternoonIcon.Image = ((System.Drawing.Image)(resources.GetObject("afternoonIcon.Image")));
+            this.afternoonIcon.Location = new System.Drawing.Point(1067, 344);
+            this.afternoonIcon.Name = "afternoonIcon";
+            this.afternoonIcon.Size = new System.Drawing.Size(24, 24);
+            this.afternoonIcon.TabIndex = 28;
+            this.afternoonIcon.TabStop = false;
+            this.afternoonIcon.Click += new System.EventHandler(this.afternoon_click);
+            this.afternoonIcon.MouseEnter += new System.EventHandler(this.afternoon_enter);
+            this.afternoonIcon.MouseLeave += new System.EventHandler(this.afternoon_leave);
+            // 
+            // morningIcon
+            // 
+            this.morningIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.morningIcon.Image = ((System.Drawing.Image)(resources.GetObject("morningIcon.Image")));
+            this.morningIcon.Location = new System.Drawing.Point(1041, 344);
+            this.morningIcon.Name = "morningIcon";
+            this.morningIcon.Size = new System.Drawing.Size(24, 24);
+            this.morningIcon.TabIndex = 27;
+            this.morningIcon.TabStop = false;
+            this.morningIcon.Click += new System.EventHandler(this.morning_click);
+            this.morningIcon.MouseEnter += new System.EventHandler(this.morning_enter);
+            this.morningIcon.MouseLeave += new System.EventHandler(this.morning_leave);
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(16, 8);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 1;
+            this.pictureBox11.TabStop = false;
+            // 
+            // collapsible_ds
+            // 
+            this.collapsible_ds.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.collapsible_ds.Image = ((System.Drawing.Image)(resources.GetObject("collapsible_ds.Image")));
+            this.collapsible_ds.Location = new System.Drawing.Point(122, 382);
+            this.collapsible_ds.Name = "collapsible_ds";
+            this.collapsible_ds.Size = new System.Drawing.Size(25, 14);
+            this.collapsible_ds.TabIndex = 11;
+            this.collapsible_ds.TabStop = false;
+            this.collapsible_ds.Click += new System.EventHandler(this.moRongDS_click);
+            // 
+            // collapsible_taiKhoan
+            // 
+            this.collapsible_taiKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.collapsible_taiKhoan.Image = ((System.Drawing.Image)(resources.GetObject("collapsible_taiKhoan.Image")));
+            this.collapsible_taiKhoan.Location = new System.Drawing.Point(122, 865);
+            this.collapsible_taiKhoan.Name = "collapsible_taiKhoan";
+            this.collapsible_taiKhoan.Size = new System.Drawing.Size(25, 14);
+            this.collapsible_taiKhoan.TabIndex = 15;
+            this.collapsible_taiKhoan.TabStop = false;
+            this.collapsible_taiKhoan.Click += new System.EventHandler(this.moRongTaiKhoan_click);
+            // 
+            // pictureBox22
+            // 
+            this.pictureBox22.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox22.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox22.Image")));
+            this.pictureBox22.Location = new System.Drawing.Point(32, 17);
+            this.pictureBox22.Name = "pictureBox22";
+            this.pictureBox22.Size = new System.Drawing.Size(20, 24);
+            this.pictureBox22.TabIndex = 2;
+            this.pictureBox22.TabStop = false;
+            this.pictureBox22.Click += new System.EventHandler(this.taiKhoan_click);
+            this.pictureBox22.MouseEnter += new System.EventHandler(this.taiKhoan_enter);
+            this.pictureBox22.MouseLeave += new System.EventHandler(this.taiKhoan_leave);
+            // 
+            // pictureBox21
+            // 
+            this.pictureBox21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox21.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox21.Image")));
+            this.pictureBox21.Location = new System.Drawing.Point(30, 17);
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox21.TabIndex = 2;
+            this.pictureBox21.TabStop = false;
+            this.pictureBox21.MouseEnter += new System.EventHandler(this.QTTC_enter);
+            this.pictureBox21.MouseLeave += new System.EventHandler(this.QTTC_leave);
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
+            this.pictureBox20.Location = new System.Drawing.Point(29, 16);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox20.TabIndex = 2;
+            this.pictureBox20.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
+            this.pictureBox19.Location = new System.Drawing.Point(29, 16);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox19.TabIndex = 2;
+            this.pictureBox19.TabStop = false;
+            this.pictureBox19.Click += new System.EventHandler(this.xemLich_click);
+            this.pictureBox19.MouseEnter += new System.EventHandler(this.xemLich_enter);
+            this.pictureBox19.MouseLeave += new System.EventHandler(this.xemLich_leave);
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
+            this.pictureBox18.Location = new System.Drawing.Point(29, 16);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox18.TabIndex = 2;
+            this.pictureBox18.TabStop = false;
+            this.pictureBox18.Click += new System.EventHandler(this.datMuaVacxin_click);
+            this.pictureBox18.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
+            this.pictureBox18.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
+            // 
+            // collapsible_chucNang
+            // 
+            this.collapsible_chucNang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.collapsible_chucNang.Image = ((System.Drawing.Image)(resources.GetObject("collapsible_chucNang.Image")));
+            this.collapsible_chucNang.Location = new System.Drawing.Point(122, 651);
+            this.collapsible_chucNang.Name = "collapsible_chucNang";
+            this.collapsible_chucNang.Size = new System.Drawing.Size(25, 14);
+            this.collapsible_chucNang.TabIndex = 13;
+            this.collapsible_chucNang.TabStop = false;
+            this.collapsible_chucNang.Click += new System.EventHandler(this.moRongChucNang_click);
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
+            this.pictureBox15.Location = new System.Drawing.Point(29, 16);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox15.TabIndex = 2;
+            this.pictureBox15.TabStop = false;
+            this.pictureBox15.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
+            this.pictureBox15.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(29, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.dsKH_enter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.dsKH_leave);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(29, 16);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.dsVacXin_click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.dsVacXin_enter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.dsVacXin_leave);
+            // 
+            // picture_dauThongBao
+            // 
+            this.picture_dauThongBao.BackColor = System.Drawing.Color.Transparent;
+            this.picture_dauThongBao.Image = ((System.Drawing.Image)(resources.GetObject("picture_dauThongBao.Image")));
+            this.picture_dauThongBao.Location = new System.Drawing.Point(259, 29);
+            this.picture_dauThongBao.Name = "picture_dauThongBao";
+            this.picture_dauThongBao.Size = new System.Drawing.Size(16, 16);
+            this.picture_dauThongBao.TabIndex = 9;
+            this.picture_dauThongBao.TabStop = false;
+            // 
+            // pictureThongBao
+            // 
+            this.pictureThongBao.BackColor = System.Drawing.Color.Transparent;
+            this.pictureThongBao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureThongBao.Image = ((System.Drawing.Image)(resources.GetObject("pictureThongBao.Image")));
+            this.pictureThongBao.Location = new System.Drawing.Point(239, 33);
+            this.pictureThongBao.Name = "pictureThongBao";
+            this.pictureThongBao.Size = new System.Drawing.Size(28, 28);
+            this.pictureThongBao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureThongBao.TabIndex = 8;
+            this.pictureThongBao.TabStop = false;
+            this.pictureThongBao.Click += new System.EventHandler(this.ThongBao_click);
+            this.pictureThongBao.MouseEnter += new System.EventHandler(this.ThongBao_enter);
+            this.pictureThongBao.MouseLeave += new System.EventHandler(this.ThongBao_leave);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(29, 16);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox6.TabIndex = 2;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.dsPhieuTiem_click);
+            this.pictureBox6.MouseEnter += new System.EventHandler(this.dsPhieuTiem_enter);
+            this.pictureBox6.MouseLeave += new System.EventHandler(this.dsPhieuTiem_leave);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(29, 17);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(25, 24);
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.DangKyTiem_click);
+            this.pictureBox5.MouseEnter += new System.EventHandler(this.DangKyTiem_enter);
+            this.pictureBox5.MouseLeave += new System.EventHandler(this.DangKyTiem_leave);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(29, 17);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(25, 24);
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.TrangChu_click);
+            this.pictureBox4.MouseEnter += new System.EventHandler(this.TrangChu_enter);
+            this.pictureBox4.MouseLeave += new System.EventHandler(this.TrangChu_leave);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(25, 17);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(29, 24);
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.DangXuat_click);
+            this.pictureBox3.MouseEnter += new System.EventHandler(this.DangXuat_enter);
+            this.pictureBox3.MouseLeave += new System.EventHandler(this.DangXuat_leave);
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(31, 17);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox9.TabIndex = 2;
+            this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.Thoat_click);
+            this.pictureBox9.MouseEnter += new System.EventHandler(this.Thoat_enter);
+            this.pictureBox9.MouseLeave += new System.EventHandler(this.Thoat_leave);
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(26, 26);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(169, 56);
+            this.pictureBox10.TabIndex = 1;
+            this.pictureBox10.TabStop = false;
             // 
             // PhanCong
             // 
@@ -1229,61 +1232,61 @@ namespace AnBinhApp
             this.Text = "PhanCong";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.collapsible_ds)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.collapsible_taiKhoan)).EndInit();
             this.panel_TaiKhoan.ResumeLayout(false);
             this.panel_TaiKhoan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             this.panel_QTTC.ResumeLayout(false);
             this.panel_QTTC.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             this.panel_PhanCong.ResumeLayout(false);
             this.panel_PhanCong.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             this.panel_XemLich.ResumeLayout(false);
             this.panel_XemLich.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             this.panel_DatMuaVacXin.ResumeLayout(false);
             this.panel_DatMuaVacXin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.collapsible_chucNang)).EndInit();
             this.panel_DSNhanVien.ResumeLayout(false);
             this.panel_DSNhanVien.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.panel_dsKH.ResumeLayout(false);
             this.panel_dsKH.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_DSVacxin.ResumeLayout(false);
             this.panel_DSVacxin.PerformLayout();
+            this.panel_DSPhieuTiem.ResumeLayout(false);
+            this.panel_DSPhieuTiem.PerformLayout();
+            this.panel_DangKyTiem.ResumeLayout(false);
+            this.panel_DangKyTiem.PerformLayout();
+            this.panel_TrangChu.ResumeLayout(false);
+            this.panel_TrangChu.PerformLayout();
+            this.panel_DangXuat.ResumeLayout(false);
+            this.panel_DangXuat.PerformLayout();
+            this.panel_Thoat.ResumeLayout(false);
+            this.panel_Thoat.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eveningIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.afternoonIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.morningIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.collapsible_ds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.collapsible_taiKhoan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.collapsible_chucNang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_dauThongBao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureThongBao)).EndInit();
-            this.panel_DSPhieuTiem.ResumeLayout(false);
-            this.panel_DSPhieuTiem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.panel_DangKyTiem.ResumeLayout(false);
-            this.panel_DangKyTiem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel_TrangChu.ResumeLayout(false);
-            this.panel_TrangChu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel_DangXuat.ResumeLayout(false);
-            this.panel_DangXuat.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel_Thoat.ResumeLayout(false);
-            this.panel_Thoat.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.morningIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.afternoonIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eveningIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

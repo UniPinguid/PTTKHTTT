@@ -310,6 +310,7 @@ namespace AnBinhApp
             this.panel_TaiKhoan.Name = "panel_TaiKhoan";
             this.panel_TaiKhoan.Size = new System.Drawing.Size(278, 56);
             this.panel_TaiKhoan.TabIndex = 5;
+            this.panel_TaiKhoan.Click += new System.EventHandler(this.taiKhoan_click);
             this.panel_TaiKhoan.MouseEnter += new System.EventHandler(this.taiKhoan_enter);
             this.panel_TaiKhoan.MouseLeave += new System.EventHandler(this.taiKhoan_leave);
             // 
@@ -322,6 +323,7 @@ namespace AnBinhApp
             this.pictureBox22.Size = new System.Drawing.Size(20, 24);
             this.pictureBox22.TabIndex = 2;
             this.pictureBox22.TabStop = false;
+            this.pictureBox22.Click += new System.EventHandler(this.taiKhoan_click);
             this.pictureBox22.MouseEnter += new System.EventHandler(this.taiKhoan_enter);
             this.pictureBox22.MouseLeave += new System.EventHandler(this.taiKhoan_leave);
             // 
@@ -336,6 +338,7 @@ namespace AnBinhApp
             this.label18.Size = new System.Drawing.Size(95, 23);
             this.label18.TabIndex = 1;
             this.label18.Text = "Tài khoản";
+            this.label18.Click += new System.EventHandler(this.taiKhoan_click);
             this.label18.MouseEnter += new System.EventHandler(this.taiKhoan_enter);
             this.label18.MouseLeave += new System.EventHandler(this.taiKhoan_leave);
             // 
@@ -386,6 +389,7 @@ namespace AnBinhApp
             this.panel_PhanCong.Name = "panel_PhanCong";
             this.panel_PhanCong.Size = new System.Drawing.Size(278, 56);
             this.panel_PhanCong.TabIndex = 13;
+            this.panel_PhanCong.Click += new System.EventHandler(this.phanCong_click);
             this.panel_PhanCong.MouseEnter += new System.EventHandler(this.phanCong_enter);
             this.panel_PhanCong.MouseLeave += new System.EventHandler(this.phanCong_leave);
             // 
@@ -398,6 +402,7 @@ namespace AnBinhApp
             this.pictureBox20.Size = new System.Drawing.Size(26, 26);
             this.pictureBox20.TabIndex = 2;
             this.pictureBox20.TabStop = false;
+            this.pictureBox20.Click += new System.EventHandler(this.phanCong_click);
             this.pictureBox20.MouseEnter += new System.EventHandler(this.phanCong_enter);
             this.pictureBox20.MouseLeave += new System.EventHandler(this.phanCong_leave);
             // 
@@ -412,6 +417,7 @@ namespace AnBinhApp
             this.label16.Size = new System.Drawing.Size(131, 23);
             this.label16.TabIndex = 1;
             this.label16.Text = "Phân công ca";
+            this.label16.Click += new System.EventHandler(this.phanCong_click);
             this.label16.MouseEnter += new System.EventHandler(this.phanCong_enter);
             this.label16.MouseLeave += new System.EventHandler(this.phanCong_leave);
             // 
@@ -528,6 +534,7 @@ namespace AnBinhApp
             this.panel_DSNhanVien.Name = "panel_DSNhanVien";
             this.panel_DSNhanVien.Size = new System.Drawing.Size(278, 56);
             this.panel_DSNhanVien.TabIndex = 10;
+            this.panel_DSNhanVien.Click += new System.EventHandler(this.dsNhanVien_click);
             this.panel_DSNhanVien.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
             this.panel_DSNhanVien.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
             // 
@@ -540,6 +547,7 @@ namespace AnBinhApp
             this.pictureBox15.Size = new System.Drawing.Size(26, 26);
             this.pictureBox15.TabIndex = 2;
             this.pictureBox15.TabStop = false;
+            this.pictureBox15.Click += new System.EventHandler(this.dsNhanVien_click);
             this.pictureBox15.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
             this.pictureBox15.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
             // 
@@ -554,6 +562,7 @@ namespace AnBinhApp
             this.label12.Size = new System.Drawing.Size(98, 23);
             this.label12.TabIndex = 1;
             this.label12.Text = "Nhân viên";
+            this.label12.Click += new System.EventHandler(this.dsNhanVien_click);
             this.label12.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
             this.label12.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
             // 

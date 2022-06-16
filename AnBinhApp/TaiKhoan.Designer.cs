@@ -82,25 +82,49 @@ namespace AnBinhApp
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label65 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.vitri = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox_viTri = new System.Windows.Forms.TextBox();
+            this.textBox_hoTen = new System.Windows.Forms.TextBox();
+            this.submitBtn = new System.Windows.Forms.PictureBox();
+            this.textBox_diaChi = new System.Windows.Forms.TextBox();
+            this.textBox_sdt = new System.Windows.Forms.TextBox();
+            this.textBox_ngaySinh = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.editBtn = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.btnPhieuDK = new System.Windows.Forms.Button();
             this.btnThongTinThem = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnBangCap = new System.Windows.Forms.Button();
             this.tab = new System.Windows.Forms.TabControl();
+            this.tabThongTinThem = new System.Windows.Forms.TabPage();
+            this.panel_nguoiGH = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.searchForm = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button5 = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.toggleSalaryVisible = new System.Windows.Forms.PictureBox();
+            this.label_salary = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabBangCap = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -119,28 +143,6 @@ namespace AnBinhApp
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label27 = new System.Windows.Forms.Label();
-            this.tabThongTinThem = new System.Windows.Forms.TabPage();
-            this.panel_nguoiGH = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.searchForm = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.toggleSalaryVisible = new System.Windows.Forms.PictureBox();
-            this.label_salary = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_ds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_taiKhoan)).BeginInit();
@@ -174,14 +176,23 @@ namespace AnBinhApp
             this.panel_Thoat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.submitBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.editBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel5.SuspendLayout();
             this.tab.SuspendLayout();
+            this.tabThongTinThem.SuspendLayout();
+            this.panel_nguoiGH.SuspendLayout();
+            this.panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSalaryVisible)).BeginInit();
             this.tabBangCap.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
@@ -190,13 +201,6 @@ namespace AnBinhApp
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tabThongTinThem.SuspendLayout();
-            this.panel_nguoiGH.SuspendLayout();
-            this.panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSalaryVisible)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -365,6 +369,7 @@ namespace AnBinhApp
             this.panel_PhanCong.Name = "panel_PhanCong";
             this.panel_PhanCong.Size = new System.Drawing.Size(278, 56);
             this.panel_PhanCong.TabIndex = 13;
+            this.panel_PhanCong.Click += new System.EventHandler(this.phanCong_click);
             this.panel_PhanCong.MouseEnter += new System.EventHandler(this.phanCong_enter);
             this.panel_PhanCong.MouseLeave += new System.EventHandler(this.phanCong_leave);
             // 
@@ -377,6 +382,7 @@ namespace AnBinhApp
             this.pictureBox20.Size = new System.Drawing.Size(26, 26);
             this.pictureBox20.TabIndex = 2;
             this.pictureBox20.TabStop = false;
+            this.pictureBox20.Click += new System.EventHandler(this.phanCong_click);
             this.pictureBox20.MouseEnter += new System.EventHandler(this.phanCong_enter);
             this.pictureBox20.MouseLeave += new System.EventHandler(this.phanCong_leave);
             // 
@@ -391,6 +397,7 @@ namespace AnBinhApp
             this.label4.Size = new System.Drawing.Size(131, 23);
             this.label4.TabIndex = 1;
             this.label4.Text = "Phân công ca";
+            this.label4.Click += new System.EventHandler(this.phanCong_click);
             this.label4.MouseEnter += new System.EventHandler(this.phanCong_enter);
             this.label4.MouseLeave += new System.EventHandler(this.phanCong_leave);
             // 
@@ -507,6 +514,7 @@ namespace AnBinhApp
             this.panel_DSNhanVien.Name = "panel_DSNhanVien";
             this.panel_DSNhanVien.Size = new System.Drawing.Size(278, 56);
             this.panel_DSNhanVien.TabIndex = 10;
+            this.panel_DSNhanVien.Click += new System.EventHandler(this.dsNhanVien_click);
             this.panel_DSNhanVien.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
             this.panel_DSNhanVien.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
             // 
@@ -519,6 +527,7 @@ namespace AnBinhApp
             this.pictureBox15.Size = new System.Drawing.Size(26, 26);
             this.pictureBox15.TabIndex = 2;
             this.pictureBox15.TabStop = false;
+            this.pictureBox15.Click += new System.EventHandler(this.dsNhanVien_click);
             this.pictureBox15.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
             this.pictureBox15.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
             // 
@@ -533,6 +542,7 @@ namespace AnBinhApp
             this.label10.Size = new System.Drawing.Size(98, 23);
             this.label10.TabIndex = 1;
             this.label10.Text = "Nhân viên";
+            this.label10.Click += new System.EventHandler(this.dsNhanVien_click);
             this.label10.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
             this.label10.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
             // 
@@ -872,57 +882,103 @@ namespace AnBinhApp
             this.pictureBox10.TabIndex = 1;
             this.pictureBox10.TabStop = false;
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(37, 43);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(218, 269);
-            this.pictureBox7.TabIndex = 6;
-            this.pictureBox7.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Inter SemiBold", 20F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
-            this.label1.Location = new System.Drawing.Point(285, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 41);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Nguyễn Văn ABC";
-            // 
-            // vitri
-            // 
-            this.vitri.AutoSize = true;
-            this.vitri.Font = new System.Drawing.Font("Inter", 11F);
-            this.vitri.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.vitri.Location = new System.Drawing.Point(287, 91);
-            this.vitri.Name = "vitri";
-            this.vitri.Size = new System.Drawing.Size(195, 23);
-            this.vitri.TabIndex = 8;
-            this.vitri.Text = "Bộ trưởng Bộ Hài cốt";
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.textBox_viTri);
+            this.panel3.Controls.Add(this.textBox_hoTen);
+            this.panel3.Controls.Add(this.submitBtn);
+            this.panel3.Controls.Add(this.textBox_diaChi);
+            this.panel3.Controls.Add(this.textBox_sdt);
+            this.panel3.Controls.Add(this.textBox_ngaySinh);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.pictureBox13);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.pictureBox12);
+            this.panel3.Controls.Add(this.editBtn);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.pictureBox11);
-            this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.pictureBox8);
-            this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.pictureBox7);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.vitri);
             this.panel3.Location = new System.Drawing.Point(43, 51);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1051, 345);
             this.panel3.TabIndex = 17;
+            // 
+            // textBox_viTri
+            // 
+            this.textBox_viTri.BackColor = System.Drawing.Color.White;
+            this.textBox_viTri.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_viTri.Font = new System.Drawing.Font("Inter", 11F);
+            this.textBox_viTri.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBox_viTri.Location = new System.Drawing.Point(291, 92);
+            this.textBox_viTri.Name = "textBox_viTri";
+            this.textBox_viTri.ReadOnly = true;
+            this.textBox_viTri.Size = new System.Drawing.Size(512, 23);
+            this.textBox_viTri.TabIndex = 33;
+            this.textBox_viTri.Text = "Trưởng phòng Nhân sự";
+            // 
+            // textBox_hoTen
+            // 
+            this.textBox_hoTen.BackColor = System.Drawing.Color.White;
+            this.textBox_hoTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_hoTen.Font = new System.Drawing.Font("Inter SemiBold", 20F, System.Drawing.FontStyle.Bold);
+            this.textBox_hoTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
+            this.textBox_hoTen.Location = new System.Drawing.Point(291, 43);
+            this.textBox_hoTen.Name = "textBox_hoTen";
+            this.textBox_hoTen.ReadOnly = true;
+            this.textBox_hoTen.Size = new System.Drawing.Size(601, 41);
+            this.textBox_hoTen.TabIndex = 32;
+            this.textBox_hoTen.Text = "Nguyễn Văn ABC";
+            // 
+            // submitBtn
+            // 
+            this.submitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.submitBtn.Image = ((System.Drawing.Image)(resources.GetObject("submitBtn.Image")));
+            this.submitBtn.Location = new System.Drawing.Point(985, 73);
+            this.submitBtn.Name = "submitBtn";
+            this.submitBtn.Size = new System.Drawing.Size(24, 24);
+            this.submitBtn.TabIndex = 31;
+            this.submitBtn.TabStop = false;
+            this.submitBtn.Click += new System.EventHandler(this.clickSubmit);
+            // 
+            // textBox_diaChi
+            // 
+            this.textBox_diaChi.BackColor = System.Drawing.Color.White;
+            this.textBox_diaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_diaChi.Font = new System.Drawing.Font("Inter Light", 10F);
+            this.textBox_diaChi.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBox_diaChi.Location = new System.Drawing.Point(348, 256);
+            this.textBox_diaChi.Name = "textBox_diaChi";
+            this.textBox_diaChi.ReadOnly = true;
+            this.textBox_diaChi.Size = new System.Drawing.Size(544, 21);
+            this.textBox_diaChi.TabIndex = 30;
+            this.textBox_diaChi.Text = "99, đường ABC, phường DEF, quận XYZ, TP. Hồ Chí Minh";
+            // 
+            // textBox_sdt
+            // 
+            this.textBox_sdt.BackColor = System.Drawing.Color.White;
+            this.textBox_sdt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_sdt.Font = new System.Drawing.Font("Inter Light", 10F);
+            this.textBox_sdt.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBox_sdt.Location = new System.Drawing.Point(480, 188);
+            this.textBox_sdt.Name = "textBox_sdt";
+            this.textBox_sdt.ReadOnly = true;
+            this.textBox_sdt.Size = new System.Drawing.Size(100, 21);
+            this.textBox_sdt.TabIndex = 29;
+            this.textBox_sdt.Text = "0987654321";
+            // 
+            // textBox_ngaySinh
+            // 
+            this.textBox_ngaySinh.BackColor = System.Drawing.Color.White;
+            this.textBox_ngaySinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_ngaySinh.Font = new System.Drawing.Font("Inter Light", 10F);
+            this.textBox_ngaySinh.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBox_ngaySinh.Location = new System.Drawing.Point(480, 149);
+            this.textBox_ngaySinh.Name = "textBox_ngaySinh";
+            this.textBox_ngaySinh.ReadOnly = true;
+            this.textBox_ngaySinh.Size = new System.Drawing.Size(100, 21);
+            this.textBox_ngaySinh.TabIndex = 28;
+            this.textBox_ngaySinh.Text = "28/5/2011";
             // 
             // label8
             // 
@@ -944,25 +1000,16 @@ namespace AnBinhApp
             this.pictureBox13.TabIndex = 26;
             this.pictureBox13.TabStop = false;
             // 
-            // label14
+            // editBtn
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Inter Light", 10F);
-            this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label14.Location = new System.Drawing.Point(477, 150);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(87, 20);
-            this.label14.TabIndex = 25;
-            this.label14.Text = "28/5/2011";
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(985, 43);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox12.TabIndex = 24;
-            this.pictureBox12.TabStop = false;
+            this.editBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
+            this.editBtn.Location = new System.Drawing.Point(985, 43);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(24, 24);
+            this.editBtn.TabIndex = 24;
+            this.editBtn.TabStop = false;
+            this.editBtn.Click += new System.EventHandler(this.clickEdit);
             // 
             // label13
             // 
@@ -995,17 +1042,6 @@ namespace AnBinhApp
             this.pictureBox11.TabIndex = 21;
             this.pictureBox11.TabStop = false;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Inter Light", 10F);
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(343, 254);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(460, 20);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "99, đường ABC, phường DEF, quận XYZ, TP. Hồ Chí Minh";
-            // 
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
@@ -1015,16 +1051,14 @@ namespace AnBinhApp
             this.pictureBox8.TabIndex = 19;
             this.pictureBox8.TabStop = false;
             // 
-            // label9
+            // pictureBox7
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Inter Light", 10F);
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label9.Location = new System.Drawing.Point(477, 189);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(109, 20);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "0987654321";
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(37, 43);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(218, 269);
+            this.pictureBox7.TabIndex = 6;
+            this.pictureBox7.TabStop = false;
             // 
             // btnPhieuDK
             // 
@@ -1083,9 +1117,9 @@ namespace AnBinhApp
             // tab
             // 
             this.tab.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tab.Controls.Add(this.tabThongTinThem);
             this.tab.Controls.Add(this.tabBangCap);
             this.tab.Controls.Add(this.tabPhieuDK);
-            this.tab.Controls.Add(this.tabThongTinThem);
             this.tab.ItemSize = new System.Drawing.Size(0, 1);
             this.tab.Location = new System.Drawing.Point(0, 509);
             this.tab.Name = "tab";
@@ -1094,6 +1128,270 @@ namespace AnBinhApp
             this.tab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tab.TabIndex = 41;
             this.tab.TabStop = false;
+            // 
+            // tabThongTinThem
+            // 
+            this.tabThongTinThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(252)))));
+            this.tabThongTinThem.Controls.Add(this.panel_nguoiGH);
+            this.tabThongTinThem.Controls.Add(this.panel6);
+            this.tabThongTinThem.Location = new System.Drawing.Point(4, 5);
+            this.tabThongTinThem.Name = "tabThongTinThem";
+            this.tabThongTinThem.Size = new System.Drawing.Size(1121, 691);
+            this.tabThongTinThem.TabIndex = 0;
+            this.tabThongTinThem.Text = "tabPage1";
+            // 
+            // panel_nguoiGH
+            // 
+            this.panel_nguoiGH.Controls.Add(this.panel16);
+            this.panel_nguoiGH.Controls.Add(this.label17);
+            this.panel_nguoiGH.Controls.Add(this.dataGridView1);
+            this.panel_nguoiGH.Controls.Add(this.button5);
+            this.panel_nguoiGH.Location = new System.Drawing.Point(39, 225);
+            this.panel_nguoiGH.Name = "panel_nguoiGH";
+            this.panel_nguoiGH.Size = new System.Drawing.Size(714, 562);
+            this.panel_nguoiGH.TabIndex = 38;
+            // 
+            // panel16
+            // 
+            this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel16.Controls.Add(this.pictureBox14);
+            this.panel16.Controls.Add(this.searchForm);
+            this.panel16.Location = new System.Drawing.Point(13, 75);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(535, 46);
+            this.panel16.TabIndex = 32;
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
+            this.pictureBox14.Location = new System.Drawing.Point(16, 7);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox14.TabIndex = 1;
+            this.pictureBox14.TabStop = false;
+            // 
+            // searchForm
+            // 
+            this.searchForm.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchForm.Font = new System.Drawing.Font("Inter", 11F);
+            this.searchForm.Location = new System.Drawing.Point(60, 10);
+            this.searchForm.Name = "searchForm";
+            this.searchForm.Size = new System.Drawing.Size(464, 23);
+            this.searchForm.TabIndex = 0;
+            this.searchForm.TabStop = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Inter SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
+            this.label17.Location = new System.Drawing.Point(5, 12);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(211, 34);
+            this.label17.TabIndex = 30;
+            this.label17.Text = "Người giám hộ";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 146);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(676, 388);
+            this.dataGridView1.TabIndex = 31;
+            this.dataGridView1.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(155)))), ((int)(((byte)(242)))));
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(544, 75);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(145, 46);
+            this.button5.TabIndex = 33;
+            this.button5.Text = "Tìm kiếm";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.pictureBox12);
+            this.panel6.Controls.Add(this.label24);
+            this.panel6.Controls.Add(this.label26);
+            this.panel6.Controls.Add(this.toggleSalaryVisible);
+            this.panel6.Controls.Add(this.label_salary);
+            this.panel6.Controls.Add(this.label25);
+            this.panel6.Controls.Add(this.label22);
+            this.panel6.Controls.Add(this.label23);
+            this.panel6.Controls.Add(this.label20);
+            this.panel6.Controls.Add(this.label21);
+            this.panel6.Controls.Add(this.label18);
+            this.panel6.Controls.Add(this.label19);
+            this.panel6.Controls.Add(this.label16);
+            this.panel6.Controls.Add(this.label15);
+            this.panel6.Location = new System.Drawing.Point(45, 29);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1051, 178);
+            this.panel6.TabIndex = 37;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
+            this.pictureBox12.Location = new System.Drawing.Point(1000, 24);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox12.TabIndex = 41;
+            this.pictureBox12.TabStop = false;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Inter Light", 10F);
+            this.label24.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label24.Location = new System.Drawing.Point(714, 115);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(20, 20);
+            this.label24.TabIndex = 39;
+            this.label24.Text = "3";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Inter Medium", 11F);
+            this.label26.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label26.Location = new System.Drawing.Point(511, 113);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(197, 23);
+            this.label26.TabIndex = 40;
+            this.label26.Text = "Số buổi trực tối thiểu";
+            // 
+            // toggleSalaryVisible
+            // 
+            this.toggleSalaryVisible.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.toggleSalaryVisible.Image = ((System.Drawing.Image)(resources.GetObject("toggleSalaryVisible.Image")));
+            this.toggleSalaryVisible.Location = new System.Drawing.Point(274, 112);
+            this.toggleSalaryVisible.Name = "toggleSalaryVisible";
+            this.toggleSalaryVisible.Size = new System.Drawing.Size(24, 24);
+            this.toggleSalaryVisible.TabIndex = 38;
+            this.toggleSalaryVisible.TabStop = false;
+            this.toggleSalaryVisible.MouseDown += new System.Windows.Forms.MouseEventHandler(this.salaryFocus);
+            this.toggleSalaryVisible.MouseUp += new System.Windows.Forms.MouseEventHandler(this.salaryUnfocus);
+            // 
+            // label_salary
+            // 
+            this.label_salary.AutoSize = true;
+            this.label_salary.Font = new System.Drawing.Font("Inter Light", 10F);
+            this.label_salary.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_salary.Location = new System.Drawing.Point(179, 113);
+            this.label_salary.Name = "label_salary";
+            this.label_salary.Size = new System.Drawing.Size(63, 20);
+            this.label_salary.TabIndex = 36;
+            this.label_salary.Text = "******";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Inter Medium", 11F);
+            this.label25.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label25.Location = new System.Drawing.Point(53, 113);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(68, 23);
+            this.label25.TabIndex = 37;
+            this.label25.Text = "Lương";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Inter Light", 10F);
+            this.label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label22.Location = new System.Drawing.Point(631, 70);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(121, 20);
+            this.label22.TabIndex = 34;
+            this.label22.Text = "Nguyễn Thiên";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Inter Medium", 11F);
+            this.label23.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label23.Location = new System.Drawing.Point(511, 68);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(102, 23);
+            this.label23.TabIndex = 35;
+            this.label23.Text = "Trung tâm";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Inter Light", 10F);
+            this.label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label20.Location = new System.Drawing.Point(179, 70);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(256, 20);
+            this.label20.TabIndex = 32;
+            this.label20.Text = "Trường phòng Quản lý Nhân sự";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Inter Medium", 11F);
+            this.label21.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label21.Location = new System.Drawing.Point(53, 70);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(68, 23);
+            this.label21.TabIndex = 33;
+            this.label21.Text = "Vai trò";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Inter Light", 10F);
+            this.label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label18.Location = new System.Drawing.Point(631, 25);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(193, 20);
+            this.label18.TabIndex = 30;
+            this.label18.Text = "nguyenabc@gmail.com";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Inter Medium", 11F);
+            this.label19.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label19.Location = new System.Drawing.Point(511, 25);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(59, 23);
+            this.label19.TabIndex = 31;
+            this.label19.Text = "Email";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Inter Light", 10F);
+            this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label16.Location = new System.Drawing.Point(179, 26);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(109, 20);
+            this.label16.TabIndex = 28;
+            this.label16.Text = "0987654321";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Inter Medium", 11F);
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label15.Location = new System.Drawing.Point(50, 25);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(97, 23);
+            this.label15.TabIndex = 29;
+            this.label15.Text = "Số CMND";
             // 
             // tabBangCap
             // 
@@ -1299,259 +1597,6 @@ namespace AnBinhApp
             this.label27.TabIndex = 15;
             this.label27.Text = "Phiếu tiêm ngừa đã đăng ký";
             // 
-            // tabThongTinThem
-            // 
-            this.tabThongTinThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(252)))));
-            this.tabThongTinThem.Controls.Add(this.panel_nguoiGH);
-            this.tabThongTinThem.Controls.Add(this.panel6);
-            this.tabThongTinThem.Location = new System.Drawing.Point(4, 5);
-            this.tabThongTinThem.Name = "tabThongTinThem";
-            this.tabThongTinThem.Size = new System.Drawing.Size(1121, 691);
-            this.tabThongTinThem.TabIndex = 0;
-            this.tabThongTinThem.Text = "tabPage1";
-            // 
-            // panel_nguoiGH
-            // 
-            this.panel_nguoiGH.Controls.Add(this.panel16);
-            this.panel_nguoiGH.Controls.Add(this.label17);
-            this.panel_nguoiGH.Controls.Add(this.dataGridView1);
-            this.panel_nguoiGH.Controls.Add(this.button5);
-            this.panel_nguoiGH.Location = new System.Drawing.Point(39, 225);
-            this.panel_nguoiGH.Name = "panel_nguoiGH";
-            this.panel_nguoiGH.Size = new System.Drawing.Size(714, 562);
-            this.panel_nguoiGH.TabIndex = 38;
-            // 
-            // panel16
-            // 
-            this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel16.Controls.Add(this.pictureBox14);
-            this.panel16.Controls.Add(this.searchForm);
-            this.panel16.Location = new System.Drawing.Point(13, 75);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(535, 46);
-            this.panel16.TabIndex = 32;
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(16, 7);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox14.TabIndex = 1;
-            this.pictureBox14.TabStop = false;
-            // 
-            // searchForm
-            // 
-            this.searchForm.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.searchForm.Font = new System.Drawing.Font("Inter", 11F);
-            this.searchForm.Location = new System.Drawing.Point(60, 10);
-            this.searchForm.Name = "searchForm";
-            this.searchForm.Size = new System.Drawing.Size(464, 23);
-            this.searchForm.TabIndex = 0;
-            this.searchForm.TabStop = false;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Inter SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
-            this.label17.Location = new System.Drawing.Point(5, 12);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(211, 34);
-            this.label17.TabIndex = 30;
-            this.label17.Text = "Người giám hộ";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 146);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(676, 388);
-            this.dataGridView1.TabIndex = 31;
-            this.dataGridView1.TabStop = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(155)))), ((int)(((byte)(242)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(544, 75);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(145, 46);
-            this.button5.TabIndex = 33;
-            this.button5.Text = "Tìm kiếm";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.label24);
-            this.panel6.Controls.Add(this.label26);
-            this.panel6.Controls.Add(this.toggleSalaryVisible);
-            this.panel6.Controls.Add(this.label_salary);
-            this.panel6.Controls.Add(this.label25);
-            this.panel6.Controls.Add(this.label22);
-            this.panel6.Controls.Add(this.label23);
-            this.panel6.Controls.Add(this.label20);
-            this.panel6.Controls.Add(this.label21);
-            this.panel6.Controls.Add(this.label18);
-            this.panel6.Controls.Add(this.label19);
-            this.panel6.Controls.Add(this.label16);
-            this.panel6.Controls.Add(this.label15);
-            this.panel6.Location = new System.Drawing.Point(45, 29);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1051, 178);
-            this.panel6.TabIndex = 37;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Inter Light", 10F);
-            this.label24.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label24.Location = new System.Drawing.Point(714, 115);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(20, 20);
-            this.label24.TabIndex = 39;
-            this.label24.Text = "3";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Inter Medium", 11F);
-            this.label26.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label26.Location = new System.Drawing.Point(511, 113);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(197, 23);
-            this.label26.TabIndex = 40;
-            this.label26.Text = "Số buổi trực tối thiểu";
-            // 
-            // toggleSalaryVisible
-            // 
-            this.toggleSalaryVisible.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.toggleSalaryVisible.Image = ((System.Drawing.Image)(resources.GetObject("toggleSalaryVisible.Image")));
-            this.toggleSalaryVisible.Location = new System.Drawing.Point(274, 112);
-            this.toggleSalaryVisible.Name = "toggleSalaryVisible";
-            this.toggleSalaryVisible.Size = new System.Drawing.Size(24, 24);
-            this.toggleSalaryVisible.TabIndex = 38;
-            this.toggleSalaryVisible.TabStop = false;
-            this.toggleSalaryVisible.MouseDown += new System.Windows.Forms.MouseEventHandler(this.salaryFocus);
-            this.toggleSalaryVisible.MouseUp += new System.Windows.Forms.MouseEventHandler(this.salaryUnfocus);
-            // 
-            // label_salary
-            // 
-            this.label_salary.AutoSize = true;
-            this.label_salary.Font = new System.Drawing.Font("Inter Light", 10F);
-            this.label_salary.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_salary.Location = new System.Drawing.Point(179, 113);
-            this.label_salary.Name = "label_salary";
-            this.label_salary.Size = new System.Drawing.Size(63, 20);
-            this.label_salary.TabIndex = 36;
-            this.label_salary.Text = "******";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Inter Medium", 11F);
-            this.label25.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label25.Location = new System.Drawing.Point(53, 113);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(68, 23);
-            this.label25.TabIndex = 37;
-            this.label25.Text = "Lương";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Inter Light", 10F);
-            this.label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label22.Location = new System.Drawing.Point(631, 70);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(121, 20);
-            this.label22.TabIndex = 34;
-            this.label22.Text = "Nguyễn Thiên";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Inter Medium", 11F);
-            this.label23.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label23.Location = new System.Drawing.Point(511, 68);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(102, 23);
-            this.label23.TabIndex = 35;
-            this.label23.Text = "Trung tâm";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Inter Light", 10F);
-            this.label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label20.Location = new System.Drawing.Point(179, 70);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(256, 20);
-            this.label20.TabIndex = 32;
-            this.label20.Text = "Trường phòng Quản lý Nhân sự";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Inter Medium", 11F);
-            this.label21.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label21.Location = new System.Drawing.Point(53, 70);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(68, 23);
-            this.label21.TabIndex = 33;
-            this.label21.Text = "Vai trò";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Inter Light", 10F);
-            this.label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label18.Location = new System.Drawing.Point(631, 25);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(193, 20);
-            this.label18.TabIndex = 30;
-            this.label18.Text = "nguyenabc@gmail.com";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Inter Medium", 11F);
-            this.label19.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label19.Location = new System.Drawing.Point(511, 25);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(59, 23);
-            this.label19.TabIndex = 31;
-            this.label19.Text = "Email";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Inter Light", 10F);
-            this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label16.Location = new System.Drawing.Point(179, 26);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(109, 20);
-            this.label16.TabIndex = 28;
-            this.label16.Text = "0987654321";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Inter Medium", 11F);
-            this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label15.Location = new System.Drawing.Point(50, 25);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(97, 23);
-            this.label15.TabIndex = 29;
-            this.label15.Text = "Số CMND";
-            // 
             // TaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1610,15 +1655,27 @@ namespace AnBinhApp
             this.panel_Thoat.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.submitBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.editBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel5.ResumeLayout(false);
             this.tab.ResumeLayout(false);
+            this.tabThongTinThem.ResumeLayout(false);
+            this.panel_nguoiGH.ResumeLayout(false);
+            this.panel_nguoiGH.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSalaryVisible)).EndInit();
             this.tabBangCap.ResumeLayout(false);
             this.tabBangCap.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -1631,16 +1688,6 @@ namespace AnBinhApp
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.tabThongTinThem.ResumeLayout(false);
-            this.panel_nguoiGH.ResumeLayout(false);
-            this.panel_nguoiGH.PerformLayout();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSalaryVisible)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1700,19 +1747,14 @@ namespace AnBinhApp
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label vitri;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox editBtn;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnPhieuDK;
         private System.Windows.Forms.Button btnThongTinThem;
         private System.Windows.Forms.Panel panel5;
@@ -1758,5 +1800,12 @@ namespace AnBinhApp
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.PictureBox submitBtn;
+        private System.Windows.Forms.TextBox textBox_diaChi;
+        private System.Windows.Forms.TextBox textBox_sdt;
+        private System.Windows.Forms.TextBox textBox_ngaySinh;
+        private System.Windows.Forms.TextBox textBox_viTri;
+        private System.Windows.Forms.TextBox textBox_hoTen;
+        private System.Windows.Forms.PictureBox pictureBox12;
     }
 }

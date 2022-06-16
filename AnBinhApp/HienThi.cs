@@ -389,6 +389,7 @@ namespace AnBinhApp
             dktn.Show();
             this.Hide();
         }
+
         private void dsPhieuTiem_click(object sender, EventArgs e)
         {
             panel_DSPhieuTiem.BackColor = Color.FromArgb(73, 155, 242);
@@ -413,12 +414,66 @@ namespace AnBinhApp
                 dsPhieuTiem_leave(sender, e);
             }
         }
+        private void dsVacXin_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_NhanVien)
+            {
+                KhaNangVacxin dsVacXinForm = new KhaNangVacxin();
+                dsVacXinForm.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
+            }
+        }
+        private void dsNhanVien_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_BoPhanDieuHanh)
+            {
+                DSNhanVien dsNV = new DSNhanVien();
+                dsNV.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có bộ phận điều hành mới được sử dụng tính năng này!", "Thông báo");
+            }
+        }
+
         private void datMuaVacxin_click(object sender, EventArgs e)
         {
             DatMuaVacxin datMuaVacxinForm = new DatMuaVacxin();
             datMuaVacxinForm.Show();
             this.Close();
         }
+        private void xemLich_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_NhanVien)
+            {
+                XemLich xemLichForm = new XemLich();
+                xemLichForm.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
+            }
+        }
+        private void phanCong_click(object sender, EventArgs e)
+        {
+            if (TrangChu.is_BoPhanDieuHanh)
+            {
+                PhanCong phanCongForm = new PhanCong();
+                phanCongForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ có bộ phận điều hành mới được sử dụng tính năng này!", "Thông báo");
+            }
+        }
+
         private void DangXuat_click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);

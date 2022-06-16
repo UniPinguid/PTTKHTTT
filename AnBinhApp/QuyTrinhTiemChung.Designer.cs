@@ -89,18 +89,20 @@ namespace AnBinhApp
             this.button4 = new System.Windows.Forms.Button();
             this.tab = new System.Windows.Forms.TabControl();
             this.step5 = new System.Windows.Forms.TabPage();
+            this.label46 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label45 = new System.Windows.Forms.Label();
             this.lblCountDown = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.label43 = new System.Windows.Forms.Label();
-            this.step4 = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label41 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
+            this.start = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.step1 = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
             this.textBox_maBS = new System.Windows.Forms.TextBox();
@@ -109,6 +111,12 @@ namespace AnBinhApp
             this.panel3 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.step2 = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.step3 = new System.Windows.Forms.TabPage();
             this.ttThanhToan = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
@@ -147,21 +155,13 @@ namespace AnBinhApp
             this.label26 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.step2 = new System.Windows.Forms.TabPage();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.start = new System.Windows.Forms.TabPage();
-            this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.step4 = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label41 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label46 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_ds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_taiKhoan)).BeginInit();
@@ -198,19 +198,19 @@ namespace AnBinhApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureEmpty)).BeginInit();
             this.tab.SuspendLayout();
             this.step5.SuspendLayout();
-            this.step4.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.start.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.step1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.step2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.step3.SuspendLayout();
             this.hoadonMotLan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.hoadonTraGop.SuspendLayout();
-            this.step2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.start.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            this.step4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -257,6 +257,7 @@ namespace AnBinhApp
             this.collapsible_ds.Size = new System.Drawing.Size(25, 14);
             this.collapsible_ds.TabIndex = 11;
             this.collapsible_ds.TabStop = false;
+            this.collapsible_ds.Click += new System.EventHandler(this.moRongDS_click);
             // 
             // label6
             // 
@@ -278,6 +279,7 @@ namespace AnBinhApp
             this.collapsible_taiKhoan.Size = new System.Drawing.Size(25, 14);
             this.collapsible_taiKhoan.TabIndex = 15;
             this.collapsible_taiKhoan.TabStop = false;
+            this.collapsible_taiKhoan.Click += new System.EventHandler(this.moRongTaiKhoan_click);
             // 
             // label_taiKhoan
             // 
@@ -307,6 +309,9 @@ namespace AnBinhApp
             this.panel_TaiKhoan.Name = "panel_TaiKhoan";
             this.panel_TaiKhoan.Size = new System.Drawing.Size(278, 56);
             this.panel_TaiKhoan.TabIndex = 5;
+            this.panel_TaiKhoan.Click += new System.EventHandler(this.taiKhoan_click);
+            this.panel_TaiKhoan.MouseEnter += new System.EventHandler(this.taiKhoan_enter);
+            this.panel_TaiKhoan.MouseLeave += new System.EventHandler(this.taiKhoan_leave);
             // 
             // pictureBox22
             // 
@@ -317,6 +322,9 @@ namespace AnBinhApp
             this.pictureBox22.Size = new System.Drawing.Size(20, 24);
             this.pictureBox22.TabIndex = 2;
             this.pictureBox22.TabStop = false;
+            this.pictureBox22.Click += new System.EventHandler(this.taiKhoan_click);
+            this.pictureBox22.MouseEnter += new System.EventHandler(this.taiKhoan_enter);
+            this.pictureBox22.MouseLeave += new System.EventHandler(this.taiKhoan_leave);
             // 
             // label2
             // 
@@ -329,6 +337,9 @@ namespace AnBinhApp
             this.label2.Size = new System.Drawing.Size(95, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tài khoản";
+            this.label2.Click += new System.EventHandler(this.taiKhoan_click);
+            this.label2.MouseEnter += new System.EventHandler(this.taiKhoan_enter);
+            this.label2.MouseLeave += new System.EventHandler(this.taiKhoan_leave);
             // 
             // panel_QTTC
             // 
@@ -373,6 +384,9 @@ namespace AnBinhApp
             this.panel_PhanCong.Name = "panel_PhanCong";
             this.panel_PhanCong.Size = new System.Drawing.Size(278, 56);
             this.panel_PhanCong.TabIndex = 13;
+            this.panel_PhanCong.Click += new System.EventHandler(this.phanCong_click);
+            this.panel_PhanCong.MouseEnter += new System.EventHandler(this.phanCong_enter);
+            this.panel_PhanCong.MouseLeave += new System.EventHandler(this.phanCong_leave);
             // 
             // pictureBox20
             // 
@@ -383,6 +397,9 @@ namespace AnBinhApp
             this.pictureBox20.Size = new System.Drawing.Size(26, 26);
             this.pictureBox20.TabIndex = 2;
             this.pictureBox20.TabStop = false;
+            this.pictureBox20.Click += new System.EventHandler(this.phanCong_click);
+            this.pictureBox20.MouseEnter += new System.EventHandler(this.phanCong_enter);
+            this.pictureBox20.MouseLeave += new System.EventHandler(this.phanCong_leave);
             // 
             // label4
             // 
@@ -395,6 +412,9 @@ namespace AnBinhApp
             this.label4.Size = new System.Drawing.Size(131, 23);
             this.label4.TabIndex = 1;
             this.label4.Text = "Phân công ca";
+            this.label4.Click += new System.EventHandler(this.phanCong_click);
+            this.label4.MouseEnter += new System.EventHandler(this.phanCong_enter);
+            this.label4.MouseLeave += new System.EventHandler(this.phanCong_leave);
             // 
             // panel_XemLich
             // 
@@ -405,6 +425,9 @@ namespace AnBinhApp
             this.panel_XemLich.Name = "panel_XemLich";
             this.panel_XemLich.Size = new System.Drawing.Size(278, 56);
             this.panel_XemLich.TabIndex = 12;
+            this.panel_XemLich.Click += new System.EventHandler(this.xemLich_click);
+            this.panel_XemLich.MouseEnter += new System.EventHandler(this.xemLich_enter);
+            this.panel_XemLich.MouseLeave += new System.EventHandler(this.xemLich_leave);
             // 
             // pictureBox19
             // 
@@ -415,6 +438,9 @@ namespace AnBinhApp
             this.pictureBox19.Size = new System.Drawing.Size(26, 26);
             this.pictureBox19.TabIndex = 2;
             this.pictureBox19.TabStop = false;
+            this.pictureBox19.Click += new System.EventHandler(this.xemLich_click);
+            this.pictureBox19.MouseEnter += new System.EventHandler(this.xemLich_enter);
+            this.pictureBox19.MouseLeave += new System.EventHandler(this.xemLich_leave);
             // 
             // label5
             // 
@@ -427,6 +453,9 @@ namespace AnBinhApp
             this.label5.Size = new System.Drawing.Size(160, 23);
             this.label5.TabIndex = 1;
             this.label5.Text = "Xem lịch làm việc";
+            this.label5.Click += new System.EventHandler(this.xemLich_click);
+            this.label5.MouseEnter += new System.EventHandler(this.xemLich_enter);
+            this.label5.MouseLeave += new System.EventHandler(this.xemLich_leave);
             // 
             // panel_DatMuaVacXin
             // 
@@ -437,6 +466,9 @@ namespace AnBinhApp
             this.panel_DatMuaVacXin.Name = "panel_DatMuaVacXin";
             this.panel_DatMuaVacXin.Size = new System.Drawing.Size(278, 56);
             this.panel_DatMuaVacXin.TabIndex = 11;
+            this.panel_DatMuaVacXin.Click += new System.EventHandler(this.datMuaVacxin_click);
+            this.panel_DatMuaVacXin.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
+            this.panel_DatMuaVacXin.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
             // 
             // pictureBox18
             // 
@@ -447,6 +479,9 @@ namespace AnBinhApp
             this.pictureBox18.Size = new System.Drawing.Size(26, 26);
             this.pictureBox18.TabIndex = 2;
             this.pictureBox18.TabStop = false;
+            this.pictureBox18.Click += new System.EventHandler(this.datMuaVacxin_click);
+            this.pictureBox18.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
+            this.pictureBox18.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
             // 
             // label7
             // 
@@ -459,6 +494,9 @@ namespace AnBinhApp
             this.label7.Size = new System.Drawing.Size(147, 23);
             this.label7.TabIndex = 1;
             this.label7.Text = "Đặt mua vacxin";
+            this.label7.Click += new System.EventHandler(this.datMuaVacxin_click);
+            this.label7.MouseEnter += new System.EventHandler(this.datMuaVacxin_enter);
+            this.label7.MouseLeave += new System.EventHandler(this.datMuaVacxin_leave);
             // 
             // collapsible_chucNang
             // 
@@ -469,6 +507,7 @@ namespace AnBinhApp
             this.collapsible_chucNang.Size = new System.Drawing.Size(25, 14);
             this.collapsible_chucNang.TabIndex = 13;
             this.collapsible_chucNang.TabStop = false;
+            this.collapsible_chucNang.Click += new System.EventHandler(this.moRongChucNang_click);
             // 
             // label_chucNang
             // 
@@ -490,6 +529,9 @@ namespace AnBinhApp
             this.panel_DSNhanVien.Name = "panel_DSNhanVien";
             this.panel_DSNhanVien.Size = new System.Drawing.Size(278, 56);
             this.panel_DSNhanVien.TabIndex = 10;
+            this.panel_DSNhanVien.Click += new System.EventHandler(this.dsNhanVien_click);
+            this.panel_DSNhanVien.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
+            this.panel_DSNhanVien.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
             // 
             // pictureBox15
             // 
@@ -500,6 +542,9 @@ namespace AnBinhApp
             this.pictureBox15.Size = new System.Drawing.Size(26, 26);
             this.pictureBox15.TabIndex = 2;
             this.pictureBox15.TabStop = false;
+            this.pictureBox15.Click += new System.EventHandler(this.dsNhanVien_click);
+            this.pictureBox15.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
+            this.pictureBox15.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
             // 
             // label10
             // 
@@ -512,6 +557,9 @@ namespace AnBinhApp
             this.label10.Size = new System.Drawing.Size(98, 23);
             this.label10.TabIndex = 1;
             this.label10.Text = "Nhân viên";
+            this.label10.Click += new System.EventHandler(this.dsNhanVien_click);
+            this.label10.MouseEnter += new System.EventHandler(this.dsNhanVien_enter);
+            this.label10.MouseLeave += new System.EventHandler(this.dsNhanVien_leave);
             // 
             // panel_dsKH
             // 
@@ -522,6 +570,8 @@ namespace AnBinhApp
             this.panel_dsKH.Name = "panel_dsKH";
             this.panel_dsKH.Size = new System.Drawing.Size(278, 56);
             this.panel_dsKH.TabIndex = 8;
+            this.panel_dsKH.MouseEnter += new System.EventHandler(this.dsKH_enter);
+            this.panel_dsKH.MouseLeave += new System.EventHandler(this.dsKH_leave);
             // 
             // pictureBox1
             // 
@@ -532,6 +582,8 @@ namespace AnBinhApp
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.dsKH_enter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.dsKH_leave);
             // 
             // label58
             // 
@@ -544,6 +596,8 @@ namespace AnBinhApp
             this.label58.Size = new System.Drawing.Size(115, 23);
             this.label58.TabIndex = 1;
             this.label58.Text = "Khách hàng";
+            this.label58.MouseEnter += new System.EventHandler(this.dsKH_enter);
+            this.label58.MouseLeave += new System.EventHandler(this.dsKH_leave);
             // 
             // panel_DSVacxin
             // 
@@ -554,6 +608,9 @@ namespace AnBinhApp
             this.panel_DSVacxin.Name = "panel_DSVacxin";
             this.panel_DSVacxin.Size = new System.Drawing.Size(278, 56);
             this.panel_DSVacxin.TabIndex = 8;
+            this.panel_DSVacxin.Click += new System.EventHandler(this.dsVacXin_click);
+            this.panel_DSVacxin.MouseEnter += new System.EventHandler(this.dsVacXin_enter);
+            this.panel_DSVacxin.MouseLeave += new System.EventHandler(this.dsVacXin_leave);
             // 
             // pictureBox2
             // 
@@ -564,6 +621,9 @@ namespace AnBinhApp
             this.pictureBox2.Size = new System.Drawing.Size(26, 26);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.dsVacXin_click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.dsVacXin_enter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.dsVacXin_leave);
             // 
             // label59
             // 
@@ -576,6 +636,9 @@ namespace AnBinhApp
             this.label59.Size = new System.Drawing.Size(180, 23);
             this.label59.TabIndex = 1;
             this.label59.Text = "Khả năng cung cấp";
+            this.label59.Click += new System.EventHandler(this.dsVacXin_click);
+            this.label59.MouseEnter += new System.EventHandler(this.dsVacXin_enter);
+            this.label59.MouseLeave += new System.EventHandler(this.dsVacXin_leave);
             // 
             // picture_dauThongBao
             // 
@@ -609,6 +672,9 @@ namespace AnBinhApp
             this.panel_DSPhieuTiem.Name = "panel_DSPhieuTiem";
             this.panel_DSPhieuTiem.Size = new System.Drawing.Size(278, 56);
             this.panel_DSPhieuTiem.TabIndex = 7;
+            this.panel_DSPhieuTiem.Click += new System.EventHandler(this.dsPhieuTiem_click);
+            this.panel_DSPhieuTiem.MouseEnter += new System.EventHandler(this.dsPhieuTiem_enter);
+            this.panel_DSPhieuTiem.MouseLeave += new System.EventHandler(this.dsPhieuTiem_leave);
             // 
             // pictureBox6
             // 
@@ -619,6 +685,9 @@ namespace AnBinhApp
             this.pictureBox6.Size = new System.Drawing.Size(26, 26);
             this.pictureBox6.TabIndex = 2;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.dsPhieuTiem_click);
+            this.pictureBox6.MouseEnter += new System.EventHandler(this.dsPhieuTiem_enter);
+            this.pictureBox6.MouseLeave += new System.EventHandler(this.dsPhieuTiem_leave);
             // 
             // label60
             // 
@@ -631,6 +700,9 @@ namespace AnBinhApp
             this.label60.Size = new System.Drawing.Size(177, 23);
             this.label60.TabIndex = 1;
             this.label60.Text = "Phiếu đăng ký tiêm";
+            this.label60.Click += new System.EventHandler(this.dsPhieuTiem_click);
+            this.label60.MouseEnter += new System.EventHandler(this.dsPhieuTiem_enter);
+            this.label60.MouseLeave += new System.EventHandler(this.dsPhieuTiem_leave);
             // 
             // panel_DangKyTiem
             // 
@@ -642,6 +714,9 @@ namespace AnBinhApp
             this.panel_DangKyTiem.Name = "panel_DangKyTiem";
             this.panel_DangKyTiem.Size = new System.Drawing.Size(278, 56);
             this.panel_DangKyTiem.TabIndex = 6;
+            this.panel_DangKyTiem.Click += new System.EventHandler(this.DangKyTiem_click);
+            this.panel_DangKyTiem.MouseEnter += new System.EventHandler(this.DangKyTiem_enter);
+            this.panel_DangKyTiem.MouseLeave += new System.EventHandler(this.DangKyTiem_leave);
             // 
             // pictureBox5
             // 
@@ -652,6 +727,9 @@ namespace AnBinhApp
             this.pictureBox5.Size = new System.Drawing.Size(25, 24);
             this.pictureBox5.TabIndex = 2;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.DangKyTiem_click);
+            this.pictureBox5.MouseEnter += new System.EventHandler(this.DangKyTiem_enter);
+            this.pictureBox5.MouseLeave += new System.EventHandler(this.DangKyTiem_leave);
             // 
             // label61
             // 
@@ -664,6 +742,9 @@ namespace AnBinhApp
             this.label61.Size = new System.Drawing.Size(174, 23);
             this.label61.TabIndex = 1;
             this.label61.Text = "Đăng ký tiêm ngừa";
+            this.label61.Click += new System.EventHandler(this.DangKyTiem_click);
+            this.label61.MouseEnter += new System.EventHandler(this.DangKyTiem_enter);
+            this.label61.MouseLeave += new System.EventHandler(this.DangKyTiem_leave);
             // 
             // panel_TrangChu
             // 
@@ -674,6 +755,9 @@ namespace AnBinhApp
             this.panel_TrangChu.Name = "panel_TrangChu";
             this.panel_TrangChu.Size = new System.Drawing.Size(278, 56);
             this.panel_TrangChu.TabIndex = 5;
+            this.panel_TrangChu.Click += new System.EventHandler(this.TrangChu_click);
+            this.panel_TrangChu.MouseEnter += new System.EventHandler(this.TrangChu_enter);
+            this.panel_TrangChu.MouseLeave += new System.EventHandler(this.TrangChu_leave);
             // 
             // pictureBox4
             // 
@@ -684,6 +768,9 @@ namespace AnBinhApp
             this.pictureBox4.Size = new System.Drawing.Size(25, 24);
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.TrangChu_click);
+            this.pictureBox4.MouseEnter += new System.EventHandler(this.TrangChu_enter);
+            this.pictureBox4.MouseLeave += new System.EventHandler(this.TrangChu_leave);
             // 
             // label62
             // 
@@ -696,6 +783,9 @@ namespace AnBinhApp
             this.label62.Size = new System.Drawing.Size(99, 23);
             this.label62.TabIndex = 1;
             this.label62.Text = "Trang chủ";
+            this.label62.Click += new System.EventHandler(this.TrangChu_click);
+            this.label62.MouseEnter += new System.EventHandler(this.TrangChu_enter);
+            this.label62.MouseLeave += new System.EventHandler(this.TrangChu_leave);
             // 
             // username
             // 
@@ -728,6 +818,9 @@ namespace AnBinhApp
             this.panel_DangXuat.Name = "panel_DangXuat";
             this.panel_DangXuat.Size = new System.Drawing.Size(278, 56);
             this.panel_DangXuat.TabIndex = 4;
+            this.panel_DangXuat.Click += new System.EventHandler(this.DangXuat_click);
+            this.panel_DangXuat.MouseEnter += new System.EventHandler(this.DangXuat_enter);
+            this.panel_DangXuat.MouseLeave += new System.EventHandler(this.DangXuat_leave);
             // 
             // pictureBox3
             // 
@@ -738,6 +831,9 @@ namespace AnBinhApp
             this.pictureBox3.Size = new System.Drawing.Size(29, 24);
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.DangXuat_click);
+            this.pictureBox3.MouseEnter += new System.EventHandler(this.DangXuat_enter);
+            this.pictureBox3.MouseLeave += new System.EventHandler(this.DangXuat_leave);
             // 
             // label64
             // 
@@ -750,6 +846,9 @@ namespace AnBinhApp
             this.label64.Size = new System.Drawing.Size(101, 23);
             this.label64.TabIndex = 1;
             this.label64.Text = "Đăng xuất";
+            this.label64.Click += new System.EventHandler(this.DangXuat_click);
+            this.label64.MouseEnter += new System.EventHandler(this.DangXuat_enter);
+            this.label64.MouseLeave += new System.EventHandler(this.DangXuat_leave);
             // 
             // panel_Thoat
             // 
@@ -760,6 +859,9 @@ namespace AnBinhApp
             this.panel_Thoat.Name = "panel_Thoat";
             this.panel_Thoat.Size = new System.Drawing.Size(278, 56);
             this.panel_Thoat.TabIndex = 3;
+            this.panel_Thoat.Click += new System.EventHandler(this.Thoat_click);
+            this.panel_Thoat.MouseEnter += new System.EventHandler(this.Thoat_enter);
+            this.panel_Thoat.MouseLeave += new System.EventHandler(this.Thoat_leave);
             // 
             // pictureBox9
             // 
@@ -770,6 +872,9 @@ namespace AnBinhApp
             this.pictureBox9.Size = new System.Drawing.Size(24, 24);
             this.pictureBox9.TabIndex = 2;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.Thoat_click);
+            this.pictureBox9.MouseEnter += new System.EventHandler(this.Thoat_enter);
+            this.pictureBox9.MouseLeave += new System.EventHandler(this.Thoat_leave);
             // 
             // label65
             // 
@@ -782,6 +887,9 @@ namespace AnBinhApp
             this.label65.Size = new System.Drawing.Size(62, 23);
             this.label65.TabIndex = 1;
             this.label65.Text = "Thoát";
+            this.label65.Click += new System.EventHandler(this.Thoat_click);
+            this.label65.MouseEnter += new System.EventHandler(this.Thoat_enter);
+            this.label65.MouseLeave += new System.EventHandler(this.Thoat_leave);
             // 
             // pictureBox10
             // 
@@ -843,12 +951,12 @@ namespace AnBinhApp
             // tab
             // 
             this.tab.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tab.Controls.Add(this.step3);
-            this.tab.Controls.Add(this.step2);
-            this.tab.Controls.Add(this.step1);
             this.tab.Controls.Add(this.step5);
-            this.tab.Controls.Add(this.step4);
             this.tab.Controls.Add(this.start);
+            this.tab.Controls.Add(this.step1);
+            this.tab.Controls.Add(this.step2);
+            this.tab.Controls.Add(this.step3);
+            this.tab.Controls.Add(this.step4);
             this.tab.ItemSize = new System.Drawing.Size(0, 1);
             this.tab.Location = new System.Drawing.Point(328, -4);
             this.tab.Name = "tab";
@@ -873,6 +981,19 @@ namespace AnBinhApp
             this.step5.Size = new System.Drawing.Size(1149, 835);
             this.step5.TabIndex = 8;
             this.step5.Text = "tabPage1";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Inter Light", 11F);
+            this.label46.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label46.Location = new System.Drawing.Point(230, 409);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(704, 46);
+            this.label46.TabIndex = 54;
+            this.label46.Text = "Bạn vui lòng ngồi lại 30 phút để nhân viên kiểm tra sức khỏe.\r\nTrong quá trình nà" +
+    "y, bạn không nên đóng ứng dụng hoặc chuyển qua tab khác.";
+            this.label46.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // comboBox1
             // 
@@ -933,6 +1054,7 @@ namespace AnBinhApp
             this.button9.TabIndex = 49;
             this.button9.Text = "Hoàn tất";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.clickHoanTat);
             // 
             // label43
             // 
@@ -946,79 +1068,94 @@ namespace AnBinhApp
             this.label43.TabIndex = 8;
             this.label43.Text = "Bước 5/5";
             // 
-            // step4
+            // start
             // 
-            this.step4.BackColor = System.Drawing.Color.White;
-            this.step4.Controls.Add(this.button7);
-            this.step4.Controls.Add(this.label41);
-            this.step4.Controls.Add(this.panel5);
-            this.step4.Controls.Add(this.label40);
-            this.step4.Location = new System.Drawing.Point(4, 5);
-            this.step4.Name = "step4";
-            this.step4.Size = new System.Drawing.Size(1149, 835);
-            this.step4.TabIndex = 7;
-            this.step4.Text = "tabPage1";
+            this.start.BackColor = System.Drawing.Color.White;
+            this.start.Controls.Add(this.label11);
+            this.start.Controls.Add(this.pictureBox7);
+            this.start.Controls.Add(this.label9);
+            this.start.Controls.Add(this.pictureBox13);
+            this.start.Controls.Add(this.button8);
+            this.start.Controls.Add(this.button1);
+            this.start.Location = new System.Drawing.Point(4, 5);
+            this.start.Name = "start";
+            this.start.Size = new System.Drawing.Size(1149, 835);
+            this.start.TabIndex = 3;
+            this.start.Text = "tabPage1";
             // 
-            // button7
+            // label11
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button7.Location = new System.Drawing.Point(488, 711);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(193, 52);
-            this.button7.TabIndex = 48;
-            this.button7.Text = "Tiếp tục";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.clickToStep5);
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Inter Light", 10.5F);
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label11.Location = new System.Drawing.Point(227, 633);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(698, 42);
+            this.label11.TabIndex = 44;
+            this.label11.Text = "Lưu ý rằng một khi bạn đã ấn \"Bất đầu\" thì bạn sẽ không thể quay lại được nữa.\r\nT" +
+    "iếp theo số thứ tự sẽ hiện lên và bạn phải theo dõi quy trình tiêm chủng của mìn" +
+    "h.";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label41
+            // pictureBox7
             // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Inter Light", 10.5F);
-            this.label41.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label41.Location = new System.Drawing.Point(329, 533);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(488, 42);
-            this.label41.TabIndex = 47;
-            this.label41.Text = "Vui lòng đợi đến đúng số thứ tự của mình in trên màn hình\r\nrồi tiến hành vào phòn" +
-    "g thực hiện tiêm ngừa.";
-            this.label41.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(313, 170);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(540, 450);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 43;
+            this.pictureBox7.TabStop = false;
             // 
-            // panel5
+            // label9
             // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.label42);
-            this.panel5.Location = new System.Drawing.Point(377, 165);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(400, 340);
-            this.panel5.TabIndex = 46;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Inter SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
+            this.label9.Location = new System.Drawing.Point(370, 69);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(429, 34);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "Hôm nay bạn có lịch tiêm ngừa";
             // 
-            // label42
+            // pictureBox13
             // 
-            this.label42.AutoSize = true;
-            this.label42.BackColor = System.Drawing.Color.Transparent;
-            this.label42.Font = new System.Drawing.Font("Inter", 120F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
-            this.label42.Location = new System.Drawing.Point(30, 50);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(366, 242);
-            this.label42.TabIndex = 8;
-            this.label42.Text = "02";
+            this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
+            this.pictureBox13.Location = new System.Drawing.Point(501, 132);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(19, 24);
+            this.pictureBox13.TabIndex = 40;
+            this.pictureBox13.TabStop = false;
             // 
-            // label40
+            // button8
             // 
-            this.label40.AutoSize = true;
-            this.label40.BackColor = System.Drawing.Color.White;
-            this.label40.Font = new System.Drawing.Font("Inter SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
-            this.label40.Location = new System.Drawing.Point(505, 69);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(140, 34);
-            this.label40.TabIndex = 7;
-            this.label40.Text = "Bước 4/5";
+            this.button8.Font = new System.Drawing.Font("Inter Light", 11F);
+            this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button8.Location = new System.Drawing.Point(484, 123);
+            this.button8.Name = "button8";
+            this.button8.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
+            this.button8.Size = new System.Drawing.Size(190, 41);
+            this.button8.TabIndex = 39;
+            this.button8.Text = "Xem lại phiếu";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.clickXemLaiPhieu);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(488, 711);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(193, 52);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "Bắt đầu";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.clickToStep1);
             // 
             // step1
             // 
@@ -1114,6 +1251,75 @@ namespace AnBinhApp
             this.label12.Size = new System.Drawing.Size(134, 34);
             this.label12.TabIndex = 6;
             this.label12.Text = "Bước 1/5";
+            // 
+            // step2
+            // 
+            this.step2.BackColor = System.Drawing.Color.White;
+            this.step2.Controls.Add(this.panel4);
+            this.step2.Controls.Add(this.label17);
+            this.step2.Controls.Add(this.label16);
+            this.step2.Controls.Add(this.button3);
+            this.step2.Location = new System.Drawing.Point(4, 5);
+            this.step2.Name = "step2";
+            this.step2.Size = new System.Drawing.Size(1149, 835);
+            this.step2.TabIndex = 5;
+            this.step2.Text = "tabPage1";
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.richTextBox1);
+            this.panel4.Location = new System.Drawing.Point(66, 192);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1009, 367);
+            this.panel4.TabIndex = 42;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Font = new System.Drawing.Font("Inter Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.richTextBox1.Location = new System.Drawing.Point(12, 9);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(983, 346);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(62, 147);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(269, 24);
+            this.label17.TabIndex = 41;
+            this.label17.Text = "Triệu chứng của bệnh nhân";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Inter SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
+            this.label16.Location = new System.Drawing.Point(505, 69);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(138, 34);
+            this.label16.TabIndex = 40;
+            this.label16.Text = "Bước 2/5";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button3.Location = new System.Drawing.Point(488, 711);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(193, 52);
+            this.button3.TabIndex = 39;
+            this.button3.Text = "Tiếp tục";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.clickToStep3);
             // 
             // step3
             // 
@@ -1564,175 +1770,79 @@ namespace AnBinhApp
             this.label30.TabIndex = 5;
             this.label30.Text = "Mã ĐK";
             // 
-            // step2
+            // step4
             // 
-            this.step2.BackColor = System.Drawing.Color.White;
-            this.step2.Controls.Add(this.panel4);
-            this.step2.Controls.Add(this.label17);
-            this.step2.Controls.Add(this.label16);
-            this.step2.Controls.Add(this.button3);
-            this.step2.Location = new System.Drawing.Point(4, 5);
-            this.step2.Name = "step2";
-            this.step2.Size = new System.Drawing.Size(1149, 835);
-            this.step2.TabIndex = 5;
-            this.step2.Text = "tabPage1";
+            this.step4.BackColor = System.Drawing.Color.White;
+            this.step4.Controls.Add(this.button7);
+            this.step4.Controls.Add(this.label41);
+            this.step4.Controls.Add(this.panel5);
+            this.step4.Controls.Add(this.label40);
+            this.step4.Location = new System.Drawing.Point(4, 5);
+            this.step4.Name = "step4";
+            this.step4.Size = new System.Drawing.Size(1149, 835);
+            this.step4.TabIndex = 7;
+            this.step4.Text = "tabPage1";
             // 
-            // panel4
+            // button7
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.richTextBox1);
-            this.panel4.Location = new System.Drawing.Point(66, 192);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1009, 367);
-            this.panel4.TabIndex = 42;
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button7.Location = new System.Drawing.Point(488, 711);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(193, 52);
+            this.button7.TabIndex = 48;
+            this.button7.Text = "Tiếp tục";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.clickToStep5);
             // 
-            // richTextBox1
+            // label41
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Inter Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.richTextBox1.Location = new System.Drawing.Point(12, 9);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(983, 346);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Inter Light", 10.5F);
+            this.label41.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label41.Location = new System.Drawing.Point(329, 533);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(488, 42);
+            this.label41.TabIndex = 47;
+            this.label41.Text = "Vui lòng đợi đến đúng số thứ tự của mình in trên màn hình\r\nrồi tiến hành vào phòn" +
+    "g thực hiện tiêm ngừa.";
+            this.label41.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label17
+            // panel5
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(62, 147);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(269, 24);
-            this.label17.TabIndex = 41;
-            this.label17.Text = "Triệu chứng của bệnh nhân";
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label42);
+            this.panel5.Location = new System.Drawing.Point(377, 165);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(400, 340);
+            this.panel5.TabIndex = 46;
             // 
-            // label16
+            // label42
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Inter SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
-            this.label16.Location = new System.Drawing.Point(505, 69);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(138, 34);
-            this.label16.TabIndex = 40;
-            this.label16.Text = "Bước 2/5";
+            this.label42.AutoSize = true;
+            this.label42.BackColor = System.Drawing.Color.Transparent;
+            this.label42.Font = new System.Drawing.Font("Inter", 120F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
+            this.label42.Location = new System.Drawing.Point(30, 50);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(366, 242);
+            this.label42.TabIndex = 8;
+            this.label42.Text = "02";
             // 
-            // button3
+            // label40
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(488, 711);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(193, 52);
-            this.button3.TabIndex = 39;
-            this.button3.Text = "Tiếp tục";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.clickToStep3);
-            // 
-            // start
-            // 
-            this.start.BackColor = System.Drawing.Color.White;
-            this.start.Controls.Add(this.label11);
-            this.start.Controls.Add(this.pictureBox7);
-            this.start.Controls.Add(this.label9);
-            this.start.Controls.Add(this.pictureBox13);
-            this.start.Controls.Add(this.button8);
-            this.start.Controls.Add(this.button1);
-            this.start.Location = new System.Drawing.Point(4, 5);
-            this.start.Name = "start";
-            this.start.Size = new System.Drawing.Size(1149, 835);
-            this.start.TabIndex = 3;
-            this.start.Text = "tabPage1";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Inter Light", 10.5F);
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(227, 633);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(698, 42);
-            this.label11.TabIndex = 44;
-            this.label11.Text = "Lưu ý rằng một khi bạn đã ấn \"Bất đầu\" thì bạn sẽ không thể quay lại được nữa.\r\nT" +
-    "iếp theo số thứ tự sẽ hiện lên và bạn phải theo dõi quy trình tiêm chủng của mìn" +
-    "h.";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(313, 170);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(540, 450);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 43;
-            this.pictureBox7.TabStop = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Inter SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
-            this.label9.Location = new System.Drawing.Point(370, 69);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(429, 34);
-            this.label9.TabIndex = 41;
-            this.label9.Text = "Hôm nay bạn có lịch tiêm ngừa";
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(501, 132);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(19, 24);
-            this.pictureBox13.TabIndex = 40;
-            this.pictureBox13.TabStop = false;
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Inter Light", 11F);
-            this.button8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button8.Location = new System.Drawing.Point(484, 123);
-            this.button8.Name = "button8";
-            this.button8.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
-            this.button8.Size = new System.Drawing.Size(190, 41);
-            this.button8.TabIndex = 39;
-            this.button8.Text = "Xem lại phiếu";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(488, 711);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(193, 52);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Bắt đầu";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.clickToStep1);
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Inter Light", 11F);
-            this.label46.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label46.Location = new System.Drawing.Point(230, 409);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(704, 46);
-            this.label46.TabIndex = 54;
-            this.label46.Text = "Bạn vui lòng ngồi lại 30 phút để nhân viên kiểm tra sức khỏe.\r\nTrong quá trình nà" +
-    "y, bạn không nên đóng ứng dụng hoặc chuyển qua tab khác.";
-            this.label46.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label40.AutoSize = true;
+            this.label40.BackColor = System.Drawing.Color.White;
+            this.label40.Font = new System.Drawing.Font("Inter SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
+            this.label40.Location = new System.Drawing.Point(505, 69);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(140, 34);
+            this.label40.TabIndex = 7;
+            this.label40.Text = "Bước 4/5";
             // 
             // QuyTrinhTiemChung
             // 
@@ -1800,14 +1910,17 @@ namespace AnBinhApp
             this.tab.ResumeLayout(false);
             this.step5.ResumeLayout(false);
             this.step5.PerformLayout();
-            this.step4.ResumeLayout(false);
-            this.step4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.start.ResumeLayout(false);
+            this.start.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.step1.ResumeLayout(false);
             this.step1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.step2.ResumeLayout(false);
+            this.step2.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.step3.ResumeLayout(false);
             this.step3.PerformLayout();
             this.hoadonMotLan.ResumeLayout(false);
@@ -1815,13 +1928,10 @@ namespace AnBinhApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.hoadonTraGop.ResumeLayout(false);
             this.hoadonTraGop.PerformLayout();
-            this.step2.ResumeLayout(false);
-            this.step2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.start.ResumeLayout(false);
-            this.start.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            this.step4.ResumeLayout(false);
+            this.step4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
