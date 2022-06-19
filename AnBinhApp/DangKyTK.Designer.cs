@@ -32,7 +32,7 @@ namespace AnBinhApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangKyTK));
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
-            this.loginBtn = new System.Windows.Forms.Button();
+            this.DangKyBtn = new System.Windows.Forms.Button();
             this.passwordLine = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.usernameHoverLine = new System.Windows.Forms.Panel();
@@ -72,19 +72,20 @@ namespace AnBinhApp
             this.label4.TabIndex = 24;
             this.label4.Text = "Đã có tài khoản?";
             // 
-            // loginBtn
+            // DangKyBtn
             // 
-            this.loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
-            this.loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginBtn.Font = new System.Drawing.Font("Inter Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.loginBtn.Location = new System.Drawing.Point(37, 630);
-            this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(430, 59);
-            this.loginBtn.TabIndex = 22;
-            this.loginBtn.Text = "Đăng ký";
-            this.loginBtn.UseVisualStyleBackColor = false;
+            this.DangKyBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
+            this.DangKyBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DangKyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DangKyBtn.Font = new System.Drawing.Font("Inter Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DangKyBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DangKyBtn.Location = new System.Drawing.Point(37, 630);
+            this.DangKyBtn.Name = "DangKyBtn";
+            this.DangKyBtn.Size = new System.Drawing.Size(430, 59);
+            this.DangKyBtn.TabIndex = 22;
+            this.DangKyBtn.Text = "Đăng ký";
+            this.DangKyBtn.UseVisualStyleBackColor = false;
+            this.DangKyBtn.Click += new System.EventHandler(this.clickDangKy);
             // 
             // passwordLine
             // 
@@ -193,7 +194,7 @@ namespace AnBinhApp
             this.label5.TabIndex = 19;
             this.label5.Text = "Nhập lại mật khẩu";
             // 
-            // Register
+            // DangKyTK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -205,7 +206,7 @@ namespace AnBinhApp
             this.Controls.Add(this.label5);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.loginBtn);
+            this.Controls.Add(this.DangKyBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.passwordLine);
             this.Controls.Add(this.textBox2);
@@ -213,7 +214,7 @@ namespace AnBinhApp
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Name = "Register";
+            this.Name = "DangKyTK";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.registerClosed);
@@ -227,7 +228,7 @@ namespace AnBinhApp
 
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button loginBtn;
+        private System.Windows.Forms.Button DangKyBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel passwordLine;
         private System.Windows.Forms.TextBox textBox2;

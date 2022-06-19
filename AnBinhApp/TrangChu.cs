@@ -107,6 +107,15 @@ namespace AnBinhApp
             }            
         }
 
+        private void ThongBao_hover(object sender, EventArgs e)
+        {
+            pictureThongBao.Image = Image.FromFile("../../svg/bell hover.png");
+        }
+        private void ThongBao_leave(object sender, EventArgs e)
+        {
+            pictureThongBao.Image = Image.FromFile("../../svg/bell.png");
+        }
+
         private void TrangChu_enter(object sender, EventArgs e)
         {
             panel_TrangChu.BackColor = Color.FromArgb(37, 58, 128);
@@ -122,7 +131,24 @@ namespace AnBinhApp
         private void DangKyTiem_leave(object sender, EventArgs e)
         {
             panel_DangKyTiem.BackColor = Color.FromArgb(38, 21, 92);
-        }        
+        }                
+        private void QTTC_enter(object sender, EventArgs e)
+        {
+            panel_QTTC.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void QTTC_leave(object sender, EventArgs e)
+        {
+            panel_QTTC.BackColor = Color.FromArgb(38, 21, 92);
+        }
+
+        private void dsKH_enter(object sender, EventArgs e)
+        {
+            panel_dsKH.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void dsKH_leave(object sender, EventArgs e)
+        {
+            panel_dsKH.BackColor = Color.FromArgb(38, 21, 92);
+        }
         private void DSPhieuTiem_enter(object sender, EventArgs e)
         {
             panel_DSPhieuTiem.BackColor = Color.FromArgb(37, 58, 128);
@@ -130,16 +156,74 @@ namespace AnBinhApp
         private void DSPhieuTiem_leave(object sender, EventArgs e)
         {
             panel_DSPhieuTiem.BackColor = Color.FromArgb(38, 21, 92);
-        }        
-        
-        private void ThongBao_hover(object sender, EventArgs e)
-        {
-            pictureThongBao.Image = Image.FromFile("../../svg/bell hover.png");
         }
-        private void ThongBao_leave(object sender, EventArgs e)
+        private void dsVacXin_enter(object sender, EventArgs e)
         {
-            pictureThongBao.Image = Image.FromFile("../../svg/bell.png");
+            panel_DSVacxin.BackColor = Color.FromArgb(37, 58, 128);
         }
+        private void dsVacXin_leave(object sender, EventArgs e)
+        {
+            panel_DSVacxin.BackColor = Color.FromArgb(38, 21, 92);
+        }
+        private void dsNhanVien_enter(object sender, EventArgs e)
+        {
+            panel_DSNhanVien.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void dsNhanVien_leave(object sender, EventArgs e)
+        {
+            panel_DSNhanVien.BackColor = Color.FromArgb(38, 21, 92);
+        }
+
+        private void panel_DatMuaVacXin_MouseEnter(object sender, EventArgs e)
+        {
+            panel_DatMuaVacXin.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void panel_DatMuaVacXin_MouseLeave(object sender, EventArgs e)
+        {
+            panel_DatMuaVacXin.BackColor = Color.FromArgb(38, 21, 92);
+        }
+        private void xemLich_enter(object sender, EventArgs e)
+        {
+            panel_XemLich.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void xemLich_leave(object sender, EventArgs e)
+        {
+            panel_XemLich.BackColor = Color.FromArgb(38, 21, 92);
+        }
+        private void phanCong_enter(object sender, EventArgs e)
+        {
+            panel_PhanCong.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void phanCong_leave(object sender, EventArgs e)
+        {
+            panel_PhanCong.BackColor = Color.FromArgb(38, 21, 92);
+        }
+
+        private void taiKhoan_enter(object sender, EventArgs e)
+        {
+            panel_TaiKhoan.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void taiKhoan_leave(object sender, EventArgs e)
+        {
+            panel_TaiKhoan.BackColor = Color.FromArgb(38, 21, 92);
+        }
+        private void DangXuat_enter(object sender, EventArgs e)
+        {
+            panel_DangXuat.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void DangXuat_leave(object sender, EventArgs e)
+        {
+            panel_DangXuat.BackColor = Color.FromArgb(38, 21, 92);
+        }
+        private void Thoat_enter(object sender, EventArgs e)
+        {
+            panel_Thoat.BackColor = Color.FromArgb(37, 58, 128);
+        }
+        private void Thoat_leave(object sender, EventArgs e)
+        {
+            panel_Thoat.BackColor = Color.FromArgb(38, 21, 92);
+        }
+
         private void moRongDS_click(object sender, EventArgs e)
         {
             if (ds_collapsible == true)
@@ -255,89 +339,6 @@ namespace AnBinhApp
                 panel2.Show();
             }
         }
-        private void QTTC_enter(object sender, EventArgs e)
-        {
-            panel_QTTC.BackColor = Color.FromArgb(37, 58, 128);
-        }
-        private void QTTC_leave(object sender, EventArgs e)
-        {
-            panel_QTTC.BackColor = Color.FromArgb(38, 21, 92);
-        }
-
-        private void dsKH_enter(object sender, EventArgs e)
-        {
-            panel_dsKH.BackColor = Color.FromArgb(37, 58, 128);
-        }
-        private void dsKH_leave(object sender, EventArgs e)
-        {
-            panel_dsKH.BackColor = Color.FromArgb(38, 21, 92);
-        }
-        private void dsVacXin_enter(object sender, EventArgs e)
-        {
-            panel_DSVacxin.BackColor = Color.FromArgb(37, 58, 128);
-        }
-        private void dsVacXin_leave(object sender, EventArgs e)
-        {
-            panel_DSVacxin.BackColor = Color.FromArgb(38, 21, 92);
-        }
-        private void dsNhanVien_enter(object sender, EventArgs e)
-        {
-            panel_DSNhanVien.BackColor = Color.FromArgb(37, 58, 128);
-        }
-        private void dsNhanVien_leave(object sender, EventArgs e)
-        {
-            panel_DSNhanVien.BackColor = Color.FromArgb(38, 21, 92);
-        }
-
-        private void panel_DatMuaVacXin_MouseEnter(object sender, EventArgs e)
-        {
-            panel_DatMuaVacXin.BackColor = Color.FromArgb(37, 58, 128);
-        }
-        private void panel_DatMuaVacXin_MouseLeave(object sender, EventArgs e)
-        {
-            panel_DatMuaVacXin.BackColor = Color.FromArgb(38, 21, 92);
-        }
-        private void xemLich_enter(object sender, EventArgs e)
-        {
-            panel_XemLich.BackColor = Color.FromArgb(37, 58, 128);
-        }
-        private void xemLich_leave(object sender, EventArgs e)
-        {
-            panel_XemLich.BackColor = Color.FromArgb(38, 21, 92);
-        }
-        private void phanCong_enter(object sender, EventArgs e)
-        {
-            panel_PhanCong.BackColor = Color.FromArgb(37, 58, 128);
-        }
-        private void phanCong_leave(object sender, EventArgs e)
-        {
-            panel_PhanCong.BackColor = Color.FromArgb(38, 21, 92);
-        }
-
-        private void taiKhoan_enter(object sender, EventArgs e)
-        {
-            panel_TaiKhoan.BackColor = Color.FromArgb(37, 58, 128);
-        }
-        private void taiKhoan_leave(object sender, EventArgs e)
-        {
-            panel_TaiKhoan.BackColor = Color.FromArgb(38, 21, 92);
-        }
-        private void DangXuat_enter(object sender, EventArgs e)
-        {
-            panel_DangXuat.BackColor = Color.FromArgb(37, 58, 128);
-        }
-        private void DangXuat_leave(object sender, EventArgs e)
-        {
-            panel_DangXuat.BackColor = Color.FromArgb(38, 21, 92);
-        }
-        private void Thoat_enter(object sender, EventArgs e)
-        {
-            panel_Thoat.BackColor = Color.FromArgb(37, 58, 128);
-        }
-        private void Thoat_leave(object sender, EventArgs e)
-        {
-            panel_Thoat.BackColor = Color.FromArgb(38, 21, 92);
-        }
 
         // End of
         // Styling and visualization
@@ -388,6 +389,12 @@ namespace AnBinhApp
             this.Hide();
         }
 
+        private void dsKH_click(object sender, EventArgs e)
+        {
+            DSKhachHang dsKHForm = new DSKhachHang();
+            dsKHForm.Show();
+            this.Hide();
+        }
         private void dsPhieuTiem_click(object sender, EventArgs e)
         {
             panel_DSPhieuTiem.BackColor = Color.FromArgb(73, 155, 242);

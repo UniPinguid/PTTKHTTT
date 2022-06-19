@@ -58,6 +58,12 @@
     <Compile Include="DatMuaVacxin.Designer.cs">
       <DependentUpon>DatMuaVacxin.cs</DependentUpon>
     </Compile>
+    <Compile Include="DSKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKhachHang.Designer.cs">
+      <DependentUpon>DSKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="DSNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,12 @@
     <Compile Include="ThongBao.Designer.cs">
       <DependentUpon>ThongBao.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThongTinKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinKhachHang.Designer.cs">
+      <DependentUpon>ThongTinKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThongTinNhanVIen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +174,9 @@
     <EmbeddedResource Include="DatMuaVacxin.resx">
       <DependentUpon>DatMuaVacxin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DSKhachHang.resx">
+      <DependentUpon>DSKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DSNhanVien.resx">
       <DependentUpon>DSNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThongBao.resx">
       <DependentUpon>ThongBao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinKhachHang.resx">
+      <DependentUpon>ThongTinKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongTinNhanVIen.resx">
       <DependentUpon>ThongTinNhanVIen.cs</DependentUpon>

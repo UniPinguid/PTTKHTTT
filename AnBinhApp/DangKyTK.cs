@@ -30,5 +30,10 @@ namespace AnBinhApp
         {
             is_register_closed = true;
         }
+
+        private void clickDangKy(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

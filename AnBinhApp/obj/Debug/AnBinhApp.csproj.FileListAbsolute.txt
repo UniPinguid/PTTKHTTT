@@ -25,3 +25,5 @@ D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.QuyTrinhTiemChung.resources
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.DSNhanVien.resources
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.ThongTinNhanVIen.resources
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.PhanCongThemNV.resources
+D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.DSKhachHang.resources
+D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.ThongTinKhachHang.resources
