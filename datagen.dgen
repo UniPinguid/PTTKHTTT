@@ -2311,5 +2311,11 @@
       </Columns>
     </Table>
   </Tables>
-  <SynchronizationOptions xsi:type="SqlDataSynchronizationOptions" />
+  <SynchronizationOptions xsi:type="SqlDataSynchronizationOptions">
+    <SynchronizeType>File</SynchronizeType>
+    <SynchronizationFileName>D:\GitHub\PTTKHTTT\data.sql</SynchronizationFileName>
+    <ExecuteCustomScriptTypeBefore>UseEmbeddedScript</ExecuteCustomScriptTypeBefore>
+    <ExecuteCustomScriptTypeAfter>UseEmbeddedScript</ExecuteCustomScriptTypeAfter>
+    <BackupPathName>C:\Program Files (x86)\Microsoft SQL Server\MSSQL10_50.UNIPINGUID\MSSQL\Backup</BackupPathName>
+  </SynchronizationOptions>
 </DataGenDocument>

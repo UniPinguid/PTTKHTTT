@@ -463,6 +463,13 @@ namespace AnBinhApp
             }
         }
 
+        private void traCuuLichRanh_click(object sender, EventArgs e)
+        {
+            TraCuuLichRanhNV traCuuForm = new TraCuuLichRanhNV();
+            traCuuForm.Show();
+            this.Close();
+        }
+
         private void clickThemNV(object sender, EventArgs e)
         {
             PhanCongThemNV PCThemNV = new PhanCongThemNV();
@@ -475,7 +482,7 @@ namespace AnBinhApp
             PhanCongSuccess.messageShow("success", "Phân công lịch làm việc thành công!", "Thông tin về lịch làm việc mới của mỗi nhân viên sẽ được cập nhật\nđến họ trong vòng 24 giờ.");
             this.Close();
         }
-
+        
 
         // End of
         // Transitioning
@@ -651,7 +658,7 @@ namespace AnBinhApp
             tomorrow_arrow.ForeColor = Color.FromArgb(150, 150, 150);
             label_tomorrow.ForeColor = Color.FromArgb(150, 150, 150);
             label_tomorrow_date.ForeColor = Color.FromArgb(150, 150, 150);
-        }
+        }       
 
         // End of
         // Date Chronology

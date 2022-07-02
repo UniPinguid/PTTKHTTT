@@ -14,8 +14,8 @@ namespace AnBinhApp
     public partial class TrangChu : Form
     {
         public static bool is_login = false;
-        public static bool is_NhanVien = true;
-        public static bool is_BoPhanDieuHanh = false;
+        public static bool is_NhanVien = false;
+        public static bool is_BoPhanDieuHanh = true;
         public static bool co_ThongBao = true;
 
         public static bool ds_collapsible = false;
