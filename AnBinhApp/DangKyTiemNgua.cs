@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +15,22 @@ namespace AnBinhApp
 {
     public partial class DangKyTiemNgua : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
+
         bool co_can_giam_ho = false;
+
+        // Khách hàng
+        int MaKH = TrangChu.MaKH;
+        string HoTenKH = TrangChu.HoTenKH;
+        string GioiTinh = TrangChu.GioiTinh;
+        string DiaChi = TrangChu.DiaChi;
+        string SDT = TrangChu.SDT;
+        string NgaySinh = TrangChu.NgaySinh;
+
+
+        // Phiếu ĐK
+        int MaPhieu;
+        string Goi, NgayTiem, TinhTrang;
 
         public DangKyTiemNgua()
         {
@@ -20,6 +38,21 @@ namespace AnBinhApp
             notification(TrangChu.co_ThongBao);
             HienThiInputGiamHo(co_can_giam_ho);
             sideBarCollapsible(TrangChu.ds_collapsible, TrangChu.chucnang_collapsible, TrangChu.taikhoan_collapsible);
+
+            tab.SelectTab(DangKyTiemTab);
+
+            hoVaTen_textBox.Text = HoTenKH;
+
+            if (GioiTinh == "Nam")
+                namBtn.Checked = true;
+            else if (GioiTinh == "Nữ")
+                nuBtn.Checked = true;
+            else if (GioiTinh == "Khác")
+                khacBtn.Checked = true;
+
+            diaChi_textBox.Text = DiaChi;
+            sdt_textBox.Text = SDT;
+            ngaySinh_picker.Value = DateTime.Parse(NgaySinh);
         }       
 
         // Start of
@@ -323,6 +356,34 @@ namespace AnBinhApp
             }
         }
 
+        private void HienThiInputGiamHo(bool check)
+        {
+            if (check == false)
+            {
+                label21.Hide();
+                tenNguoiGiamHo_textBox.Hide();
+                panel11.Hide();
+                label19.Hide();
+                sdtNguoiGiamHo_textBox.Hide();
+                panel10.Hide();
+                label18.Hide();
+                mqhNguoiGiamHo_textBox.Hide();
+                panel7.Hide();
+            }
+            else
+            {
+                label21.Show();
+                tenNguoiGiamHo_textBox.Show();
+                panel11.Show();
+                label19.Show();
+                sdtNguoiGiamHo_textBox.Show();
+                panel10.Show();
+                label18.Show();
+                mqhNguoiGiamHo_textBox.Show();
+                panel7.Show();
+            }
+        }        
+
         // End of
         // Styling and visualization
 
@@ -474,57 +535,118 @@ namespace AnBinhApp
             }
         }
 
+        private void clickQuayLaiPhieuDK(object sender, EventArgs e)
+        {
+            tab.SelectTab("DangKyTiemTab");
+        }
+        private void clickTiepTucPhieuDK(object sender, EventArgs e)
+        {
+            if (hoVaTen_textBox.Text == "")
+                MessageBox.Show("Xin vui lòng nhập đầy đủ thông tin", "Thông báo");
+            else if (!namBtn.Checked && !nuBtn.Checked && !khacBtn.Checked)
+                MessageBox.Show("Xin vui lòng chọn giới tính", "Thông báo");
+            else if (!goiCheck.Checked && !leCheck.Checked)
+                MessageBox.Show("Xin vui lòng chọn loại tiêm ngừa", "Thông báo");
+            else
+            {
+                if (goiCheck.Checked)
+                {
+                    tab.SelectTab("packageTab");
+                }
+                else if (leCheck.Checked)
+                {
+                    tab.SelectTab("singleVacTab");
+                }
+            }
+
+            if (namBtn.Checked)
+                GioiTinh = "Nam";
+            else if (nuBtn.Checked)
+                GioiTinh = "Nữ";
+            else if (khacBtn.Checked)
+                GioiTinh = "Khác";
+        }
+        private void clickTiepTucLe(object sender, EventArgs e)
+        {
+            tab.SelectTab(finalizationTab);
+
+            label46.Text = hoVaTen_textBox.Text;
+            if (namBtn.Checked) label47.Text = "Nam";
+            else if (nuBtn.Checked) label47.Text = "Nữ";
+            else if (khacBtn.Checked) label47.Text = "Khác";
+            label48.Text = ngaySinh_picker.Value.ToShortDateString();
+            label49.Text = diaChi_textBox.Text;
+            label50.Text = sdt_textBox.Text;
+            if (tenNguoiGiamHo_textBox.Text == "")
+                label51.Text = "Không";
+            else label51.Text = tenNguoiGiamHo_textBox.Text;
+            if (sdtNguoiGiamHo_textBox.Text == "")
+                label52.Text = "Không";
+            else label52.Text = sdtNguoiGiamHo_textBox.Text;
+            if (mqhNguoiGiamHo_textBox.Text == "")
+                label53.Text = "Không";
+            else label53.Text = mqhNguoiGiamHo_textBox.Text;
+            if (goiCheck.Checked) label54.Text = "Gói";
+            else if (leCheck.Checked) label54.Text = "Lẻ";
+            label56.Text = vaccinationDatePicker.Value.ToShortDateString();
+            label55.Text = vacxin_comboBox.Text;
+            label57.Text = "Không";
+        }
+        private void clickQuayLaiGoiLe(object sender, EventArgs e)
+        {
+            if (goiCheck.Checked)
+                tab.SelectTab("packageTab");
+            else if (leCheck.Checked)
+                tab.SelectTab("singleVacTab");
+        }
+        private void clickTiepTucGoi(object sender, EventArgs e)
+        {
+            tab.SelectTab("finalizationTab");
+
+            label46.Text = hoVaTen_textBox.Text;
+            if (namBtn.Checked) label47.Text = "Nam";
+            else if (nuBtn.Checked) label47.Text = "Nữ";
+            else if (khacBtn.Checked) label47.Text = "Khác";
+            label48.Text = ngaySinh_picker.Value.ToShortDateString();
+            label49.Text = diaChi_textBox.Text;
+            label50.Text = sdt_textBox.Text;
+            if (tenNguoiGiamHo_textBox.Text == "")
+                label51.Text = "Không";
+            else label51.Text = tenNguoiGiamHo_textBox.Text;
+            if (sdtNguoiGiamHo_textBox.Text == "")
+                label52.Text = "Không";
+            else label52.Text = sdtNguoiGiamHo_textBox.Text;
+            if (mqhNguoiGiamHo_textBox.Text == "")
+                label53.Text = "Không";
+            else label53.Text = mqhNguoiGiamHo_textBox.Text;
+            if (goiCheck.Checked) label54.Text = "Gói";
+            else if (leCheck.Checked) label51.Text = "Lẻ";
+            label56.Text = vaccinationDatePicker.Value.ToShortDateString();
+            label55.Text = vacxin_comboBox.Text;
+
+            if (is_option1_select)
+                Goi += "Gói tiêm trẻ em 0 - 12 tháng tuổi, ";
+            if (is_option2_select)
+                Goi += "Gói tiêm trẻ em 0 - 12 tháng tuổi, ";
+            if (is_option3_select)
+                Goi += "Gói tiêm thường, ";
+            if (is_option4_select)
+                Goi += "Gói phụ nữ mang thai";
+
+            if (Goi[Goi.Length - 1].Equals(" ") && Goi[Goi.Length - 2].Equals(","))
+            {
+                Goi = Goi.Substring(0, Goi.Length - 2);
+            }
+
+            label57.Text = Goi;
+        }
+
         // End of
         // Transitioning
 
-        private void getAge(object sender, EventArgs e)
-        {
-            int years = DateTime.Now.Year - birthday_picker.Value.Year;
-            int months = DateTime.Now.Month - birthday_picker.Value.Month;
-            agePrompt.Text = "Bạn " + years.ToString() + " tuổi";
 
-            if (years <= 12)
-            {
-                co_can_giam_ho = true;
-                if (years <= 3)
-                {
-                    months += years * 12;
-                    agePrompt.Text = "Bạn " + months.ToString() + " tháng tuổi";
-                }
-            }
-            else
-                co_can_giam_ho = false;
-
-            HienThiInputGiamHo(co_can_giam_ho);
-        }
-
-        private void HienThiInputGiamHo(bool check)
-        {
-            if (check == false)
-            {
-                label21.Hide();
-                supervisorName_textBox.Hide();
-                panel11.Hide();
-                label19.Hide();
-                supervisorNum_textBox.Hide();
-                panel10.Hide();
-                label18.Hide();
-                supervisorRelationship_textBox.Hide();
-                panel7.Hide();
-            }
-            else
-            {
-                label21.Show();
-                supervisorName_textBox.Show();
-                panel11.Show();
-                label19.Show();
-                supervisorNum_textBox.Show();
-                panel10.Show();
-                label18.Show();
-                supervisorRelationship_textBox.Show();
-                panel7.Show();
-            }
-        }
+        // Start of 
+        // selecting package
 
         bool is_option1_select = false;
         bool is_option2_select = false;
@@ -544,7 +666,6 @@ namespace AnBinhApp
                 option1.Image = Image.FromFile("../../svg/package option1.png");
             }
         }
-
         private void option2_click(object sender, EventArgs e)
         {
             if (is_option2_select == false)
@@ -558,7 +679,6 @@ namespace AnBinhApp
                 option2.Image = Image.FromFile("../../svg/package option2.png");
             }
         }
-
         private void option3_click(object sender, EventArgs e)
         {
             if (is_option3_select == false)
@@ -572,7 +692,6 @@ namespace AnBinhApp
                 option3.Image = Image.FromFile("../../svg/package option3.png");
             }
         }
-
         private void option4_click(object sender, EventArgs e)
         {
             if (is_option4_select == false)
@@ -587,76 +706,64 @@ namespace AnBinhApp
             }
         }
 
-        private void clickReturnVacRec(object sender, EventArgs e)
-        {
-            tab.SelectTab("DangKyTiemTab");
-        }
+        // End of
+        // Selecting package
 
-        private void clickContinueMethod(object sender, EventArgs e)
+        private void getAge(object sender, EventArgs e)
         {
-            if (fullName_textBox.Text == "")
-                MessageBox.Show("Xin vui lòng nhập đầy đủ thông tin", "Thông báo");
-            else if (!maleBtn.Checked && !femaleBtn.Checked && !otherGenderBtn.Checked)
-                MessageBox.Show("Xin vui lòng chọn giới tính", "Thông báo");
-            else if (!packageCheck.Checked && !singleCheck.Checked)
-                MessageBox.Show("Xin vui lòng chọn loại tiêm ngừa", "Thông báo");
-            else
+            int years = DateTime.Now.Year - ngaySinh_picker.Value.Year;
+            int months = DateTime.Now.Month - ngaySinh_picker.Value.Month;
+            agePrompt.Text = "Bạn " + years.ToString() + " tuổi";
+
+            if (years <= 12)
             {
-                if (packageCheck.Checked)
+                co_can_giam_ho = true;
+                if (years <= 3)
                 {
-                    tab.SelectTab("packageTab");
-                }
-                else if (singleCheck.Checked)
-                {
-                    tab.SelectTab("singleVacTab");
+                    months += years * 12;
+                    agePrompt.Text = "Bạn " + months.ToString() + " tháng tuổi";
                 }
             }
-        }
+            else
+                co_can_giam_ho = false;
 
-        private void clickQuayLaiGoiLe(object sender, EventArgs e)
-        {
-            if (packageCheck.Checked)
-                tab.SelectTab("packageTab");
-            else if (singleCheck.Checked)
-                tab.SelectTab("singleVacTab");
-        }
-
-        private void clickTiepTucCuoiCung(object sender, EventArgs e)
-        {
-            tab.SelectTab("finalizationTab");
-
-            label46.Text = fullName_textBox.Text;
-            if (maleBtn.Checked) label47.Text = "Nam";
-            else if (femaleBtn.Checked) label47.Text = "Nữ";
-            else if (otherGenderBtn.Checked) label47.Text = "Khác";
-            label48.Text = birthday_picker.Value.ToShortDateString();
-            label49.Text = textBox1.Text;
-            label50.Text = textBox2.Text;
-            if (supervisorName_textBox.Text == "")
-                label51.Text = "Không";
-            else label51.Text = supervisorName_textBox.Text;
-            if (supervisorNum_textBox.Text == "")
-                label52.Text = "Không";
-            else label52.Text = supervisorNum_textBox.Text;
-            if (supervisorRelationship_textBox.Text == "")
-                label53.Text = "Không";
-            else label53.Text = supervisorRelationship_textBox.Text;
-            if (packageCheck.Checked) label54.Text = "Gói";
-            else if (singleCheck.Checked) label51.Text = "Lẻ";
-            label56.Text = vaccinationDatePicker.Value.ToShortDateString();
-            label55.Text = comboBox1.Text;
-            if (is_option1_select == true) label57.Text = "Gói 0 - 12 tháng tuổi";
-            else if (is_option2_select == true) label57.Text = "Gói 0 - 24 tháng tuổi";
-            else if (is_option3_select == true) label57.Text = "Gói thường";
-            else if (is_option4_select == true) label57.Text = "Gói phụ nữ mang thai";
-        }
-
+            HienThiInputGiamHo(co_can_giam_ho);
+        }        
         private void clickHoanTat(object sender, EventArgs e)
         {
+            Random rnd = new Random();
+            MaKH = rnd.Next(0, 99999999);
+            MaPhieu = rnd.Next(0, 99999999);            
+
+            NgayTiem = thoiGianTiem_picker.Value.ToShortDateString();
+            TinhTrang = "CD";
+
+            SqlConnection con = new SqlConnection();          
+            using (con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand sql_cmnd = new SqlCommand("themPhieuDKTiem", con);
+                    sql_cmnd.CommandType = CommandType.StoredProcedure;
+                    sql_cmnd.Parameters.AddWithValue("@MaKH", SqlDbType.Int).Value = MaKH;
+                    sql_cmnd.Parameters.AddWithValue("@MaPhieu", SqlDbType.Int).Value = MaPhieu;
+                    sql_cmnd.Parameters.AddWithValue("@Goi", SqlDbType.NVarChar).Value = Goi;
+                    sql_cmnd.Parameters.AddWithValue("@NgayTiem", SqlDbType.NVarChar).Value = DateTime.Parse(NgayTiem);
+                    sql_cmnd.Parameters.AddWithValue("@TinhTrang", SqlDbType.NVarChar).Value = TinhTrang;
+                    sql_cmnd.ExecuteNonQuery();
+                    con.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Không thể thêm phiếu mới.", "Thông báo");
+                }
+            }
+
             HienThi hienThiForm = new HienThi();
             hienThiForm.messageShow("success", "Đăng ký tiêm ngừa thành công!", "Hệ thống sẽ duyệt và gửi kết quả cho bạn trong vòng 24 giờ.");
             this.Close();
             hienThiForm.Show();
-        }
+        }       
     }
 }
