@@ -632,6 +632,8 @@ namespace AnBinhApp
         {
             date = calendar.Value;
             getToday(date);
+
+
         }
 
         private void previousDay_enter(object sender, EventArgs e)
@@ -658,7 +660,17 @@ namespace AnBinhApp
             tomorrow_arrow.ForeColor = Color.FromArgb(150, 150, 150);
             label_tomorrow.ForeColor = Color.FromArgb(150, 150, 150);
             label_tomorrow_date.ForeColor = Color.FromArgb(150, 150, 150);
-        }       
+        }
+
+        private void cbbTrungTam_TextChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Thanh cong");
+        }
+
+        private void cbbVaiTro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         // End of
         // Date Chronology
