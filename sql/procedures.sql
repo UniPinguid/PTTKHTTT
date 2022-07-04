@@ -41,3 +41,18 @@ WHERE (k.MAKH = @username AND k.SDT = @password) OR (n.MANV = @username AND n.SD
 END;
 
 -- EXEC getLogin @username = 123, @password = '123'
+
+CREATE or ALTER PROCEDURE searchCustomer(@bar nvarchar(100))
+AS
+BEGIN
+	SELECT * FROM KHACHHANG
+	WHERE MAKH like '%' + @bar + '%' or
+	HOVATEN like '%' + @bar + '%' or
+	DIACHI like '%' + @bar + '%' or
+	SDT like '%' + @bar + '%' or
+	NGAYSINH like '%' + @bar + '%'
+end
+	
+--EXEC searchCustomer @bar = N'nguyen'
+
+--select * from KHACHHANG where makh like '%1%'
