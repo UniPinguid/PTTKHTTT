@@ -31,10 +31,10 @@ namespace AnBinhApp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.username_textBox = new System.Windows.Forms.TextBox();
             this.usernameHoverLine = new System.Windows.Forms.Panel();
             this.passwordLine = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.password_textBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.checkRememberLogin = new System.Windows.Forms.CheckBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -43,7 +43,9 @@ namespace AnBinhApp
             this.label4 = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -56,19 +58,19 @@ namespace AnBinhApp
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên người dùng";
             // 
-            // textBox1
+            // username_textBox
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Inter Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(38, 308);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(429, 25);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Click += new System.EventHandler(this.username_click);
-            this.textBox1.Enter += new System.EventHandler(this.username_click);
-            this.textBox1.MouseEnter += new System.EventHandler(this.username_hover);
-            this.textBox1.MouseLeave += new System.EventHandler(this.username_leave);
+            this.username_textBox.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.username_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.username_textBox.Font = new System.Drawing.Font("Inter Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username_textBox.Location = new System.Drawing.Point(38, 308);
+            this.username_textBox.Name = "username_textBox";
+            this.username_textBox.Size = new System.Drawing.Size(429, 25);
+            this.username_textBox.TabIndex = 1;
+            this.username_textBox.Click += new System.EventHandler(this.username_click);
+            this.username_textBox.Enter += new System.EventHandler(this.username_click);
+            this.username_textBox.MouseEnter += new System.EventHandler(this.username_hover);
+            this.username_textBox.MouseLeave += new System.EventHandler(this.username_leave);
             // 
             // usernameHoverLine
             // 
@@ -86,19 +88,19 @@ namespace AnBinhApp
             this.passwordLine.Size = new System.Drawing.Size(430, 3);
             this.passwordLine.TabIndex = 5;
             // 
-            // textBox2
+            // password_textBox
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Inter Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(38, 421);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(429, 25);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.Click += new System.EventHandler(this.password_click);
-            this.textBox2.MouseEnter += new System.EventHandler(this.password_enter);
-            this.textBox2.MouseLeave += new System.EventHandler(this.password_leave);
+            this.password_textBox.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.password_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.password_textBox.Font = new System.Drawing.Font("Inter Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password_textBox.Location = new System.Drawing.Point(38, 421);
+            this.password_textBox.Name = "password_textBox";
+            this.password_textBox.PasswordChar = '*';
+            this.password_textBox.Size = new System.Drawing.Size(429, 25);
+            this.password_textBox.TabIndex = 4;
+            this.password_textBox.Click += new System.EventHandler(this.password_click);
+            this.password_textBox.MouseEnter += new System.EventHandler(this.password_enter);
+            this.password_textBox.MouseLeave += new System.EventHandler(this.password_leave);
             // 
             // label2
             // 
@@ -195,12 +197,23 @@ namespace AnBinhApp
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // Login
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(573, 162);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 13;
+            // 
+            // DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(505, 722);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -209,17 +222,18 @@ namespace AnBinhApp
             this.Controls.Add(this.checkRememberLogin);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.passwordLine);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.password_textBox);
             this.Controls.Add(this.usernameHoverLine);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.username_textBox);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Login";
+            this.Name = "DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,10 +242,10 @@ namespace AnBinhApp
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox username_textBox;
         private System.Windows.Forms.Panel usernameHoverLine;
         private System.Windows.Forms.Panel passwordLine;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox password_textBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox checkRememberLogin;
@@ -240,5 +254,6 @@ namespace AnBinhApp
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

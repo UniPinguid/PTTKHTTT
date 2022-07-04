@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -13,6 +15,8 @@ namespace AnBinhApp
 {
     public partial class TrangChu : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
+
         public static bool is_login = false;
         public static bool is_NhanVien = false;
         public static bool is_BoPhanDieuHanh = true;
@@ -21,6 +25,9 @@ namespace AnBinhApp
         public static bool ds_collapsible = false;
         public static bool chucnang_collapsible = false;
         public static bool taikhoan_collapsible = true;
+
+        public static int MaKH;
+        public static string HoTenKH, GioiTinh, DiaChi, SDT, NgaySinh;
 
         public TrangChu()
         {
@@ -43,9 +50,35 @@ namespace AnBinhApp
                     this.Close();
                 }
             }
-            else
+            else if (is_login == true)
             {
-                //
+                SqlConnection con = new SqlConnection();
+                using (con = new SqlConnection(connectionString))
+                {
+                    try
+                    {
+                        string sql = "EXEC getInfoKhachHang @MaKH = " + DangNhap.username;
+                        SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connectionString);
+                        DataSet ds = new DataSet();
+                        con.Open();
+                        dataadapter.Fill(ds, "KhachHang");
+                        dataGridView1.DataSource = ds;
+                        dataGridView1.DataMember = "KhachHang";
+
+                        MaKH = Convert.ToInt32(dataGridView1.Rows[0].Cells[0].Value.ToString());
+                        HoTenKH = dataGridView1.Rows[0].Cells[1].Value.ToString();
+                        GioiTinh = dataGridView1.Rows[0].Cells[2].Value.ToString();
+                        DiaChi = dataGridView1.Rows[0].Cells[3].Value.ToString();
+                        SDT = dataGridView1.Rows[0].Cells[4].Value.ToString();
+                        NgaySinh = dataGridView1.Rows[0].Cells[5].Value.ToString();
+
+                        con.Close();
+                    }
+                    catch
+                    {
+                        //
+                    }
+                }
             }
         }
 

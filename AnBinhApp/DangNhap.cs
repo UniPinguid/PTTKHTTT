@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,11 +14,16 @@ namespace AnBinhApp
 {
     public partial class DangNhap : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
+
         bool username_focus = false;
         bool password_focus = false;
 
         bool is_manually_close = true;
         public static bool is_login_close = false;
+
+        public static string username = "";
+        public static string password = "";
 
         public DangNhap()
         {
@@ -74,15 +81,51 @@ namespace AnBinhApp
 
         private void clickLogin(object sender, EventArgs e)
         {
-            if (true /*login successfully*/)
+            username = username_textBox.Text;
+            password = password_textBox.Text;
+
+            SqlConnection con = new SqlConnection();
+            using (con = new SqlConnection(connectionString))
             {
-                TrangChu.is_login = true;
-                is_manually_close = false;
-                this.Hide();
-            }
-            else
-            {
-                //
+                try
+                {
+                    string sql = "EXEC getLogin @username = " + username + ", @password = '" + password + "'";
+                    SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connectionString);
+                    DataSet ds = new DataSet();
+                    con.Open();
+                    dataadapter.Fill(ds, "login");
+                    dataGridView1.DataSource = ds;
+                    dataGridView1.DataMember = "login";
+
+                    con.Close();
+
+                    if (dataGridView1.RowCount == 1)
+                        MessageBox.Show("Xin vui lòng kiểm tra lại tên đăng nhập hoặc mật khẩu", "Thông báo");
+                    else
+                    {
+                        if (dataGridView1.Rows[0].Cells[0].Value.ToString() == username && dataGridView1.Rows[0].Cells[1].Value.ToString() == password)
+                        {
+                            username = username_textBox.Text;
+                        }
+                        else if (dataGridView1.Rows[0].Cells[2].Value.ToString() == username && dataGridView1.Rows[0].Cells[3].Value.ToString() == password)
+                        {
+                            username = username_textBox.Text;
+                            TrangChu.is_NhanVien = true;
+                        }
+
+                        is_manually_close = false;
+                        MessageBox.Show("Đăng nhập thành công", "Thông báo");
+                        this.Hide();
+
+                        TrangChu trangChuForm = new TrangChu();
+                        TrangChu.is_login = true;
+                        trangChuForm.Show();
+                    }                   
+                }
+                catch
+                {
+                    MessageBox.Show("Xin vui lòng kiểm tra lại tên đăng nhập hoặc mật khẩu", "Thông báo");
+                }
             }
         }
 
