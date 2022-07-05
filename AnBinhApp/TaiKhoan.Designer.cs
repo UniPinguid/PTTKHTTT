@@ -139,8 +139,8 @@ namespace AnBinhApp
             this.button2 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.search_BangCap = new System.Windows.Forms.TextBox();
+            this.dgv_BangCap = new System.Windows.Forms.DataGridView();
             this.label32 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_ds)).BeginInit();
@@ -198,7 +198,7 @@ namespace AnBinhApp
             this.tabBangCap.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_BangCap)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -1115,9 +1115,9 @@ namespace AnBinhApp
             // tab
             // 
             this.tab.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tab.Controls.Add(this.tabBangCap);
             this.tab.Controls.Add(this.tabPhieuDK);
             this.tab.Controls.Add(this.tabThongTinThem);
-            this.tab.Controls.Add(this.tabBangCap);
             this.tab.ItemSize = new System.Drawing.Size(0, 1);
             this.tab.Location = new System.Drawing.Point(0, 509);
             this.tab.Name = "tab";
@@ -1518,7 +1518,7 @@ namespace AnBinhApp
             this.tabBangCap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(252)))));
             this.tabBangCap.Controls.Add(this.button2);
             this.tabBangCap.Controls.Add(this.panel7);
-            this.tabBangCap.Controls.Add(this.dataGridView3);
+            this.tabBangCap.Controls.Add(this.dgv_BangCap);
             this.tabBangCap.Controls.Add(this.label32);
             this.tabBangCap.Location = new System.Drawing.Point(4, 5);
             this.tabBangCap.Name = "tabBangCap";
@@ -1545,7 +1545,7 @@ namespace AnBinhApp
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.pictureBox17);
-            this.panel7.Controls.Add(this.textBox2);
+            this.panel7.Controls.Add(this.search_BangCap);
             this.panel7.Location = new System.Drawing.Point(43, 106);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(416, 45);
@@ -1561,26 +1561,28 @@ namespace AnBinhApp
             this.pictureBox17.TabIndex = 1;
             this.pictureBox17.TabStop = false;
             // 
-            // textBox2
+            // search_BangCap
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Inter", 11F);
-            this.textBox2.Location = new System.Drawing.Point(60, 10);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(349, 23);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.TabStop = false;
+            this.search_BangCap.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.search_BangCap.Font = new System.Drawing.Font("Inter", 11F);
+            this.search_BangCap.Location = new System.Drawing.Point(60, 10);
+            this.search_BangCap.Name = "search_BangCap";
+            this.search_BangCap.Size = new System.Drawing.Size(349, 23);
+            this.search_BangCap.TabIndex = 0;
+            this.search_BangCap.TabStop = false;
             // 
-            // dataGridView3
+            // dgv_BangCap
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(43, 180);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(799, 444);
-            this.dataGridView3.TabIndex = 31;
-            this.dataGridView3.TabStop = false;
+            this.dgv_BangCap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_BangCap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_BangCap.ColumnHeadersVisible = false;
+            this.dgv_BangCap.Location = new System.Drawing.Point(43, 180);
+            this.dgv_BangCap.Name = "dgv_BangCap";
+            this.dgv_BangCap.RowHeadersWidth = 51;
+            this.dgv_BangCap.RowTemplate.Height = 24;
+            this.dgv_BangCap.Size = new System.Drawing.Size(799, 444);
+            this.dgv_BangCap.TabIndex = 31;
+            this.dgv_BangCap.TabStop = false;
             // 
             // label32
             // 
@@ -1683,7 +1685,7 @@ namespace AnBinhApp
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_BangCap)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1793,8 +1795,8 @@ namespace AnBinhApp
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox17;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.TextBox search_BangCap;
+        private System.Windows.Forms.DataGridView dgv_BangCap;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.PictureBox submitBtn;
         private System.Windows.Forms.TextBox textBox_diaChi;

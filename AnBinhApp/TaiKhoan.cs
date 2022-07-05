@@ -545,6 +545,12 @@ namespace AnBinhApp
             if (dialogResult == DialogResult.Yes)
             {
                 this.Close();
+                var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is DangNhap);
+                if (formToShow != null)
+                {
+                    formToShow.Show();
+                    formToShow.Close();
+                }
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -635,8 +641,6 @@ namespace AnBinhApp
         {
             if (TrangChu.is_NhanVien)
             {
-                username_label.Text = HoTenNV;
-
                 MaNV = TrangChu.MaNV;
                 HoTenNV = TrangChu.HoTenNV;
                 NgaySinhNV = TrangChu.NgaySinhNV;
@@ -660,11 +664,24 @@ namespace AnBinhApp
                 label_vaiTro.Text = VaiTro;
                 label_trungTam.Text = MaTT.ToString();
                 label_soBuoiTruc.Text = SoBuoiTruc.ToString();
+
+                username_label.Text = HoTenNV;
+
+                SqlConnection con = new SqlConnection();
+                using (con = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT * FROM BANGCAP WHERE BC_MANV = " + DangNhap.username;
+                    SqlDataAdapter dataadapter = new SqlDataAdapter(query, connectionString);
+                    DataSet ds = new DataSet();
+                    con.Open();
+                    dataadapter.Fill(ds, "BangCap");
+                    dgv_BangCap.DataSource = ds;
+                    dgv_BangCap.DataMember = "BangCap";
+                    con.Close();
+                }
             }
             else
             {
-                username_label.Text = HoTenKH;
-
                 MaKH = TrangChu.MaKH;
                 HoTenKH = TrangChu.HoTenKH;
                 GioiTinh = TrangChu.GioiTinh;
@@ -677,6 +694,8 @@ namespace AnBinhApp
                 textBox_ngaySinh.Text = NgaySinh;
                 textBox_sdt.Text = SDT;
                 textBox_diaChi.Text = DiaChi;
+
+                username_label.Text = HoTenKH;
 
                 SqlConnection con = new SqlConnection();
                 using (con = new SqlConnection(connectionString))
