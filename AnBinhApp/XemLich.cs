@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 
 namespace AnBinhApp
 {
@@ -648,6 +649,8 @@ namespace AnBinhApp
             date = date.AddDays(-7);
             weekCalendar(date);
             get_cell_status();
+
+
         }
 
         private void click_nextWeek(object sender, EventArgs e)
@@ -679,6 +682,9 @@ namespace AnBinhApp
 
             label8.Text = "Đăng ký lịch rảnh";
             label27.Show();
+
+            resetButton();
+
         }
 
         private void click_Huy(object sender, EventArgs e)
@@ -695,12 +701,9 @@ namespace AnBinhApp
 
         private void click_HoanTat(object sender, EventArgs e)
         {
-            is_DKLichRanh_clicked = false;
+            
 
-            HienThi dkLichSuccess = new HienThi();
-            dkLichSuccess.Show();
-            dkLichSuccess.messageShow("successDKLichRanh", "Đăng ký lịch rảnh thành công!", "Hãy chờ bộ phận điều hành duyệt\ntrong vòng 24 giờ.");
-            this.Close();
+
         }
 
         // End of
@@ -715,20 +718,57 @@ namespace AnBinhApp
         // status 2 và 3 không thể bỏ chọn
 
         short c2M_status = 0;
-        short c2A_status = 2;
-        short c2E_status = 3;
+        short c2A_status = 0;
+        short c2E_status = 0;
 
         private void get_cell_status()
         {
             // hàm đọc dữ liệu từ database
+            DataTable lich = LichRanh.docLichRanh(DangNhap.username, label_T2.Text);
+
+            for (int i = 0; i< lich.Rows.Count;i++)
+            {
+                string thu = lich.Rows[i]["THU"].ToString();
+                if(thu == "Thứ Hai")
+                {
+                    cbbT2.Items.Add(lich.Rows[i]["BUOI"].ToString());
+                }
+                if(thu == "Thứ Ba")
+                {
+                    cbbT3.Items.Add(lich.Rows[i]["BUOI"].ToString());
+                }
+                if (thu == "Thứ Tư")
+                {
+                    cbbT4.Items.Add(lich.Rows[i]["BUOI"].ToString());
+                }
+                if (thu == "Thứ Năm")
+                {
+                    cbbT5.Items.Add(lich.Rows[i]["BUOI"].ToString());
+                }
+                if (thu == "Thứ Sáu")
+                {
+                    cbbT6.Items.Add(lich.Rows[i]["BUOI"].ToString());
+                }
+                if (thu == "Thứ Bảy")
+                {
+                    cbbT7.Items.Add(lich.Rows[i]["BUOI"].ToString());
+                }
+                if (thu == "Chủ Nhật")
+                {
+                    cbbCN.Items.Add(lich.Rows[i]["BUOI"].ToString());
+                }
+
+            }
+
             // và nhập vào từng cX_status
 
-            cell_color(c2M, c2M_status);
-            cell_color(c2A, c2A_status);
-            cell_color(c2E, c2E_status);
+            //cell_color(c2M, c2M_status);
+            //cell_color(c2A, c2A_status);
+            //cell_color(c2E, c2E_status);
             // copy paste hết 21 ô...
         }
 
+        
         private void cell_color(Button cell, short cell_status)
         {
             if (cell_status == 0) cell.BackColor = Color.Gainsboro;
@@ -751,22 +791,314 @@ namespace AnBinhApp
                 cell.BackColor = Color.Gainsboro;
                 cell.FlatAppearance.BorderSize = 0;
             }
-            else if (is_DKLichRanh_clicked && cell_checked == 2)
-            {
-                MessageBox.Show("Không thể chọn trùng lịch rảnh.","Thông báo"); 
-            }
-            else if (is_DKLichRanh_clicked && cell_checked == 3)
-            {
-                MessageBox.Show("Không thể chọn lịch rảnh trùng với lịch làm việc.", "Thông báo");
-            }
+            //else if (is_DKLichRanh_clicked && cell_checked == 2)
+            //{
+            //    MessageBox.Show("Không thể chọn trùng lịch rảnh.", "Thông báo");
+            //}
+            //else if (is_DKLichRanh_clicked && cell_checked == 3)
+            //{
+            //    MessageBox.Show("Không thể chọn lịch rảnh trùng với lịch làm việc.", "Thông báo");
+            //}
 
             return cell_checked;
         }
 
-        private void c2M_click(object sender, EventArgs e)
+
+        private void c2M_Click_1(object sender, EventArgs e)
         {
             c2M_status = cell_click(c2M, c2M_status);
-            // copy paste hết 21 ô...
+        }
+        short c3M_status = 0;
+        private void c3M_Click(object sender, EventArgs e)
+        {
+            c3M_status = cell_click(c3M, c3M_status);
+        }
+        short c4M_status = 0;
+        private void c4M_Click(object sender, EventArgs e)
+        {
+            c4M_status = cell_click(c4M, c4M_status);
+        }
+        short c5M_status = 0;
+        private void c5M_Click(object sender, EventArgs e)
+        {
+            c5M_status = cell_click(c5M, c5M_status);
+        }
+        short c6M_status = 0;
+        private void c6M_Click(object sender, EventArgs e)
+        {
+            c6M_status = cell_click(c6M, c6M_status);
+        }
+        short c7M_status = 0;
+        private void c7M_Click(object sender, EventArgs e)
+        {
+            c7M_status = cell_click(c7M, c7M_status);
+        }
+        short c8M_status = 0;
+        private void c8M_Click(object sender, EventArgs e)
+        {
+            c8M_status = cell_click(c8M, c8M_status);
+        }
+        private void c2A_Click(object sender, EventArgs e)
+        {
+            c2A_status = cell_click(c2A, c2A_status);
+        }
+        short c3A_status = 0;
+        private void c3A_Click(object sender, EventArgs e)
+        {
+            c3A_status = cell_click(c3A, c3A_status);
+        }
+        short c4A_status = 0;
+        private void c4A_Click(object sender, EventArgs e)
+        {
+            c4A_status = cell_click(c4A, c4A_status);
+        }
+        short c5A_status = 0;
+        private void c5A_Click(object sender, EventArgs e)
+        {
+            c5A_status = cell_click(c5A, c5A_status);
+        }
+        short c6A_status = 0;
+        private void c6A_Click(object sender, EventArgs e)
+        {
+            c6A_status = cell_click(c6A, c6A_status);
+        }
+        short c7A_status = 0;
+        private void c7A_Click(object sender, EventArgs e)
+        {
+            c7A_status = cell_click(c7A, c2M_status);
+        }
+        short c8A_status = 0;
+        private void c8A_Click(object sender, EventArgs e)
+        {
+            c8A_status = cell_click(c8A, c8A_status);
+        }
+        private void c2E_Click(object sender, EventArgs e)
+        {
+            c2E_status = cell_click(c2E, c2E_status);
+        }
+        short c3E_status = 0;
+        private void c3E_Click(object sender, EventArgs e)
+        {
+            c3E_status = cell_click(c3E, c3E_status);
+        }
+        short c4E_status = 0;
+        private void c4E_Click(object sender, EventArgs e)
+        {
+            c4E_status = cell_click(c4E, c4E_status);
+        }
+        short c5E_status = 0;
+        private void c5E_Click(object sender, EventArgs e)
+        {
+            c5E_status = cell_click(c5E, c5E_status);
+        }
+        short c6E_status = 0;
+        private void c6E_Click(object sender, EventArgs e)
+        {
+            c6E_status = cell_click(c6E, c6E_status);
+        }
+        short c7E_status = 0;
+        private void c7E_Click(object sender, EventArgs e)
+        {
+            c7E_status = cell_click(c7E, c7E_status);
+        }
+        short c8E_status = 0;
+        private void c8E_Click(object sender, EventArgs e)
+        {
+            c8E_status = cell_click(c8E, c8E_status);
+        }
+
+        private void btnHoanTat_Click(object sender, EventArgs e)
+        {
+            LichRanh.khoiTao(label_T2.Text, label_CN.Text);
+            LichRanh.dangKyLichRanh();
+
+            string buoi = "";
+            string thu = "";
+            string ngay = "";
+            if (c2M_status == 1)
+            {
+                buoi = label4.Text;
+                thu = label6.Text;
+                ngay = label_T2.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            //if (c2M_status == 1)
+            //{
+            //    buoi = label4.Text;
+            //    CaRanh.khoiTao(thu, ngay, buoi);
+            //    CaRanh.themChiTietLichRanh();
+            //}
+            if (c3M_status == 1)
+            {
+                buoi = label4.Text;
+                thu = label13.Text;
+                ngay = label_T3.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c4M_status == 1)
+            {
+                ngay = label_T4.Text;
+                buoi = label4.Text;
+                thu = label19.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c5M_status == 1)
+            {
+                ngay = label_T5.Text;
+                thu = label20.Text;
+                buoi = label4.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c6M_status == 1)
+            {
+                ngay = label_T6.Text;
+                buoi = label4.Text;
+                thu = label21.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c7M_status == 1)
+            {
+                ngay = label_T7.Text;
+                buoi = label4.Text;
+                thu = label22.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c8M_status == 1)
+            {
+                ngay = label_CN.Text;
+                buoi = label4.Text;
+                thu = label23.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c2A_status == 1)
+            {
+                thu = label6.Text;
+                buoi = label24.Text;
+                ngay = label_T2.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c3A_status == 1)
+            {
+                ngay = label_T3.Text;
+                buoi = label24.Text;
+                thu = label13.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c4A_status == 1)
+            {
+                ngay = label_T4.Text;
+                thu = label19.Text;
+                buoi = label24.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c5A_status == 1)
+            {
+                ngay = label_T5.Text;
+                thu = label20.Text;
+                buoi = label24.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c6A_status == 1)
+            {
+                ngay = label_T6.Text;
+                buoi = label24.Text;
+                thu = label21.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c7A_status == 1)
+            {
+                ngay = label_T7.Text;
+                buoi = label24.Text;
+                thu = label22.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c8A_status == 1)
+            {
+                ngay = label_CN.Text;
+                buoi = label24.Text;
+                thu = label23.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c2E_status == 1)
+            {
+                thu = label6.Text;
+                buoi = label25.Text;
+                ngay = label_T2.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c3E_status == 1)
+            {
+                ngay = label_T3.Text;
+                buoi = label25.Text;
+                thu = label13.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c4E_status == 1)
+            {
+                ngay = label_T4.Text;
+                thu = label19.Text;
+                buoi = label25.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c5E_status == 1)
+            {
+                ngay = label_T5.Text;
+                thu = label20.Text;
+                buoi = label25.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c6E_status == 1)
+            {
+                ngay = label_T6.Text;
+                buoi = label25.Text;
+                thu = label21.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c7E_status == 1)
+            {
+                ngay = label_T7.Text;
+                buoi = label25.Text;
+                thu = label22.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+            if (c8E_status == 1)
+            {
+                ngay = label_CN.Text;
+                buoi = label25.Text;
+                thu = label23.Text;
+                CaRanh.khoiTao(thu, ngay, buoi);
+                CaRanh.themChiTietLichRanh();
+            }
+
+
+
+
+            is_DKLichRanh_clicked = false;
+
+            HienThi dkLichSuccess = new HienThi();
+            dkLichSuccess.Show();
+            dkLichSuccess.messageShow("successDKLichRanh", "Đăng ký lịch rảnh thành công!", "Hãy chờ bộ phận điều hành duyệt\ntrong vòng 24 giờ.");
+            this.Close();
         }
 
         // End of
