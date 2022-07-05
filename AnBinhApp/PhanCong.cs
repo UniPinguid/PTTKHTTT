@@ -479,98 +479,12 @@ namespace AnBinhApp
         }
         private void clickHoanTat(object sender, EventArgs e)
         {
-            HienThi PhanCongSuccess = new HienThi();
-            PhanCongSuccess.Show();
-            PhanCongSuccess.messageShow("success", "Phân công lịch làm việc thành công!", "Thông tin về lịch làm việc mới của mỗi nhân viên sẽ được cập nhật\nđến họ trong vòng 24 giờ.");
-            this.Close();
+
         }
-        
+
 
         // End of
         // Transitioning
-
-
-        // Start of
-        // Time filter
-
-        bool morning_toggle = false;
-        bool afternoon_toggle = false;
-        bool evening_toggle = false;
-
-        private void morning_enter(object sender, EventArgs e)
-        {
-            morningIcon.BackColor = Color.FromArgb(230,230,230);
-        }
-        private void morning_leave(object sender, EventArgs e)
-        {
-            morningIcon.BackColor = Color.White;
-        }
-        private void morning_click(object sender, EventArgs e)
-        {
-            if (morning_toggle == false)
-            {
-                
-
-                morningIcon.Image = Image.FromFile("../../svg/morning select.png");
-                morning_toggle = true;
-
-                string dieuKien = "Ca = '" + label_today.Text + "'";
-                dgv.DataSource = LichRanhTongHop.dataFilter(dieuKien);
-            }
-            else
-            {
-                morningIcon.Image = Image.FromFile("../../svg/morning.png");
-                morning_toggle = false;
-            }
-        }
-
-        private void afternoon_enter(object sender, EventArgs e)
-        {
-            afternoonIcon.BackColor = Color.FromArgb(230, 230, 230);
-        }
-        private void afternoon_leave(object sender, EventArgs e)
-        {
-            afternoonIcon.BackColor = Color.White;
-        }
-        private void afternoon_click(object sender, EventArgs e)
-        {
-            if (afternoon_toggle == false)
-            {
-                afternoonIcon.Image = Image.FromFile("../../svg/afternoon select.png");
-                afternoon_toggle = true;
-            }
-            else
-            {
-                afternoonIcon.Image = Image.FromFile("../../svg/afternoon.png");
-                afternoon_toggle = false;
-            }
-        }
-
-        private void evening_enter(object sender, EventArgs e)
-        {
-            eveningIcon.BackColor = Color.FromArgb(230, 230, 230);
-        }
-        private void evening_leave(object sender, EventArgs e)
-        {
-            eveningIcon.BackColor = Color.White;
-        }
-        private void evening_click(object sender, EventArgs e)
-        {
-            if (evening_toggle == false)
-            {
-                eveningIcon.Image = Image.FromFile("../../svg/evening select.png");
-                evening_toggle = true;
-            }
-            else
-            {
-                eveningIcon.Image = Image.FromFile("../../svg/evening.png");
-                evening_toggle = false;
-            }
-        }
-
-        // End of
-        // Time filter
-
 
         // Start of
         // Date Chronology
@@ -626,19 +540,27 @@ namespace AnBinhApp
 
         private void clickPreviousDay(object sender, EventArgs e)
         {
-            date = date.AddDays(-1);
-            getToday(date);
+            if(label_today.Text != "Thứ Hai")
+            {
+                date = date.AddDays(-1);
+                getToday(date);
 
-            string dieuKien = "THU LIKE '%" + label_today.Text + "%'";
-            dgv.DataSource = LichRanhTongHop.dataFilter(dieuKien);
+                LichRanhTongHop.docLichRanhTheoNgay(label_today.Text);
+                dgv.DataSource = LichRanhTongHop.LichRanh;
+            }
+            
         }
         private void clickNextDay(object sender, EventArgs e)
         {
-            date = date.AddDays(1);
-            getToday(date);
+            
+            if(label_today.Text != "Chủ Nhật")
+            {
+                date = date.AddDays(1);
+                getToday(date);
 
-            string dieuKien = "THU LIKE '%" + label_today.Text + "%'";
-            dgv.DataSource = LichRanhTongHop.dataFilter(dieuKien);
+                LichRanhTongHop.docLichRanhTheoNgay(label_today.Text);
+                dgv.DataSource = LichRanhTongHop.LichRanh;
+            }
         }
 
         private void changeDate(object sender, EventArgs e)
@@ -646,7 +568,8 @@ namespace AnBinhApp
             date = calendar.Value;
             getToday(date);
 
-            dgv.DataSource = LichRanhTongHop.docLichRanh();
+            
+            dgv.DataSource = LichRanhTongHop.docLichRanhTheoNgay(label_today.Text);
             dgv.AutoResizeColumns();
             
         }
@@ -679,46 +602,29 @@ namespace AnBinhApp
 
         private void cbbTrungTam_TextChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("Thanh cong");
-            string dieuKien = "TRUNGTAM = " + cbbTrungTam.Text;
-            dgv.DataSource = LichRanhTongHop.dataFilter(dieuKien);
+            string dieuKien = " TRUNGTAM = " + cbbTrungTam.Text;
+            dgv.DataSource = LichRanhTongHop.docLichRanhCoDieuKien(label_today.Text,dieuKien);
         }
 
-        private void cbbVaiTro_TextChanged(object sender, EventArgs e)
+        private void label_today_TextChanged(object sender, EventArgs e)
         {
-            string dieuKien = "VAITRO = " + cbbVaiTro.Text;
-            dgv.DataSource = LichRanhTongHop.dataFilter(dieuKien);
+            if (label_today_date.Text == "Thứ Hai")
+            {
+                DateTime date = Convert.ToDateTime(label_today_date.Text);
+                date.AddDays(7);
+                LichLamViec.khoiTao(label_today_date.Text, date.ToShortDateString());
+                LichLamViec.ghiLichLamViec();
+            }
         }
 
-        private void PhanCong_Load(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            LichRanhTongHop.docLichRanh();
-            DataTable temp = LichRanhTongHop.LichRanh;
-            List<string> vaitro = new List<string>();
-            List<string> trungtam = new List<string>();
-            for (int i = 0; i < temp.Rows.Count; i++)
-            {
-                vaitro.Add(temp.Rows[i]["VAITRO"].ToString());
-                trungtam.Add(temp.Rows[i]["TRUNGTAM"].ToString());
-            }
-
-            vaitro = new HashSet<String>(vaitro).ToList();
-            trungtam = new HashSet<String>(trungtam).ToList();
-
-            for (int i = 0; i< vaitro.Count;i++)
-            {
-                cbbVaiTro.Items.Add(vaitro[i]);
-            }
-
-            for (int i = 0; i < trungtam.Count; i++)
-            {
-                cbbTrungTam.Items.Add(trungtam[i]);
-            }
-
 
         }
 
-        // End of
-        // Date Chronology
+        private void button5_Click(object sender, EventArgs e)
+        {
+            LichCaTruc.ghiLichCaTruc();
+        }
     }
 }

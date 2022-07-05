@@ -90,7 +90,6 @@ namespace AnBinhApp
             this.dgv = new System.Windows.Forms.DataGridView();
             this.cbbTrungTam = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.yesterday_arrow = new System.Windows.Forms.Label();
             this.label_yesterday = new System.Windows.Forms.Label();
             this.label_yesterday_date = new System.Windows.Forms.Label();
@@ -109,11 +108,7 @@ namespace AnBinhApp
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.eveningIcon = new System.Windows.Forms.PictureBox();
-            this.afternoonIcon = new System.Windows.Forms.PictureBox();
-            this.morningIcon = new System.Windows.Forms.PictureBox();
-            this.cbbVaiTro = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_ds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_taiKhoan)).BeginInit();
@@ -153,9 +148,6 @@ namespace AnBinhApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eveningIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.afternoonIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.morningIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -910,13 +902,13 @@ namespace AnBinhApp
             this.cbbTrungTam.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbbTrungTam.FormattingEnabled = true;
             this.cbbTrungTam.Items.AddRange(new object[] {
-            "Trung tâm A",
-            "Trung tâm B"});
+            "1",
+            "2",
+            "3"});
             this.cbbTrungTam.Location = new System.Drawing.Point(474, 341);
             this.cbbTrungTam.Name = "cbbTrungTam";
             this.cbbTrungTam.Size = new System.Drawing.Size(191, 30);
             this.cbbTrungTam.TabIndex = 10;
-            this.cbbTrungTam.Text = "Trung tâm x";
             this.cbbTrungTam.TextChanged += new System.EventHandler(this.cbbTrungTam_TextChanged);
             // 
             // label1
@@ -929,17 +921,6 @@ namespace AnBinhApp
             this.label1.Size = new System.Drawing.Size(100, 20);
             this.label1.TabIndex = 25;
             this.label1.Text = "Trung tâm:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label9.Location = new System.Drawing.Point(986, 345);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 20);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Buổi:";
             // 
             // yesterday_arrow
             // 
@@ -1042,6 +1023,7 @@ namespace AnBinhApp
             this.label_today.TabIndex = 39;
             this.label_today.Text = "Thứ Hai";
             this.label_today.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label_today.TextChanged += new System.EventHandler(this.label_today_TextChanged);
             // 
             // label_today_date
             // 
@@ -1112,13 +1094,13 @@ namespace AnBinhApp
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(1206, 759);
+            this.button5.Location = new System.Drawing.Point(1200, 683);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(219, 45);
+            this.button5.Size = new System.Drawing.Size(225, 45);
             this.button5.TabIndex = 66;
-            this.button5.Text = "Hoàn tất";
+            this.button5.Text = "Chốt Phân Công";
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.clickHoanTat);
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // calendar
             // 
@@ -1176,66 +1158,20 @@ namespace AnBinhApp
             this.pictureBox7.TabIndex = 61;
             this.pictureBox7.TabStop = false;
             // 
-            // eveningIcon
+            // button3
             // 
-            this.eveningIcon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.eveningIcon.Image = ((System.Drawing.Image)(resources.GetObject("eveningIcon.Image")));
-            this.eveningIcon.Location = new System.Drawing.Point(1093, 344);
-            this.eveningIcon.Name = "eveningIcon";
-            this.eveningIcon.Size = new System.Drawing.Size(24, 24);
-            this.eveningIcon.TabIndex = 29;
-            this.eveningIcon.TabStop = false;
-            this.eveningIcon.Click += new System.EventHandler(this.evening_click);
-            this.eveningIcon.MouseEnter += new System.EventHandler(this.evening_enter);
-            this.eveningIcon.MouseLeave += new System.EventHandler(this.evening_leave);
-            // 
-            // afternoonIcon
-            // 
-            this.afternoonIcon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.afternoonIcon.Image = ((System.Drawing.Image)(resources.GetObject("afternoonIcon.Image")));
-            this.afternoonIcon.Location = new System.Drawing.Point(1067, 344);
-            this.afternoonIcon.Name = "afternoonIcon";
-            this.afternoonIcon.Size = new System.Drawing.Size(24, 24);
-            this.afternoonIcon.TabIndex = 28;
-            this.afternoonIcon.TabStop = false;
-            this.afternoonIcon.Click += new System.EventHandler(this.afternoon_click);
-            this.afternoonIcon.MouseEnter += new System.EventHandler(this.afternoon_enter);
-            this.afternoonIcon.MouseLeave += new System.EventHandler(this.afternoon_leave);
-            // 
-            // morningIcon
-            // 
-            this.morningIcon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.morningIcon.Image = ((System.Drawing.Image)(resources.GetObject("morningIcon.Image")));
-            this.morningIcon.Location = new System.Drawing.Point(1041, 344);
-            this.morningIcon.Name = "morningIcon";
-            this.morningIcon.Size = new System.Drawing.Size(24, 24);
-            this.morningIcon.TabIndex = 27;
-            this.morningIcon.TabStop = false;
-            this.morningIcon.Click += new System.EventHandler(this.morning_click);
-            this.morningIcon.MouseEnter += new System.EventHandler(this.morning_enter);
-            this.morningIcon.MouseLeave += new System.EventHandler(this.morning_leave);
-            // 
-            // cbbVaiTro
-            // 
-            this.cbbVaiTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.cbbVaiTro.FormattingEnabled = true;
-            this.cbbVaiTro.Location = new System.Drawing.Point(789, 340);
-            this.cbbVaiTro.Name = "cbbVaiTro";
-            this.cbbVaiTro.Size = new System.Drawing.Size(191, 30);
-            this.cbbVaiTro.TabIndex = 10;
-            this.cbbVaiTro.Text = "Lễ Tân";
-            this.cbbVaiTro.TextChanged += new System.EventHandler(this.cbbVaiTro_TextChanged);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(696, 345);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 20);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "Vai Trò:";
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(155)))), ((int)(((byte)(242)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(1200, 756);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(225, 45);
+            this.button3.TabIndex = 66;
+            this.button3.Text = "Chốt Lịch Làm Việc";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // PhanCong
             // 
@@ -1245,6 +1181,7 @@ namespace AnBinhApp
             this.ClientSize = new System.Drawing.Size(1482, 833);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.calendar);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.btnXoaNV);
@@ -1261,13 +1198,7 @@ namespace AnBinhApp
             this.Controls.Add(this.label_yesterday);
             this.Controls.Add(this.label_yesterday_date);
             this.Controls.Add(this.yesterday_arrow);
-            this.Controls.Add(this.eveningIcon);
-            this.Controls.Add(this.afternoonIcon);
-            this.Controls.Add(this.morningIcon);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbbVaiTro);
             this.Controls.Add(this.cbbTrungTam);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel16);
@@ -1277,7 +1208,6 @@ namespace AnBinhApp
             this.Name = "PhanCong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PhanCong";
-            this.Load += new System.EventHandler(this.PhanCong_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_ds)).EndInit();
@@ -1332,9 +1262,6 @@ namespace AnBinhApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eveningIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.afternoonIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.morningIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1402,10 +1329,6 @@ namespace AnBinhApp
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.ComboBox cbbTrungTam;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox morningIcon;
-        private System.Windows.Forms.PictureBox afternoonIcon;
-        private System.Windows.Forms.PictureBox eveningIcon;
         private System.Windows.Forms.Label yesterday_arrow;
         private System.Windows.Forms.Label label_yesterday;
         private System.Windows.Forms.Label label_yesterday_date;
@@ -1424,7 +1347,6 @@ namespace AnBinhApp
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DateTimePicker calendar;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ComboBox cbbVaiTro;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button3;
     }
 }

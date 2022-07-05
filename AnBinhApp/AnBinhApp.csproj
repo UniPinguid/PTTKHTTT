@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaRanh.cs" />
     <Compile Include="DangKyTiemNgua.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +92,9 @@
     </Compile>
     <Compile Include="LichCaTruc.cs" />
     <Compile Include="LichLamViec.cs" />
+    <Compile Include="LichLamViecDB.cs" />
+    <Compile Include="LichRanh.cs" />
+    <Compile Include="LichRanhDB.cs" />
     <Compile Include="LichRanhTongHop.cs" />
     <Compile Include="PhanCong.cs">
       <SubType>Form</SubType>
