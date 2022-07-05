@@ -60,6 +60,24 @@ BEGIN
 	NGAYSINH like '%' + @bar + '%'
 end
 	
---EXEC searchCustomer @bar = N'nguyen'
+EXEC searchCustomer @bar = ''
 
---select * from KHACHHANG where makh like '%1%'
+select * from NHANVIEN
+
+select * from NGUOIGIAMHO WHERE MANGH = 565742042
+
+CREATE OR ALTER PROCEDURE  getGiamHo(@kh int)
+AS
+BEGIN
+	SELECT * FROM NGUOIGIAMHO
+	WHERE MANGH = @kh
+END
+
+EXEC getGiamHo @kh = 565742042
+
+CREATE OR ALTER PROCEDURE  getPhieuDk(@kh int)
+AS
+BEGIN
+	SELECT * FROM PHIEUDKTIEM
+	WHERE MAKH = @kh
+END
