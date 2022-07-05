@@ -504,6 +504,12 @@ namespace AnBinhApp
             if (dialogResult == DialogResult.Yes)
             {
                 this.Close();
+                var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is DangNhap);
+                if (formToShow != null)
+                {
+                    formToShow.Show();
+                    formToShow.Close();
+                }
             }
             else if (dialogResult == DialogResult.No)
             {

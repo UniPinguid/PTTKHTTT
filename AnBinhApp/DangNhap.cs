@@ -114,7 +114,6 @@ namespace AnBinhApp
                         }
 
                         is_manually_close = false;
-                        MessageBox.Show("Đăng nhập thành công", "Thông báo");
                         this.Hide();
 
                         TrangChu trangChuForm = new TrangChu();
@@ -144,6 +143,26 @@ namespace AnBinhApp
                 {
                     e.Cancel = true;
                 }
+            }
+        }
+
+        private void togglePasswordVisible_MouseDown(object sender, MouseEventArgs e)
+        {
+            togglePasswordVisible.Image = Image.FromFile("../../svg/eye hidden.png");
+            password_textBox.PasswordChar = (char)0;
+        }
+
+        private void togglePasswordVisible_MouseUp(object sender, MouseEventArgs e)
+        {
+            togglePasswordVisible.Image = Image.FromFile("../../svg/eye visible.png");
+            password_textBox.PasswordChar = '*';
+        }
+
+        private void keyDownEnter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                clickLogin(sender, e);
             }
         }
     }

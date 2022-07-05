@@ -37,7 +37,7 @@ namespace AnBinhApp
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.username = new System.Windows.Forms.Label();
+            this.username_label = new System.Windows.Forms.Label();
             this.panel_TrangChu = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -83,6 +83,8 @@ namespace AnBinhApp
             this.pictureThongBao = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel_Thoat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel_DangXuat.SuspendLayout();
@@ -117,6 +119,7 @@ namespace AnBinhApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureThongBao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_Thoat
@@ -212,16 +215,16 @@ namespace AnBinhApp
             this.label3.TabIndex = 5;
             this.label3.Text = "Chào mừng,";
             // 
-            // username
+            // username_label
             // 
-            this.username.AutoSize = true;
-            this.username.Font = new System.Drawing.Font("Inter SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.username.Location = new System.Drawing.Point(22, 143);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(152, 29);
-            this.username.TabIndex = 6;
-            this.username.Text = "Khách hàng";
+            this.username_label.AutoSize = true;
+            this.username_label.Font = new System.Drawing.Font("Inter SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username_label.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.username_label.Location = new System.Drawing.Point(22, 143);
+            this.username_label.Name = "username_label";
+            this.username_label.Size = new System.Drawing.Size(152, 29);
+            this.username_label.TabIndex = 6;
+            this.username_label.Text = "Khách hàng";
             // 
             // panel_TrangChu
             // 
@@ -731,7 +734,7 @@ namespace AnBinhApp
             this.panel1.Controls.Add(this.panel_DSPhieuTiem);
             this.panel1.Controls.Add(this.panel_DangKyTiem);
             this.panel1.Controls.Add(this.panel_TrangChu);
-            this.panel1.Controls.Add(this.username);
+            this.panel1.Controls.Add(this.username_label);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.panel_DangXuat);
             this.panel1.Controls.Add(this.panel_Thoat);
@@ -819,10 +822,36 @@ namespace AnBinhApp
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 1;
             // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(332, 32);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(800, 800);
+            this.pictureBox9.TabIndex = 2;
+            this.pictureBox9.TabStop = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(155)))), ((int)(((byte)(242)))));
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Inter Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(858, 391);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(219, 45);
+            this.button6.TabIndex = 71;
+            this.button6.Text = "Đăng ký ngay!";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.clickDangKy);
+            // 
             // TrangChu
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1482, 833);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "TrangChu";
@@ -877,6 +906,7 @@ namespace AnBinhApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureThongBao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -891,7 +921,7 @@ namespace AnBinhApp
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label username;
+        private System.Windows.Forms.Label username_label;
         private System.Windows.Forms.Panel panel_TrangChu;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label5;
@@ -936,6 +966,8 @@ namespace AnBinhApp
         private System.Windows.Forms.PictureBox collapsible_ds;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.Button button6;
     }
 }
 

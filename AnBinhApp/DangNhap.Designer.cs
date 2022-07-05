@@ -44,8 +44,10 @@ namespace AnBinhApp
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.togglePasswordVisible = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.togglePasswordVisible)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,6 +71,7 @@ namespace AnBinhApp
             this.username_textBox.TabIndex = 1;
             this.username_textBox.Click += new System.EventHandler(this.username_click);
             this.username_textBox.Enter += new System.EventHandler(this.username_click);
+            this.username_textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownEnter);
             this.username_textBox.MouseEnter += new System.EventHandler(this.username_hover);
             this.username_textBox.MouseLeave += new System.EventHandler(this.username_leave);
             // 
@@ -96,9 +99,10 @@ namespace AnBinhApp
             this.password_textBox.Location = new System.Drawing.Point(38, 421);
             this.password_textBox.Name = "password_textBox";
             this.password_textBox.PasswordChar = '*';
-            this.password_textBox.Size = new System.Drawing.Size(429, 25);
+            this.password_textBox.Size = new System.Drawing.Size(391, 25);
             this.password_textBox.TabIndex = 4;
             this.password_textBox.Click += new System.EventHandler(this.password_click);
+            this.password_textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownEnter);
             this.password_textBox.MouseEnter += new System.EventHandler(this.password_enter);
             this.password_textBox.MouseLeave += new System.EventHandler(this.password_leave);
             // 
@@ -207,12 +211,25 @@ namespace AnBinhApp
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 13;
             // 
+            // togglePasswordVisible
+            // 
+            this.togglePasswordVisible.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.togglePasswordVisible.Image = ((System.Drawing.Image)(resources.GetObject("togglePasswordVisible.Image")));
+            this.togglePasswordVisible.Location = new System.Drawing.Point(444, 418);
+            this.togglePasswordVisible.Name = "togglePasswordVisible";
+            this.togglePasswordVisible.Size = new System.Drawing.Size(24, 24);
+            this.togglePasswordVisible.TabIndex = 39;
+            this.togglePasswordVisible.TabStop = false;
+            this.togglePasswordVisible.MouseDown += new System.Windows.Forms.MouseEventHandler(this.togglePasswordVisible_MouseDown);
+            this.togglePasswordVisible.MouseUp += new System.Windows.Forms.MouseEventHandler(this.togglePasswordVisible_MouseUp);
+            // 
             // DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(505, 722);
+            this.Controls.Add(this.togglePasswordVisible);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.label4);
@@ -234,6 +251,7 @@ namespace AnBinhApp
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.togglePasswordVisible)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,5 +273,6 @@ namespace AnBinhApp
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox togglePasswordVisible;
     }
 }

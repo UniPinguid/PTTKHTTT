@@ -483,7 +483,12 @@ namespace AnBinhApp
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là muốn thoát không?", "Thoát An Binh", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                this.Close();
+                var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is DangNhap);
+                if (formToShow != null)
+                {
+                    formToShow.Show();
+                    formToShow.Close();
+                }
             }
             else if (dialogResult == DialogResult.No)
             {

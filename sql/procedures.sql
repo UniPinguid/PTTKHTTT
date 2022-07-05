@@ -5,6 +5,13 @@ SELECT *
 FROM KHACHHANG
 WHERE MAKH = @MaKH;
 
+-- Lấy thông tin nhân viên
+CREATE PROCEDURE getInfoNhanVien (@MaNV INT)
+AS
+SELECT *
+FROM NHANVIEN
+WHERE MANV = @MaNV
+
 -- EXEC getInfoKhachHang @MaKH = 123
 
 -- Thêm khách hàng
