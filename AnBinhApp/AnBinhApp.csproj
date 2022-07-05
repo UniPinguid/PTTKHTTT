@@ -89,6 +89,9 @@
     <Compile Include="KhaNangVacxin.Designer.cs">
       <DependentUpon>KhaNangVacxin.cs</DependentUpon>
     </Compile>
+    <Compile Include="LichCaTruc.cs" />
+    <Compile Include="LichLamViec.cs" />
+    <Compile Include="LichRanhTongHop.cs" />
     <Compile Include="PhanCong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +140,7 @@
     <Compile Include="ThongTinNhanVIen.Designer.cs">
       <DependentUpon>ThongTinNhanVIen.cs</DependentUpon>
     </Compile>
+    <Compile Include="TongHopLichRanh.cs" />
     <Compile Include="TraCuuLichRanhNV.cs">
       <SubType>Form</SubType>
     </Compile>

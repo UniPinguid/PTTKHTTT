@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace AnBinhApp
 {
@@ -507,8 +509,13 @@ namespace AnBinhApp
         {
             if (morning_toggle == false)
             {
+                
+
                 morningIcon.Image = Image.FromFile("../../svg/morning select.png");
                 morning_toggle = true;
+
+                string dieuKien = "Ca = '" + label_today.Text + "'";
+                dgv.DataSource = LichRanhTongHop.dataFilter(dieuKien);
             }
             else
             {
@@ -621,11 +628,17 @@ namespace AnBinhApp
         {
             date = date.AddDays(-1);
             getToday(date);
+
+            string dieuKien = "THU LIKE '%" + label_today.Text + "%'";
+            dgv.DataSource = LichRanhTongHop.dataFilter(dieuKien);
         }
         private void clickNextDay(object sender, EventArgs e)
         {
             date = date.AddDays(1);
             getToday(date);
+
+            string dieuKien = "THU LIKE '%" + label_today.Text + "%'";
+            dgv.DataSource = LichRanhTongHop.dataFilter(dieuKien);
         }
 
         private void changeDate(object sender, EventArgs e)
@@ -633,7 +646,9 @@ namespace AnBinhApp
             date = calendar.Value;
             getToday(date);
 
-
+            dgv.DataSource = LichRanhTongHop.docLichRanh();
+            dgv.AutoResizeColumns();
+            
         }
 
         private void previousDay_enter(object sender, EventArgs e)
@@ -665,10 +680,41 @@ namespace AnBinhApp
         private void cbbTrungTam_TextChanged(object sender, EventArgs e)
         {
             MessageBox.Show("Thanh cong");
+            string dieuKien = "TRUNGTAM = " + cbbTrungTam.Text;
+            dgv.DataSource = LichRanhTongHop.dataFilter(dieuKien);
         }
 
         private void cbbVaiTro_TextChanged(object sender, EventArgs e)
         {
+            string dieuKien = "VAITRO = " + cbbVaiTro.Text;
+            dgv.DataSource = LichRanhTongHop.dataFilter(dieuKien);
+        }
+
+        private void PhanCong_Load(object sender, EventArgs e)
+        {
+            LichRanhTongHop.docLichRanh();
+            DataTable temp = LichRanhTongHop.LichRanh;
+            List<string> vaitro = new List<string>();
+            List<string> trungtam = new List<string>();
+            for (int i = 0; i < temp.Rows.Count; i++)
+            {
+                vaitro.Add(temp.Rows[i]["VAITRO"].ToString());
+                trungtam.Add(temp.Rows[i]["TRUNGTAM"].ToString());
+            }
+
+            vaitro = new HashSet<String>(vaitro).ToList();
+            trungtam = new HashSet<String>(trungtam).ToList();
+
+            for (int i = 0; i< vaitro.Count;i++)
+            {
+                cbbVaiTro.Items.Add(vaitro[i]);
+            }
+
+            for (int i = 0; i < trungtam.Count; i++)
+            {
+                cbbTrungTam.Items.Add(trungtam[i]);
+            }
+
 
         }
 
