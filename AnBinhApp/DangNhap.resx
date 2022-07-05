@@ -154,4 +154,17 @@
         YII=
 </value>
   </data>
+  <data name="togglePasswordVisible.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        QgAAAEIBarqQRAAAAZ5JREFUSEu1lD1KQ0EUhbOE7EBXINmAkFqEpMsGsgAXYJElpHABqawDNpYpY2UW
+        oGAniMEfUBDR5znh3OEk3qDCWHzhzTf33pl572ZaTdP8K6msSSprksqapNLp9XpdMAIz8SD4PMxynFQS
+        JPfBDWh+4AX0sxoklUiYWAEuMgY8CTkCx+ASsHjETbJa3wQCp0p4BEfm9zgWu+Y5jkWW4YO1AQK40yje
+        kWuDa3lnbHn74FN+Hp54cR4/krvmozgL8LXMwZPcyOKGcqSc3BdYaNKTDuRYfMd8R560zZ/LvYWLidj9
+        M/CEE/lZOJu70Jyflq/zQ37VwjERx3sH2QJr71Vzt5rbXICbpD+k84RXTZTd4jleEd+5d85Anrv1DfEP
+        Sb8It/rRpLebt6e37Rm40phMLS5tkrKAgtghDOBHHcjx2NG+jhfnR+cG6Ev7kvIQIGCpQOId5X80fy0c
+        R/GyaLA2CBB4qgRyD9j/vB5YLK4Mnsrvqt9dFQESeNndWYFtcJG/XXYOktnCm9c0YceUj7mNVNYklTVJ
+        ZU1SWY+m9QWlq5769VyJ6gAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

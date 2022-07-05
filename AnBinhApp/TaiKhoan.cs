@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,11 +14,17 @@ namespace AnBinhApp
 {
     public partial class TaiKhoan : Form
     {
-        int salary = 5000;
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
 
         bool is_ThongTinThem_clicked = true;
         bool is_PhieuDK_clickd = false;
         bool is_BangCap_clicked = false;
+
+        int MaKH;
+        string HoTenKH, GioiTinh, DiaChi, SDT, NgaySinh;
+
+        int MaNV, Luong, SoBuoiTruc, MaTT;
+        string HoTenNV, NgaySinhNV, CMND, SDTNV, Email, DiaChiNV, ViTri, VaiTro;
 
         public TaiKhoan()
         {
@@ -58,7 +66,7 @@ namespace AnBinhApp
         private void salaryFocus(object sender, MouseEventArgs e)
         {
             toggleSalaryVisible.Image = Image.FromFile("../../svg/eye hidden.png");
-            label_salary.Text = "$" + salary.ToString();
+            label_salary.Text = Luong.ToString() + "đ";
         }
         private void salaryUnfocus(object sender, MouseEventArgs e)
         {
@@ -406,6 +414,26 @@ namespace AnBinhApp
             this.Hide();
         }
 
+        private void clickTimKieuPhieuDK(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection();
+            using (con = new SqlConnection(connectionString))
+            {
+                string query = "select * " +
+                           "from PHIEUDKTIEM " +
+                           "where (MAKH = " + TrangChu.MaKH + " AND MAPHIEU like '%" + search_phieuDK.Text + "%') " +
+                           "and NGAYTIEM between '" + fromDatePicker.Value.ToString("yyyy/MM/dd") + "' and '" + toDatePicker.Value.ToString("yyyy/MM/dd") + "'";
+
+                SqlDataAdapter dataadapter = new SqlDataAdapter(query, connectionString);
+                DataSet ds = new DataSet();
+                con.Open();
+                dataadapter.Fill(ds, "PhieuDK");
+                dgv_phieuDK.DataSource = ds;
+                dgv_phieuDK.DataMember = "PhieuDK";
+                con.Close();
+            }
+        }
+
         private void dsPhieuTiem_click(object sender, EventArgs e)
         {
             panel_DSPhieuTiem.BackColor = Color.FromArgb(73, 155, 242);
@@ -517,6 +545,12 @@ namespace AnBinhApp
             if (dialogResult == DialogResult.Yes)
             {
                 this.Close();
+                var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is DangNhap);
+                if (formToShow != null)
+                {
+                    formToShow.Show();
+                    formToShow.Close();
+                }
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -602,5 +636,80 @@ namespace AnBinhApp
 
         // End of
         // Transitioning     
+
+        private void TaiKhoan_Load(object sender, EventArgs e)
+        {
+            if (TrangChu.is_NhanVien)
+            {
+                MaNV = TrangChu.MaNV;
+                HoTenNV = TrangChu.HoTenNV;
+                NgaySinhNV = TrangChu.NgaySinhNV;
+                CMND = TrangChu.CMND;
+                SDTNV = TrangChu.SDTNV;
+                Email = TrangChu.Email;
+                DiaChiNV = TrangChu.DiaChiNV;
+                ViTri = TrangChu.ViTri;
+                Luong = TrangChu.Luong;
+                VaiTro = TrangChu.VaiTro;
+                MaTT = TrangChu.MaTT;
+                SoBuoiTruc = TrangChu.SoBuoiTruc;
+
+                textBox_hoTen.Text = HoTenNV;
+                textBox_viTri.Text = ViTri;
+                textBox_ngaySinh.Text = NgaySinhNV;
+                textBox_sdt.Text = SDTNV;
+                textBox_diaChi.Text = DiaChiNV;
+                label_cmnd.Text = CMND;
+                label_email.Text = Email;
+                label_vaiTro.Text = VaiTro;
+                label_trungTam.Text = MaTT.ToString();
+                label_soBuoiTruc.Text = SoBuoiTruc.ToString();
+
+                username_label.Text = HoTenNV;
+
+                SqlConnection con = new SqlConnection();
+                using (con = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT * FROM BANGCAP WHERE BC_MANV = " + DangNhap.username;
+                    SqlDataAdapter dataadapter = new SqlDataAdapter(query, connectionString);
+                    DataSet ds = new DataSet();
+                    con.Open();
+                    dataadapter.Fill(ds, "BangCap");
+                    dgv_BangCap.DataSource = ds;
+                    dgv_BangCap.DataMember = "BangCap";
+                    con.Close();
+                }
+            }
+            else
+            {
+                MaKH = TrangChu.MaKH;
+                HoTenKH = TrangChu.HoTenKH;
+                GioiTinh = TrangChu.GioiTinh;
+                DiaChi = TrangChu.DiaChi;
+                SDT = TrangChu.SDT;
+                NgaySinh = TrangChu.NgaySinh;
+
+                textBox_hoTen.Text = HoTenKH;
+                textBox_viTri.Hide();
+                textBox_ngaySinh.Text = NgaySinh;
+                textBox_sdt.Text = SDT;
+                textBox_diaChi.Text = DiaChi;
+
+                username_label.Text = HoTenKH;
+
+                SqlConnection con = new SqlConnection();
+                using (con = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT * FROM NGUOIGIAMHO WHERE MANGH = " + DangNhap.username;
+                    SqlDataAdapter dataadapter = new SqlDataAdapter(query, connectionString);
+                    DataSet ds = new DataSet();
+                    con.Open();
+                    dataadapter.Fill(ds, "NguoiGiamHo");
+                    dgv_nguoiGiamHo.DataSource = ds;
+                    dgv_nguoiGiamHo.DataMember = "NguoiGiamHo";
+                    con.Close();
+                }
+            }
+        }
     }
 }

@@ -88,7 +88,10 @@ namespace AnBinhApp
             this.label33 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.DangKyTiemTab = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.diaChi_textBox = new System.Windows.Forms.TextBox();
             this.tiepTuc_button = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.vaccinationDatePicker = new System.Windows.Forms.DateTimePicker();
             this.label28 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
@@ -171,9 +174,6 @@ namespace AnBinhApp
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label65 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.diaChi_textBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tab.SuspendLayout();
             this.singleVacTab.SuspendLayout();
             this.packageTab.SuspendLayout();
@@ -951,6 +951,25 @@ namespace AnBinhApp
             this.DangKyTiemTab.TabIndex = 1;
             this.DangKyTiemTab.Text = "2";
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(235)))), ((int)(((byte)(245)))));
+            this.panel3.Location = new System.Drawing.Point(335, 418);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(700, 3);
+            this.panel3.TabIndex = 7;
+            // 
+            // diaChi_textBox
+            // 
+            this.diaChi_textBox.BackColor = System.Drawing.Color.White;
+            this.diaChi_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.diaChi_textBox.Font = new System.Drawing.Font("Inter Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.diaChi_textBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.diaChi_textBox.Location = new System.Drawing.Point(335, 391);
+            this.diaChi_textBox.Name = "diaChi_textBox";
+            this.diaChi_textBox.Size = new System.Drawing.Size(700, 25);
+            this.diaChi_textBox.TabIndex = 6;
+            // 
             // tiepTuc_button
             // 
             this.tiepTuc_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(240)))));
@@ -965,6 +984,16 @@ namespace AnBinhApp
             this.tiepTuc_button.Text = "Tiếp tục ❯";
             this.tiepTuc_button.UseVisualStyleBackColor = false;
             this.tiepTuc_button.Click += new System.EventHandler(this.clickTiepTucPhieuDK);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(331, 350);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 24);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Địa chỉ";
             // 
             // vaccinationDatePicker
             // 
@@ -1927,6 +1956,7 @@ namespace AnBinhApp
             this.panel_Thoat.Name = "panel_Thoat";
             this.panel_Thoat.Size = new System.Drawing.Size(278, 56);
             this.panel_Thoat.TabIndex = 3;
+            this.panel_Thoat.Click += new System.EventHandler(this.Thoat_click);
             this.panel_Thoat.MouseEnter += new System.EventHandler(this.Thoat_enter);
             this.panel_Thoat.MouseLeave += new System.EventHandler(this.Thoat_leave);
             // 
@@ -1939,6 +1969,7 @@ namespace AnBinhApp
             this.pictureBox9.Size = new System.Drawing.Size(24, 24);
             this.pictureBox9.TabIndex = 2;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.Thoat_click);
             this.pictureBox9.MouseEnter += new System.EventHandler(this.Thoat_enter);
             this.pictureBox9.MouseLeave += new System.EventHandler(this.Thoat_leave);
             // 
@@ -1953,6 +1984,7 @@ namespace AnBinhApp
             this.label65.Size = new System.Drawing.Size(62, 23);
             this.label65.TabIndex = 1;
             this.label65.Text = "Thoát";
+            this.label65.Click += new System.EventHandler(this.Thoat_click);
             this.label65.MouseEnter += new System.EventHandler(this.Thoat_enter);
             this.label65.MouseLeave += new System.EventHandler(this.Thoat_leave);
             // 
@@ -1964,35 +1996,6 @@ namespace AnBinhApp
             this.pictureBox10.Size = new System.Drawing.Size(169, 56);
             this.pictureBox10.TabIndex = 1;
             this.pictureBox10.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(235)))), ((int)(((byte)(245)))));
-            this.panel3.Location = new System.Drawing.Point(335, 418);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(700, 3);
-            this.panel3.TabIndex = 7;
-            // 
-            // diaChi_textBox
-            // 
-            this.diaChi_textBox.BackColor = System.Drawing.Color.White;
-            this.diaChi_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.diaChi_textBox.Font = new System.Drawing.Font("Inter Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diaChi_textBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.diaChi_textBox.Location = new System.Drawing.Point(335, 391);
-            this.diaChi_textBox.Name = "diaChi_textBox";
-            this.diaChi_textBox.Size = new System.Drawing.Size(700, 25);
-            this.diaChi_textBox.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(331, 350);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 24);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Địa chỉ";
             // 
             // DangKyTiemNgua
             // 

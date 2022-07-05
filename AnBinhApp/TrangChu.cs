@@ -29,6 +29,9 @@ namespace AnBinhApp
         public static int MaKH;
         public static string HoTenKH, GioiTinh, DiaChi, SDT, NgaySinh;
 
+        public static int MaNV, Luong, SoBuoiTruc, MaTT;
+        public static string HoTenNV, NgaySinhNV, CMND, SDTNV, Email, DiaChiNV, ViTri, VaiTro;
+
         public TrangChu()
         {
             InitializeComponent();
@@ -52,31 +55,74 @@ namespace AnBinhApp
             }
             else if (is_login == true)
             {
-                SqlConnection con = new SqlConnection();
-                using (con = new SqlConnection(connectionString))
+                if (is_NhanVien == true)
                 {
-                    try
+                    SqlConnection con = new SqlConnection();
+                    using (con = new SqlConnection(connectionString))
                     {
-                        string sql = "EXEC getInfoKhachHang @MaKH = " + DangNhap.username;
-                        SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connectionString);
-                        DataSet ds = new DataSet();
-                        con.Open();
-                        dataadapter.Fill(ds, "KhachHang");
-                        dataGridView1.DataSource = ds;
-                        dataGridView1.DataMember = "KhachHang";
+                        try
+                        {
+                            string sql = "EXEC getInfoNhanVien @MaNV = " + DangNhap.username;
+                            SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connectionString);
+                            DataSet ds = new DataSet();
+                            con.Open();
+                            dataadapter.Fill(ds, "NhanVien");
+                            dataGridView1.DataSource = ds;
+                            dataGridView1.DataMember = "NhanVien";
 
-                        MaKH = Convert.ToInt32(dataGridView1.Rows[0].Cells[0].Value.ToString());
-                        HoTenKH = dataGridView1.Rows[0].Cells[1].Value.ToString();
-                        GioiTinh = dataGridView1.Rows[0].Cells[2].Value.ToString();
-                        DiaChi = dataGridView1.Rows[0].Cells[3].Value.ToString();
-                        SDT = dataGridView1.Rows[0].Cells[4].Value.ToString();
-                        NgaySinh = dataGridView1.Rows[0].Cells[5].Value.ToString();
+                            MaNV = Convert.ToInt32(dataGridView1.Rows[0].Cells[0].Value.ToString());
+                            HoTenNV = dataGridView1.Rows[0].Cells[1].Value.ToString();
+                            NgaySinhNV = dataGridView1.Rows[0].Cells[2].Value.ToString();
+                            CMND = dataGridView1.Rows[0].Cells[3].Value.ToString();
+                            SDTNV = dataGridView1.Rows[0].Cells[4].Value.ToString();
+                            Email = dataGridView1.Rows[0].Cells[5].Value.ToString();
+                            DiaChiNV = dataGridView1.Rows[0].Cells[6].Value.ToString();
+                            ViTri = dataGridView1.Rows[0].Cells[7].Value.ToString();
+                            Luong = Convert.ToInt32(dataGridView1.Rows[0].Cells[8].Value.ToString());
+                            VaiTro = dataGridView1.Rows[0].Cells[9].Value.ToString();
+                            MaTT = Convert.ToInt32(dataGridView1.Rows[0].Cells[10].Value.ToString());
+                            SoBuoiTruc = Convert.ToInt32(dataGridView1.Rows[0].Cells[11].Value.ToString());
 
-                        con.Close();
+                            username_label.Text = HoTenNV;
+
+                            con.Close();
+                        }
+                        catch
+                        {
+                            //
+                        }
                     }
-                    catch
+                }
+                else 
+                { 
+                    SqlConnection con = new SqlConnection();
+                    using (con = new SqlConnection(connectionString))
                     {
-                        //
+                        try
+                        {
+                            string sql = "EXEC getInfoKhachHang @MaKH = " + DangNhap.username;
+                            SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connectionString);
+                            DataSet ds = new DataSet();
+                            con.Open();
+                            dataadapter.Fill(ds, "KhachHang");
+                            dataGridView1.DataSource = ds;
+                            dataGridView1.DataMember = "KhachHang";
+
+                            MaKH = Convert.ToInt32(dataGridView1.Rows[0].Cells[0].Value.ToString());
+                            HoTenKH = dataGridView1.Rows[0].Cells[1].Value.ToString();
+                            GioiTinh = dataGridView1.Rows[0].Cells[2].Value.ToString();
+                            DiaChi = dataGridView1.Rows[0].Cells[3].Value.ToString();
+                            SDT = dataGridView1.Rows[0].Cells[4].Value.ToString();
+                            NgaySinh = DateTime.Parse(dataGridView1.Rows[0].Cells[5].Value.ToString()).ToShortDateString();
+
+                            username_label.Text = HoTenKH;
+
+                            con.Close();
+                        }
+                        catch
+                        {
+                            //
+                        }
                     }
                 }
             }
@@ -498,6 +544,14 @@ namespace AnBinhApp
                 MessageBox.Show("Chỉ có nhân viên mới được sử dụng tính năng này!", "Thông báo");
             }
         }
+
+        private void clickDangKy(object sender, EventArgs e)
+        {
+            DangKyTiemNgua dkTiemNguaForm = new DangKyTiemNgua();
+            dkTiemNguaForm.Show();
+            this.Hide();
+        }
+
         private void phanCong_click(object sender, EventArgs e)
         {
             if (is_BoPhanDieuHanh)
@@ -544,6 +598,12 @@ namespace AnBinhApp
             if (dialogResult == DialogResult.Yes)
             {
                 this.Close();
+                var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is DangNhap);
+                if (formToShow != null)
+                {
+                    formToShow.Show();
+                    formToShow.Close();
+                }
             }
             else if (dialogResult == DialogResult.No)
             {
