@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace AnBinhApp
 {
     public partial class ThanhToan : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
         public ThanhToan()
         {
             InitializeComponent();
@@ -430,12 +433,6 @@ namespace AnBinhApp
             if (dialogResult == DialogResult.Yes)
             {
                 this.Close();
-                var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is DangNhap);
-                if (formToShow != null)
-                {
-                    formToShow.Show();
-                    formToShow.Close();
-                }
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -463,9 +460,27 @@ namespace AnBinhApp
         {
             if (rBtnMotLan.Checked)
             {
+                SqlConnection myCon = new SqlConnection(connectionString);
                 hoadonMotLan.Show();
                 btnThanhToan.Show();
-                btnThanhToan.Location = new Point(1225, 470);
+                //btnThanhToan.Location = new Point(1225, 470);
+                btnThanhToan.Location = new Point(1378, 588);
+                try
+                {
+                    myCon.Open();
+                    SqlDataAdapter myAdapter = new SqlDataAdapter("select top 1 * from PHIEUDKTIEM phieu join GOITIEMCHUNG goitc on phieu.GOI = goitc.TEN_GTC where TINHTRANG = N'1' and MAKH = " + DangNhap.username, myCon);
+                    DataTable dt = new DataTable();
+                    myAdapter.Fill(dt);
+                    maPhieuDK.Text = dt.Rows[0]["MAPHIEU"].ToString();
+                    donGiaMotLan.Text = dt.Rows[0]["DONGIA"].ToString();
+                    phiDVMotLan.Text = "100000";
+                    thanhtienMotLan.Text = (Int32.Parse(donGiaMotLan.Text) + Int32.Parse(phiDVMotLan.Text)).ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bạn đã thanh toán thành công cho Phiếu Đăng Ký Tiêm này.");
+                }
+                myCon.Close();
             }
             else
             {
@@ -477,10 +492,28 @@ namespace AnBinhApp
         {
             if (rBtnTraGop.Checked)
             {
-                hoadonTraGop.Location = new Point(801, 179);
+                //hoadonTraGop.Location = new Point(801, 179);
+                //hoadonTraGop.Show();
+                //btnThanhToan.Show();
+                //btnThanhToan.Location = new Point(1225, 505);
+                SqlConnection myCon = new SqlConnection(connectionString);
+                hoadonTraGop.Location = new Point(901, 224);
                 hoadonTraGop.Show();
                 btnThanhToan.Show();
-                btnThanhToan.Location = new Point(1225, 505);
+                btnThanhToan.Location = new Point(1378, 628);
+                try
+                {
+                    myCon.Open();
+                    SqlDataAdapter myAdapter = new SqlDataAdapter("select top 1 * from PHIEUDKTIEM phieu join GOITIEMCHUNG goitc on phieu.GOI = goitc.TEN_GTC where TINHTRANG = N'1' and MAKH = " + DangNhap.username, myCon);
+                    DataTable dt = new DataTable();
+                    myAdapter.Fill(dt);
+                    label24.Text = dt.Rows[0]["MAPHIEU"].ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bạn đã thanh toán thành công cho Phiếu Đăng Ký Tiêm này.");
+                }
+                myCon.Close();
             }
             else
             {
@@ -492,6 +525,110 @@ namespace AnBinhApp
         {
             KiemTraPhieu phieu = new KiemTraPhieu();
             phieu.Show();
-        }       
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            SqlConnection myCon = new SqlConnection(connectionString);
+            try
+            {
+                myCon.Open();
+                SqlCommand myCommand = new SqlCommand("sp_THANHTOAN", myCon);
+                myCommand.CommandType = CommandType.StoredProcedure;
+                int solanthanhtoantrongngay;
+                SqlCommand sqlCommand = new SqlCommand("Select top 1 MAHD, THOIGIANTHANHTOAN from HOADON order by MAHD desc", myCon);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                if (reader.Read())
+                {
+                    string p_thoigian = reader.GetDateTime(1).ToShortDateString();
+                    if (Convert.ToDateTime(DateTime.Now.ToShortDateString()) > Convert.ToDateTime(p_thoigian)) solanthanhtoantrongngay = 0;
+                    else
+                    {
+                        string p_mahd = reader.GetInt32(0).ToString();
+                        string id_mahd = p_mahd.Remove(0, 6);
+                        solanthanhtoantrongngay = Int32.Parse(id_mahd);
+                    }
+                }
+                else solanthanhtoantrongngay = 0;
+                reader.Close();
+                solanthanhtoantrongngay += 1;
+                string mahoadon = String.Format("{0:yy}", Convert.ToDateTime(ngayttMotLan.Text)) + String.Format("{0:MM}", Convert.ToDateTime(ngayttMotLan.Text)) + String.Format("{0:dd}", Convert.ToDateTime(ngayttMotLan.Text)) + solanthanhtoantrongngay.ToString();
+                if (rBtnMotLan.Checked)
+                {
+                    myCommand.Parameters.Add("@mahd", SqlDbType.Int).Value = Int32.Parse(mahoadon);
+                    myCommand.Parameters.Add("@hinhthuc", SqlDbType.NVarChar).Value = rBtnMotLan.Text;
+                    myCommand.Parameters.Add("@thanhtien", SqlDbType.Float).Value = float.Parse(thanhtienMotLan.Text);
+                    myCommand.Parameters.Add("@thoigian", SqlDbType.DateTime).Value = ngayttMotLan.Text;
+                    myCommand.Parameters.Add("@makh", SqlDbType.Int).Value = Int32.Parse(DangNhap.username);
+                    myCommand.Parameters.Add("@maphieu", SqlDbType.Int).Value = Int32.Parse(maPhieuDK.Text);
+                }
+                else
+                {
+                    myCommand.Parameters.Add("@mahd", SqlDbType.Int).Value = Int32.Parse(mahoadon);
+                    myCommand.Parameters.Add("@hinhthuc", SqlDbType.NVarChar).Value = rBtnTraGop.Text + " " + solantragop.Text + " lần";
+                    myCommand.Parameters.Add("@thanhtien", SqlDbType.Float).Value = float.Parse(label17.Text);
+                    myCommand.Parameters.Add("@thoigian", SqlDbType.DateTime).Value = ngayttTraGop.Text;
+                    myCommand.Parameters.Add("@makh", SqlDbType.Int).Value = Int32.Parse(DangNhap.username);
+                    myCommand.Parameters.Add("@maphieu", SqlDbType.Int).Value = Int32.Parse(label24.Text);
+                }
+                int n = myCommand.ExecuteNonQuery();
+                if (n > 0)
+                {
+                    MessageBox.Show("Thanh toán thành công.");
+                }
+                else
+                {
+                    MessageBox.Show("Thanh toán KHÔNG thành công.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            myCon.Close();
+        }
+
+        private void solantragop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection myCon = new SqlConnection(connectionString);
+            myCon.Open();
+            SqlDataAdapter myAdapter = new SqlDataAdapter("select top 1 * from PHIEUDKTIEM phieu join GOITIEMCHUNG goitc on phieu.GOI = goitc.TEN_GTC where MAKH = " + DangNhap.username + " and TINHTRANG = N'1'", myCon);
+            DataTable dt = new DataTable();
+            myAdapter.Fill(dt);
+            int solan = Int32.Parse(solantragop.Text);
+            string dongia = dt.Rows[0]["DONGIA"].ToString();
+            switch (solan)
+            {
+                case 3:
+                    {
+                        label18.Text = (Int32.Parse(dongia) / solan).ToString();
+                        label27.Text = "300000";
+                        label17.Text = (Int32.Parse(dongia) + Int32.Parse(label27.Text)).ToString();
+                        break;
+                    }
+                case 6:
+                    {
+                        label18.Text = (Int32.Parse(dongia) / solan).ToString();
+                        label27.Text = "600000";
+                        label17.Text = (Int32.Parse(dongia) + Int32.Parse(label27.Text)).ToString();
+                        break;
+                    }
+                case 9:
+                    {
+                        label18.Text = (Int32.Parse(dongia) / solan).ToString();
+                        label27.Text = "900000";
+                        label17.Text = (Int32.Parse(dongia) + Int32.Parse(label27.Text)).ToString();
+                        break;
+                    }
+                case 12:
+                    {
+                        label18.Text = (Int32.Parse(dongia) / solan).ToString();
+                        label27.Text = "1200000";
+                        label17.Text = (Int32.Parse(dongia) + Int32.Parse(label27.Text)).ToString();
+                        break;
+                    }
+            }
+            myCon.Close();
+        }
     }
 }

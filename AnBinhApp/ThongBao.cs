@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
+using System.Configuration;
 namespace AnBinhApp
 {
     public partial class ThongBao : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
         public ThongBao()
         {
             InitializeComponent();
+            HienThiThongBao();
             notification(TrangChu.co_ThongBao);
             sideBarCollapsible(TrangChu.ds_collapsible, TrangChu.chucnang_collapsible, TrangChu.taikhoan_collapsible);
         }
@@ -26,8 +29,40 @@ namespace AnBinhApp
         bool is_DSPhieuTiem_clicked = false;
 
         bool is_DKTiem_success = false;
-        bool is_DuyetLich_approved = true;
+        bool is_DuyetLich_approved = false;
 
+        private void HienThiThongBao()
+        {
+            SqlConnection myCon = new SqlConnection(connectionString);
+            try
+            {
+                myCon.Open();
+                if (!TrangChu.is_NhanVien)
+                {
+                    SqlCommand cm2 = new SqlCommand("Select top 1 MAPHIEU, TINHTRANG from PHIEUDKTIEM phieu where MAKH = @IDKH and TINHTRANG = N'1'", myCon);
+                    cm2.Parameters.Add("@IDKH", SqlDbType.Int).Value = Int32.Parse(DangNhap.username);
+                    //dr.Close();
+                    SqlDataReader reader = cm2.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        is_DKTiem_success = true;
+                        is_DuyetLich_approved = false;
+                    }
+                    reader.Close();
+                }
+                else
+                {
+                    is_DuyetLich_approved = true;
+                    is_DKTiem_success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra.");
+            } 
+            
+            myCon.Close();
+        }
         private void notification(bool co_ThongBao)
         {
             if (TrangChu.co_ThongBao == false)
@@ -53,7 +88,8 @@ namespace AnBinhApp
                 if (is_DuyetLich_approved)
                 {
                     panel_tbDuyetLich.Show();
-                    panel_tbDuyetLich.Location = new Point(357, 122);
+                    //panel_tbDuyetLich.Location = new Point(357, 122);
+                    panel_tbDuyetLich.Location = new Point(400, 155);
                 }
                 else
                 {
@@ -509,12 +545,6 @@ namespace AnBinhApp
             if (dialogResult == DialogResult.Yes)
             {
                 this.Close();
-                var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is DangNhap);
-                if (formToShow != null)
-                {
-                    formToShow.Show();
-                    formToShow.Close();
-                }
             }
             else if (dialogResult == DialogResult.No)
             {
