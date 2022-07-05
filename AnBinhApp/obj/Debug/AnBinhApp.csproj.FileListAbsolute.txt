@@ -28,3 +28,34 @@ D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.PhanCongThemNV.resources
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.DSKhachHang.resources
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.ThongTinKhachHang.resources
 D:\GitHub\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.TraCuuLichRanhNV.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\bin\Debug\AnBinhApp.exe.config
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\bin\Debug\AnBinhApp.exe
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\bin\Debug\AnBinhApp.pdb
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.csproj.AssemblyReference.cache
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.csproj.SuggestedBindingRedirects.cache
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.DangKyTiemNgua.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.DatMuaVacxin.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.DSKhachHang.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.DSNhanVien.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.DSPhieuTiem.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.HienThi.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.KhaNangVacxin.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.PhanCong.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.PhanCongThemNV.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.QuyTrinhTiemChung.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.TaiKhoan.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.ThanhToan.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.ThongBao.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.ThongTinKhachHang.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.ThongTinNhanVIen.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.TraCuuLichRanhNV.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.TrangChu.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.DangNhap.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.Properties.Resources.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.DangKyTK.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.KiemTraPhieu.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.XemLich.resources
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.csproj.GenerateResource.cache
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.csproj.CoreCompileInputs.cache
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.exe
+D:\Work\2022_2nd\Database designing\Proj\PTTKHTTT\AnBinhApp\obj\Debug\AnBinhApp.pdb
