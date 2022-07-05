@@ -916,11 +916,11 @@ namespace AnBinhApp
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Inter", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Inter SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(21)))), ((int)(((byte)(92)))));
             this.label8.Location = new System.Drawing.Point(353, 48);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(321, 34);
+            this.label8.Size = new System.Drawing.Size(320, 34);
             this.label8.TabIndex = 26;
             this.label8.Text = "Danh sách khách hàng";
             // 

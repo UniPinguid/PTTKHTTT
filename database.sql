@@ -252,6 +252,11 @@ add constraint FK_CHITIETGTC_VACCINE
 foreign key (MAVACCINE)
 references VACCINE(MAVACCINE)
 
+alter table CHITIETGOITC
+add constraint FK_CHITIECGTC_TENGTC
+foreign key (TEN_GTC)
+references GOITIEMCHUNG(TEN_GTC)
+
 --những chỗ sửa là thuộc tính GOI của PHIEUDKTIEM (từ NVARCHAR(10) -> NVARCHAR2(50)), thuộc tính TEN_GTC của GOITIEMCHUNG
 --nếu chưa tạo bảng GOITIEMCHUNG thì cứ việc tạo bình thường
 ----nếu đã tạo rồi thì xóa bảng CHITIETGOITC, drop constraint FK_PHIEUDK_GTC đi rồi xóa GOITIEMCHUNG và tạo lại GOITIEMCHUNG và CHITIETGOITC
