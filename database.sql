@@ -150,7 +150,7 @@ ADD CONSTRAINT PK_LOVACCINE PRIMARY KEY (MALO)
 CREATE TABLE PHIEUDKTIEM(
 	MAKH INT NOT NULL,
 	MAPHIEU INT NOT NULL,
-	GOI NVARCHAR(10),
+	GOI NVARCHAR(50),
 	NGAYTIEM DATE,
 	TINHTRANG NVARCHAR(10)
 )
@@ -228,11 +228,11 @@ ALTER TABLE BAOCAOTIEMNGUA
 ADD CONSTRAINT PK_BAOCAO PRIMARY KEY (BCTN_MAKH, STT) 
 --need help on this constraint :(
 
+
 alter table VACCINE add DONGIA INT;
 
 create table GOITIEMCHUNG (
-	TEN_GTC NVARCHAR(10),
-	MOTA NVARCHAR(100),
+	TEN_GTC NVARCHAR(50),
 	DONGIA INT,
 	CONSTRAINT PK_GOITIEMCHUNG PRIMARY KEY (TEN_GTC))
 
@@ -242,7 +242,7 @@ foreign key (GOI)
 references GOITIEMCHUNG(TEN_GTC)
 
 create table CHITIETGOITC (
-	TEN_GTC NVARCHAR(10),
+	TEN_GTC NVARCHAR(50),
 	MAVACCINE INT,
 	SOMUI INT,
 	CONSTRAINT PK_CHITIETGTC PRIMARY KEY (TEN_GTC,MAVACCINE))
@@ -252,5 +252,14 @@ add constraint FK_CHITIETGTC_VACCINE
 foreign key (MAVACCINE)
 references VACCINE(MAVACCINE)
 
+--những chỗ sửa là thuộc tính GOI của PHIEUDKTIEM (từ NVARCHAR(10) -> NVARCHAR2(50)), thuộc tính TEN_GTC của GOITIEMCHUNG
+--nếu chưa tạo bảng GOITIEMCHUNG thì cứ việc tạo bình thường
+----nếu đã tạo rồi thì xóa bảng CHITIETGOITC, drop constraint FK_PHIEUDK_GTC đi rồi xóa GOITIEMCHUNG và tạo lại GOITIEMCHUNG và CHITIETGOITC
+--nếu chưa gen data thì cứ tạo khóa ngoại bình thường rồi thực hiện insert GOITIEMCHUNG
+----nếu gen data rồi thì thực hiện insert GOITIEMCHUNG trước rồi mới tạo lại khóa ngoại FK_PHIEUDK_GTC
 
-select * from NHANVIEN
+insert into GOITIEMCHUNG values (N'Thường',8000000);
+insert into GOITIEMCHUNG values (N'Gói tiêm trẻ em 0 - 12 tháng tuổi',19000000);
+insert into GOITIEMCHUNG values (N'Gói tiêm trẻ em 0 - 24 tháng tuổi',22000000);
+insert into GOITIEMCHUNG values (N'Gói tiêm thường',7500000);
+insert into GOITIEMCHUNG values (N'Gói tiêm cho phụ nữ mang thai',5000000);
