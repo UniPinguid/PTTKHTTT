@@ -19,7 +19,8 @@ namespace AnBinhApp
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new XemLich());
+            //Application.Run(new DangNhap());
+            Application.Run(new DSNhanVien());
         }
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]

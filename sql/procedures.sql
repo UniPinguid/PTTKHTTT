@@ -60,6 +60,51 @@ BEGIN
 	NGAYSINH like '%' + @bar + '%'
 end
 	
---EXEC searchCustomer @bar = N'nguyen'
+EXEC searchCustomer @bar = ''
 
---select * from KHACHHANG where makh like '%1%'
+--select * from NHANVIEN
+
+--select * from NGUOIGIAMHO WHERE MANGH = 565742042
+
+CREATE OR ALTER PROCEDURE  getGiamHo(@kh int)
+AS
+BEGIN
+	SELECT * FROM NGUOIGIAMHO
+	WHERE MANGH = @kh
+END
+
+--EXEC getGiamHo @kh = 565742042
+
+CREATE OR ALTER PROCEDURE  getPhieuDk(@kh int)
+AS
+BEGIN
+	SELECT * FROM PHIEUDKTIEM
+	WHERE MAKH = @kh
+END
+
+--EXEC getPhieuDk @kh = 67280102
+
+CREATE or ALTER PROCEDURE searchEmployee(@bar nvarchar(100))
+AS
+BEGIN
+	SELECT * FROM NHANVIEN
+	WHERE MANV like '%' + @bar + '%' or
+	HOTEN like '%' + @bar + '%' or
+	DIACHI like '%' + @bar + '%' or
+	SDT like '%' + @bar + '%' or
+	NGAYSINH like '%' + @bar + '%'
+end
+
+CREATE OR ALTER PROCEDURE  getBangCap(@kh int)
+AS
+BEGIN
+	SELECT * FROM BANGCAP
+	WHERE BC_MANV = @kh
+END
+SELECT * FROM NHANVIEN
+CREATE OR ALTER PROCEDURE getdetailInfoNV(@nv int)
+AS
+BEGIN
+	SELECT * FROM NHANVIEN NV JOIN TRUNGTAM TT ON (NV.TRUNGTAM = TT.STT)
+	WHERE MANV = @nv
+END

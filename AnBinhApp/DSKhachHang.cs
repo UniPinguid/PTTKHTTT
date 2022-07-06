@@ -529,6 +529,20 @@ namespace AnBinhApp
 
         }
 
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow;
+            numrow = e.RowIndex;
+            id = dataGridView1.Rows[numrow].Cells[0].Value.ToString();
+            ThongTinKhachHang tt = new ThongTinKhachHang();
+            tt.Show();
+            //this.Hide();
+        }
+        public static string getid()
+        {
+            return id;
+        }
+
         // End of
         // Transitioning
     }

@@ -267,3 +267,4 @@ foreign key (MAVACCINE)
 references VACCINE(MAVACCINE)
 
 
+select * from NHANVIEN
