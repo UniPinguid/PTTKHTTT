@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,12 @@ namespace AnBinhApp
 {
     public partial class DSNhanVien : Form
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
+        private static string id = null;
+        SqlConnection conn;
+        SqlCommand cmd;
+        SqlDataAdapter adapter;
+        DataTable dt;
         public DSNhanVien()
         {
             InitializeComponent();
@@ -502,6 +510,33 @@ namespace AnBinhApp
                 is_Thoat_clicked = false;
                 Thoat_leave(sender, e);
             }
+        }
+
+        private void DSNhanVien_Load(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            string truyvan = "SELECT * FROM NHANVIEN";
+            adapter = new SqlDataAdapter(truyvan, con);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
+
+        
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow;
+            numrow = e.RowIndex;
+            id = dataGridView1.Rows[numrow].Cells[0].Value.ToString();
+            //MessageBox.Show(id);
+            ThongTinNhanVIen tt = new ThongTinNhanVIen();
+            tt.Show();
+        }
+
+        public static string getid()
+        {
+            return id;
         }
 
         // End of
