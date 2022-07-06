@@ -19,16 +19,11 @@ namespace AnBinhApp
             lichRanh = TongHopLichRanh.truyVanLichRanhTheoNgay(thu);
             return lichRanh;
         }
-        public static DataTable docLichRanhCoDieuKien(string thu, string dk)
+        public static DataTable docLichRanhCoDieuKien(string thu, string trungtam, string vaitro)
         {
-            lichRanh = TongHopLichRanh.truyVanLichRanhCoDieuKien(thu,dk);
+            lichRanh = TongHopLichRanh.truyVanLichRanhCoDieuKien(thu,trungtam,vaitro);
             return lichRanh;
         }
-        public static DataView dataFilter(string dk)
-        {
-            //lichRanh = TongHopLichRanh.truyVanLichRanhCoDieuKien(dk);
-            DataView view = lichRanh.DefaultView;
-            return view;
-        }
+        
     }
 }

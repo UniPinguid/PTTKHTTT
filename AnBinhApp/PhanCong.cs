@@ -473,14 +473,14 @@ namespace AnBinhApp
 
         private void traCuuLichRanh_click(object sender, EventArgs e)
         {
-            TraCuuLichRanhNV traCuuForm = new TraCuuLichRanhNV();
+            TraCuuLichRanhNV traCuuForm = new TraCuuLichRanhNV(label_today.Text);
             traCuuForm.Show();
             this.Close();
         }
 
         private void clickThemNV(object sender, EventArgs e)
         {
-            PhanCongThemNV PCThemNV = new PhanCongThemNV();
+            PhanCongThemNV PCThemNV = new PhanCongThemNV(label_today.Text);
             PCThemNV.Show();
         }
         private void clickHoanTat(object sender, EventArgs e)
@@ -530,7 +530,7 @@ namespace AnBinhApp
             }
         }
 
-        private void getToday(DateTime date)
+        private void getToday(DateTime date)    
         {
             DateTime yesterday = date.AddDays(-1);
             DateTime tomorrow = date.AddDays(1);
@@ -608,8 +608,8 @@ namespace AnBinhApp
 
         private void cbbTrungTam_TextChanged(object sender, EventArgs e)
         {
-            string dieuKien = " TRUNGTAM = " + cbbTrungTam.Text;
-            dgv.DataSource = LichRanhTongHop.docLichRanhCoDieuKien(label_today.Text,dieuKien);
+            string vaitro = "";
+            dgv.DataSource = LichRanhTongHop.docLichRanhCoDieuKien(label_today.Text, cbbTrungTam.Text,vaitro);
         }
 
         private void label_today_TextChanged(object sender, EventArgs e)
@@ -623,14 +623,19 @@ namespace AnBinhApp
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void button5_Click(object sender, EventArgs e)
         {
             LichCaTruc.ghiLichCaTruc();
+        }
+
+        private void btnXoaNV_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgv.SelectedRows[0];
+            dgv.Rows.Remove(row);
+            LichCaTruc.xoaNhanVien(Int32.Parse(row.Cells["MANV"].Value.ToString()));
+
         }
     }
 }

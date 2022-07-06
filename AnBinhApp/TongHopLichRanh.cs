@@ -41,7 +41,7 @@ namespace AnBinhApp
             return dataTable;
         }
 
-        public static DataTable truyVanLichRanhCoDieuKien(string thu, string dk)
+        public static DataTable truyVanLichRanhCoDieuKien(string thu, string trungtam, string vaitro)
         {
             string ConnectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
             SqlConnection sqlConnection = new SqlConnection(ConnectionString);
@@ -56,10 +56,17 @@ namespace AnBinhApp
             query += "AND c.THU LIKE N'";
             query += thu;
             query += "' ";
-            if (dk != "")
+            if (trungtam != "")
             {
-                query += " AND ";
-                query += dk;
+                query += " AND nv.TRUNGTAM = ";
+                query += trungtam;
+            }
+
+            if(vaitro != "")
+            {
+                query += " AND nv.VAI TRO LIKE N'";
+                query += trungtam;
+                query += "' ";
             }
 
 

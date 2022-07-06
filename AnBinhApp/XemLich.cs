@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 
 namespace AnBinhApp
 {
@@ -699,12 +698,7 @@ namespace AnBinhApp
             label27.Hide();
         }
 
-        private void click_HoanTat(object sender, EventArgs e)
-        {
-            
-
-
-        }
+        
 
         // End of
         // Calendar

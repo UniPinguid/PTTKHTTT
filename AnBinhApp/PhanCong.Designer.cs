@@ -102,13 +102,12 @@ namespace AnBinhApp
             this.button2 = new System.Windows.Forms.Button();
             this.btnThemNV = new System.Windows.Forms.Button();
             this.btnXoaNV = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_HoanTat = new System.Windows.Forms.Button();
             this.calendar = new System.Windows.Forms.DateTimePicker();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btn_TraCuu = new System.Windows.Forms.Button();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_ds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapsible_taiKhoan)).BeginInit();
@@ -1068,7 +1067,7 @@ namespace AnBinhApp
             this.btnThemNV.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
             this.btnThemNV.Size = new System.Drawing.Size(219, 45);
             this.btnThemNV.TabIndex = 62;
-            this.btnThemNV.Text = "Thêm nhân viên";
+            this.btnThemNV.Text = "Thêm Nhân Viên";
             this.btnThemNV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThemNV.UseVisualStyleBackColor = true;
             this.btnThemNV.Click += new System.EventHandler(this.clickThemNV);
@@ -1083,24 +1082,25 @@ namespace AnBinhApp
             this.btnXoaNV.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
             this.btnXoaNV.Size = new System.Drawing.Size(219, 45);
             this.btnXoaNV.TabIndex = 64;
-            this.btnXoaNV.Text = "Xóa nhân viên";
+            this.btnXoaNV.Text = "Xóa Nhân Viên";
             this.btnXoaNV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoaNV.UseVisualStyleBackColor = true;
+            this.btnXoaNV.Click += new System.EventHandler(this.btnXoaNV_Click);
             // 
-            // button5
+            // btn_HoanTat
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(155)))), ((int)(((byte)(242)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(1200, 683);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(225, 45);
-            this.button5.TabIndex = 66;
-            this.button5.Text = "Chốt Phân Công";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btn_HoanTat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(155)))), ((int)(((byte)(242)))));
+            this.btn_HoanTat.FlatAppearance.BorderSize = 0;
+            this.btn_HoanTat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_HoanTat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.btn_HoanTat.ForeColor = System.Drawing.Color.White;
+            this.btn_HoanTat.Location = new System.Drawing.Point(1200, 756);
+            this.btn_HoanTat.Name = "btn_HoanTat";
+            this.btn_HoanTat.Size = new System.Drawing.Size(225, 45);
+            this.btn_HoanTat.TabIndex = 66;
+            this.btn_HoanTat.Text = "Hoàn Tất";
+            this.btn_HoanTat.UseVisualStyleBackColor = false;
+            this.btn_HoanTat.Click += new System.EventHandler(this.button5_Click);
             // 
             // calendar
             // 
@@ -1113,20 +1113,20 @@ namespace AnBinhApp
             this.calendar.TabIndex = 69;
             this.calendar.ValueChanged += new System.EventHandler(this.changeDate);
             // 
-            // button6
+            // btn_TraCuu
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(155)))), ((int)(((byte)(242)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(1206, 272);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(219, 45);
-            this.button6.TabIndex = 70;
-            this.button6.Text = "Tra cứu lịch rảnh";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.traCuuLichRanh_click);
+            this.btn_TraCuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(155)))), ((int)(((byte)(242)))));
+            this.btn_TraCuu.FlatAppearance.BorderSize = 0;
+            this.btn_TraCuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_TraCuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.btn_TraCuu.ForeColor = System.Drawing.Color.White;
+            this.btn_TraCuu.Location = new System.Drawing.Point(1206, 272);
+            this.btn_TraCuu.Name = "btn_TraCuu";
+            this.btn_TraCuu.Size = new System.Drawing.Size(219, 45);
+            this.btn_TraCuu.TabIndex = 70;
+            this.btn_TraCuu.Text = "Tra cứu lịch rảnh";
+            this.btn_TraCuu.UseVisualStyleBackColor = false;
+            this.btn_TraCuu.Click += new System.EventHandler(this.traCuuLichRanh_click);
             // 
             // pictureBox12
             // 
@@ -1158,31 +1158,15 @@ namespace AnBinhApp
             this.pictureBox7.TabIndex = 61;
             this.pictureBox7.TabStop = false;
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(155)))), ((int)(((byte)(242)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(1200, 756);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(225, 45);
-            this.button3.TabIndex = 66;
-            this.button3.Text = "Chốt Lịch Làm Việc";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // PhanCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1482, 833);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btn_TraCuu);
             this.Controls.Add(this.calendar);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btn_HoanTat);
             this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.btnXoaNV);
             this.Controls.Add(this.pictureBox8);
@@ -1344,9 +1328,8 @@ namespace AnBinhApp
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Button btnXoaNV;
         private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_HoanTat;
         private System.Windows.Forms.DateTimePicker calendar;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_TraCuu;
     }
 }

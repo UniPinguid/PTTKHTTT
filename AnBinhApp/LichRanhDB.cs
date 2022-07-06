@@ -21,12 +21,19 @@ namespace AnBinhApp
             string query = "select ct.THU, ct.BUOI ";
             query += "from LICHLAMVIEC lv, LICHCATRUC ct, PHANCONG pc ";
             query += "where lv.MALICHLV = ct.MALICHLV AND ct.MALICHLV = pc.MALLV and ct.MACATRUC = pc.MACATRUC ";
-            //query += " and lv.LV_MANV = ";
-            //query += manv;
-            query += " AND lv.NGAYBATDAU = '";
-            query += ngaybd;
-            query += "'";
-
+            
+            if(ngaybd != "")
+            {
+                query += " AND lv.NGAYBATDAU = '";
+                query += ngaybd;
+                query += "'";
+            }
+            
+            if (manv != "")
+            {
+                query += " and lv.LV_MANV = ";
+                query += manv;
+            }
 
 
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);

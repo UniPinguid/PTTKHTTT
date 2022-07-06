@@ -29,7 +29,7 @@ namespace AnBinhApp
             ngaybd = _ngaybd;
             ngaykt = _ngaykt;
 
-            ng_tao = 0;
+            ng_tao = Int32.Parse(DangNhap.username);
             thoigiantao = DateTime.Now.ToString();
 
             mallv = Int32.Parse(_ngaybd);

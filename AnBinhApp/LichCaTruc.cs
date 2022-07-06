@@ -22,7 +22,7 @@ namespace AnBinhApp
         public static string Thu { get => thu; set => thu = value; }
         public static int taoMaCaTruc (string thu, string buoi)
         {
-            int kq = 0;
+            int kq;
             if (thu == "Thứ Hai")
             {
                 kq = 20;
@@ -99,6 +99,15 @@ namespace AnBinhApp
         public static void ghiLichCaTruc()
         {
             LichLamViecDB.themLichCaTruc();
+        }
+        public static void themNhanVien(int maNV)
+        {
+            dsNhanVien.Add(maNV);
+        }
+
+        public static void xoaNhanVien(int manv)
+        {
+            dsNhanVien.Remove(manv);
         }
     }
     

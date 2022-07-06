@@ -12,11 +12,12 @@ namespace AnBinhApp
 {
     public partial class TraCuuLichRanhNV : Form
     {
-        public TraCuuLichRanhNV()
+        public TraCuuLichRanhNV(string _thu)
         {
             InitializeComponent();
             notification(TrangChu.co_ThongBao);
             sideBarCollapsible(TrangChu.ds_collapsible, TrangChu.chucnang_collapsible, TrangChu.taikhoan_collapsible);
+            thu = _thu;
         }
 
         // Start of
@@ -505,6 +506,19 @@ namespace AnBinhApp
                 is_Thoat_clicked = false;
                 Thoat_leave(sender, e);
             }
+        }
+        private static string thu;
+
+        private void searchForm_TextChanged(object sender, EventArgs e)
+        {
+            LichRanhTongHop.docLichRanhCoDieuKien(thu, cbb_TrungTam.Text, searchForm.Text);
+            dataGridView1.DataSource = LichRanhTongHop.LichRanh;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LichRanhTongHop.docLichRanhCoDieuKien(thu, cbb_TrungTam.Text, searchForm.Text);
+            dataGridView1.DataSource = LichRanhTongHop.LichRanh;
         }
 
         // End of

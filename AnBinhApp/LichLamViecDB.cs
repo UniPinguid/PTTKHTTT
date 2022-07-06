@@ -28,7 +28,7 @@ namespace AnBinhApp
             statement += "', '";
             statement += LichLamViec.Thoigiantao;
             statement += "', ";
-            statement += LichLamViec.Ng_tao;
+            statement += LichLamViec.Ng_tao.ToString();
             statement += ")";
 
 
