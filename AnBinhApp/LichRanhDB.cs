@@ -106,5 +106,28 @@ namespace AnBinhApp
 
             sqlConnection.Close();
         }
+        public static int tinhSoBuoiToiThieu()
+        {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
+            SqlConnection sqlConnection = new SqlConnection(ConnectionString);
+
+            sqlConnection.Open();
+
+
+            string statement = "SELECT SOBUOITRUCTOITHIEU FROM NHANVIEN WHERE MANV = ";
+            statement += DangNhap.username;
+
+            
+
+
+            SqlCommand sqlCommand = new SqlCommand(statement, sqlConnection);
+            sqlCommand.CommandType = System.Data.CommandType.Text;
+
+            int kq = Int32.Parse(sqlCommand.ExecuteScalar().ToString());
+
+            sqlConnection.Close();
+
+            return kq;
+        }
     }
 }

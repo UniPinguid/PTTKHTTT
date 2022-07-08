@@ -525,32 +525,7 @@ namespace AnBinhApp
         // Start of
         // Calendar
 
-        public static DateTime FirstDateOfWeek(int year, int weekOfYear)
-        {
-            DateTime jan1 = new DateTime(year, 1, 1);
-            int daysOffset = DayOfWeek.Thursday - jan1.DayOfWeek;
-
-            // Use first Thursday in January to get first week of the year as
-            // it will never be in Week 52/53
-            DateTime firstThursday = jan1.AddDays(daysOffset);
-            var cal = CultureInfo.CurrentCulture.Calendar;
-            int firstWeek = cal.GetWeekOfYear(firstThursday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
-
-            var weekNum = weekOfYear;
-            // As we're adding days to a date in Week 1,
-            // we need to subtract 1 in order to get the right date for week #1
-            if (firstWeek == 1)
-            {
-                weekNum -= 1;
-            }
-
-            // Using the first Thursday as starting week ensures that we are starting in the right year
-            // then we add number of weeks multiplied with days
-            var result = firstThursday.AddDays(weekNum * 7);
-
-            // Subtract 3 days from Thursday to get Monday, which is the first weekday in ISO8601
-            return result.AddDays(-3);
-        }
+        
 
         private void resetButton()
         {
@@ -587,7 +562,7 @@ namespace AnBinhApp
         {
             Calendar cal = new CultureInfo("en-US").Calendar;
             int week = cal.GetWeekOfYear(date, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
-            DateTime firstMonday = FirstDateOfWeek(2022, week - 1);
+            DateTime firstMonday = LichRanh.FirstDateOfWeek(2022, week - 1);
 
             label_T2.Text = firstMonday.ToShortDateString();
             label_T3.Text = firstMonday.AddDays(1).ToShortDateString();
@@ -903,12 +878,107 @@ namespace AnBinhApp
 
         private void btnHoanTat_Click(object sender, EventArgs e)
         {
-            LichRanh.khoiTao(label_T2.Text, label_CN.Text);
-            LichRanh.dangKyLichRanh();
-
+            
             string buoi = "";
             string thu = "";
             string ngay = "";
+            int count = 0;
+            if (c2M_status == 1)
+            {
+                count++;
+            }
+            if (c3M_status == 1)
+            {
+                count++;
+            }
+            if (c4M_status == 1)
+            {
+                count++;
+            }
+            if (c5M_status == 1)
+            {
+                count++;
+            }
+            if (c6M_status == 1)
+            {
+                count++;
+            }
+            if (c7M_status == 1)
+            {
+                count++;
+            }
+            if (c8M_status == 1)
+            {
+                count++;
+            }
+            if (c2A_status == 1)
+            {
+                count++;
+            }
+            if (c3A_status == 1)
+            {
+                count++;
+            }
+            if (c4A_status == 1)
+            {
+                count++;
+            }
+            if (c5A_status == 1)
+            {
+                count++;
+            }
+            if (c6A_status == 1)
+            {
+                count++;
+            }
+
+            if (c7A_status == 1)
+            {
+                count++;
+            }
+            if (c8A_status == 1)
+            {
+                count++;
+            }
+            if (c2E_status == 1)
+            {
+                count++;
+            }
+            if (c3E_status == 1)
+            {
+                count++;
+            }
+            if (c4E_status == 1)
+            {
+                count++;
+            }
+            if (c5E_status == 1)
+            {
+                count++;
+            }
+            if (c6E_status == 1)
+            {
+                count++;
+            }
+            if (c7E_status == 1)
+            {
+                count++;
+            }
+            if (c8E_status == 1)
+            {
+                count++;
+            }
+
+            if (!LichRanh.kiemTraSoBuoiRanh(count))
+            {
+                string mess = "Số buổi đăng ký ít hơn số buổi tối thiểu\n";
+                mess += "Yêu cầu đăng ký lại.";
+                MessageBox.Show(mess, "Thông Báo");
+            }
+            LichRanh.khoiTao(label_T2.Text, label_CN.Text);
+            LichRanh.dangKyLichRanh();
+
+
             if (c2M_status == 1)
             {
                 buoi = label4.Text;
@@ -917,12 +987,6 @@ namespace AnBinhApp
                 CaRanh.khoiTao(thu, ngay, buoi);
                 CaRanh.themChiTietLichRanh();
             }
-            //if (c2M_status == 1)
-            //{
-            //    buoi = label4.Text;
-            //    CaRanh.khoiTao(thu, ngay, buoi);
-            //    CaRanh.themChiTietLichRanh();
-            //}
             if (c3M_status == 1)
             {
                 buoi = label4.Text;
