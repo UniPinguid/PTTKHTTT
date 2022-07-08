@@ -632,6 +632,10 @@ namespace AnBinhApp
             }
             LichCaTruc.khoiTao(label_today_date.Text, "SÁNG", label_today.Text, LichRanhTongHop.LichRanh);
             LichCaTruc.ghiLichCaTruc();
+            LichCaTruc.khoiTao(label_today_date.Text, "CHIỀU", label_today.Text, LichRanhTongHop.LichRanh);
+            LichCaTruc.ghiLichCaTruc();
+            LichCaTruc.khoiTao(label_today_date.Text, "TỐI", label_today.Text, LichRanhTongHop.LichRanh);
+            LichCaTruc.ghiLichCaTruc();
         }
 
         private void btnXoaNV_Click(object sender, EventArgs e)

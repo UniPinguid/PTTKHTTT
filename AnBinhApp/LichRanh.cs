@@ -49,11 +49,7 @@ namespace AnBinhApp
             LichRanhDB.themLichRanh();
         }
 
-        public static DateTime GetNextWeekday(DateTime start, DayOfWeek day)
-        {
-            int daysToAdd = ((int)day - (int)start.DayOfWeek + 7) % 7;
-            return start.AddDays(daysToAdd);
-        }
+        
 
         public static DateTime FirstDateOfWeek(int year, int weekOfYear)
         {
