@@ -31,7 +31,7 @@ namespace AnBinhApp
             
             if (manv != "")
             {
-                query += " and lv.LV_MANV = ";
+                query += " and pc.MANV = ";
                 query += manv;
             }
 
@@ -57,9 +57,9 @@ namespace AnBinhApp
             sqlConnection.Open();
 
 
-            string statement = "INSERT INTO LICHRANH(MALICHRANH, NGAYBATDAU, NGAYKETTHUC, THOIGIANDANGKY, LV_MANV) VALUES (";
+            string statement = "INSERT INTO LICHRANH(MALICHRANH, NGAYBATDAU, NGAYKETTHUC, THOIGIANDANGKY, LR_MANV) VALUES (";
             statement += LichRanh.MaLR;
-            statement += "'";
+            statement += ", '";
             statement += LichRanh.NgayBD;
             statement += "', '";
             statement += LichRanh.NgayKT;
@@ -88,16 +88,15 @@ namespace AnBinhApp
 
             string statement = "INSERT INTO CHITIETLICHRANH(MALICHRANH, SOTHUTU, THU, NGAY, CA) VALUES (";
             statement += LichRanh.MaLR;
-            statement += "'";
+            statement += ", ";
             statement += CaRanh.Sothutu;
-            statement += "', '";
+            statement += ", N'";
             statement += CaRanh.Thu;
             statement += "', '";
             statement += CaRanh.Ngay;
-            statement += "', ";
+            statement += "', N'";
             statement += CaRanh.Ca;
-            statement += ")";
-
+            statement += "')";
 
             SqlCommand sqlCommand = new SqlCommand(statement, sqlConnection);
             sqlCommand.CommandType = System.Data.CommandType.Text;

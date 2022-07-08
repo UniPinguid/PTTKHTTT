@@ -34,8 +34,13 @@ namespace AnBinhApp
             nguoiDK = DangNhap.username;
             int _maLR = 10000000;
             _maLR += Int32.Parse(nguoiDK);
+            _maLR += DateTime.Now.Day * 100000;
+            _maLR += DateTime.Now.Month * 1000000;
             _maLR += DateTime.Now.Hour * 10000;
             _maLR += DateTime.Now.Minute * 1000;
+            _maLR += DateTime.Now.Second * 100;
+            _maLR += DateTime.Parse(ngayBD).Day * 10;
+            _maLR += DateTime.Parse(ngayBD).Month;
             maLR = _maLR.ToString();
 
         }

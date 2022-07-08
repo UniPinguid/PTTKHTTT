@@ -11,7 +11,7 @@ namespace AnBinhApp
     class LichCaTruc
     {
         private static string buoi;
-        private static List<int> dsNhanVien;
+        public static List<int> dsNhanVien;
         private static int maCaTruc;
         private static string thu;
 
@@ -79,18 +79,17 @@ namespace AnBinhApp
             buoi = _buoi;
             thu = _thu;
 
-            dsNhanVien.Clear();
+            //if (dsNhanVien.Count != 0)
+            //{
+            //    dsNhanVien.Clear();
+            //}
+            dsNhanVien = new List<int>();
             for (int i = 0; i< _data.Rows.Count;i++)
             {
                 if (_data.Rows[i]["CA"].ToString() == buoi)
                 {
-                    if(_data.Rows[i]["NGAY"].ToString() == Ngay)
-                    {
-                        if(_data.Rows[i]["THU"].ToString()== thu)
-                        {
-                            dsNhanVien.Add(Int32.Parse(_data.Rows[i]["MANV"].ToString()));
-                        }
-                    }
+                    int temp = Int32.Parse(_data.Rows[i]["MANV"].ToString());
+                    dsNhanVien.Add(temp);
                 }
             }
             maCaTruc = LichCaTruc.taoMaCaTruc(thu, buoi);
@@ -99,6 +98,11 @@ namespace AnBinhApp
         public static void ghiLichCaTruc()
         {
             LichLamViecDB.themLichCaTruc();
+
+            foreach (int t in dsNhanVien)
+            {
+                LichLamViecDB.themPhanCong(t);
+            }
         }
         public static void themNhanVien(int maNV)
         {
