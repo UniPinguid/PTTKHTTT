@@ -632,5 +632,10 @@ namespace AnBinhApp
         {
             LichCaTruc.ghiLichCaTruc();
         }
+
+        private void PhanCong_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

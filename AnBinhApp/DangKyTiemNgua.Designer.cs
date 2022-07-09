@@ -407,7 +407,7 @@ namespace AnBinhApp
             this.tiepTucGoi_button.TabIndex = 31;
             this.tiepTucGoi_button.Text = "Tiếp tục ❯";
             this.tiepTucGoi_button.UseVisualStyleBackColor = false;
-            this.tiepTucGoi_button.Click += new System.EventHandler(this.clickTiepTucGoi);
+            this.tiepTucGoi_button.Click += new System.EventHandler(this.updateInfoKhachHang);
             // 
             // label23
             // 

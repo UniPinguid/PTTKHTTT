@@ -605,7 +605,7 @@ namespace AnBinhApp
             else if (leCheck.Checked)
                 tab.SelectTab("singleVacTab");
         }
-        private void clickTiepTucGoi(object sender, EventArgs e)
+        private void updateInfoKhachHang(object sender, EventArgs e)
         {
             tab.SelectTab("finalizationTab");
 
