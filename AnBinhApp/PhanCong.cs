@@ -20,6 +20,7 @@ namespace AnBinhApp
             notification(TrangChu.co_ThongBao);
             sideBarCollapsible(TrangChu.ds_collapsible, TrangChu.chucnang_collapsible, TrangChu.taikhoan_collapsible);
             getToday(today);
+            LichLamViec.Trangthaikhoitao = 0;
         }
 
         // Start of
@@ -27,7 +28,7 @@ namespace AnBinhApp
 
         bool is_Thoat_clicked = false;
         bool is_DSPhieuTiem_clicked = false;
-
+        
         private void notification(bool co_ThongBao)
         {
             if (TrangChu.co_ThongBao == false)
@@ -473,14 +474,14 @@ namespace AnBinhApp
 
         private void traCuuLichRanh_click(object sender, EventArgs e)
         {
-            TraCuuLichRanhNV traCuuForm = new TraCuuLichRanhNV();
+            TraCuuLichRanhNV traCuuForm = new TraCuuLichRanhNV(label_today.Text);
             traCuuForm.Show();
             this.Close();
         }
 
         private void clickThemNV(object sender, EventArgs e)
         {
-            PhanCongThemNV PCThemNV = new PhanCongThemNV();
+            PhanCongThemNV PCThemNV = new PhanCongThemNV(label_today.Text);
             PCThemNV.Show();
         }
         private void clickHoanTat(object sender, EventArgs e)
@@ -530,7 +531,7 @@ namespace AnBinhApp
             }
         }
 
-        private void getToday(DateTime date)
+        private void getToday(DateTime date)    
         {
             DateTime yesterday = date.AddDays(-1);
             DateTime tomorrow = date.AddDays(1);
@@ -608,29 +609,41 @@ namespace AnBinhApp
 
         private void cbbTrungTam_TextChanged(object sender, EventArgs e)
         {
-            string dieuKien = " TRUNGTAM = " + cbbTrungTam.Text;
-            dgv.DataSource = LichRanhTongHop.docLichRanhCoDieuKien(label_today.Text,dieuKien);
+            string vaitro = "";
+            dgv.DataSource = LichRanhTongHop.docLichRanhCoDieuKien(label_today.Text, cbbTrungTam.Text,vaitro);
         }
 
         private void label_today_TextChanged(object sender, EventArgs e)
         {
-            if (label_today_date.Text == "Thứ Hai")
+            
+        }
+
+        
+        
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (LichLamViec.Trangthaikhoitao == 0)
             {
                 DateTime date = Convert.ToDateTime(label_today_date.Text);
                 date.AddDays(7);
                 LichLamViec.khoiTao(label_today_date.Text, date.ToShortDateString());
                 LichLamViec.ghiLichLamViec();
+                LichLamViec.Trangthaikhoitao = 1;
             }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
+            LichCaTruc.khoiTao(label_today_date.Text, "SÁNG", label_today.Text, LichRanhTongHop.LichRanh);
             LichCaTruc.ghiLichCaTruc();
+            LichCaTruc.khoiTao(label_today_date.Text, "CHIỀU", label_today.Text, LichRanhTongHop.LichRanh);
+            LichCaTruc.ghiLichCaTruc();
+            LichCaTruc.khoiTao(label_today_date.Text, "TỐI", label_today.Text, LichRanhTongHop.LichRanh);
+            LichCaTruc.ghiLichCaTruc();
+        }
+
+        private void btnXoaNV_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgv.SelectedRows[0];
+            dgv.Rows.Remove(row);
+            LichCaTruc.xoaNhanVien(Int32.Parse(row.Cells["MANV"].Value.ToString()));
+
         }
 
         private void PhanCong_Load(object sender, EventArgs e)

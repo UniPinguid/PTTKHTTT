@@ -108,3 +108,13 @@ BEGIN
 	SELECT * FROM NHANVIEN NV JOIN TRUNGTAM TT ON (NV.TRUNGTAM = TT.STT)
 	WHERE MANV = @nv
 END
+
+create procedure sp_THANHTOAN (@mahd int, @hinhthuc nvarchar(10), @thanhtien float, @thoigian datetime, @makh int, @maphieu int)
+as
+begin tran
+	INSERT INTO DBO.HOADON (MAHD, HINHTHUCTHANHTOAN, THANHTIEN, THOIGIANTHANHTOAN,HD_MAKH, HD_MAPHIEU) VALUES (@mahd,@hinhthuc,@thanhtien,@thoigian,@makh, @maphieu)
+	update PHIEUDKTIEM
+	set TINHTRANG = N'2'
+	where MAPHIEU = @maphieu
+commit tran
+return 0;

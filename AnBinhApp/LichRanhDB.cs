@@ -21,12 +21,19 @@ namespace AnBinhApp
             string query = "select ct.THU, ct.BUOI ";
             query += "from LICHLAMVIEC lv, LICHCATRUC ct, PHANCONG pc ";
             query += "where lv.MALICHLV = ct.MALICHLV AND ct.MALICHLV = pc.MALLV and ct.MACATRUC = pc.MACATRUC ";
-            //query += " and lv.LV_MANV = ";
-            //query += manv;
-            query += " AND lv.NGAYBATDAU = '";
-            query += ngaybd;
-            query += "'";
-
+            
+            if(ngaybd != "")
+            {
+                query += " AND lv.NGAYBATDAU = '";
+                query += ngaybd;
+                query += "'";
+            }
+            
+            if (manv != "")
+            {
+                query += " and pc.MANV = ";
+                query += manv;
+            }
 
 
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
@@ -50,9 +57,9 @@ namespace AnBinhApp
             sqlConnection.Open();
 
 
-            string statement = "INSERT INTO LICHRANH(MALICHRANH, NGAYBATDAU, NGAYKETTHUC, THOIGIANDANGKY, LV_MANV) VALUES (";
+            string statement = "INSERT INTO LICHRANH(MALICHRANH, NGAYBATDAU, NGAYKETTHUC, THOIGIANDANGKY, LR_MANV) VALUES (";
             statement += LichRanh.MaLR;
-            statement += "'";
+            statement += ", '";
             statement += LichRanh.NgayBD;
             statement += "', '";
             statement += LichRanh.NgayKT;
@@ -81,16 +88,15 @@ namespace AnBinhApp
 
             string statement = "INSERT INTO CHITIETLICHRANH(MALICHRANH, SOTHUTU, THU, NGAY, CA) VALUES (";
             statement += LichRanh.MaLR;
-            statement += "'";
+            statement += ", ";
             statement += CaRanh.Sothutu;
-            statement += "', '";
+            statement += ", N'";
             statement += CaRanh.Thu;
             statement += "', '";
             statement += CaRanh.Ngay;
-            statement += "', ";
+            statement += "', N'";
             statement += CaRanh.Ca;
-            statement += ")";
-
+            statement += "')";
 
             SqlCommand sqlCommand = new SqlCommand(statement, sqlConnection);
             sqlCommand.CommandType = System.Data.CommandType.Text;
@@ -98,6 +104,29 @@ namespace AnBinhApp
             sqlCommand.ExecuteNonQuery();
 
             sqlConnection.Close();
+        }
+        public static int tinhSoBuoiToiThieu()
+        {
+            string ConnectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
+            SqlConnection sqlConnection = new SqlConnection(ConnectionString);
+
+            sqlConnection.Open();
+
+
+            string statement = "SELECT SOBUOITRUCTOITHIEU FROM NHANVIEN WHERE MANV = ";
+            statement += DangNhap.username;
+
+            
+
+
+            SqlCommand sqlCommand = new SqlCommand(statement, sqlConnection);
+            sqlCommand.CommandType = System.Data.CommandType.Text;
+
+            int kq = Int32.Parse(sqlCommand.ExecuteScalar().ToString());
+
+            sqlConnection.Close();
+
+            return kq;
         }
     }
 }

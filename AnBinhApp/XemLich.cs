@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 
 namespace AnBinhApp
 {
@@ -526,32 +525,7 @@ namespace AnBinhApp
         // Start of
         // Calendar
 
-        public static DateTime FirstDateOfWeek(int year, int weekOfYear)
-        {
-            DateTime jan1 = new DateTime(year, 1, 1);
-            int daysOffset = DayOfWeek.Thursday - jan1.DayOfWeek;
-
-            // Use first Thursday in January to get first week of the year as
-            // it will never be in Week 52/53
-            DateTime firstThursday = jan1.AddDays(daysOffset);
-            var cal = CultureInfo.CurrentCulture.Calendar;
-            int firstWeek = cal.GetWeekOfYear(firstThursday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
-
-            var weekNum = weekOfYear;
-            // As we're adding days to a date in Week 1,
-            // we need to subtract 1 in order to get the right date for week #1
-            if (firstWeek == 1)
-            {
-                weekNum -= 1;
-            }
-
-            // Using the first Thursday as starting week ensures that we are starting in the right year
-            // then we add number of weeks multiplied with days
-            var result = firstThursday.AddDays(weekNum * 7);
-
-            // Subtract 3 days from Thursday to get Monday, which is the first weekday in ISO8601
-            return result.AddDays(-3);
-        }
+        
 
         private void resetButton()
         {
@@ -588,7 +562,7 @@ namespace AnBinhApp
         {
             Calendar cal = new CultureInfo("en-US").Calendar;
             int week = cal.GetWeekOfYear(date, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
-            DateTime firstMonday = FirstDateOfWeek(2022, week - 1);
+            DateTime firstMonday = LichRanh.FirstDateOfWeek(2022, week - 1);
 
             label_T2.Text = firstMonday.ToShortDateString();
             label_T3.Text = firstMonday.AddDays(1).ToShortDateString();
@@ -598,48 +572,48 @@ namespace AnBinhApp
             label_T7.Text = firstMonday.AddDays(5).ToShortDateString();
             label_CN.Text = firstMonday.AddDays(6).ToShortDateString();
 
-            if (date.DayOfWeek == DayOfWeek.Monday && today == firstMonday)
-            {
-                c2M.BackColor = Color.FromArgb(196, 220, 245);
-                c2A.BackColor = Color.FromArgb(196, 220, 245);
-                c2E.BackColor = Color.FromArgb(196, 220, 245);
-            }
-            else if (date.DayOfWeek == DayOfWeek.Tuesday && today == firstMonday.AddDays(1))
-            {
-                c3M.BackColor = Color.FromArgb(196, 220, 245);
-                c3A.BackColor = Color.FromArgb(196, 220, 245);
-                c3E.BackColor = Color.FromArgb(196, 220, 245);
-            }
-            else if (date.DayOfWeek == DayOfWeek.Wednesday && today == firstMonday.AddDays(2))
-            {
-                c4M.BackColor = Color.FromArgb(196, 220, 245);
-                c4A.BackColor = Color.FromArgb(196, 220, 245);
-                c4E.BackColor = Color.FromArgb(196, 220, 245);
-            }
-            else if (date.DayOfWeek == DayOfWeek.Thursday && today == firstMonday.AddDays(3))
-            {
-                c5M.BackColor = Color.FromArgb(196, 220, 245);
-                c5A.BackColor = Color.FromArgb(196, 220, 245);
-                c5E.BackColor = Color.FromArgb(196, 220, 245);
-            }
-            else if (date.DayOfWeek == DayOfWeek.Friday && today == firstMonday.AddDays(4))
-            {
-                c6M.BackColor = Color.FromArgb(196, 220, 245);
-                c6A.BackColor = Color.FromArgb(196, 220, 245);
-                c6E.BackColor = Color.FromArgb(196, 220, 245);
-            }
-            else if (date.DayOfWeek == DayOfWeek.Saturday && today == firstMonday.AddDays(5))
-            {
-                c7M.BackColor = Color.FromArgb(196, 220, 245);
-                c7A.BackColor = Color.FromArgb(196, 220, 245);
-                c7E.BackColor = Color.FromArgb(196, 220, 245);
-            }
-            else if (date.DayOfWeek == DayOfWeek.Sunday && today == firstMonday.AddDays(6))
-            {
-                c8M.BackColor = Color.FromArgb(196, 220, 245);
-                c8A.BackColor = Color.FromArgb(196, 220, 245);
-                c8E.BackColor = Color.FromArgb(196, 220, 245);
-            }
+            //if (date.DayOfWeek == DayOfWeek.Monday && today == firstMonday)
+            //{
+            //    c2M.BackColor = Color.FromArgb(196, 220, 245);
+            //    c2A.BackColor = Color.FromArgb(196, 220, 245);
+            //    c2E.BackColor = Color.FromArgb(196, 220, 245);
+            //}
+            //else if (date.DayOfWeek == DayOfWeek.Tuesday && today == firstMonday.AddDays(1))
+            //{
+            //    c3M.BackColor = Color.FromArgb(196, 220, 245);
+            //    c3A.BackColor = Color.FromArgb(196, 220, 245);
+            //    c3E.BackColor = Color.FromArgb(196, 220, 245);
+            //}
+            //else if (date.DayOfWeek == DayOfWeek.Wednesday && today == firstMonday.AddDays(2))
+            //{
+            //    c4M.BackColor = Color.FromArgb(196, 220, 245);
+            //    c4A.BackColor = Color.FromArgb(196, 220, 245);
+            //    c4E.BackColor = Color.FromArgb(196, 220, 245);
+            //}
+            //else if (date.DayOfWeek == DayOfWeek.Thursday && today == firstMonday.AddDays(3))
+            //{
+            //    c5M.BackColor = Color.FromArgb(196, 220, 245);
+            //    c5A.BackColor = Color.FromArgb(196, 220, 245);
+            //    c5E.BackColor = Color.FromArgb(196, 220, 245);
+            //}
+            //else if (date.DayOfWeek == DayOfWeek.Friday && today == firstMonday.AddDays(4))
+            //{
+            //    c6M.BackColor = Color.FromArgb(196, 220, 245);
+            //    c6A.BackColor = Color.FromArgb(196, 220, 245);
+            //    c6E.BackColor = Color.FromArgb(196, 220, 245);
+            //}
+            //else if (date.DayOfWeek == DayOfWeek.Saturday && today == firstMonday.AddDays(5))
+            //{
+            //    c7M.BackColor = Color.FromArgb(196, 220, 245);
+            //    c7A.BackColor = Color.FromArgb(196, 220, 245);
+            //    c7E.BackColor = Color.FromArgb(196, 220, 245);
+            //}
+            //else if (date.DayOfWeek == DayOfWeek.Sunday && today == firstMonday.AddDays(6))
+            //{
+            //    c8M.BackColor = Color.FromArgb(196, 220, 245);
+            //    c8A.BackColor = Color.FromArgb(196, 220, 245);
+            //    c8E.BackColor = Color.FromArgb(196, 220, 245);
+            //}
         }
 
         private void click_lastWeek(object sender, EventArgs e)
@@ -648,6 +622,15 @@ namespace AnBinhApp
             resetButton();
             date = date.AddDays(-7);
             weekCalendar(date);
+
+
+            cbbT2.Items.Clear();
+            cbbT3.Items.Clear();
+            cbbT4.Items.Clear();
+            cbbT5.Items.Clear();
+            cbbT6.Items.Clear();
+            cbbT7.Items.Clear();
+            cbbCN.Items.Clear();
             get_cell_status();
 
 
@@ -655,18 +638,36 @@ namespace AnBinhApp
 
         private void click_nextWeek(object sender, EventArgs e)
         {
+            
             label_nextWeek.Font = new Font("Inter Medium", label_nextWeek.Font.Size);
             resetButton();
+            cbbT2.Items.Clear();
+            cbbT3.Items.Clear();
+            cbbT4.Items.Clear();
+            cbbT5.Items.Clear();
+            cbbT6.Items.Clear();
+            cbbT7.Items.Clear();
+            cbbCN.Items.Clear();
             date = date.AddDays(7);
             weekCalendar(date);
             get_cell_status();
+
+            
         }
 
         private void click_returnToday(object sender, EventArgs e)
         {
             resetButton();
+            cbbT2.Items.Clear();
+            cbbT3.Items.Clear();
+            cbbT4.Items.Clear();
+            cbbT5.Items.Clear();
+            cbbT6.Items.Clear();
+            cbbT7.Items.Clear();
+            cbbCN.Items.Clear();
             date = today;
             weekCalendar(date);
+            get_cell_status();
         }
 
         private void click_DKLichRanh(object sender, EventArgs e)
@@ -699,12 +700,7 @@ namespace AnBinhApp
             label27.Hide();
         }
 
-        private void click_HoanTat(object sender, EventArgs e)
-        {
-            
-
-
-        }
+        
 
         // End of
         // Calendar
@@ -909,196 +905,290 @@ namespace AnBinhApp
 
         private void btnHoanTat_Click(object sender, EventArgs e)
         {
-            LichRanh.khoiTao(label_T2.Text, label_CN.Text);
-            LichRanh.dangKyLichRanh();
-
+            
             string buoi = "";
             string thu = "";
             string ngay = "";
+            int count = 0;
             if (c2M_status == 1)
             {
-                buoi = label4.Text;
-                thu = label6.Text;
-                ngay = label_T2.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
-            //if (c2M_status == 1)
-            //{
-            //    buoi = label4.Text;
-            //    CaRanh.khoiTao(thu, ngay, buoi);
-            //    CaRanh.themChiTietLichRanh();
-            //}
             if (c3M_status == 1)
             {
-                buoi = label4.Text;
-                thu = label13.Text;
-                ngay = label_T3.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c4M_status == 1)
             {
-                ngay = label_T4.Text;
-                buoi = label4.Text;
-                thu = label19.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c5M_status == 1)
             {
-                ngay = label_T5.Text;
-                thu = label20.Text;
-                buoi = label4.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c6M_status == 1)
             {
-                ngay = label_T6.Text;
-                buoi = label4.Text;
-                thu = label21.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c7M_status == 1)
             {
-                ngay = label_T7.Text;
-                buoi = label4.Text;
-                thu = label22.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c8M_status == 1)
             {
-                ngay = label_CN.Text;
-                buoi = label4.Text;
-                thu = label23.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c2A_status == 1)
             {
-                thu = label6.Text;
-                buoi = label24.Text;
-                ngay = label_T2.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c3A_status == 1)
             {
-                ngay = label_T3.Text;
-                buoi = label24.Text;
-                thu = label13.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c4A_status == 1)
             {
-                ngay = label_T4.Text;
-                thu = label19.Text;
-                buoi = label24.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c5A_status == 1)
             {
-                ngay = label_T5.Text;
-                thu = label20.Text;
-                buoi = label24.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c6A_status == 1)
             {
-                ngay = label_T6.Text;
-                buoi = label24.Text;
-                thu = label21.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
+
             if (c7A_status == 1)
             {
-                ngay = label_T7.Text;
-                buoi = label24.Text;
-                thu = label22.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c8A_status == 1)
             {
-                ngay = label_CN.Text;
-                buoi = label24.Text;
-                thu = label23.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c2E_status == 1)
             {
-                thu = label6.Text;
-                buoi = label25.Text;
-                ngay = label_T2.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c3E_status == 1)
             {
-                ngay = label_T3.Text;
-                buoi = label25.Text;
-                thu = label13.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c4E_status == 1)
             {
-                ngay = label_T4.Text;
-                thu = label19.Text;
-                buoi = label25.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c5E_status == 1)
             {
-                ngay = label_T5.Text;
-                thu = label20.Text;
-                buoi = label25.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c6E_status == 1)
             {
-                ngay = label_T6.Text;
-                buoi = label25.Text;
-                thu = label21.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c7E_status == 1)
             {
-                ngay = label_T7.Text;
-                buoi = label25.Text;
-                thu = label22.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
             }
             if (c8E_status == 1)
             {
-                ngay = label_CN.Text;
-                buoi = label25.Text;
-                thu = label23.Text;
-                CaRanh.khoiTao(thu, ngay, buoi);
-                CaRanh.themChiTietLichRanh();
+                count++;
+            }
+
+            if (!LichRanh.kiemTraSoBuoiRanh(count))
+            {
+                string mess = "Số buổi đăng ký ít hơn số buổi tối thiểu\n";
+                mess += "Yêu cầu đăng ký lại.";
+                MessageBox.Show(mess, "Thông Báo");
+            }
+            else
+            {
+                LichRanh.khoiTao(label_T2.Text, label_CN.Text);
+                LichRanh.dangKyLichRanh();
+
+                if (c2M_status == 1)
+                {
+                    buoi = label4.Text;
+                    thu = label6.Text;
+                    ngay = label_T2.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c3M_status == 1)
+                {
+                    buoi = label4.Text;
+                    thu = label13.Text;
+                    ngay = label_T3.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c4M_status == 1)
+                {
+                    ngay = label_T4.Text;
+                    buoi = label4.Text;
+                    thu = label19.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c5M_status == 1)
+                {
+                    ngay = label_T5.Text;
+                    thu = label20.Text;
+                    buoi = label4.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c6M_status == 1)
+                {
+                    ngay = label_T6.Text;
+                    buoi = label4.Text;
+                    thu = label21.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c7M_status == 1)
+                {
+                    ngay = label_T7.Text;
+                    buoi = label4.Text;
+                    thu = label22.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c8M_status == 1)
+                {
+                    ngay = label_CN.Text;
+                    buoi = label4.Text;
+                    thu = label23.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c2A_status == 1)
+                {
+                    thu = label6.Text;
+                    buoi = label24.Text;
+                    ngay = label_T2.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c3A_status == 1)
+                {
+                    ngay = label_T3.Text;
+                    buoi = label24.Text;
+                    thu = label13.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c4A_status == 1)
+                {
+                    ngay = label_T4.Text;
+                    thu = label19.Text;
+                    buoi = label24.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c5A_status == 1)
+                {
+                    ngay = label_T5.Text;
+                    thu = label20.Text;
+                    buoi = label24.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c6A_status == 1)
+                {
+                    ngay = label_T6.Text;
+                    buoi = label24.Text;
+                    thu = label21.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c7A_status == 1)
+                {
+                    ngay = label_T7.Text;
+                    buoi = label24.Text;
+                    thu = label22.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c8A_status == 1)
+                {
+                    ngay = label_CN.Text;
+                    buoi = label24.Text;
+                    thu = label23.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c2E_status == 1)
+                {
+                    thu = label6.Text;
+                    buoi = label25.Text;
+                    ngay = label_T2.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c3E_status == 1)
+                {
+                    ngay = label_T3.Text;
+                    buoi = label25.Text;
+                    thu = label13.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c4E_status == 1)
+                {
+                    ngay = label_T4.Text;
+                    thu = label19.Text;
+                    buoi = label25.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c5E_status == 1)
+                {
+                    ngay = label_T5.Text;
+                    thu = label20.Text;
+                    buoi = label25.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c6E_status == 1)
+                {
+                    ngay = label_T6.Text;
+                    buoi = label25.Text;
+                    thu = label21.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c7E_status == 1)
+                {
+                    ngay = label_T7.Text;
+                    buoi = label25.Text;
+                    thu = label22.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+                if (c8E_status == 1)
+                {
+                    ngay = label_CN.Text;
+                    buoi = label25.Text;
+                    thu = label23.Text;
+                    CaRanh.khoiTao(thu, ngay, buoi);
+                    CaRanh.themChiTietLichRanh();
+                }
+
+
+
+
+                is_DKLichRanh_clicked = false;
+
+                HienThi dkLichSuccess = new HienThi();
+                dkLichSuccess.Show();
+                dkLichSuccess.messageShow("successDKLichRanh", "Đăng ký lịch rảnh thành công!", "Hãy chờ bộ phận điều hành duyệt\ntrong vòng 24 giờ.");
+                this.Close();
             }
 
 
-
-
-            is_DKLichRanh_clicked = false;
-
-            HienThi dkLichSuccess = new HienThi();
-            dkLichSuccess.Show();
-            dkLichSuccess.messageShow("successDKLichRanh", "Đăng ký lịch rảnh thành công!", "Hãy chờ bộ phận điều hành duyệt\ntrong vòng 24 giờ.");
-            this.Close();
+            
         }
 
         // End of

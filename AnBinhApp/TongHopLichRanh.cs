@@ -41,7 +41,7 @@ namespace AnBinhApp
             return dataTable;
         }
 
-        public static DataTable truyVanLichRanhCoDieuKien(string thu, string dk)
+        public static DataTable truyVanLichRanhCoDieuKien(string thu, string trungtam, string vaitro)
         {
             string ConnectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
             SqlConnection sqlConnection = new SqlConnection(ConnectionString);
@@ -56,12 +56,24 @@ namespace AnBinhApp
             query += "AND c.THU LIKE N'";
             query += thu;
             query += "' ";
-            if (dk != "")
+            if (trungtam != "")
             {
-                query += " AND ";
-                query += dk;
+                query += " AND nv.TRUNGTAM = ";
+                query += trungtam;
             }
 
+            if(vaitro != "")
+            {
+                query += " AND nv.VAI TRO LIKE N'";
+                query += trungtam;
+                query += "' ";
+            }
+            //SELECT nv.MANV, nv.HOTEN, nv.TRUNGTAM, nv.VAITRO, c.CA
+            //FROM NHANVIEN nv, LICHRANH r, CHITIETLICHRANH c
+            //WHERE nv.MANV = r.LR_MANV AND r.MALICHRANH = c.MALICHRANH
+            //AND r.THOIGIANDANGKY >= ALL (SELECT r1.THOIGIANDANGKY FROM LICHRANH r1 WHERE r1.LR_MANV = r.LR_MANV)
+            //AND nv.VAITRO IS NOT NULL AND c.CA IS NOT NULL AND c.THU LIKE N'Thứ Bảy'
+            //AND nv.TRUNGTAM = 1 AND nv.VAI TRO LIKE N'1' 
 
 
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
